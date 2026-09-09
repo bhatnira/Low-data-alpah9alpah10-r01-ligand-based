@@ -1,0 +1,20 @@
+{
+  "arm_split": {
+    "diversity_random": 1,
+    "diversity_topup": 4,
+    "model_ranked": 4
+  },
+  "eligibility_filter": "PAINS-clean AND BRENK-clean AND Lipinski<=2",
+  "enrichment_factor_formula": "EF_topk = (hits_in_topk / k) / (hits_total / n) within each arm",
+  "enrichment_factor_threshold": 2.0,
+  "fdr_method": "Benjamini-Hochberg, alpha=0.10, across all round compounds",
+  "go_no_go": "continue if EF>=2.0 at top-k for model_ranked vs diversity_random AND >=1 clean novel chemotype confirmed; max planned rounds 3",
+  "n_total": 31,
+  "no_post_hoc_repowering": true,
+  "plate_hash": "ed7f33c758fbcb869ff1af253606106121ee9b2667155a6d8e77a6996682b2a4",
+  "primary_endpoint": "TEVC alpha9alpha10 potentiation: active = potency>0 AND potentiation>0; hits re-confirmed by independent dose-response",
+  "registered_before_experiment": true,
+  "round": 1,
+  "scaffold_cap_per_plate": 2,
+  "stereo_probes_appended": 22
+}

@@ -1,0 +1,4 @@
+fingerprint,mean_tanimoto,min_tanimoto,max_tanimoto
+morgan,0.3233,0.0328,1.0
+maccs,0.6676,0.4091,1.0
+rdkit,0.6039,0.2049,1.0

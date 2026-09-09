@@ -1,0 +1,17 @@
+fragment,active_fraction,inactive_fraction,attribution_direction
+Nitrogen,0.0,0.0435,inactive_assoc
+Bromine,0.1429,0.0,active_assoc
+Alkyne,0.1429,0.0,active_assoc
+Benzyl,0.1429,0.087,active_assoc
+Acetal,0.0,0.0,inactive_assoc
+Lactone,1.0,0.9565,active_assoc
+Hydroxyl,0.7143,0.3913,active_assoc
+Ether,0.0,0.087,inactive_assoc
+CarboxylicEster,1.0,0.9565,active_assoc
+Chlorine,0.0,0.0435,inactive_assoc
+Dioxolane,0.2857,0.6522,inactive_assoc
+Enol,1.0,0.7391,active_assoc
+DefinedStereo,1.0,1.0,inactive_assoc
+SmallAlkyl,1.0,1.0,inactive_assoc
+Nitrile,0.0,0.0435,inactive_assoc
+AliphaticRing,0.0,0.0,inactive_assoc

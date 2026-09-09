@@ -1,0 +1,47 @@
+[
+  {
+    "round": 1,
+    "plate_designed": 31,
+    "oversight_pending": 9,
+    "pooled_round_processed": [],
+    "refit_artifact": [],
+    "hit_metrics_rounds": [],
+    "data_watch": {
+      "reinvent_molecule_dirs": 5,
+      "structural_outputs_found": 0,
+      "reinvent_ingest": "pending until molecule files appear",
+      "structural_ingest": "NOT AVAILABLE - no AF3/Boltz outputs"
+    },
+    "provenance": {
+      "generated_at": "2026-09-09T03:57:36Z",
+      "module": "loop",
+      "python": "3.14.2",
+      "rdkit": "2025.09.4",
+      "scikit_learn": "1.8.0",
+      "pandas": "2.3.3",
+      "numpy": "2.5.3",
+      "seeds": {
+        "global": 42,
+        "tsne": 42,
+        "models": 42,
+        "conformer_etkdgv3": 42,
+        "bootstrap": 42,
+        "reinvent": 42
+      },
+      "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+      "input_hashes": {
+        "round": 1,
+        "updates": [
+          "plate_designed",
+          "oversight_pending",
+          "pooled_round_processed",
+          "refit_artifact",
+          "hit_metrics_rounds",
+          "data_watch"
+        ]
+      },
+      "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+      "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml"
+    }
+  }
+]

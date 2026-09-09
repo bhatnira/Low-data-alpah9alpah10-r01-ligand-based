@@ -1,0 +1,7 @@
+hypothesis_id,statement,evidence_type,indicator,observed,status,distinguishing_design
+H1,Hydrophobicity (LogP) drives activity.,descriptor,LogP,active LogP -0.32 vs inactive 0.35,COMPETING,Vary LogP while holding scaffold fixed.
+H2,A specific aromatic/polar interaction drives activity.,fragment,Benzyl / polar HBA,"Benzyl present in 1/7 active, 2/23 inactive",COMPETING,Swap benzyl for non-aromatic isostere.
+H3,Spatial positioning / 3D shape (elongated conformers) drives activity.,3d,Asphericity/Eccentricity,Active compounds reported more elongated in prior 3D analysis.,COMPETING,Retain 2D features but disrupt 3D shape.
+H4,Electron-withdrawing substituent at a defined position drives potency.,mmp,Br/alkyne,Two most potent compounds carry Br or alkyne; MMP shows gained activity.,COMPETING,"Replace EWG with neutral/polar isostere, test effect."
+H5,The effect is scaffold-dependent (context-dependent).,scaffold,murcko scaffold,17 unique scaffolds; activity distributed across scaffolds,COMPETING,Scaffold-hopping test set + scaffold-out CV.
+H6,Stereochemistry (defined configuration) is required for activity.,stereo,stereo status,Active compounds predominantly defined stereo.,COMPETING,Enantiomeric / diastereomeric pairs in prospective set.

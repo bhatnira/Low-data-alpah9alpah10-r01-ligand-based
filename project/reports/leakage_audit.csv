@@ -1,0 +1,7 @@
+check,finding,severity
+duplicate_molecules_across_splits,none (0),NONE
+generated_molecule_leakage,generated/ dir exists,REVIEW
+information_leakage_from_experimental_outcomes,0 round result files; confirmatory cycle locked,NONE
+xai_background_leakage,SHAP TreeExplainer uses training data background; documented,NONE
+preprocessing_leakage,StandardScaler fit on training fold only (per-fold); no global scaling,NONE
+structural_model_leakage,no structural outputs present,NONE

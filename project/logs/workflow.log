@@ -1,0 +1,929 @@
+2026-09-07 12:23:13,056 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 12:23:13,540 | ERROR | dataset FAILED: cannot access local variable 'logging' where it is not associated with a value
+2026-09-07 12:23:13,540 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 87, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 29, in <lambda>
+    {"key": "dataset", "fn": lambda cfg: __import__("src.dataset", fromlist=["run_phase2"]).run_phase2(cfg),
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/dataset.py", line 310, in run_phase2
+    logger = ManagedLogger("phase2_dataset", str(cfg.resolve("logs")), level=logging.INFO)
+                                                                             ^^^^^^^
+UnboundLocalError: cannot access local variable 'logging' where it is not associated with a value
+
+2026-09-07 12:23:13,564 | INFO | workflow results: {'dataset': "FAILED: cannot access local variable 'logging' where it is not associated with a value"}
+2026-09-07 12:23:22,016 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 12:23:22,325 | ERROR | dataset FAILED: 'stereo_has_undefined_stereo'
+2026-09-07 12:23:22,328 | ERROR | Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'stereo_has_undefined_stereo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 87, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 29, in <lambda>
+    {"key": "dataset", "fn": lambda cfg: __import__("src.dataset", fromlist=["run_phase2"]).run_phase2(cfg),
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/dataset.py", line 313, in run_phase2
+    df = builder.build()
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/dataset.py", line 257, in build
+    self.log.info(f"Compounds with undefined stereo: {int(df['stereo_has_undefined_stereo'].sum())}")
+                                                          ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'stereo_has_undefined_stereo'
+
+2026-09-07 12:23:22,339 | INFO | workflow results: {'dataset': "FAILED: 'stereo_has_undefined_stereo'"}
+2026-09-07 12:23:36,259 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 12:23:36,701 | INFO | dataset completed
+2026-09-07 12:23:36,711 | INFO | workflow results: {'dataset': 'OK'}
+2026-09-07 12:23:41,963 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 12:23:42,234 | ERROR | sar FAILED: name 'os' is not defined
+2026-09-07 12:23:42,235 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 87, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 31, in <lambda>
+    {"key": "sar", "fn": lambda cfg: __import__("src.sar", fromlist=["run_phase3"]).run_phase3(cfg),
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar.py", line 336, in run_phase3
+    if df is None and os.path.exists(analysis_ready):
+                      ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+
+2026-09-07 12:23:42,249 | INFO | workflow results: {'sar': "FAILED: name 'os' is not defined"}
+2026-09-07 12:23:51,762 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 12:23:52,198 | INFO | sar completed
+2026-09-07 12:23:52,208 | INFO | workflow results: {'sar': 'OK'}
+2026-09-07 12:23:56,359 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 12:25:37,826 | INFO | models completed
+2026-09-07 12:25:37,837 | INFO | workflow results: {'models': 'OK'}
+2026-09-07 12:25:42,554 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 12:28:44,675 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 12:28:54,903 | ERROR | xai FAILED: Per-column arrays must each be 1-dimensional
+2026-09-07 12:28:54,907 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 87, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 35, in <lambda>
+    {"key": "xai", "fn": lambda cfg: __import__("src.xai", fromlist=["run_phase5"]).run_phase5(cfg),
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/xai.py", line 318, in run_phase5
+    return xai.run_all(df)
+           ~~~~~~~~~~~^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/xai.py", line 285, in run_all
+    pd.DataFrame({
+    ~~~~~~~~~~~~^^
+        "feature": DESC_COLS,
+        ^^^^^^^^^^^^^^^^^^^^^
+        "shap_mean_abs": shap_out["shap_mean_abs"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }).to_csv(str(self.cfg.resolve("xai/shap/shap_mean_abs.csv")), index=False)
+    ^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 664, in _extract_index
+    raise ValueError("Per-column arrays must each be 1-dimensional")
+ValueError: Per-column arrays must each be 1-dimensional
+
+2026-09-07 12:28:54,929 | INFO | workflow results: {'xai': 'FAILED: Per-column arrays must each be 1-dimensional'}
+2026-09-07 12:29:26,923 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 12:29:37,379 | ERROR | xai FAILED: Per-column arrays must each be 1-dimensional
+2026-09-07 12:29:37,382 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 87, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 35, in <lambda>
+    {"key": "xai", "fn": lambda cfg: __import__("src.xai", fromlist=["run_phase5"]).run_phase5(cfg),
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/xai.py", line 326, in run_phase5
+    return xai.run_all(df)
+           ~~~~~~~~~~~^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/xai.py", line 293, in run_all
+    pd.DataFrame({
+    ~~~~~~~~~~~~^^
+        "feature": DESC_COLS,
+        ^^^^^^^^^^^^^^^^^^^^^
+        "shap_mean_abs": shap_out["shap_mean_abs"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }).to_csv(str(self.cfg.resolve("xai/shap/shap_mean_abs.csv")), index=False)
+    ^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 782, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 503, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 114, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/internals/construction.py", line 664, in _extract_index
+    raise ValueError("Per-column arrays must each be 1-dimensional")
+ValueError: Per-column arrays must each be 1-dimensional
+
+2026-09-07 12:29:37,404 | INFO | workflow results: {'xai': 'FAILED: Per-column arrays must each be 1-dimensional'}
+2026-09-07 12:30:25,750 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 12:30:35,866 | INFO | xai completed
+2026-09-07 12:30:35,877 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 12:30:40,428 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 12:30:40,586 | INFO | taf completed
+2026-09-07 12:30:40,596 | INFO | workflow results: {'taf': 'OK'}
+2026-09-07 12:30:45,875 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 12:30:45,900 | INFO | structures completed
+2026-09-07 12:30:45,900 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 12:30:46,188 | INFO | medchem completed
+2026-09-07 12:30:46,188 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 12:30:46,213 | INFO | reinvent completed
+2026-09-07 12:30:46,213 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 12:30:46,256 | INFO | chemspace completed
+2026-09-07 12:30:46,256 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 12:30:46,297 | INFO | candidates completed
+2026-09-07 12:30:46,297 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 12:30:46,338 | INFO | lock completed
+2026-09-07 12:30:46,348 | INFO | workflow results: {'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK'}
+2026-09-07 12:30:49,857 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 12:30:49,889 | INFO | prospective completed
+2026-09-07 12:30:49,889 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 12:30:49,909 | INFO | audit completed
+2026-09-07 12:30:49,910 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 12:30:49,929 | INFO | reports completed
+2026-09-07 12:30:49,940 | INFO | workflow results: {'prospective': 'OK', 'audit': 'OK', 'reports': 'OK'}
+2026-09-07 12:30:59,460 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 12:30:59,488 | INFO | prospective completed
+2026-09-07 12:30:59,499 | INFO | workflow results: {'prospective': 'OK'}
+2026-09-07 12:31:06,388 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 12:31:06,831 | INFO | dataset completed
+2026-09-07 12:31:06,831 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 12:31:06,896 | INFO | sar completed
+2026-09-07 12:31:06,896 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 12:32:49,355 | INFO | models completed
+2026-09-07 12:32:49,355 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 12:32:59,179 | INFO | xai completed
+2026-09-07 12:32:59,179 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 12:32:59,205 | INFO | taf completed
+2026-09-07 12:32:59,205 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 12:32:59,222 | INFO | structures completed
+2026-09-07 12:32:59,222 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 12:32:59,275 | INFO | medchem completed
+2026-09-07 12:32:59,275 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 12:32:59,298 | INFO | reinvent completed
+2026-09-07 12:32:59,299 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 12:32:59,324 | INFO | chemspace completed
+2026-09-07 12:32:59,324 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 12:32:59,366 | INFO | candidates completed
+2026-09-07 12:32:59,367 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 12:32:59,405 | INFO | lock completed
+2026-09-07 12:32:59,405 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 12:32:59,427 | INFO | prospective completed
+2026-09-07 12:32:59,427 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 12:32:59,449 | INFO | audit completed
+2026-09-07 12:32:59,449 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 12:32:59,467 | INFO | reports completed
+2026-09-07 12:32:59,480 | INFO | workflow results: {'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'audit': 'OK', 'reports': 'OK'}
+2026-09-07 13:09:11,418 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 13:09:11,573 | INFO | lock completed
+2026-09-07 13:09:11,574 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 13:09:11,594 | INFO | audit completed
+2026-09-07 13:09:11,594 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 13:09:11,612 | INFO | reports completed
+2026-09-07 13:09:11,623 | INFO | workflow results: {'lock': 'OK', 'audit': 'OK', 'reports': 'OK'}
+2026-09-07 13:10:04,872 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 13:10:05,100 | INFO | lock completed
+2026-09-07 13:10:05,100 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 13:10:05,133 | INFO | reports completed
+2026-09-07 13:10:05,149 | INFO | workflow results: {'lock': 'OK', 'reports': 'OK'}
+2026-09-07 13:10:12,124 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 13:10:12,540 | INFO | dataset completed
+2026-09-07 13:10:12,540 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 13:10:12,603 | INFO | sar completed
+2026-09-07 13:10:12,603 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 13:11:56,898 | INFO | models completed
+2026-09-07 13:11:56,898 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 13:12:07,125 | INFO | xai completed
+2026-09-07 13:12:07,126 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 13:12:07,152 | INFO | taf completed
+2026-09-07 13:12:07,152 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 13:12:07,180 | INFO | structures completed
+2026-09-07 13:12:07,180 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 13:12:07,236 | INFO | medchem completed
+2026-09-07 13:12:07,237 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 13:12:07,409 | INFO | reinvent completed
+2026-09-07 13:12:07,409 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 13:12:07,436 | INFO | chemspace completed
+2026-09-07 13:12:07,436 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 13:12:07,478 | INFO | candidates completed
+2026-09-07 13:12:07,478 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 13:12:07,585 | INFO | lock completed
+2026-09-07 13:12:07,585 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 13:12:07,608 | INFO | prospective completed
+2026-09-07 13:12:07,609 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 13:12:07,629 | INFO | audit completed
+2026-09-07 13:12:07,629 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 13:12:07,648 | INFO | reports completed
+2026-09-07 13:12:07,658 | INFO | workflow results: {'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'audit': 'OK', 'reports': 'OK'}
+2026-09-07 14:09:18,881 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:09:18,924 | INFO | audit completed
+2026-09-07 14:09:18,924 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:09:18,944 | INFO | audit completed
+2026-09-07 14:09:18,953 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:09:33,917 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:09:34,052 | INFO | audit completed
+2026-09-07 14:09:34,052 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:09:34,071 | INFO | audit completed
+2026-09-07 14:09:34,081 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:10:29,332 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:10:44,773 | ERROR | models FAILED: ManagedLogger.info() takes 2 positional arguments but 3 were given
+2026-09-07 14:10:44,774 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 89, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 35, in <lambda>
+    {"key": "models", "fn": lambda cfg: __import__("src.models", fromlist=["run_phase4"]).run_phase4(cfg),
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/models.py", line 507, in run_phase4
+    return val.run_all(df)
+           ~~~~~~~~~~~^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/models.py", line 480, in run_all
+    "series_out": self.series_out(reps, df),
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/models.py", line 208, in series_out
+    self.log.info("series-out summary written (n series = %d)", len(unique))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ManagedLogger.info() takes 2 positional arguments but 3 were given
+
+2026-09-07 14:10:44,800 | INFO | workflow results: {'models': 'FAILED: ManagedLogger.info() takes 2 positional arguments but 3 were given'}
+2026-09-07 14:10:53,442 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:12:36,878 | INFO | models completed
+2026-09-07 14:12:36,889 | INFO | workflow results: {'models': 'OK'}
+2026-09-07 14:14:02,970 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 14:14:04,212 | INFO | candidates completed
+2026-09-07 14:14:04,222 | INFO | workflow results: {'candidates': 'OK'}
+2026-09-07 14:14:30,917 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 14:14:32,176 | INFO | candidates completed
+2026-09-07 14:14:32,187 | INFO | workflow results: {'candidates': 'OK'}
+2026-09-07 14:16:14,184 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:16:14,532 | ERROR | sar FAILED: cannot import name 'MMPA' from 'rdkit.Chem' (/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/rdkit/Chem/__init__.py)
+2026-09-07 14:16:14,532 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 89, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 33, in <lambda>
+    {"key": "sar", "fn": lambda cfg: __import__("src.sar", fromlist=["run_phase3"]).run_phase3(cfg),
+                                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar.py", line 18, in <module>
+    from rdkit.Chem import MMPA
+ImportError: cannot import name 'MMPA' from 'rdkit.Chem' (/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/rdkit/Chem/__init__.py)
+
+2026-09-07 14:16:14,553 | INFO | workflow results: {'sar': "FAILED: cannot import name 'MMPA' from 'rdkit.Chem' (/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/rdkit/Chem/__init__.py)"}
+2026-09-07 14:16:23,858 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:16:24,268 | INFO | sar completed
+2026-09-07 14:16:24,278 | INFO | workflow results: {'sar': 'OK'}
+2026-09-07 14:16:50,773 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:16:58,525 | INFO | sar completed
+2026-09-07 14:16:58,536 | INFO | workflow results: {'sar': 'OK'}
+2026-09-07 14:19:12,893 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:19:12,895 | ERROR | sar FAILED: unindent does not match any outer indentation level (sar.py, line 290)
+2026-09-07 14:19:12,895 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 89, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 33, in <lambda>
+    {"key": "sar", "fn": lambda cfg: __import__("src.sar", fromlist=["run_phase3"]).run_phase3(cfg),
+                                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar.py", line 290
+    def fragments(self, df: pd.DataFrame) -> pd.DataFrame:
+                                                          ^
+IndentationError: unindent does not match any outer indentation level
+
+2026-09-07 14:19:12,913 | INFO | workflow results: {'sar': 'FAILED: unindent does not match any outer indentation level (sar.py, line 290)'}
+2026-09-07 14:19:42,786 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:19:42,787 | ERROR | sar FAILED: unindent does not match any outer indentation level (sar.py, line 178)
+2026-09-07 14:19:42,787 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 89, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 33, in <lambda>
+    {"key": "sar", "fn": lambda cfg: __import__("src.sar", fromlist=["run_phase3"]).run_phase3(cfg),
+                                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar.py", line 178
+    def _core_var_pair(self, s: str):
+                                     ^
+IndentationError: unindent does not match any outer indentation level
+
+2026-09-07 14:19:42,801 | INFO | workflow results: {'sar': 'FAILED: unindent does not match any outer indentation level (sar.py, line 178)'}
+2026-09-07 14:20:01,208 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:20:01,762 | INFO | sar completed
+2026-09-07 14:20:01,773 | INFO | workflow results: {'sar': 'OK'}
+2026-09-07 14:20:35,093 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:20:35,654 | INFO | sar completed
+2026-09-07 14:20:35,664 | INFO | workflow results: {'sar': 'OK'}
+2026-09-07 14:21:50,689 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:23:33,401 | INFO | models completed
+2026-09-07 14:23:33,402 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:23:42,896 | INFO | xai completed
+2026-09-07 14:23:42,896 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:23:42,923 | INFO | taf completed
+2026-09-07 14:23:42,934 | INFO | workflow results: {'models': 'OK', 'xai': 'OK', 'taf': 'OK'}
+2026-09-07 14:25:05,782 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:25:06,018 | INFO | taf completed
+2026-09-07 14:25:06,029 | INFO | workflow results: {'taf': 'OK'}
+2026-09-07 14:25:53,937 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:25:54,056 | INFO | audit completed
+2026-09-07 14:25:54,056 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 14:25:54,536 | INFO | dataset completed
+2026-09-07 14:25:54,536 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:25:54,728 | INFO | sar completed
+2026-09-07 14:25:54,728 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:27:37,988 | INFO | models completed
+2026-09-07 14:27:37,989 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:27:47,926 | INFO | xai completed
+2026-09-07 14:27:47,926 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:27:47,974 | INFO | taf completed
+2026-09-07 14:27:47,974 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 14:27:47,994 | INFO | structures completed
+2026-09-07 14:27:47,994 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 14:27:48,045 | INFO | medchem completed
+2026-09-07 14:27:48,045 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 14:27:48,195 | INFO | reinvent completed
+2026-09-07 14:27:48,195 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 14:27:48,223 | INFO | chemspace completed
+2026-09-07 14:27:48,223 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 14:27:49,115 | INFO | candidates completed
+2026-09-07 14:27:49,115 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 14:27:49,222 | INFO | lock completed
+2026-09-07 14:27:49,222 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 14:27:49,244 | INFO | prospective completed
+2026-09-07 14:27:49,244 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:27:49,265 | INFO | audit completed
+2026-09-07 14:27:49,265 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:27:49,285 | INFO | reports completed
+2026-09-07 14:27:49,296 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'reports': 'OK'}
+2026-09-07 14:29:31,846 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:29:31,964 | INFO | audit completed
+2026-09-07 14:29:31,964 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:29:31,990 | INFO | audit completed
+2026-09-07 14:29:32,000 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:29:54,651 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:29:54,770 | INFO | audit completed
+2026-09-07 14:29:54,770 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:29:54,797 | INFO | audit completed
+2026-09-07 14:29:54,806 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:30:36,951 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:30:37,061 | INFO | audit completed
+2026-09-07 14:30:37,061 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:30:37,087 | INFO | audit completed
+2026-09-07 14:30:37,096 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:30:55,457 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:30:55,555 | INFO | audit completed
+2026-09-07 14:30:55,555 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:30:55,581 | INFO | audit completed
+2026-09-07 14:30:55,581 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:30:55,602 | INFO | reports completed
+2026-09-07 14:30:55,613 | INFO | workflow results: {'audit': 'OK', 'reports': 'OK'}
+2026-09-07 14:32:44,495 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 14:32:44,531 | INFO | prospective completed
+2026-09-07 14:32:44,541 | INFO | workflow results: {'prospective': 'OK'}
+2026-09-07 14:35:01,355 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:35:21,475 | INFO | xai completed
+2026-09-07 14:35:21,486 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 14:36:45,775 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:37:08,896 | INFO | xai completed
+2026-09-07 14:37:08,908 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 14:38:27,303 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:38:27,429 | INFO | audit completed
+2026-09-07 14:38:27,429 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:38:27,457 | INFO | audit completed
+2026-09-07 14:38:27,457 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:38:27,482 | INFO | reports completed
+2026-09-07 14:38:27,494 | INFO | workflow results: {'audit': 'OK', 'reports': 'OK'}
+2026-09-07 14:39:08,389 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:39:28,435 | INFO | xai completed
+2026-09-07 14:39:28,446 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 14:40:43,954 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:41:04,784 | INFO | xai completed
+2026-09-07 14:41:04,795 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 14:41:10,794 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:41:10,958 | INFO | taf completed
+2026-09-07 14:41:10,968 | INFO | workflow results: {'taf': 'OK'}
+2026-09-07 14:42:40,339 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:43:00,930 | INFO | xai completed
+2026-09-07 14:43:00,942 | INFO | workflow results: {'xai': 'OK'}
+2026-09-07 14:43:14,366 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:43:14,482 | INFO | audit completed
+2026-09-07 14:43:14,482 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 14:43:14,972 | INFO | dataset completed
+2026-09-07 14:43:14,972 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:43:15,172 | INFO | sar completed
+2026-09-07 14:43:15,172 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:45:02,427 | INFO | models completed
+2026-09-07 14:45:02,427 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:45:17,672 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:45:17,793 | INFO | audit completed
+2026-09-07 14:45:17,793 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 14:45:18,190 | INFO | dataset completed
+2026-09-07 14:45:18,190 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:45:18,382 | INFO | sar completed
+2026-09-07 14:45:18,382 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:47:25,731 | INFO | models completed
+2026-09-07 14:47:25,731 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:47:54,835 | INFO | xai completed
+2026-09-07 14:47:54,835 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:47:54,884 | INFO | taf completed
+2026-09-07 14:47:54,884 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 14:47:54,903 | INFO | structures completed
+2026-09-07 14:47:54,903 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 14:47:54,956 | INFO | medchem completed
+2026-09-07 14:47:54,957 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 14:47:55,107 | INFO | reinvent completed
+2026-09-07 14:47:55,107 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 14:47:55,134 | INFO | chemspace completed
+2026-09-07 14:47:55,134 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 14:47:56,075 | INFO | candidates completed
+2026-09-07 14:47:56,075 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 14:47:56,207 | INFO | lock completed
+2026-09-07 14:47:56,207 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 14:47:56,234 | INFO | prospective completed
+2026-09-07 14:47:56,234 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:47:56,259 | INFO | audit completed
+2026-09-07 14:47:56,259 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:47:56,281 | INFO | reports completed
+2026-09-07 14:47:56,292 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'reports': 'OK'}
+2026-09-07 14:49:27,610 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:49:27,642 | INFO | reports completed
+2026-09-07 14:49:27,658 | INFO | workflow results: {'reports': 'OK'}
+2026-09-07 14:50:28,873 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:50:28,985 | INFO | audit completed
+2026-09-07 14:50:28,985 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:50:29,030 | INFO | audit completed
+2026-09-07 14:50:29,040 | INFO | workflow results: {'audit': 'OK'}
+2026-09-07 14:50:36,493 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:50:36,522 | INFO | reports completed
+2026-09-07 14:50:36,535 | INFO | workflow results: {'reports': 'OK'}
+2026-09-07 14:51:03,286 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 14:51:03,397 | INFO | audit completed
+2026-09-07 14:51:03,397 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 14:51:03,886 | INFO | dataset completed
+2026-09-07 14:51:03,886 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 14:51:04,082 | INFO | sar completed
+2026-09-07 14:51:04,082 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 14:53:10,855 | INFO | models completed
+2026-09-07 14:53:10,855 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 14:53:37,459 | INFO | xai completed
+2026-09-07 14:53:37,459 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 14:53:37,513 | INFO | taf completed
+2026-09-07 14:53:37,513 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 14:53:37,534 | INFO | structures completed
+2026-09-07 14:53:37,534 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 14:53:37,594 | INFO | medchem completed
+2026-09-07 14:53:37,594 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 14:53:37,748 | INFO | reinvent completed
+2026-09-07 14:53:37,748 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 14:53:37,779 | INFO | chemspace completed
+2026-09-07 14:53:37,779 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 14:53:38,869 | INFO | candidates completed
+2026-09-07 14:53:38,870 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 14:53:38,995 | INFO | lock completed
+2026-09-07 14:53:38,995 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 14:53:39,028 | INFO | prospective completed
+2026-09-07 14:53:39,028 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 14:53:39,079 | INFO | audit completed
+2026-09-07 14:53:39,079 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 14:53:39,108 | INFO | reports completed
+2026-09-07 14:53:39,121 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'reports': 'OK'}
+2026-09-07 15:00:54,324 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 15:00:54,791 | INFO | reinvent completed
+2026-09-07 15:00:54,801 | INFO | workflow results: {'reinvent': 'OK'}
+2026-09-07 15:01:07,570 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 15:01:07,601 | INFO | reports completed
+2026-09-07 15:01:07,617 | INFO | workflow results: {'reports': 'OK'}
+2026-09-07 15:31:33,039 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 15:31:33,169 | INFO | audit completed
+2026-09-07 15:31:33,169 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 15:31:33,666 | INFO | dataset completed
+2026-09-07 15:31:33,666 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 15:31:33,888 | INFO | sar completed
+2026-09-07 15:31:33,888 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 15:33:22,884 | INFO | models completed
+2026-09-07 15:33:22,885 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 15:33:44,897 | INFO | xai completed
+2026-09-07 15:33:44,897 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 15:33:44,952 | INFO | taf completed
+2026-09-07 15:33:44,952 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 15:33:44,973 | INFO | structures completed
+2026-09-07 15:33:44,973 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 15:33:45,029 | INFO | medchem completed
+2026-09-07 15:33:45,029 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 15:33:45,179 | INFO | reinvent completed
+2026-09-07 15:33:45,179 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 15:33:45,231 | INFO | chemspace completed
+2026-09-07 15:33:45,231 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 15:33:46,306 | INFO | candidates completed
+2026-09-07 15:33:46,306 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 15:33:46,409 | INFO | lock completed
+2026-09-07 15:33:46,409 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 15:33:46,436 | INFO | prospective completed
+2026-09-07 15:33:46,436 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 15:33:46,483 | INFO | audit completed
+2026-09-07 15:33:46,484 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 15:33:46,509 | INFO | reports completed
+2026-09-07 15:33:46,523 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'reports': 'OK'}
+2026-09-07 15:54:55,672 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 15:54:55,834 | INFO | loop completed
+2026-09-07 15:54:55,846 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 15:55:21,504 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 15:55:21,750 | INFO | loop completed
+2026-09-07 15:55:21,760 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 15:55:54,669 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 15:55:54,773 | INFO | audit completed
+2026-09-07 15:55:54,773 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 15:55:55,173 | INFO | dataset completed
+2026-09-07 15:55:55,173 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 15:55:55,365 | INFO | sar completed
+2026-09-07 15:55:55,365 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 15:57:39,474 | INFO | models completed
+2026-09-07 15:57:39,474 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 15:57:59,602 | INFO | xai completed
+2026-09-07 15:57:59,602 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 15:57:59,653 | INFO | taf completed
+2026-09-07 15:57:59,653 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 15:57:59,672 | INFO | structures completed
+2026-09-07 15:57:59,672 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 15:57:59,722 | INFO | medchem completed
+2026-09-07 15:57:59,722 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 15:57:59,857 | INFO | reinvent completed
+2026-09-07 15:57:59,857 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 15:57:59,884 | INFO | chemspace completed
+2026-09-07 15:57:59,884 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 15:58:00,796 | INFO | candidates completed
+2026-09-07 15:58:00,796 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 15:58:00,897 | INFO | lock completed
+2026-09-07 15:58:00,897 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 15:58:00,927 | INFO | prospective completed
+2026-09-07 15:58:00,927 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 15:58:00,972 | INFO | loop completed
+2026-09-07 15:58:00,972 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 15:58:01,017 | INFO | audit completed
+2026-09-07 15:58:01,017 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 15:58:01,044 | INFO | reports completed
+2026-09-07 15:58:01,056 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-07 15:59:17,412 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 15:59:17,578 | INFO | loop completed
+2026-09-07 15:59:17,588 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 15:59:21,634 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 15:59:21,743 | INFO | audit completed
+2026-09-07 15:59:21,743 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 15:59:22,167 | INFO | dataset completed
+2026-09-07 15:59:22,167 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 15:59:22,363 | INFO | sar completed
+2026-09-07 15:59:22,363 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 16:01:06,432 | INFO | models completed
+2026-09-07 16:01:06,432 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 16:01:26,446 | INFO | xai completed
+2026-09-07 16:01:26,446 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 16:01:26,495 | INFO | taf completed
+2026-09-07 16:01:26,495 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 16:01:26,520 | INFO | structures completed
+2026-09-07 16:01:26,521 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 16:01:26,579 | INFO | medchem completed
+2026-09-07 16:01:26,579 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 16:01:26,708 | INFO | reinvent completed
+2026-09-07 16:01:26,708 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 16:01:26,736 | INFO | chemspace completed
+2026-09-07 16:01:26,736 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 16:01:27,639 | INFO | candidates completed
+2026-09-07 16:01:27,639 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 16:01:27,744 | INFO | lock completed
+2026-09-07 16:01:27,744 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 16:01:27,769 | INFO | prospective completed
+2026-09-07 16:01:27,769 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:01:27,812 | INFO | loop completed
+2026-09-07 16:01:27,812 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 16:01:27,857 | INFO | audit completed
+2026-09-07 16:01:27,858 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 16:01:27,883 | INFO | reports completed
+2026-09-07 16:01:27,896 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-07 16:23:04,080 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 16:23:04,187 | INFO | audit completed
+2026-09-07 16:23:04,187 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 16:23:04,668 | INFO | dataset completed
+2026-09-07 16:23:04,668 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 16:23:04,858 | INFO | sar completed
+2026-09-07 16:23:04,858 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 16:24:48,247 | INFO | models completed
+2026-09-07 16:24:48,247 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 16:25:08,464 | INFO | xai completed
+2026-09-07 16:25:08,465 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 16:25:08,512 | INFO | taf completed
+2026-09-07 16:25:08,512 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 16:25:08,530 | INFO | structures completed
+2026-09-07 16:25:08,530 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 16:25:08,581 | INFO | medchem completed
+2026-09-07 16:25:08,582 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 16:25:08,718 | INFO | reinvent completed
+2026-09-07 16:25:08,718 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 16:25:08,744 | INFO | chemspace completed
+2026-09-07 16:25:08,744 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 16:25:09,649 | INFO | candidates completed
+2026-09-07 16:25:09,649 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-07 16:25:09,802 | INFO | library completed
+2026-09-07 16:25:09,802 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 16:25:09,918 | INFO | lock completed
+2026-09-07 16:25:09,918 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 16:25:09,947 | INFO | prospective completed
+2026-09-07 16:25:09,948 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:25:10,059 | ERROR | loop FAILED: 'molecule_id'
+2026-09-07 16:25:10,064 | ERROR | Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'molecule_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 93, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 57, in <lambda>
+    {"key": "loop", "fn": lambda cfg: __import__("src.loop", fromlist=["run_phase_loop"]).run_phase_loop(cfg),
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 781, in run_phase_loop
+    return loop.run_all(df, portfolio,
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+                        gini=xai_frames.get("gini"),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        perm=xai_frames.get("permutation"),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        ablation=xai_frames.get("ablation"))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 706, in run_all
+    next_plate = self.design_plate(portfolio, next_round)
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 364, in design_plate
+    for m in plate["molecule_id"]]
+             ~~~~~^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'molecule_id'
+
+2026-09-07 16:25:10,064 | ERROR | pipeline halted at failing phase (use --only to resume later phases)
+2026-09-07 16:25:10,080 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': "FAILED: 'molecule_id'"}
+2026-09-07 16:25:18,691 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:25:19,103 | INFO | loop completed
+2026-09-07 16:25:19,113 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 16:26:10,698 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:26:11,159 | ERROR | loop FAILED: Length of values (9) does not match length of index (13)
+2026-09-07 16:26:11,161 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 93, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 57, in <lambda>
+    {"key": "loop", "fn": lambda cfg: __import__("src.loop", fromlist=["run_phase_loop"]).run_phase_loop(cfg),
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 771, in run_phase_loop
+    return loop.run_all(df, portfolio,
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+                        gini=xai_frames.get("gini"),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        perm=xai_frames.get("permutation"),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        ablation=xai_frames.get("ablation"))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 696, in run_all
+    next_plate = self.design_plate(portfolio, next_round)
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 350, in design_plate
+    plate["arm"] = (["model_ranked"] * len(ranked) + ["diversity_random"] * len(div)
+    ~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 4322, in __setitem__
+    self._set_item(key, value)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 4535, in _set_item
+    value, refs = self._sanitize_column(value)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 5288, in _sanitize_column
+    com.require_length_match(value, self.index)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/common.py", line 573, in require_length_match
+    raise ValueError(
+    ...<4 lines>...
+    )
+ValueError: Length of values (9) does not match length of index (13)
+
+2026-09-07 16:26:11,176 | INFO | workflow results: {'loop': 'FAILED: Length of values (9) does not match length of index (13)'}
+2026-09-07 16:26:29,004 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:26:29,397 | INFO | loop completed
+2026-09-07 16:26:29,408 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 16:27:18,155 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:27:18,539 | INFO | loop completed
+2026-09-07 16:27:18,549 | INFO | workflow results: {'loop': 'OK'}
+2026-09-07 16:27:55,403 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 16:27:55,507 | INFO | audit completed
+2026-09-07 16:27:55,507 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 16:27:55,885 | INFO | dataset completed
+2026-09-07 16:27:55,885 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 16:27:56,079 | INFO | sar completed
+2026-09-07 16:27:56,079 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 16:29:43,553 | INFO | models completed
+2026-09-07 16:29:43,553 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 16:30:03,536 | INFO | xai completed
+2026-09-07 16:30:03,536 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 16:30:03,584 | INFO | taf completed
+2026-09-07 16:30:03,584 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 16:30:03,603 | INFO | structures completed
+2026-09-07 16:30:03,603 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 16:30:03,656 | INFO | medchem completed
+2026-09-07 16:30:03,656 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 16:30:03,789 | INFO | reinvent completed
+2026-09-07 16:30:03,789 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 16:30:03,816 | INFO | chemspace completed
+2026-09-07 16:30:03,816 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 16:30:04,726 | INFO | candidates completed
+2026-09-07 16:30:04,727 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-07 16:30:04,874 | INFO | library completed
+2026-09-07 16:30:04,874 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 16:30:04,972 | INFO | lock completed
+2026-09-07 16:30:04,973 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 16:30:04,999 | INFO | prospective completed
+2026-09-07 16:30:04,999 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:30:05,123 | INFO | loop completed
+2026-09-07 16:30:05,123 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 16:30:05,196 | INFO | audit completed
+2026-09-07 16:30:05,196 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 16:30:05,226 | INFO | reports completed
+2026-09-07 16:30:05,238 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-07 16:47:33,899 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 16:47:34,015 | INFO | audit completed
+2026-09-07 16:47:34,015 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 16:47:34,492 | INFO | dataset completed
+2026-09-07 16:47:34,492 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 16:47:34,685 | INFO | sar completed
+2026-09-07 16:47:34,685 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-07 16:47:34,686 | ERROR | sar_ascorbate FAILED: 'str' object has no attribute 'resolve'
+2026-09-07 16:47:34,687 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 95, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 35, in <lambda>
+    {"key": "sar_ascorbate", "fn": lambda cfg: __import__("src.sar_ascorbate", fromlist=["run_phase_sar_ascorbate"]).run_phase_sar_ascorbate(cfg),
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar_ascorbate.py", line 198, in run_phase_sar_ascorbate
+    logger = ManagedLogger("phase3b_sar_ascorbate", str(cfg.resolve("logs")))
+                                                        ^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'resolve'
+
+2026-09-07 16:47:34,687 | ERROR | pipeline halted at failing phase (use --only to resume later phases)
+2026-09-07 16:47:34,707 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': "FAILED: 'str' object has no attribute 'resolve'"}
+2026-09-07 16:48:21,937 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-07 16:48:22,090 | INFO | sar_ascorbate completed
+2026-09-07 16:48:22,101 | INFO | workflow results: {'sar_ascorbate': 'OK'}
+2026-09-07 16:48:29,222 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 16:48:29,313 | INFO | audit completed
+2026-09-07 16:48:29,313 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 16:48:29,691 | INFO | dataset completed
+2026-09-07 16:48:29,691 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 16:48:29,881 | INFO | sar completed
+2026-09-07 16:48:29,881 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-07 16:48:29,916 | INFO | sar_ascorbate completed
+2026-09-07 16:48:29,916 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 16:50:29,232 | INFO | models completed
+2026-09-07 16:50:29,232 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 16:50:53,664 | INFO | xai completed
+2026-09-07 16:50:53,664 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 16:50:53,721 | INFO | taf completed
+2026-09-07 16:50:53,721 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 16:50:53,742 | INFO | structures completed
+2026-09-07 16:50:53,742 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 16:50:53,802 | INFO | medchem completed
+2026-09-07 16:50:53,802 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 16:50:53,955 | INFO | reinvent completed
+2026-09-07 16:50:53,955 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 16:50:53,987 | INFO | chemspace completed
+2026-09-07 16:50:53,987 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 16:50:55,121 | INFO | candidates completed
+2026-09-07 16:50:55,121 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-07 16:50:55,298 | INFO | library completed
+2026-09-07 16:50:55,298 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 16:50:55,414 | INFO | lock completed
+2026-09-07 16:50:55,414 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 16:50:55,444 | INFO | prospective completed
+2026-09-07 16:50:55,444 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:50:55,594 | INFO | loop completed
+2026-09-07 16:50:55,594 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 16:50:55,661 | INFO | audit completed
+2026-09-07 16:50:55,661 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 16:50:55,693 | INFO | reports completed
+2026-09-07 16:50:55,706 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-07 16:56:34,316 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-07 16:56:34,405 | INFO | audit completed
+2026-09-07 16:56:34,405 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-07 16:56:34,784 | INFO | dataset completed
+2026-09-07 16:56:34,784 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-07 16:56:34,972 | INFO | sar completed
+2026-09-07 16:56:34,972 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-07 16:56:35,006 | INFO | sar_ascorbate completed
+2026-09-07 16:56:35,006 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-07 16:58:39,193 | INFO | models completed
+2026-09-07 16:58:39,193 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-07 16:59:03,671 | INFO | xai completed
+2026-09-07 16:59:03,671 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-07 16:59:03,720 | INFO | taf completed
+2026-09-07 16:59:03,721 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-07 16:59:03,746 | INFO | structures completed
+2026-09-07 16:59:03,746 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-07 16:59:03,807 | INFO | medchem completed
+2026-09-07 16:59:03,807 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-07 16:59:03,951 | INFO | reinvent completed
+2026-09-07 16:59:03,951 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-07 16:59:03,978 | INFO | chemspace completed
+2026-09-07 16:59:03,978 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-07 16:59:04,950 | INFO | candidates completed
+2026-09-07 16:59:04,950 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-07 16:59:05,102 | INFO | library completed
+2026-09-07 16:59:05,102 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-07 16:59:05,204 | INFO | lock completed
+2026-09-07 16:59:05,204 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-07 16:59:05,229 | INFO | prospective completed
+2026-09-07 16:59:05,229 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-07 16:59:05,357 | INFO | loop completed
+2026-09-07 16:59:05,357 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-07 16:59:05,423 | INFO | audit completed
+2026-09-07 16:59:05,423 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-07 16:59:05,462 | INFO | reports completed
+2026-09-07 16:59:05,475 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-08 22:12:51,458 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-08 22:12:51,460 | ERROR | sar_ascorbate FAILED: from __future__ imports must occur at the beginning of the file (sar_ascorbate.py, line 45)
+2026-09-08 22:12:51,461 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 95, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 35, in <lambda>
+    {"key": "sar_ascorbate", "fn": lambda cfg: __import__("src.sar_ascorbate", fromlist=["run_phase_sar_ascorbate"]).run_phase_sar_ascorbate(cfg),
+                                               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/sar_ascorbate.py", line 45
+    from __future__ import annotations
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: from __future__ imports must occur at the beginning of the file
+
+2026-09-08 22:12:51,461 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-08 22:12:51,515 | INFO | reports completed
+2026-09-08 22:12:51,540 | INFO | workflow results: {'sar_ascorbate': 'FAILED: from __future__ imports must occur at the beginning of the file (sar_ascorbate.py, line 45)', 'reports': 'OK'}
+2026-09-08 22:13:06,305 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-08 22:13:06,527 | INFO | sar_ascorbate completed
+2026-09-08 22:13:06,527 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-08 22:13:06,566 | INFO | reports completed
+2026-09-08 22:13:06,576 | INFO | workflow results: {'sar_ascorbate': 'OK', 'reports': 'OK'}
+2026-09-08 22:55:19,031 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-08 22:55:19,181 | INFO | audit completed
+2026-09-08 22:55:19,181 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-08 22:55:20,062 | INFO | dataset completed
+2026-09-08 22:55:20,062 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-08 22:55:20,315 | INFO | sar completed
+2026-09-08 22:55:20,315 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-08 22:55:20,359 | INFO | sar_ascorbate completed
+2026-09-08 22:55:20,359 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-08 22:57:12,521 | INFO | models completed
+2026-09-08 22:57:12,521 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-08 22:57:34,945 | INFO | xai completed
+2026-09-08 22:57:34,946 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-08 22:57:35,013 | INFO | taf completed
+2026-09-08 22:57:35,013 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-08 22:57:35,037 | INFO | structures completed
+2026-09-08 22:57:35,037 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-08 22:57:35,107 | INFO | medchem completed
+2026-09-08 22:57:35,108 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-08 22:57:35,257 | INFO | reinvent completed
+2026-09-08 22:57:35,257 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-08 22:57:35,286 | INFO | chemspace completed
+2026-09-08 22:57:35,286 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-08 22:57:36,326 | INFO | candidates completed
+2026-09-08 22:57:36,326 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-08 22:57:36,523 | INFO | library completed
+2026-09-08 22:57:36,523 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-08 22:57:36,631 | INFO | lock completed
+2026-09-08 22:57:36,631 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-08 22:57:36,657 | INFO | prospective completed
+2026-09-08 22:57:36,657 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-08 22:57:36,801 | INFO | loop completed
+2026-09-08 22:57:36,801 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-08 22:57:36,891 | INFO | audit completed
+2026-09-08 22:57:36,891 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-08 22:57:36,938 | INFO | reports completed
+2026-09-08 22:57:36,953 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}

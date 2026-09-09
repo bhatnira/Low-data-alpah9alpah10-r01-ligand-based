@@ -1,0 +1,16 @@
+probe,parent_compound,category,note,predicted_active,confidence,hypothesis,matches_dataset_compound
+ID01_break_lactone_ring,1,remove_feature,lactone ring enlarged to 6-membered semi-pyrone (removes 5-ring H-bond acceptor geometry) to test TAF-1 necessity,True,0.665,untested-hypothesis-not-experimental-proof,no
+ID01_remove_primary_OH,1,change_h_bond,-CH2OH -> -CH3 (remove primary hydroxyl H-bond donor),True,0.75,untested-hypothesis-not-experimental-proof,no
+ID01_move_primary_OH_chain,1,move_substituent,side-chain hydroxyl moved to a longer tether (alter spatial relationship),True,0.6,untested-hypothesis-not-experimental-proof,no
+ID25_remove_Br,25,remove_feature,-CH2Br -> -CH2CH3 (remove bromine EWG),True,0.845,untested-hypothesis-not-experimental-proof,no
+ID25_Br_to_Cl,25,replace_feature,-CH2Br -> -CH2Cl (replace EWG with weaker halide),True,0.865,untested-hypothesis-not-experimental-proof,no
+ID25_Br_to_CF3,25,replace_feature,-CH2Br -> -CH(CF3) extended EWG in comparable position,True,0.77,untested-hypothesis-not-experimental-proof,no
+ID25_remove_stereo,25,alter_stereochemistry,all R/S removed (diastereomer-free) to test TAF-4,True,0.915,untested-hypothesis-not-experimental-proof,no
+ID12_remove_stereo,12,alter_stereochemistry,compound 12 stereocentres removed,True,0.645,untested-hypothesis-not-experimental-proof,no
+ID12_flip_core_stereo,12,alter_stereochemistry,both core stereocentres inverted (enantiomeric configuration of lactone core),True,0.645,untested-hypothesis-not-experimental-proof,no
+ID12_remove_alkyne,12,remove_feature,propargyl ether -> ethyl ether (remove terminal alkyne EWG),False,0.93,untested-hypothesis-not-experimental-proof,no
+ID12_alkyne_to_small_chain,12,replace_feature,"propargyl ether -> n-butyl ether (isosteric chain, no EWG)",False,0.895,untested-hypothesis-not-experimental-proof,no
+ID18_ester_to_ether_linker,18,alter_linker,benzyl O-ester linkage lengthened by one carbon (alter linker),True,0.52,untested-hypothesis-not-experimental-proof,no
+ID18_benzyl_to_ortho_methyl,18,alter_hydrophobic,o-methyl on benzyl (alter hydrophobic group bulk),False,0.545,untested-hypothesis-not-experimental-proof,no
+ID24_remove_alcohol,24,remove_feature,remove secondary alcohol (H-bond donor) from active series,False,0.585,untested-hypothesis-not-experimental-proof,no
+ID01_open_pyrone,1,remove_feature,open e-lactone ring to acyclic dihydroxy diacid (removes ring H-bond acceptor geometry),False,0.75,untested-hypothesis-not-experimental-proof,no

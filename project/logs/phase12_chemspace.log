@@ -1,0 +1,98 @@
+2026-09-07 12:30:46,238 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 12:30:46,256 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 12:32:59,307 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 12:32:59,324 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 13:12:07,418 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 13:12:07,435 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 14:27:48,203 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 14:27:48,222 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 14:47:55,115 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 14:47:55,133 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 14:53:37,759 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 14:53:37,779 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 15:33:45,193 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 15:33:45,230 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 15:57:59,865 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 15:57:59,883 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 16:01:26,716 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 16:01:26,736 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 16:25:08,727 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 16:25:08,744 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 16:30:03,798 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 16:30:03,815 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 16:50:53,965 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 16:50:53,986 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-07 16:59:03,960 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-07 16:59:03,978 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+2026-09-08 22:57:35,265 | INFO | === Chemical-space expansion (section 23) ===
+2026-09-08 22:57:35,286 | INFO |                             metric  value                                                                                                                    note
+fingerprint_space_mean_nn_distance    NaN                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+ fingerprint_space_frac_beyond_0.4    NaN                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+              novel_scaffold_count    0.0                                                                  Bemis-Murcko scaffolds not present in the training set
+                   generated_count    0.0                                                                    count alone is NOT meaningful expansion (section 23)
+             new_sar_relationships    0.0 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds

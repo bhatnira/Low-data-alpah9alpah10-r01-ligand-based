@@ -1,0 +1,4 @@
+compound,modification,predicted_active,confidence
+ID 12,Remove ethynyl→methyl,False,0.885
+ID 12,Remove stereo,True,0.6388333333333334
+ID 25,Remove Br→ethyl,True,0.8

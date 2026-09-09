@@ -1,0 +1,36 @@
+{
+  "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
+  "generated_at": "2026-09-09T03:57:36Z",
+  "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+  "input_hashes": {
+    "external": {
+      "external_datasets_found": 0,
+      "note": "no fabricated external data; enrichment claims rest on internal data until provided",
+      "source": "search of data/external for published a9a10 / nicotinic PAM datasets",
+      "validation": "models NOT yet validated on external data"
+    },
+    "n_families": 26,
+    "n_novel_scaffolds": 24,
+    "tier_counts": {
+      "1": 1,
+      "2": 8,
+      "3": 17
+    },
+    "tier_rule": "tier1 = novel Bemis-Murcko scaffold vs training; tier2 = known scaffold in hypothesis groups A/B/C/E; tier3 = residual uncertainty-reduction set (mostly F)"
+  },
+  "module": "library",
+  "numpy": "2.5.3",
+  "pandas": "2.3.3",
+  "python": "3.14.2",
+  "rdkit": "2025.09.4",
+  "scikit_learn": "1.8.0",
+  "seeds": {
+    "bootstrap": 42,
+    "conformer_etkdgv3": 42,
+    "global": 42,
+    "models": 42,
+    "reinvent": 42,
+    "tsne": 42
+  }
+}

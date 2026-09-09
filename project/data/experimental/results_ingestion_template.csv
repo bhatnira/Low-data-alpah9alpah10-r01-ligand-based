@@ -1,0 +1,1 @@
+compound_id,SMILES,experimental_status,activity_potency_uM,activity_potentiation_pct,replicate_1_uM,replicate_2_uM,replicate_3_uM,biological_replicates_n,assay_date,operator,vehicle_control,positive_control_id,raw_data_path,notes,exclusion_criteria_triggered

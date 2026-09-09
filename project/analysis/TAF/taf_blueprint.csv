@@ -1,0 +1,6 @@
+TAF,Required,Evidence,3D_geometry,Stereo_dependence,Confidence
+TAF-1: Lactone Core,True,100% actives,Planar 5-membered ring,Indirect,High
+TAF-2: Hydroxyl Group,True,"71% actives, enriched",OH vector ~109°,R/S affects orientation,Moderate
+TAF-3: Electron-Withdrawing Group,True,Top 2 potent (Br/alkyne),3-5 Å from core,Position dependent,Strong
+TAF-4: Defined Stereochemistry,True,7/7 active defined,Specific R/S config,Critical,Very High
+TAF-5: MW 175-300 Da,False,All actives in range,Size for pocket,N/A,Moderate

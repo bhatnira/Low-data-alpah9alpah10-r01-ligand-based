@@ -1,0 +1,7 @@
+phrase_class,pattern,matches,locations,verdict
+proves_activity,\bproves?\b,0,,CLEAR
+confirms_activity,\bconfirms?\b,0,,CLEAR
+guarantees_activity,\bguarante[esd]\b,0,,CLEAR
+will_be_active,\bwill be active\b,0,,CLEAR
+certainly_active,\bcertainly\b,0,,CLEAR
+unambiguous_causality,\bdefinitively\b,0,,CLEAR

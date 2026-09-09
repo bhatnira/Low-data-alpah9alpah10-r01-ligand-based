@@ -1,0 +1,54 @@
+{
+  "candidate_library_hash": "bab74e412b2e98c22e2271c127b43cc27a0f1b72cee1dbac3495ee4fca6c8c0e",
+  "candidate_selection_algorithm": "portfolio groups A-F; multi-axis; NO single-score sorting",
+  "configuration_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+  "input_hashes": {
+    "candidate_library": "bab74e412b2e98c22e2271c127b43cc27a0f1b72cee1dbac3495ee4fca6c8c0e",
+    "canonical_dataset": "57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5",
+    "sar_mmp": "f87b8aba3d6e0be5f3c8c3faa662a102ed0d3f9e612f86437098458c0835b3ae",
+    "taf_evidence": "37339a3540fa5b68ffe3765173f9ca1a2724abdda5488ad71b2bb3b05e016369",
+    "validation_summary": "ff108d1417050265a4f0ff8ea3090e5129703bebc0178bd63a36c74bf3382144",
+    "xai_stability": "a7f3f78f2463279d4f8cd4488fdccd9189f591b12c5b8b261ef7bd6c7c769f55"
+  },
+  "lock_reason": "Pre-prospective synthesis freeze. NO computational redesign after experimental outcomes are revealed except as an explicitly labeled exploratory cycle.",
+  "locked_at": "2026-09-09T03:57:36Z",
+  "model_architecture": "classical interpretable panel (logreg/ridge/RF/ExtraTrees/GBM)",
+  "model_weights_referenced_by": "reproducible retraining from frozen config + data hash",
+  "preprocessing": "StandardScaler per fold; fingerprints Morgan r2 2048 + 10 descriptors",
+  "primary_endpoint": "Prospective experimental validation of TAF-derived SAR relationships in chemically novel alpha9alpha10 nAChR modulators.\n",
+  "prior_file_hashes": {
+    "priors/libinvent.prior": "03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af",
+    "priors/reinvent_pubchem.prior": "fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3"
+  },
+  "reinvent_config_hashes": {
+    "reinvent/configs/de_novo_staged_learning.toml": "a6a6ef66dd83253d440d013ea5dda5cca8c52487bc12945ffc6d7aa23089accd",
+    "reinvent/configs/information_gain_staged_learning.toml": "55253cdc3de39d840c647c1d8316519129bb6ee2b15927cf017f1f62daa8084f",
+    "reinvent/configs/local_analog_libinvent_staged_learning.toml": "bfd192207e45be8650b8e4a49f5ec8bc37c22d17df0163061942c1c4641e6d34",
+    "reinvent/configs/local_analog_staged_learning.toml": "6dd6c3ce380015f0e641259671c0ea9af0414143d9a7db0f76b42909d444ea0c",
+    "reinvent/configs/scaffold_hopping_staged_learning.toml": "369e655557c328b91767463f263f72e85902e260594834040805629e2a6a9ab6",
+    "reinvent/configs/taf_disrupting_staged_learning.toml": "0ae32d6abe94cd3e2a123ad3c36abc6444905ac92eb07719e2c7336382eb156c",
+    "reinvent/generation_plan.csv": "1755ef91f09cd9e2f82a34c8ac00a5edb52fa76f0b51692b67f981106498b21c",
+    "reinvent/inception.smi": "5d8eca5328bf85383f50b3e40113057e89b4b75ea5f32cb1c07f97433c6d8d2b",
+    "reinvent/reinvent_manifest.json": "2122f2d5ebf2a4fd179a70cc685b2e2f524e8941efa31bc58bd1c3296b1186e1",
+    "reinvent/run_generation.sh": "cab5e02345df2160826f4e080991f653d6c36c8b0ce75c6acff44770a1b5286b",
+    "reinvent/scaffolds_libinvent.smi": "ded655c8256bdcb8d6511b3187f6b68029d7107353ea37b54dcbd9781b1fbab1",
+    "reinvent/score_lbm.py": "2ae7a1571c5274625c7e1552c7356496c8c368f801beee4ba4dee586805628ed"
+  },
+  "seeds": {
+    "bootstrap": 42,
+    "conformer_etkdgv3": 42,
+    "global": 42,
+    "models": 42,
+    "reinvent": 42,
+    "tsne": 42
+  },
+  "statistical_analysis_plan": "predefined responder criteria; effect-size RD with CI; Wilson/exact binomial CIs; 10k bootstrap; Benjamini-Hochberg FDR; sensitivity analyses; full plan frozen in prospective/roundN_lock.json (section 31)",
+  "taf_definitions": "/Users/nb/Documents/ligand-based-modeling/project/taf/evidence/taf_evidence_matrix.csv",
+  "taf_version": "v0-prospective",
+  "thresholds": {
+    "active_threshold": "potency>0 AND potentiation>0",
+    "applicability_domain": "NEAR/IN by min-NN Tanimoto distance",
+    "uncertainty_axis_separated": true
+  }
+}

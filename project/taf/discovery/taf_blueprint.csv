@@ -1,0 +1,7 @@
+taf_id,requirement,confidence,3d_geometry,observed_3d,evidence_class,not_for_release_until_validation
+TAF-1,required,High,planar 5-membered ring,UNKNOWN,LOW_CONFIDENCE,True
+TAF-2,preferred,Moderate,OH vector ~109 deg,UNKNOWN,LOW_CONFIDENCE,True
+TAF-3,required,Strong,EWG 3-5 A from core,UNKNOWN,MODERATE_CONFIDENCE,True
+TAF-4,required,Very High,specific R/S at core centers,UNKNOWN,LOW_CONFIDENCE,True
+TAF-5,preferred,Moderate,size compatible with pocket,UNKNOWN,LOW_CONFIDENCE,True
+TAF-6,preferred,Moderate,elongated conformer,"active_asphericity=0.41, inactive=0.31, p=0.02",LOW_CONFIDENCE,True

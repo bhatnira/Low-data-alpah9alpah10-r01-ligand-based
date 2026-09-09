@@ -1,0 +1,1021 @@
+2026-09-07 12:23:52,138 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 12:23:52,138 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 12:23:52,145 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 12:23:52,145 | INFO | MMP pairs: 23
+2026-09-07 12:23:52,145 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 12:23:52,150 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 12:23:52,151 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 12:23:52,152 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 12:23:52,178 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 12:23:52,178 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 12:23:52,181 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 12:23:52,181 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 12:23:52,183 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 12:23:52,183 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 12:31:06,839 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 12:31:06,839 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 12:31:06,846 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 12:31:06,846 | INFO | MMP pairs: 23
+2026-09-07 12:31:06,846 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 12:31:06,850 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 12:31:06,850 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 12:31:06,852 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 12:31:06,879 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 12:31:06,879 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 12:31:06,883 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 12:31:06,883 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 12:31:06,884 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 12:31:06,884 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 13:10:12,548 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 13:10:12,549 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 13:10:12,555 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 13:10:12,555 | INFO | MMP pairs: 23
+2026-09-07 13:10:12,555 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 13:10:12,559 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 13:10:12,559 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 13:10:12,561 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 13:10:12,587 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 13:10:12,587 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 13:10:12,590 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 13:10:12,590 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 13:10:12,591 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 13:10:12,591 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:16:24,173 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:16:24,173 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:16:24,181 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:16:24,181 | INFO | MMP pairs: 23
+2026-09-07 14:16:24,181 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:16:24,182 | INFO | No matched molecular pairs detected (30-compound series, single-point cuts)
+2026-09-07 14:16:24,182 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:16:24,187 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:16:24,187 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:16:24,191 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:16:24,191 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:16:24,192 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:16:24,217 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:16:24,217 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:16:24,220 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:16:24,220 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:16:24,253 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:16:24,253 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:16:51,096 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:16:51,097 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:16:51,103 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:16:51,103 | INFO | MMP pairs: 23
+2026-09-07 14:16:51,103 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:16:58,427 | INFO | Transformation classes:
+transformation_class
+carbonyl_related            6457
+alkyl_chain_extension       6318
+aromatic_substitution       2882
+EWG_introduction_removal    2722
+other                       1883
+2026-09-07 14:16:58,428 | INFO | Activity changes:
+activity_change
+no_change            12514
+lost_activity         4071
+gained_activity       3129
+increased_potency      362
+decreased_potency      186
+2026-09-07 14:16:58,430 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:16:58,438 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:16:58,438 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:16:58,446 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:16:58,446 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:16:58,448 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:16:58,474 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:16:58,474 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:16:58,476 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:16:58,476 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:16:58,506 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:16:58,506 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:20:01,594 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:20:01,595 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:20:01,602 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:20:01,602 | INFO | MMP pairs: 23
+2026-09-07 14:20:01,602 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:20:01,676 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:20:01,677 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:20:01,677 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:20:01,681 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:20:01,681 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:20:01,685 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:20:01,685 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:20:01,687 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:20:01,713 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:20:01,713 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:20:01,715 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:20:01,715 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:20:01,746 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:20:01,746 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:20:35,481 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:20:35,481 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:20:35,489 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:20:35,490 | INFO | MMP pairs: 23
+2026-09-07 14:20:35,490 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:20:35,567 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:20:35,567 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:20:35,567 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:20:35,571 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:20:35,571 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:20:35,575 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:20:35,575 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:20:35,577 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:20:35,602 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:20:35,603 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:20:35,605 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:20:35,605 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:20:35,638 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:20:35,638 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:25:54,564 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:25:54,565 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:25:54,572 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:25:54,572 | INFO | MMP pairs: 23
+2026-09-07 14:25:54,572 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:25:54,645 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:25:54,645 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:25:54,645 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:25:54,650 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:25:54,650 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:25:54,654 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:25:54,654 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:25:54,655 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:25:54,681 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:25:54,681 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:25:54,684 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:25:54,684 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:25:54,715 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:25:54,716 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:43:15,001 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:43:15,001 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:43:15,011 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:43:15,011 | INFO | MMP pairs: 23
+2026-09-07 14:43:15,011 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:43:15,088 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:43:15,088 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:43:15,088 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:43:15,093 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:43:15,093 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:43:15,096 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:43:15,096 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:43:15,098 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:43:15,124 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:43:15,124 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:43:15,126 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:43:15,126 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:43:15,158 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:43:15,158 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:45:18,215 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:45:18,216 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:45:18,222 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:45:18,222 | INFO | MMP pairs: 23
+2026-09-07 14:45:18,222 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:45:18,301 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:45:18,301 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:45:18,301 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:45:18,306 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:45:18,306 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:45:18,309 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:45:18,309 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:45:18,311 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:45:18,336 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:45:18,336 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:45:18,338 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:45:18,338 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:45:18,369 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:45:18,369 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 14:51:03,917 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 14:51:03,917 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 14:51:03,924 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 14:51:03,924 | INFO | MMP pairs: 23
+2026-09-07 14:51:03,924 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 14:51:03,997 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 14:51:03,997 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 14:51:03,997 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 14:51:04,001 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 14:51:04,001 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 14:51:04,005 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 14:51:04,005 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 14:51:04,007 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 14:51:04,034 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 14:51:04,034 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 14:51:04,036 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 14:51:04,036 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 14:51:04,070 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 14:51:04,070 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 15:31:33,726 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 15:31:33,726 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 15:31:33,733 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 15:31:33,733 | INFO | MMP pairs: 23
+2026-09-07 15:31:33,733 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 15:31:33,806 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 15:31:33,806 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 15:31:33,806 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 15:31:33,810 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 15:31:33,810 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 15:31:33,815 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 15:31:33,815 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 15:31:33,816 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 15:31:33,842 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 15:31:33,842 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 15:31:33,845 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 15:31:33,845 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 15:31:33,875 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 15:31:33,875 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 15:55:55,200 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 15:55:55,201 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 15:55:55,208 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 15:55:55,208 | INFO | MMP pairs: 23
+2026-09-07 15:55:55,208 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 15:55:55,284 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 15:55:55,285 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 15:55:55,285 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 15:55:55,289 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 15:55:55,289 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 15:55:55,293 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 15:55:55,293 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 15:55:55,295 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 15:55:55,320 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 15:55:55,320 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 15:55:55,323 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 15:55:55,323 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 15:55:55,353 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 15:55:55,353 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 15:59:22,196 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 15:59:22,196 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 15:59:22,203 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 15:59:22,203 | INFO | MMP pairs: 23
+2026-09-07 15:59:22,203 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 15:59:22,280 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 15:59:22,280 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 15:59:22,280 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 15:59:22,284 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 15:59:22,284 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 15:59:22,288 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 15:59:22,288 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 15:59:22,289 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 15:59:22,315 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 15:59:22,316 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 15:59:22,318 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 15:59:22,318 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 15:59:22,350 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 15:59:22,350 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 16:23:04,696 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 16:23:04,697 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 16:23:04,703 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 16:23:04,703 | INFO | MMP pairs: 23
+2026-09-07 16:23:04,703 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 16:23:04,778 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 16:23:04,778 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 16:23:04,778 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 16:23:04,782 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 16:23:04,783 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 16:23:04,786 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 16:23:04,786 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 16:23:04,788 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 16:23:04,813 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 16:23:04,813 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 16:23:04,815 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 16:23:04,816 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 16:23:04,845 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 16:23:04,845 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 16:27:55,914 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 16:27:55,915 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 16:27:55,922 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 16:27:55,922 | INFO | MMP pairs: 23
+2026-09-07 16:27:55,922 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 16:27:55,998 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 16:27:55,998 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 16:27:55,998 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 16:27:56,002 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 16:27:56,002 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 16:27:56,006 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 16:27:56,006 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 16:27:56,007 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 16:27:56,034 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 16:27:56,034 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 16:27:56,036 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 16:27:56,036 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 16:27:56,066 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 16:27:56,066 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 16:47:34,521 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 16:47:34,521 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 16:47:34,528 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 16:47:34,528 | INFO | MMP pairs: 23
+2026-09-07 16:47:34,528 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 16:47:34,601 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 16:47:34,601 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 16:47:34,601 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 16:47:34,605 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 16:47:34,605 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 16:47:34,609 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 16:47:34,609 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 16:47:34,610 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 16:47:34,636 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 16:47:34,636 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 16:47:34,639 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 16:47:34,639 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 16:47:34,671 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 16:47:34,671 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 16:48:29,716 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 16:48:29,716 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 16:48:29,722 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 16:48:29,722 | INFO | MMP pairs: 23
+2026-09-07 16:48:29,722 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 16:48:29,799 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 16:48:29,799 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 16:48:29,799 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 16:48:29,803 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 16:48:29,803 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 16:48:29,807 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 16:48:29,807 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 16:48:29,808 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 16:48:29,834 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 16:48:29,834 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 16:48:29,836 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 16:48:29,836 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 16:48:29,869 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 16:48:29,869 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-07 16:56:34,808 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-07 16:56:34,808 | INFO | === MMP analysis (section 6.1) ===
+2026-09-07 16:56:34,815 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-07 16:56:34,815 | INFO | MMP pairs: 23
+2026-09-07 16:56:34,815 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-07 16:56:34,891 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-07 16:56:34,891 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-07 16:56:34,891 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-07 16:56:34,895 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-07 16:56:34,895 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-07 16:56:34,899 | INFO | Scaffold-specific fragment rows: 80
+2026-09-07 16:56:34,899 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-07 16:56:34,900 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-07 16:56:34,926 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-07 16:56:34,926 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-07 16:56:34,928 | INFO | Unique Murcko scaffolds: 17
+2026-09-07 16:56:34,928 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-07 16:56:34,960 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-07 16:56:34,960 | INFO | === Competing SAR hypotheses (section 7) ===
+2026-09-08 22:55:20,123 | INFO | Loaded analysis-ready dataset: 30 rows
+2026-09-08 22:55:20,124 | INFO | === MMP analysis (section 6.1) ===
+2026-09-08 22:55:20,131 | INFO | activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+2026-09-08 22:55:20,131 | INFO | MMP pairs: 23
+2026-09-08 22:55:20,131 | INFO | === MMP transformation analysis (section 6.1, true MMP) ===
+2026-09-08 22:55:20,225 | INFO | Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+2026-09-08 22:55:20,226 | INFO | Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+2026-09-08 22:55:20,226 | INFO | === Fragment enrichment analysis (section 6.2) ===
+2026-09-08 22:55:20,231 | INFO |         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+2026-09-08 22:55:20,231 | INFO | === Scaffold-specific fragment analysis (section 6.2) ===
+2026-09-08 22:55:20,236 | INFO | Scaffold-specific fragment rows: 80
+2026-09-08 22:55:20,236 | INFO | === Descriptor analysis (section 6.3) ===
+2026-09-08 22:55:20,237 | INFO | === Fingerprint + similarity (section 6.4) ===
+2026-09-08 22:55:20,265 | INFO | Morgan: active-active mean=0.422, active-inactive mean=0.307
+2026-09-08 22:55:20,265 | INFO | === Scaffold analysis (section 6.5) ===
+2026-09-08 22:55:20,267 | INFO | Unique Murcko scaffolds: 17
+2026-09-08 22:55:20,267 | INFO | === Stereochemical SAR (section 6.6) ===
+2026-09-08 22:55:20,301 | INFO |  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+2026-09-08 22:55:20,301 | INFO | === Competing SAR hypotheses (section 7) ===

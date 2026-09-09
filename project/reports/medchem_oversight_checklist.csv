@@ -1,0 +1,7 @@
+check_key,question,reviewer_signoff
+synthesizability_sanity,Are portfolio A/F hits realistic to synthesize by expert med-chemists?,PENDING_REVIEW
+stereochemistry_assessment,Are stereochemical handles proposed compatible with a laboratory route?,PENDING_REVIEW
+warhead_hydrolability,"Given TAF-1 lactone, do proposed esters/lactams hydrolyze under assay conditions?",PENDING_REVIEW
+taf_EWG_context,Is the EWG hypothesis chemically plausible for the receptor pocket?,PENDING_REVIEW
+adme_sanity,Do computed descriptors (MW/logP/TPSA) stay within drug-like guardrails?,PENDING_REVIEW
+dose_response_selectivity,Is selective potentiation (not full agonism) the intended readout across series?,PENDING_REVIEW

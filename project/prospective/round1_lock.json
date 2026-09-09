@@ -1,0 +1,18 @@
+{
+  "contamination_guard": "No retraining or TAF redefinition will occur on the basis of these results before the round is complete and reported.",
+  "locked_at": "2026-09-09T03:57:36Z",
+  "prespecified_responder_criterion": "compound active if potency>0 uM AND potentiation>0%",
+  "round": 1,
+  "statistics": {
+    "bootstrap_ci": true,
+    "bootstrap_detail": "10,000 resamples of compound-level outcomes; percentile CI; seed-fixed",
+    "causal_claim_restriction": "no causal attribution claimed from single confirmatory round",
+    "confidence_intervals": "Wilson / exact binomial 95% CI on active fraction per portfolio group",
+    "effect_size": "risk difference (RD) in active fraction; reported with 95% CI",
+    "hierarchical_mixed_effects": "NOT APPLICABLE to primary endpoint (compound-level binomial outcomes); would apply to EC50/Emax comparisons once replicate sweeps exist - pre-specified here",
+    "multiple_testing_correction": "Benjamini-Hochberg FDR if >5 portfolio comparisons; families defined at lock time",
+    "primary_analysis": "active-fraction enrichment (TAF-guided portfolio) vs pre-specified medchem baseline with continuity-corrected CI",
+    "replicate_aware_analysis": "biological replicates to be averaged before analysis; technical sweeps from same preparation NEVER treated as independent",
+    "sensitivity_analyses": "1) binary inactive (potency=0) excluded vs imputed; 2) responder threshold +/-50% potentiation; 3) leave-one-series-out precision robustness"
+  }
+}

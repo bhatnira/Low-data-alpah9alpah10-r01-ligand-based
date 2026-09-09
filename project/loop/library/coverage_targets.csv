@@ -1,0 +1,4 @@
+round,target_new_chemotypes_per_round,scaffold_cap_per_plate,target_clean_novel_chemotypes_added,primary_hit_criteria,enrichment_factor_threshold,go_no_go
+1,9,2,1,potency>0 AND potentiation>0 confirmed by dose-response,2.0,continue if EF>=2.0 at top-k and >=1 clean novel chemotype confirmed
+2,9,2,1,potency>0 AND potentiation>0 confirmed by dose-response,2.0,continue if EF>=2.0 at top-k and >=1 clean novel chemotype confirmed
+3,9,2,1,potency>0 AND potentiation>0 confirmed by dose-response,2.0,continue if EF>=2.0 at top-k and >=1 clean novel chemotype confirmed

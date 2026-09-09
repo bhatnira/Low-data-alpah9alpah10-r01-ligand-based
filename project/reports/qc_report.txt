@@ -1,0 +1,48 @@
+======================================================================
+DATA QUALITY CONTROL REPORT
+Generated: 2026-09-04 12:17:48
+======================================================================
+
+Dataset: /Users/nb/Documents/ligand-based-modeling/project/data/raw/modulator-dataset-a9a10.csv
+Total rows: 30
+Unique compounds (by ID): 30
+Unique canonical SMILES: 30
+Valid SMILES parsed: 30
+Invalid SMILES: 0
+
+Activity Summary:
+  Potency (uM) range: 0.0 - 6077.0
+  Active compounds: 7
+  Inactive/unknown: 23
+
+Potency-active compounds (>0 uM, >0% pot):
+  ID 12: 0.1981 uM, 150% pot, SMILES=C#CCOC1=C(O)C(=O)O[C@@H]1[C@H]1COC(C)(C)O1
+  ID 25: 2.63 uM, 180% pot, SMILES=O=C1O[C@H]([C@H](O)CBr)C(O)=C1O
+  ID 24: 1202.0 uM, 190% pot, SMILES=CCCOC1=C(O)[C@@H]([C@H](O)CO)OC1=O
+  ID 18: 1288.0 uM, 500% pot, SMILES=O=C1O[C@H]([C@H](O)CO)C(OCc2ccccc2)=C1O
+  ID 2: 1316.0 uM, 300% pot, SMILES=O=C1OC(C(O)CO)C(O)=C1O
+  ID 1: 1797.0 uM, 286% pot, SMILES=O=C1O[C@H]([C@H](O)CO)C(O)=C1O
+  ID 3: 6077.0 uM, 293% pot, SMILES=CC1(C)OC[C@@H]([C@H]2OC(=O)C(O)=C2O)O1
+
+Stereochemistry:
+  Compounds with stereocenters: 30
+  Compounds with undefined stereo: 7
+  Compounds with E/Z bonds: 0
+
+Duplicates:
+  Exact canonical SMILES duplicates: 0
+  Connectivity duplicates (ignoring stereo): 2
+
+Missing Values:
+  Smiles: 0
+  Activity (uM): 0
+  %Potentiation: 0
+
+Molecular Properties Summary (all compounds):
+  MW: mean=247.64, std=55.12, range=[148.11, 396.44]
+  LogP: mean=0.19, std=1.73, range=[-3.01, 3.71]
+  TPSA: mean=85.09, std=15.49, range=[63.22, 110.80]
+  HBD: mean=1.90, std=1.40, range=[0.00, 4.00]
+  HBA: mean=6.00, std=0.45, range=[5.00, 8.00]
+  RotBonds: mean=3.80, std=2.02, range=[1.00, 8.00]
+  FractionCSP3: mean=0.66, std=0.17, range=[0.31, 1.00]

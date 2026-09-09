@@ -1,0 +1,11 @@
+feature,ablated_accuracy,accuracy_drop
+MW,1.0,0.0
+LogP,1.0,0.0
+TPSA,1.0,0.0
+HBD,1.0,0.0
+HBA,1.0,0.0
+RotBonds,1.0,0.0
+FractionCSP3,1.0,0.0
+RingCount,1.0,0.0
+AromaticRings,1.0,0.0
+HeavyAtomCount,1.0,0.0

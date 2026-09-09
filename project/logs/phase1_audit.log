@@ -1,0 +1,147 @@
+2026-09-07 14:09:18,887 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:09:18,897 | INFO | existing_datasets: 0 entries
+2026-09-07 14:09:18,897 | INFO | existing_models: 0 entries
+2026-09-07 14:09:18,897 | INFO | existing_scripts: 0 entries
+2026-09-07 14:09:18,898 | INFO | existing_artifacts: 76 entries
+2026-09-07 14:09:18,898 | INFO | structural_status: 3 entries
+2026-09-07 14:09:18,924 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:09:33,923 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:09:34,019 | INFO | existing_datasets: 10 entries
+2026-09-07 14:09:34,019 | INFO | existing_models: 4 entries
+2026-09-07 14:09:34,020 | INFO | existing_scripts: 19 entries
+2026-09-07 14:09:34,020 | INFO | existing_artifacts: 84 entries
+2026-09-07 14:09:34,020 | INFO | structural_status: 3 entries
+2026-09-07 14:09:34,052 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:25:53,943 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:25:54,029 | INFO | existing_datasets: 10 entries
+2026-09-07 14:25:54,029 | INFO | existing_models: 4 entries
+2026-09-07 14:25:54,029 | INFO | existing_scripts: 19 entries
+2026-09-07 14:25:54,030 | INFO | existing_artifacts: 90 entries
+2026-09-07 14:25:54,030 | INFO | structural_status: 3 entries
+2026-09-07 14:25:54,056 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:29:31,852 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:29:31,939 | INFO | existing_datasets: 10 entries
+2026-09-07 14:29:31,940 | INFO | existing_models: 4 entries
+2026-09-07 14:29:31,940 | INFO | existing_scripts: 19 entries
+2026-09-07 14:29:31,940 | INFO | existing_artifacts: 90 entries
+2026-09-07 14:29:31,940 | INFO | structural_status: 3 entries
+2026-09-07 14:29:31,964 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:29:54,656 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:29:54,745 | INFO | existing_datasets: 10 entries
+2026-09-07 14:29:54,745 | INFO | existing_models: 4 entries
+2026-09-07 14:29:54,745 | INFO | existing_scripts: 19 entries
+2026-09-07 14:29:54,746 | INFO | existing_artifacts: 91 entries
+2026-09-07 14:29:54,746 | INFO | structural_status: 3 entries
+2026-09-07 14:29:54,770 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:30:36,957 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:30:37,037 | INFO | existing_datasets: 10 entries
+2026-09-07 14:30:37,037 | INFO | existing_models: 4 entries
+2026-09-07 14:30:37,037 | INFO | existing_scripts: 19 entries
+2026-09-07 14:30:37,038 | INFO | existing_artifacts: 91 entries
+2026-09-07 14:30:37,038 | INFO | structural_status: 3 entries
+2026-09-07 14:30:37,061 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:30:55,462 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:30:55,530 | INFO | existing_datasets: 10 entries
+2026-09-07 14:30:55,530 | INFO | existing_models: 4 entries
+2026-09-07 14:30:55,530 | INFO | existing_scripts: 19 entries
+2026-09-07 14:30:55,531 | INFO | existing_artifacts: 91 entries
+2026-09-07 14:30:55,531 | INFO | structural_status: 3 entries
+2026-09-07 14:30:55,555 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:38:27,309 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:38:27,400 | INFO | existing_datasets: 10 entries
+2026-09-07 14:38:27,400 | INFO | existing_models: 4 entries
+2026-09-07 14:38:27,400 | INFO | existing_scripts: 19 entries
+2026-09-07 14:38:27,401 | INFO | existing_artifacts: 93 entries
+2026-09-07 14:38:27,401 | INFO | structural_status: 3 entries
+2026-09-07 14:38:27,429 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:43:14,372 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:43:14,456 | INFO | existing_datasets: 10 entries
+2026-09-07 14:43:14,456 | INFO | existing_models: 4 entries
+2026-09-07 14:43:14,456 | INFO | existing_scripts: 19 entries
+2026-09-07 14:43:14,456 | INFO | existing_artifacts: 94 entries
+2026-09-07 14:43:14,456 | INFO | structural_status: 3 entries
+2026-09-07 14:43:14,482 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:45:17,677 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:45:17,766 | INFO | existing_datasets: 10 entries
+2026-09-07 14:45:17,766 | INFO | existing_models: 4 entries
+2026-09-07 14:45:17,766 | INFO | existing_scripts: 19 entries
+2026-09-07 14:45:17,767 | INFO | existing_artifacts: 94 entries
+2026-09-07 14:45:17,767 | INFO | structural_status: 3 entries
+2026-09-07 14:45:17,793 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:50:28,878 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:50:28,960 | INFO | existing_datasets: 10 entries
+2026-09-07 14:50:28,961 | INFO | existing_models: 4 entries
+2026-09-07 14:50:28,961 | INFO | existing_scripts: 19 entries
+2026-09-07 14:50:28,962 | INFO | existing_artifacts: 94 entries
+2026-09-07 14:50:28,962 | INFO | structural_status: 3 entries
+2026-09-07 14:50:28,985 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 14:51:03,291 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 14:51:03,372 | INFO | existing_datasets: 10 entries
+2026-09-07 14:51:03,372 | INFO | existing_models: 4 entries
+2026-09-07 14:51:03,373 | INFO | existing_scripts: 19 entries
+2026-09-07 14:51:03,373 | INFO | existing_artifacts: 96 entries
+2026-09-07 14:51:03,373 | INFO | structural_status: 3 entries
+2026-09-07 14:51:03,397 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 15:31:33,044 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 15:31:33,131 | INFO | existing_datasets: 10 entries
+2026-09-07 15:31:33,131 | INFO | existing_models: 4 entries
+2026-09-07 15:31:33,131 | INFO | existing_scripts: 19 entries
+2026-09-07 15:31:33,132 | INFO | existing_artifacts: 96 entries
+2026-09-07 15:31:33,132 | INFO | structural_status: 3 entries
+2026-09-07 15:31:33,168 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 15:55:54,675 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 15:55:54,749 | INFO | existing_datasets: 10 entries
+2026-09-07 15:55:54,750 | INFO | existing_models: 4 entries
+2026-09-07 15:55:54,750 | INFO | existing_scripts: 20 entries
+2026-09-07 15:55:54,750 | INFO | existing_artifacts: 96 entries
+2026-09-07 15:55:54,750 | INFO | structural_status: 3 entries
+2026-09-07 15:55:54,772 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 15:59:21,640 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 15:59:21,719 | INFO | existing_datasets: 10 entries
+2026-09-07 15:59:21,719 | INFO | existing_models: 4 entries
+2026-09-07 15:59:21,719 | INFO | existing_scripts: 20 entries
+2026-09-07 15:59:21,720 | INFO | existing_artifacts: 96 entries
+2026-09-07 15:59:21,720 | INFO | structural_status: 3 entries
+2026-09-07 15:59:21,742 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 16:23:04,085 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 16:23:04,162 | INFO | existing_datasets: 10 entries
+2026-09-07 16:23:04,162 | INFO | existing_models: 4 entries
+2026-09-07 16:23:04,162 | INFO | existing_scripts: 21 entries
+2026-09-07 16:23:04,162 | INFO | existing_artifacts: 96 entries
+2026-09-07 16:23:04,162 | INFO | structural_status: 3 entries
+2026-09-07 16:23:04,187 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 16:27:55,409 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 16:27:55,485 | INFO | existing_datasets: 10 entries
+2026-09-07 16:27:55,485 | INFO | existing_models: 4 entries
+2026-09-07 16:27:55,485 | INFO | existing_scripts: 21 entries
+2026-09-07 16:27:55,485 | INFO | existing_artifacts: 96 entries
+2026-09-07 16:27:55,485 | INFO | structural_status: 3 entries
+2026-09-07 16:27:55,507 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 16:47:33,905 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 16:47:33,988 | INFO | existing_datasets: 10 entries
+2026-09-07 16:47:33,988 | INFO | existing_models: 4 entries
+2026-09-07 16:47:33,988 | INFO | existing_scripts: 22 entries
+2026-09-07 16:47:33,989 | INFO | existing_artifacts: 100 entries
+2026-09-07 16:47:33,989 | INFO | structural_status: 3 entries
+2026-09-07 16:47:34,015 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 16:48:29,227 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 16:48:29,290 | INFO | existing_datasets: 10 entries
+2026-09-07 16:48:29,291 | INFO | existing_models: 4 entries
+2026-09-07 16:48:29,291 | INFO | existing_scripts: 22 entries
+2026-09-07 16:48:29,291 | INFO | existing_artifacts: 100 entries
+2026-09-07 16:48:29,291 | INFO | structural_status: 3 entries
+2026-09-07 16:48:29,313 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-07 16:56:34,321 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-07 16:56:34,382 | INFO | existing_datasets: 10 entries
+2026-09-07 16:56:34,382 | INFO | existing_models: 4 entries
+2026-09-07 16:56:34,382 | INFO | existing_scripts: 22 entries
+2026-09-07 16:56:34,383 | INFO | existing_artifacts: 100 entries
+2026-09-07 16:56:34,383 | INFO | structural_status: 3 entries
+2026-09-07 16:56:34,405 | INFO | Phase 1 audit complete; no duplicate work will be created.
+2026-09-08 22:55:19,037 | INFO | === Phase 1: initial project audit (section 3) ===
+2026-09-08 22:55:19,143 | INFO | existing_datasets: 10 entries
+2026-09-08 22:55:19,143 | INFO | existing_models: 4 entries
+2026-09-08 22:55:19,143 | INFO | existing_scripts: 22 entries
+2026-09-08 22:55:19,144 | INFO | existing_artifacts: 100 entries
+2026-09-08 22:55:19,144 | INFO | structural_status: 3 entries
+2026-09-08 22:55:19,181 | INFO | Phase 1 audit complete; no duplicate work will be created.

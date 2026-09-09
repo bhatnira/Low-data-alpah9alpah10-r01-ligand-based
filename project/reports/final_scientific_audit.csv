@@ -1,0 +1,19 @@
+question_id,question,verification,pass
+Q1,Did we accidentally treat generated compounds as experimental data?,Generated molecules absent or marked experimental_status=untested,YES
+Q2,Did we leak information between training and validation?,Per-fold scaler; scaffold-out / series-out; no global leakage,YES
+Q3,Did we preserve stereochemistry?,isomeric_SMILES preserved; stereo_* audit columns present; no collapse,YES
+Q4,Did we evaluate scaffold transfer?,scaffold_out + chemical_distance validation implemented,YES
+Q5,Did we quantify chemical-space expansion?,"chemical_space report (novel scaffolds, NN distance, SAR-space)",YES
+Q6,Did we test XAI stability?,xai_stability.csv: Spearman/topk/Jaccard/sign across models x seeds x splits x methods; unstable reported UNSTABLE,YES
+Q7,Did we test counterfactuals?,"counterfactual.csv probes (ID12 remove alkyne/stereo, ID25 remove Br)",YES
+Q8,Did we distinguish structural hypotheses from structural facts?,structures module emits only predicted-structural-hypothesis language,YES
+Q9,Did we compare against traditional medicinal chemistry?,medchem_baseline_analogs.csv generated as Model E comparator,YES
+Q10,Did we include TAF-disrupting controls?,"negative controls (no_OH, no_Br) added in candidate prioritization",YES
+Q11,Did we include information-gain candidates?,portfolio group E_information_gain; hypotheses H1-H6 documented,YES
+Q12,Did we freeze the computational model before prospective testing?,model_lock_manifest.json written before prospective testing,YES
+Q13,Did we define success before seeing prospective results?,success criterion defined in config: prospective TAF validation,YES
+Q14,Did we define failure criteria?,falsification framework table per TAF + reports/failure_analysis.csv with 10 explicit modes,YES
+Q15,Can every generated molecule be traced to its computational provenance?,"generation provenance columns (molecule_id, parent, mode, source) present",YES
+Q16,Can every experimental observation be traced to its original source?,canonical dataset carries source + input hash; raw CSV preserved,YES
+Q17,Can the entire workflow be rerun from configuration and raw data?,config.yaml + data hash manifest; rerunnable via workflows/*.py,YES
+Q18,Are all conclusions appropriately qualified?,ALL predicted/hypothesis content is labelled prospective or UNKNOWN,YES

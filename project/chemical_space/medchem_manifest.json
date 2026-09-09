@@ -1,0 +1,23 @@
+{
+  "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
+  "generated_at": "2026-09-09T03:57:35Z",
+  "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+  "input_hashes": {
+    "n_parents_used": 30
+  },
+  "module": "medchem_baseline",
+  "numpy": "2.5.3",
+  "pandas": "2.3.3",
+  "python": "3.14.2",
+  "rdkit": "2025.09.4",
+  "scikit_learn": "1.8.0",
+  "seeds": {
+    "bootstrap": 42,
+    "conformer_etkdgv3": 42,
+    "global": 42,
+    "models": 42,
+    "reinvent": 42,
+    "tsne": 42
+  }
+}

@@ -1,0 +1,11 @@
+feature,selection_frequency
+MW,48
+LogP,45
+TPSA,44
+HBD,44
+HBA,44
+RotBonds,39
+RingCount,38
+AromaticRings,38
+FractionCSP3,30
+HeavyAtomCount,27

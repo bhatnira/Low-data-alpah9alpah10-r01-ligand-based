@@ -1,0 +1,5 @@
+strategy,sar_fidelity,chemical_novelty,uncertainty,scaffold_transfer,prospective_value
+Traditional medicinal chemistry,baseline (Model E enumerated),reported in chemical_space report,not modelled (untested),not evaluated,PENDING EXPERIMENT
+Unguided generation,NOT_AVAILABLE (REINVENT absent),NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE
+TAF-guided generation,defined via TAF evidence matrix,candidate scoring implemented,separable uncertainty axes implemented,scaffold-out CV + chemical-distance run,PENDING EXPERIMENT
+TAF + structural guidance,structural layer NOT AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE (AF3/Boltz outputs absent)

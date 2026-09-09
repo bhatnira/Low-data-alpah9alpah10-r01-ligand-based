@@ -1,0 +1,380 @@
+2026-09-07 15:54:55,795 | INFO | === Closed-loop cycle ===
+2026-09-07 15:54:55,795 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 15:54:55,800 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  mean_agreement  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN           0.522               1
+          LogP   4.500000                0.522                      NaN           0.522               2
+            MW   4.833333                0.522                      NaN           0.522               3
+      RotBonds   5.166667                0.522                      NaN           0.522               4
+HeavyAtomCount   5.500000                0.522                      NaN           0.522               5
+          TPSA   5.833333                0.522                      NaN           0.522               6
+2026-09-07 15:54:55,800 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 15:54:55,810 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 15:54:55,810 | INFO | === Design round 1 plate (balanced, size-fixed) ===
+2026-09-07 15:54:55,813 | INFO | portfolio_group
+A_high_confidence_taf_preserving    1
+B_taf_disrupting                    2
+C_scaffold_transfer                 2
+D_chemically_novel                  3
+E_information_gain                  2
+F_uncertainty_reduction             5
+2026-09-07 15:54:55,813 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 15:54:55,813 | INFO | === Oversight gate for round 1 ===
+2026-09-07 15:54:55,813 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 15:54:55,814 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 15:54:55,814 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 15:55:21,715 | INFO | === Closed-loop cycle ===
+2026-09-07 15:55:21,716 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 15:55:21,718 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 15:55:21,721 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 15:55:21,721 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 15:55:21,731 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 15:55:21,731 | INFO | === Design round 1 plate (balanced, size-fixed) ===
+2026-09-07 15:55:21,734 | INFO | portfolio_group
+A_high_confidence_taf_preserving    1
+B_taf_disrupting                    2
+C_scaffold_transfer                 2
+D_chemically_novel                  3
+E_information_gain                  2
+F_uncertainty_reduction             5
+2026-09-07 15:55:21,734 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 15:55:21,734 | INFO | === Oversight gate for round 1 ===
+2026-09-07 15:55:21,734 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 15:55:21,735 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 15:55:21,736 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 15:58:00,937 | INFO | === Closed-loop cycle ===
+2026-09-07 15:58:00,937 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 15:58:00,939 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 15:58:00,941 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 15:58:00,941 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 15:58:00,954 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 15:58:00,955 | INFO | === Design round 1 plate (balanced, size-fixed) ===
+2026-09-07 15:58:00,957 | INFO | portfolio_group
+A_high_confidence_taf_preserving    1
+B_taf_disrupting                    2
+C_scaffold_transfer                 2
+D_chemically_novel                  3
+E_information_gain                  2
+F_uncertainty_reduction             5
+2026-09-07 15:58:00,958 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 15:58:00,958 | INFO | === Oversight gate for round 1 ===
+2026-09-07 15:58:00,958 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 15:58:00,959 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 15:58:00,959 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 15:59:17,545 | INFO | === Closed-loop cycle ===
+2026-09-07 15:59:17,545 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 15:59:17,547 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 15:59:17,550 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 15:59:17,550 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 15:59:17,559 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 15:59:17,559 | INFO | === Design round 1 plate (balanced, size-fixed) ===
+2026-09-07 15:59:17,562 | INFO | portfolio_group
+A_high_confidence_taf_preserving    1
+B_taf_disrupting                    2
+C_scaffold_transfer                 2
+D_chemically_novel                  3
+E_information_gain                  2
+F_uncertainty_reduction             5
+2026-09-07 15:59:17,562 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 15:59:17,562 | INFO | === Oversight gate for round 1 ===
+2026-09-07 15:59:17,562 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 15:59:17,563 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 15:59:17,564 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:01:27,778 | INFO | === Closed-loop cycle ===
+2026-09-07 16:01:27,779 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:01:27,781 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:01:27,782 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:01:27,783 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:01:27,795 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:01:27,795 | INFO | === Design round 1 plate (balanced, size-fixed) ===
+2026-09-07 16:01:27,798 | INFO | portfolio_group
+A_high_confidence_taf_preserving    1
+B_taf_disrupting                    2
+C_scaffold_transfer                 2
+D_chemically_novel                  3
+E_information_gain                  2
+F_uncertainty_reduction             5
+2026-09-07 16:01:27,798 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:01:27,798 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:01:27,799 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:01:27,800 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:01:27,800 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:25:09,962 | INFO | === Closed-loop cycle ===
+2026-09-07 16:25:09,962 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:25:09,964 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:25:09,966 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:25:09,966 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:25:09,978 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:25:09,978 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:25:10,052 | INFO | Eligible (drug-like) candidates for plate: 13
+2026-09-07 16:25:18,986 | INFO | === Closed-loop cycle ===
+2026-09-07 16:25:18,986 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:25:18,988 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:25:18,991 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:25:18,991 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:25:19,002 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:25:19,003 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:25:19,077 | INFO | Eligible (drug-like) candidates for plate: 13
+2026-09-07 16:25:19,086 | INFO | Round 1 pre-registered (hash fc81aaf699a3...)
+2026-09-07 16:25:19,087 | INFO | arm              portfolio_group        
+diversity_topup  B_taf_disrupting           2
+                 E_information_gain         4
+                 F_uncertainty_reduction    3
+model_ranked     B_taf_disrupting           4
+                 E_information_gain         2
+2026-09-07 16:25:19,087 | INFO | arm              matched_tier
+diversity_topup  2               6
+                 3               3
+model_ranked     2               6
+2026-09-07 16:25:19,087 | INFO | Plate size 15; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:25:19,088 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:25:19,089 | WARNING | 15/15 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:25:19,090 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:25:19,090 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:26:11,061 | INFO | === Closed-loop cycle ===
+2026-09-07 16:26:11,062 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:26:11,064 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:26:11,067 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:26:11,067 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:26:11,079 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:26:11,079 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:26:11,154 | INFO | Eligible (drug-like) candidates for plate: 13/141
+2026-09-07 16:26:29,284 | INFO | === Closed-loop cycle ===
+2026-09-07 16:26:29,284 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:26:29,286 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:26:29,288 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:26:29,288 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:26:29,300 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:26:29,300 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:26:29,375 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-07 16:26:29,379 | INFO | Round 1 pre-registered (hash cafaff292342...)
+2026-09-07 16:26:29,380 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-07 16:26:29,380 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-07 16:26:29,381 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:26:29,381 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:26:29,382 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:26:29,383 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:26:29,383 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:27:18,426 | INFO | === Closed-loop cycle ===
+2026-09-07 16:27:18,427 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:27:18,429 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:27:18,431 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:27:18,431 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:27:18,443 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:27:18,443 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:27:18,517 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-07 16:27:18,521 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-07 16:27:18,522 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-07 16:27:18,522 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:27:18,522 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:27:18,523 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:27:18,524 | INFO | Round 1 pre-registered (hash ed7f33c758fb...)
+2026-09-07 16:27:18,524 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:27:18,524 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:30:05,009 | INFO | === Closed-loop cycle ===
+2026-09-07 16:30:05,009 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:30:05,011 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:30:05,013 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:30:05,013 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:30:05,025 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:30:05,026 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:30:05,103 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-07 16:30:05,107 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-07 16:30:05,108 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-07 16:30:05,108 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:30:05,108 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:30:05,109 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:30:05,110 | INFO | Round 1 pre-registered (hash ed7f33c758fb...)
+2026-09-07 16:30:05,110 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:30:05,110 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:50:55,455 | INFO | === Closed-loop cycle ===
+2026-09-07 16:50:55,457 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:50:55,459 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:50:55,461 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:50:55,461 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:50:55,476 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:50:55,476 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:50:55,571 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-07 16:50:55,576 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-07 16:50:55,577 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-07 16:50:55,577 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:50:55,577 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:50:55,578 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:50:55,580 | INFO | Round 1 pre-registered (hash ed7f33c758fb...)
+2026-09-07 16:50:55,580 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:50:55,580 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-07 16:59:05,239 | INFO | === Closed-loop cycle ===
+2026-09-07 16:59:05,239 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-07 16:59:05,241 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-07 16:59:05,243 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-07 16:59:05,243 | INFO | === Stereo probe design (section 14b) ===
+2026-09-07 16:59:05,256 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-07 16:59:05,257 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-07 16:59:05,335 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-07 16:59:05,340 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-07 16:59:05,340 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-07 16:59:05,340 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-07 16:59:05,341 | INFO | === Oversight gate for round 1 ===
+2026-09-07 16:59:05,341 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-07 16:59:05,343 | INFO | Round 1 pre-registered (hash ed7f33c758fb...)
+2026-09-07 16:59:05,343 | INFO | === Data watch (generator + structural availability) ===
+2026-09-07 16:59:05,343 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+2026-09-08 22:57:36,669 | INFO | === Closed-loop cycle ===
+2026-09-08 22:57:36,669 | INFO | === Consensus explanation (Borda fusion, section 13b) ===
+2026-09-08 22:57:36,672 | INFO | Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+2026-09-08 22:57:36,674 | INFO |        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+2026-09-08 22:57:36,674 | INFO | === Stereo probe design (section 14b) ===
+2026-09-08 22:57:36,687 | INFO | Stereo probes designed: 22 (append to plate)
+2026-09-08 22:57:36,688 | INFO | === Design round 1 plate (comparator-arm, size-fixed) ===
+2026-09-08 22:57:36,776 | INFO | Eligible (drug-like) candidates for plate: 9/99
+2026-09-08 22:57:36,781 | INFO | arm               portfolio_group        
+diversity_random  F_uncertainty_reduction    1
+diversity_topup   B_taf_disrupting           2
+                  E_information_gain         1
+                  F_uncertainty_reduction    1
+model_ranked      B_taf_disrupting           3
+                  F_uncertainty_reduction    1
+2026-09-08 22:57:36,782 | INFO | arm               matched_tier
+diversity_random  3               1
+diversity_topup   2               3
+                  3               1
+model_ranked      2               3
+                  3               1
+2026-09-08 22:57:36,782 | INFO | Plate size 9; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+2026-09-08 22:57:36,782 | INFO | === Oversight gate for round 1 ===
+2026-09-08 22:57:36,783 | WARNING | 9/9 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+2026-09-08 22:57:36,787 | INFO | Round 1 pre-registered (hash ed7f33c758fb...)
+2026-09-08 22:57:36,787 | INFO | === Data watch (generator + structural availability) ===
+2026-09-08 22:57:36,787 | INFO | {'reinvent_molecule_dirs': 5, 'structural_outputs_found': 0, 'reinvent_ingest': 'pending until molecule files appear', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}

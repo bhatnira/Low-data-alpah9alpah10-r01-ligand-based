@@ -1,0 +1,51 @@
+{
+  "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
+  "generated_at": "2026-09-09T03:55:20Z",
+  "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+  "input_hashes": {
+    "actives_on_core": 7,
+    "ascorbate_core_dataset": 24,
+    "ascorbate_mmp_transforms": 56,
+    "candidate_panel_core": 8,
+    "candidate_panel_enediol_motif": 27,
+    "core_smarts": "OC1=C(O)C(=O)OC1-[#6]",
+    "d_form_id": 2,
+    "d_form_note": "D-isoascorbic acid / erythorbate; similar potency (1316 uM, 300%) per PI; stereo undefined in source",
+    "dataset_n": 30,
+    "high_potency_actives": {
+      "compound_12": "3-O-propargyl-5,6-acetonide ascorbate, 0.198 uM (3-O-substituted arm)",
+      "compound_25": "6-bromo-6-deoxy ascorbate, 2.63 uM"
+    },
+    "lower_potency_actives_uM": {
+      "ID18": 1288,
+      "ID24": 1202,
+      "ID3": 6077
+    },
+    "pi_domain_notes": [
+      "Reference: L-ascorbic acid (compound 1; potency 1797 uM, 286% potentiation) is the reference PAM for this series.",
+      "D-form probe: compound 2 (D-isoascorbic acid / erythorbate) has similar potency (1316 uM, 300%); PI-note L/D assignment - raw stereo undefined (stereo_has_undefined_stereo=True).",
+      "High potency arm: 3-O-substituted ascorbate (PI shorthand '3-O-ethyl'). Best-annotated instance: compound 12, 3-O-propargyl-5,6-acetonide, 0.198 uM - no literal O-ethyl analog in the dataset.",
+      "Second high potency active: 6-bromo-6-deoxy ascorbate (compound 25, 2.63 uM).",
+      "All other validated actives are >1 mM (compounds 3/18/24: 6077/1288/1202 uM), i.e. substantially less potent than compounds 12 and 25.",
+      "Selectivity (PI note): ascorbic acid is a selective potentiator of alpha9alpha10. NOT modeled - no cross-subunit selectivity data in the repository."
+    ],
+    "reference_id": 1,
+    "reference_name": "L-ascorbic acid (potency 1797 uM, 286% potentiation)",
+    "selectivity_note": "PI note: ascorbic acid is a selective potentiator of alpha9alpha10. NOT modeled - no cross-subunit selectivity data."
+  },
+  "module": "sar_ascorbate",
+  "numpy": "2.5.3",
+  "pandas": "2.3.3",
+  "python": "3.14.2",
+  "rdkit": "2025.09.4",
+  "scikit_learn": "1.8.0",
+  "seeds": {
+    "bootstrap": 42,
+    "conformer_etkdgv3": 42,
+    "global": 42,
+    "models": 42,
+    "reinvent": 42,
+    "tsne": 42
+  }
+}

@@ -1,0 +1,214 @@
+project:
+  name: alpha9alpha10-nAChR-PAM-TAF
+  root: /Users/nb/Documents/ligand-based-modeling/project
+  schema_version: "2.0.0"
+  cycle: 0
+  description: >
+    AI-augmented medicinal chemistry for alpha9alpha10 nAChR PAMs.
+    Experimental SAR -> computational interpretation -> competing hypotheses
+    -> TAFs -> uncertainty/reproducibility -> generative design ->
+    medicinal-chemist review -> synthesis -> electrophysiology -> update.
+
+data:
+  raw_csv: /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+  id_column: Identifier
+  smiles_column: Smiles
+  activity_columns:
+    potency: "Activity (uM)"
+    potentiation: "%Potentiation"
+  activity_classification:
+    # A compound is ACTIVE only when potency > 0 AND potentiation > 0
+    active_rule: "potency > 0 AND potentiation > 0"
+    potency_units: uM
+    potency_lower_is_more_potent: true
+  stereochemistry:
+    preserve: true
+    flag_undefined: true
+  experimental_data_model_fields:
+    - compound_id
+    - SMILES
+    - isomeric_SMILES
+    - canonical_SMILES
+    - stereochemistry
+    - activity
+    - activity_type
+    - activity_unit
+    - assay
+    - assay_condition
+    - replicate_information
+    - experimental_status
+    - source
+    - series_id
+    - scaffold_id
+    - parent_compound
+
+seeds:
+  global: 42
+  tsne: 42
+  models: 42
+  conformer_etkdgv3: 42
+  bootstrap: 42
+  reinvent: 42
+
+models:
+  panel:
+    baselines:
+      - name: majority
+        description: always predict majority class
+      - name: random
+        description: random class assignment matched to prior
+      - name: descriptor_logreg
+        description: logistic regression on 10 RDKit descriptors
+    classical:
+      - name: ridge
+        params: {alpha: 1.0}
+      - name: logistic_regression
+        params: {C: 1.0, max_iter: 2000, class_weight: balanced}
+      - name: random_forest
+        params: {n_estimators: 100, random_state: 42, class_weight: balanced}
+      - name: extra_trees
+        params: {n_estimators: 100, random_state: 42, class_weight: balanced}
+      - name: gradient_boosting
+        params: {n_estimators: 50, random_state: 42}
+    representations:
+      - fingerprints_morgan_r2
+      - descriptors_only
+      - fingerprints_plus_descriptors
+  target: is_active
+  scoring: balanced_accuracy
+
+validation:
+  primary:
+    - loco
+    - leave_one_series_out
+    - scaffold_out
+  secondary:
+    - chemical_distance
+    - bootstrap
+    - permutation
+  cluster_scheme:
+    # assignment used for leave-one-series-out / scaffold-out
+    by: murcko_scaffold
+  chemical_distance_levels:
+    - same_scaffold
+    - close_analogue
+    - bioisostere
+    - moderate_hop
+    - distant_scaffold
+    - novel_scaffold
+
+xai:
+  methods:
+    - permutation_importance
+    - rf_gini
+    - fragment_attribution
+    - counterfactual
+    - feature_ablation
+  stability:
+    n_resamples: 20
+    top_k: 10
+    correlation: spearman
+    random_states: [1, 2, 3, 4, 5]
+
+taf:
+  evidence_threshold:
+    min_independent_sources: 3
+  evidence_classes:
+    - HIGH_CONFIDENCE
+    - MODERATE_CONFIDENCE
+    - LOW_CONFIDENCE
+    - REJECTED
+    - CONTEXT_DEPENDENT
+  transferability_metric: "T(F) = active diverse scaffolds containing F / tested diverse scaffolds containing F"
+
+medchem_baseline:
+  strategies:
+    - mmp_transformations
+    - analog_enumeration
+    - bioisosteric_replacement
+    - substituent_scanning
+    - scaffold_expansion
+    - scaffold_hopping
+  bioisosteres:
+    - ["[Br]", "[Cl]", "[#8]#C", "C#N"]
+    - ["C#C", "c1ccccc1", "C#N"]
+    - ["C(=O)O", "O=S(=O)O", "P(=O)(O)O"]
+    - ["[CX4][OH]", "C(=O)[OH]", "S(=O)(=O)[OH]"]
+  max_analogs_per_parent: 12
+
+reinvent:
+  available: false
+  version: UNKNOWN
+  modes:
+    - de_novo
+    - local_analog
+    - scaffold_hopping
+    - taf_disrupting
+    - information_gain
+  objectives:
+    - predicted_activity
+    - taf_consistency
+    - novelty
+    - scaffold_novelty
+    - uncertainty
+    - stereo_validity
+    - synthetic_feasibility
+    - applicability_domain
+  n_generate: 10000
+  batch_size: 64
+  device: cpu
+  max_steps: 100
+  learning:
+    type: dap
+    sigma: 128
+    rate: 0.0001
+  priors:
+    reinvent:
+      file: priors/reinvent_pubchem.prior
+      sha256: fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3
+      md5: 75052d5e93b2470e9c6684d369704f5f
+    libinvent:
+      file: priors/libinvent.prior
+      sha256: 03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af
+      md5: fea30c293909216fe183bb0d1b7ca432
+  prior_source: https://zenodo.org/records/20701824
+  libinvent_scaffolds_enabled: true
+  scoring_python: /Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+
+structures:
+  available: false
+  af3: {present: false, note: NOT AVAILABLE - no AF3 outputs in repository}
+  boltz: {present: false, note: NOT AVAILABLE - no Boltz outputs in repository}
+  consensus_rule: require reproduction across independent predictions
+
+candidate_selection:
+  tuneable: false
+  freeze_before_prospective: true
+  portfolio_groups:
+    A: high_confidence_taf_preserving
+    B: taf_disrupting
+    C: scaffold_transfer
+    D: chemically_novel
+    E: information_gain
+    F: uncertainty_reduction
+
+prospective:
+  rounds: 3
+  per_round_n: 15
+  assay: two-electrode voltage-clamp (TEVC), alpha9alpha10-expressing Xenopus oocytes
+  primary_endpoint: >
+    Prospective experimental validation of TAF-derived SAR relationships in
+    chemically novel alpha9alpha10 nAChR modulators.
+
+reports:
+  out_dir: /Users/nb/Documents/ligand-based-modeling/project/reports
+  formats: [csv, html]
+
+logging:
+  dir: /Users/nb/Documents/ligand-based-modeling/project/logs
+  level: INFO
+
+benchmarks:
+  nAChR_structural:
+    targets: [a7, a4b2]
+    present: false

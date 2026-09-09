@@ -1,0 +1,70 @@
+{
+  "config_files": {
+    "de_novo": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/de_novo_staged_learning.toml",
+    "information_gain": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/information_gain_staged_learning.toml",
+    "local_analog": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/local_analog_staged_learning.toml",
+    "local_analog_libinvent": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/local_analog_libinvent_staged_learning.toml",
+    "scaffold_hopping": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/scaffold_hopping_staged_learning.toml",
+    "taf_disrupting": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/configs/taf_disrupting_staged_learning.toml"
+  },
+  "config_hashes": {
+    "de_novo": "a6a6ef66dd83253d440d013ea5dda5cca8c52487bc12945ffc6d7aa23089accd",
+    "information_gain": "55253cdc3de39d840c647c1d8316519129bb6ee2b15927cf017f1f62daa8084f",
+    "local_analog": "6dd6c3ce380015f0e641259671c0ea9af0414143d9a7db0f76b42909d444ea0c",
+    "local_analog_libinvent": "bfd192207e45be8650b8e4a49f5ec8bc37c22d17df0163061942c1c4641e6d34",
+    "scaffold_hopping": "369e655557c328b91767463f263f72e85902e260594834040805629e2a6a9ab6",
+    "taf_disrupting": "0ae32d6abe94cd3e2a123ad3c36abc6444905ac92eb07719e2c7336382eb156c"
+  },
+  "fabrication_guard": "NO molecules fabricated: config generation only. Run reinvent/run_generation.sh once the REINVENT4 binary is present.",
+  "prior_source": "https://zenodo.org/records/20701824",
+  "priors": {
+    "libinvent": {
+      "exists": true,
+      "file": "/Users/nb/Documents/ligand-based-modeling/project/priors/libinvent.prior",
+      "name": "libinvent",
+      "sha256_actual": "03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af",
+      "sha256_expected": "03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af",
+      "size_bytes": 94756131,
+      "verified": true
+    },
+    "reinvent": {
+      "exists": true,
+      "file": "/Users/nb/Documents/ligand-based-modeling/project/priors/reinvent_pubchem.prior",
+      "name": "reinvent",
+      "sha256_actual": "fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3",
+      "sha256_expected": "fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3",
+      "size_bytes": 23528840,
+      "verified": true
+    }
+  },
+  "provenance": {
+    "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+    "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
+    "generated_at": "2026-09-09T03:57:35Z",
+    "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+    "input_hashes": {
+      "n_mode_configs": 6,
+      "n_prior_verified": 2
+    },
+    "module": "reinvent",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "python": "3.14.2",
+    "rdkit": "2025.09.4",
+    "scikit_learn": "1.8.0",
+    "seeds": {
+      "bootstrap": 42,
+      "conformer_etkdgv3": 42,
+      "global": 42,
+      "models": 42,
+      "reinvent": 42,
+      "tsne": 42
+    }
+  },
+  "reinvent_available": false,
+  "reinvent_version": "NOT AVAILABLE",
+  "run_script": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/run_generation.sh",
+  "scoring_python": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "scoring_script": "/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py",
+  "stereochemistry_note": "Only the Mol2Mol prior (reinvent_pubchem.prior) supports stereochemistry; LibInvent prior does not -> local_analog_libinvent config sets isomeric_smiles=false and drops stereo_validity endpoint."
+}

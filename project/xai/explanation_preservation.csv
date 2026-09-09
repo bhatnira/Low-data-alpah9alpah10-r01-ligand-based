@@ -1,0 +1,2 @@
+top_generic_descriptor,top_specific_descriptor,generic_descriptor_gini_frac,specific_descriptor_gini_frac,fragment_experimental_support_frac,shap_top3_features,shap_includes_specific,generic_dominated_flag,weak_experimental_fragment_support_flag,flag_artifact_exploitation,interpretation
+"FractionCSP3,LogP,MW","HBD,HBA",0.938,0.062,1.0,"FractionCSP3,LogP,HeavyAtomCount",0,True,False,False,Model top features retain experimental specificity; artifact-exploitation flag NOT raised

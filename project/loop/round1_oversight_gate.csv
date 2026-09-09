@@ -1,0 +1,10 @@
+molecule_id,portfolio_group,TAF_score_2d,ranked_shortlist_position,oversight_status,required_review_dimensions,eligible_for_experiment
+NEG-25-no_Br_or_alkyne,B_taf_disrupting,0.5,1,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+NEG-1-no_OH,B_taf_disrupting,0.25,2,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+NEG-18-no_OH,B_taf_disrupting,0.25,3,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+MC-41,F_uncertainty_reduction,0.25,4,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+MC-42,F_uncertainty_reduction,0.0,5,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+NEG-24-no_OH,B_taf_disrupting,0.25,6,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+MC-40,F_uncertainty_reduction,0.0,7,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+NEG-2-no_OH,B_taf_disrupting,0.25,8,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False
+MC-7,E_information_gain,0.5,9,PENDING_REVIEW,synthesizability; stereochemical feasibility; assay-suitability; TAF-consistency; negative-control balance,False

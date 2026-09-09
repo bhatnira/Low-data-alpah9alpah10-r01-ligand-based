@@ -1,0 +1,6 @@
+phase,reuse_decision,overwrite
+Phase 2 datasets,canonical + governed datasets already exist under data/; regenerate with added salt/tautomer/charge QC and derived series_id,False
+Phase 3 SAR,sar/ outputs exist; regenerate in governed form with added transformation-level MMP and stereo detail,False
+Phase 4 models,"models/classical/lbm_rf_fp_desc.joblib exists and is consumed by REINVENT scoring; freeze artifact preserved, retrained only when the dataset hash changes",False
+Phases 9-11 REINVENT,prior files verification + TOML configs + inception/scaffold seeds already present; REINVENT binary unavailable -> config generation only (no fabricated molecules),False
+Phase 14 model lock,prospective/model_lock_manifest.json frozen; preserved unless analysis-ready dataset changes hash,False

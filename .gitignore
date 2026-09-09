@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Large model weights - not committed to git.
+# Download from Zenodo record 20701824 (configs/config.yaml: prior_source);
+# checksums are verified at runtime by src/reinvent.py.
+project/priors/
+*.prior
