@@ -1,0 +1,48 @@
+2026-09-09 13:37:57,367 | INFO | === Synth route prediction for round 3 ===
+2026-09-09 13:37:57,367 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:37:57,374 | INFO | targets from loop/library/chemotype_library_annotated.csv: 99
+2026-09-09 13:37:57,391 | INFO | 0 PREDICTED_ROUTE rows written (targets=99)
+2026-09-09 13:38:28,022 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 13:38:28,022 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:38:28,029 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 13:38:28,044 | INFO | 0 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 13:40:07,542 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 13:40:07,542 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:40:07,549 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 13:40:07,563 | INFO | 0 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 13:40:36,244 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 13:40:36,244 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:40:36,253 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 13:40:36,270 | INFO | 0 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 13:43:12,743 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 13:43:12,743 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:43:12,745 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 13:43:12,757 | INFO | 0 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 13:45:45,452 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 13:45:45,453 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-09 13:45:45,454 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 13:45:45,467 | INFO | 0 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 15:20:07,950 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 15:20:07,972 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 15:26:30,927 | INFO | worker returned 31 predicted/declared rows
+2026-09-09 15:26:31,151 | INFO | 9 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 15:39:21,617 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 15:39:21,634 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 15:45:58,344 | INFO | worker returned 31 predicted/declared rows
+2026-09-09 15:45:58,554 | INFO | 9 PREDICTED_ROUTE rows written (targets=11)
+2026-09-09 16:00:06,586 | INFO | === Synth route prediction for round 1 ===
+2026-09-09 16:00:06,589 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-09 16:08:07,752 | INFO | worker returned 31 predicted/declared rows
+2026-09-09 16:08:07,837 | INFO | 9 PREDICTED_ROUTE rows written (targets=11)
+2026-09-10 13:41:40,344 | INFO | === Synth route prediction for round 1 ===
+2026-09-10 13:41:40,347 | INFO | targets from prospective/round1_plan.csv: 11
+2026-09-10 13:45:38,576 | INFO | worker returned 31 predicted/declared rows
+2026-09-10 13:45:38,624 | INFO | 9 PREDICTED_ROUTE rows written (targets=11)
+2026-09-10 14:12:55,416 | INFO | === Synth route prediction for round 1 ===
+2026-09-10 14:12:55,418 | INFO | targets from prospective/round1_plan.csv: 8
+2026-09-10 14:16:11,402 | INFO | worker returned 24 predicted/declared rows
+2026-09-10 14:16:11,451 | INFO | 3 PREDICTED_ROUTE rows over 1 targets; clean routes for 1 (targets=8)
+2026-09-10 14:19:58,617 | INFO | === Synth route prediction for round 1 ===
+2026-09-10 14:19:58,618 | INFO | targets from prospective/round1_plan.csv: 8
+2026-09-10 14:23:46,673 | INFO | worker returned 24 predicted/declared rows
+2026-09-10 14:23:46,722 | INFO | 3 PREDICTED_ROUTE rows over 1 targets; clean routes for 1 (targets=8)

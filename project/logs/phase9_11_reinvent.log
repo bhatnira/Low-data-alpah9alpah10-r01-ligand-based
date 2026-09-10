@@ -94,3 +94,51 @@
 2026-09-08 22:57:35,236 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
 2026-09-08 22:57:35,238 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
 2026-09-08 22:57:35,256 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-09 00:22:27,880 | INFO | === REINVENT 4 integration ===
+2026-09-09 00:22:27,881 | INFO | REINVENT available: False
+2026-09-09 00:22:27,957 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 00:22:28,007 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 00:22:28,009 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-09 00:22:28,024 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-09 12:56:26,066 | INFO | === REINVENT 4 integration ===
+2026-09-09 12:56:26,072 | INFO | REINVENT available: False
+2026-09-09 12:56:26,140 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 12:56:26,189 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 12:56:26,191 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-09 12:56:26,205 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-09 13:43:11,368 | INFO | === REINVENT 4 integration ===
+2026-09-09 13:43:11,368 | INFO | REINVENT available: False
+2026-09-09 13:43:11,435 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 13:43:11,484 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 13:43:11,486 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-09 13:43:11,501 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-09 13:45:44,117 | INFO | === REINVENT 4 integration ===
+2026-09-09 13:45:44,117 | INFO | REINVENT available: False
+2026-09-09 13:45:44,189 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 13:45:44,239 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 13:45:44,241 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-09 13:45:44,257 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-09 16:00:03,675 | INFO | === REINVENT 4 integration ===
+2026-09-09 16:00:03,681 | INFO | REINVENT available: False
+2026-09-09 16:00:03,796 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 16:00:03,898 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-09 16:00:03,902 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-09 16:00:03,933 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-10 13:41:38,974 | INFO | === REINVENT 4 integration ===
+2026-09-10 13:41:38,981 | INFO | REINVENT available: False
+2026-09-10 13:41:39,046 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 13:41:39,094 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 13:41:39,096 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 13:41:39,110 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-10 14:12:54,807 | INFO | === REINVENT 4 integration ===
+2026-09-10 14:12:54,808 | INFO | REINVENT available: False
+2026-09-10 14:12:54,874 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 14:12:54,923 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 14:12:54,925 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 14:12:54,938 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-10 14:19:58,052 | INFO | === REINVENT 4 integration ===
+2026-09-10 14:19:58,052 | INFO | REINVENT available: False
+2026-09-10 14:19:58,109 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 14:19:58,159 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
+2026-09-10 14:19:58,161 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 14:19:58,178 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.

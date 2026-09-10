@@ -1,0 +1,955 @@
+================================================================================
+NIH R01 GRANT APPLICATION (VERSION 2)
+================================================================================
+
+ASSIGNMENT BOARD: Pharmacology of Drug Abuse (PA)
+ACTIVITY CODE: R01
+APPLICATION TYPE: New
+
+================================================================================
+PROJECT INFORMATION
+================================================================================
+
+PROJECT TITLE:
+Development of High-Potency, Selective Ascorbate-Derived alpha9alpha10
+Nicotinic Acetylcholine Receptor (nAChR) Positive Allosteric Modulators (PAMs)
+through an Integrated Medicinal Chemistry and AI-Guided Ligand-Based Approach
+
+PROJECT START DATE: 09/01/2027
+PROJECT END DATE: 08/31/2030
+TOTAL PROJECT PERIOD: 3 Years (3 budget periods)
+
+RESPONSIBLE PROJECT DIRECTOR/PI:
+[Name, Degree]
+[Institution]
+[Department]
+[Address]
+Phone: [XXX-XXX-XXXX]
+Email: [email@institution.edu]
+ERA Commons ID: [XXXXXXX]
+
+CO-INVESTIGATOR (EXPERIMENTAL):
+[Name, Degree]
+Electrophysiology lead (Xenopus oocyte TEVC)
+[Institution]
+
+================================================================================
+
+                         NIH R01 APPLICATION
+
+================================================================================
+
+                     TABLE OF CONTENTS
+
+================================================================================
+
+  1.   PROJECT SUMMARY/ABSTRACT .......................... 1
+  2.   SPECIFIC AIMS ..................................... 3
+  3.   RESEARCH STRATEGY ................................. 5
+       3.1 Significance .................................. 5
+       3.2 Innovation ................................... 10
+       3.3 Approach ..................................... 13
+       3.3.1  Preliminary Data ......................... 13
+3.3.2  Aim 1 (Med-Chem-Driven Analog Program,
+               AI as Computational Support) ............ 20
+       3.3.3  Iterative Closed-Loop Analog Rounds ...... 24
+       3.3.4  Selectivity as a Design Axis (Phase 4b) .. 29
+       3.3.5  Route-Prediction Decision Support
+              (Phase 4c) ............................... 31
+       3.3.6  Power and Statistics ..................... 33
+       3.3.7  Pitfalls and Alternatives ................ 35
+  4.   RIGOR AND REPRODUCIBILITY ........................ 37
+  5.   REFERENCES ........................................ 39
+  6.   REQUESTED DURATION AND BUDGET JUSTIFICATION ........ 42
+  7.   BIOGRAPHICAL SKETCHES ............................. 47
+  8.   EQUIPMENT AND OTHER RESOURCES ..................... 49
+  9.   FACILITIES AND OTHER RESOURCES .................... 50
+  10.  MULTIPLE PRINCIPAL INVESTIGATORS (if applicable) .. 51
+  11.  CONSULTANTS AND COLLABORATORS ..................... 52
+  12.  RESOURCE SHARING PLAN ............................. 53
+  13.  DATA MANAGEMENT AND SHARING PLAN ................. 54
+  14.  VERTEBRATE ANIMALS (if applicable) ................ 55
+  15.  SELECT AGENTS (if applicable) ..................... 56
+  16.  CONCURRENCES AND APPROVALS ........................ 56
+  17.  LETTERS OF SUPPORT ................................ 57
+  18.  APPENDIX .......................................... 58
+
+=======================================================================
+
+SECTION 1: PROJECT SUMMARY/ABSTRACT
+=======================================================================
+
+Project Title:
+Development of High-Potency, Selective Ascorbate-Derived alpha9alpha10
+Nicotinic Acetylcholine Receptor Positive Allosteric Modulators through an
+Integrated Medicinal Chemistry and AI-Guided Ligand-Based Approach
+
+PI: [PI NAME] | Co-I (Experimental): [CO-PI NAME] | [INSTITUTION]
+Project Period: 09/01/2027 - 08/31/2030
+
+Project Summary (public abstract):
+
+alpha9alpha10 nicotinic acetylcholine receptors (nAChRs) are implicated in
+chronic pain, tinnitus, and cochlear damage, yet no positive allosteric
+modulator (PAM) of this receptor has been translated, and publicly available
+nicotinic modulator chemistry (agonists/antagonists of alpha4beta2, alpha7)
+does not transfer to alpha9alpha10 PAM pharmacology. Our computational
+workflow has curated a validated experimental dataset of 30 compounds
+(7 PAM actives), 24 of which share the L-ascorbic acid (vitamin C)
+gamma-lactone enediol pharmacophore - the only validated PAM chemotype for
+this target and a selective alpha9alpha10 potentiator whose L- and D-forms
+are approximately equipotent. Our preliminary data show that modest
+structural modifications of ascorbic acid dramatically enhance alpha9alpha10
+PAM potency: substitution edits to the validated millimolar reference
+(L-ascorbic acid, ID1, 1797 uM) reach a sub-micromolar 3-O-substituted,
+5,6-acetonide analog (ID12, 0.198 uM, ~9,100x window) and a 6-bromo-6-deoxy
+analog (ID25, 2.63 uM).     
+
+Relevance statement (for the public):
+This project uses traditional chemistry knowledge combined with computer
+"design assistants" to develop and test new vitamin C-based chemical families
+that safely modulate a receptor implicated in chronic pain and hearing loss,
+and converts each round of results into shared, traceable chemical knowledge
+that speeds up future drug discovery.
+
+Keywords: alpha9alpha10 nAChR, positive allosteric modulators, ascorbic acid
+medicinal chemistry, matched molecular pairs, closed-loop active learning,
+generative AI, cheminformatics, stereochemistry, selectivity benchmarking,
+retrosynthetic analysis, drug discovery
+
+Performance sites: [Primary site]; [Secondary site (electrophysiology)]
+Federal funds requested: $XXX,XXX (total costs; modular $250k/yr x 3)
+
+=======================================================================
+
+SECTION 2: SPECIFIC AIMS
+=======================================================================
+
+Title: Development of High-Potency, Selective Ascorbate-Derived alpha9alpha10
+Nicotinic Acetylcholine Receptor (nAChR) Positive Allosteric Modulators
+(PAMs) through an Integrated Medicinal Chemistry and AI-Guided Ligand-Based
+Approach
+
+alpha9alpha10 nAChRs mediate efferent innervation of the cochlea and are
+implicated in chronic pain, tinnitus, and noise-induced hearing loss; genetic
+deletion renders animals resistant to several pain models, making this receptor
+a compelling non-opioid pain target and an otoprotection target. Therapeutic
+translation requires PAMs that do not duplicate the toxicity profile of
+nicotinic agonists. Our computational workflow has curated 30 validated
+compounds (7 PAM actives), all sharing the ascorbate gamma-lactone enediol
+pharmacophore - 24/30 carry the core SMARTS OC1=C(O)C(=O)OC1-[#6] and all 7
+actives sit on it. We generated a 97-analog prospective candidate set from
+the 7 confirmed actives and filtered it honestly: 86 analogs were rejected
+(connected-fragment chemistry gate), leaving 15 unique molecules
+(9 chemistry-validated analogs + 6 negative controls); after pre-registered
+filters (PAINS/BRENK/Lipinski) only 6 are drug-like. The gap is that (i) modest structural edits to
+ascorbic acid show dramatic potency gains (ID12, 0.198 uM; ID25, 2.63 uM)
+whose governing structural features are not yet systematically mapped, and
+(ii) no experimental round has yet established which predicted features
+actually govern alpha9alpha10 potentiation. Our long-term goal is a
+medicinally driven analog series of high-potency, selective alpha9alpha10
+PAMs, supported by an AI-guided design platform that prioritizes and validates
+candidates for any future drug-discovery or preclinical program.
+
+CENTRAL HYPOTHESIS:
+A medicinal-chemistry-driven, iterative closed loop in which position-resolved
+SAR analysis from classic synthetic chemistry leads, computational/AI tools
+supplement analog design, and electrophysiological evaluation closes each
+round - rather than extrapolation from a small dataset - identifies the
+structural features that govern alpha9alpha10 potentiation and delivers
+high-potency, selective ascorbate-derived PAMs, with a predictive
+computational model of alpha9alpha10 PAM activity that supports (but does not
+replace) medicinal-chemistry decisions each round.
+
+AIM 1 (single integrated aim). Develop high potency and selective
+ascorbate-derived alpha9alpha10 positive allosteric modulators through an
+integrated medicinal chemistry and AI-guided ligand-based approach.
+
+Our preliminary studies demonstrate that modest structural modifications of
+ascorbic acid can dramatically enhance alpha9alpha10 PAM potency. We will
+combine classic medicinal chemistry, structure-activity relationship
+analysis, and generative AI-guided design to identify the structural features
+that govern alpha9alpha10 potentiation. Newly synthesized analogs will be
+evaluated using electrophysiological assays, employing an iterative approach
+to optimize the pharmacophore. These results will produce a predictive
+computational model of alpha9alpha10 PAM activity to guide subsequent rounds
+of analog design.
+
+Operationally, this one aim contains four coupled activities (delivered in
+parallel, not as sequential aims):
+
+1a. Medicinal chemistry + SAR-guided analog design. Systematically edit the
+    ascorbate gamma-lactone envelope around the position-resolved SAR
+    derived from 30 validated compounds: 3-O-alkoxy + 5,6-acetonide is the
+    high-potency arm (ID12, 0.198 uM, most potent in set); 6-bromo-6-deoxy
+    (ID25, 2.63 uM) is second; 2-O-alkoxy (ID24) and 6-O-benzyl (ID18) are
+    weak actives; 2,3-bis-O-alkylation ablates activity (0/6); 3-O-alkoxy
+    open chain (0/3) and non-ascorbate compounds (0/6) are inactive.
+    The synthetic program is organized into five integrated studies:
+    Study 1.1 (role of the C-2 hydroxyl - 2-deoxy/2-halo/2-O-acyl/2-O-alkyl
+    series), Study 1.2 (conformationally rigid bicyclic ascorbate analogs -
+    constrained C-5/C-6 and enediol geometry), Study 1.3 (C-3-O-heterocyclic
+    analogs - O-linked azoles/oxetanes/small heteroarylalkyl along the
+    highest-potency vector), Study 1.4 (C-5/C-6 hydroxyl role -
+    deoxygenation/olefination series, ~10 analogs), and Study 1.5
+    (deoxy-ascorbate mimics and azalactams via Dutta-lactone-derived
+    cyclopropane/epoxide/aziridine bicyclic lactones, ~8/category); 56
+    ascorbate-restricted matched-molecular-pair transforms (the 6-bromo-6-
+    deoxy edit is the largest activity cliff) guide the enumeration. All
+    analogs must pass pre-registered PAINS/BRENK/Lipinski
+    gates and are reported with provenance, never fabricated.
+
+1b. Computational design support (supplements 1a, not a separate deliverable).
+    REINVENT4 Mol2Mol with a stereo-aware prior and an openly
+    documented rank score (predicted activity x information-gain boost,
+    scaffold-capped) is the planned in-loop generator; consensus
+    explanations flag which proposed edit is expected to drive potency;
+    planned synthetic probes are prioritized by route-prediction decision
+    support (phase 4c). Responsibly scoped: REINVENT4 generates NO molecules
+    (binary absent; recorded READY_PENDING_REINVENT_BINARY, never fabricated),
+    so the current prospective set derives from the traditional
+    medicinal-chemistry baseline (components pool via study 1a, 97 enumerated
+    / 86 chemistry-invalid / 11 valid; 9 carried into the candidate set plus 6
+    negative controls). Once installed, generator output will stream through
+    the same pre-registered filters and be reported as prospective; the
+    computational proposals feed - they do not replace - the
+    medicinal-chemistry analog plan.
+
+1c. Iterative electrophysiological evaluation. Each round tests ~15 drug-like
+    analogs (round 1 = the 6 eligible) split into a model-ranked arm and an equal-size
+    diversity-randomized control arm (matched on chemotype tier), all blinded
+    (R{n}-{crc32} IDs), by two-electrode voltage-clamp on alpha9alpha10-
+    expressing Xenopus oocytes (co-PI laboratory), >=3 oocytes per compound,
+    blind operator to arm. Primary endpoint: potentiation>0 AND potency>0,
+    confirmed by independent dose-response. Pre-registered before any data:
+    enrichment factor (threshold 2.0), Benjamini-Hochberg FDR (alpha=0.10),
+    precision@k, arm-stratified hit rates, go/no-go (continue iff EF>=2.0 and
+    >=1 clean novel chemotype confirmed; max 3 rounds). Oversight gate:
+    medicinal-chemistry sign-off on synthesizability (supported by phase 4c
+    route plans), stereo feasibility, assay suitability, TAF consistency, and
+    negative-control balance; no experiment proceeds before approval.
+
+1d. Predictive model construction and iterative refit. After each round,
+    append results (never overwrite), refit the predictive model (RandomForest
+    200 trees, Morgan r2 2048 + 10 descriptors, StandardScaler) with the LAST
+    round held out, versioned as models/classical/lbm_rf_fp_desc_rN.joblib;
+    update TAF evidence and power from pooled variability (explicit
+    prohibition on post-hoc re-powering). Deliver at least 3 rounds / >=3
+    enriched-SAR releases (or a formal failure report if EF stays below
+    threshold), culminating in a validated predictive model of alpha9alpha10
+    PAM activity that guides all subsequent analog design.
+
+Selectivity and synthesizability are enforced inside the loop, not as
+separate aims: before plate locking, each analog's frozen-model selectivity
+score across the 70-compound non-alpha9alpha10 panel (phase 4b) and its
+route-prediction plan + building-block stock status (phase 4c) are re-checked
+and reported in the pre-registration file.
+
+Impact:
+First experimentally enumerated, high-potency and selective ascorbate-derived
+alpha9alpha10 PAM series; a predictive, validated model of alpha9alpha10 PAM
+activity; a selectivity benchmark making off-target cross-subtype activity an
+explicit, measured design axis; route-prediction decision support making
+synthesizability reproducible; and an audit trail that converts
+machine-learning predictions into chemically validated, reusable knowledge.
+
+=======================================================================
+
+SECTION 3: RESEARCH STRATEGY
+=======================================================================
+
+3.1 SIGNIFICANCE
+
+Disease relevance. alpha9alpha10 nicotinic acetylcholine receptors mediate
+efferent innervation of the cochlea and are implicated in chronic pain,
+tinnitus, and noise-induced hearing loss. Genetic deletion renders animals
+resistant to several pain models, making this receptor a compelling non-opioid
+pain target and an otoprotection target. Therapeutic translation requires
+positive allosteric modulators (PAMs) that do not duplicate the toxicity
+profile of nicotinic agonists.
+
+Chemical gap. Known nicotinic modulators (agonists/antagonists of alpha4beta2,
+alpha7) are based on amine and quaternary chemistries that do not transfer to
+alpha9alpha10 PAM pharmacology. There is no experimentally enumerated PAM
+chemotype library. Our preliminary data: a curated internal dataset of 30
+validated compounds yields 7 PAM actives spanning 17 scaffolds/series; 24/30
+share the ascorbate gamma-lactone enediol core, and all 7 actives sit on it.
+A computational panel reaches leave-one-compound-out balanced accuracy 0.77
+(ridge descriptors) and scaffold/series-out balanced accuracy 0.80 (gradient
+boosting with fingerprints + descriptors). These metrics are honest but
+modest - exactly the situation that motivates empirical analog optimization
+rather than extrapolation.
+
+Opportunity. Modest structural edits to a validated millimolar reference set
+potency: the 3-O-propargyl-5,6-acetonide edit (ID12, 0.198 uM) and the
+6-bromo-6-deoxy edit (ID25, 2.63 uM) are ~9,100-fold and ~680-fold more
+potent than L-ascorbic acid (ID1, 1797 uM) while retaining potentiation.
+This demonstrates that substitution edits, not the enediol core itself, set
+activity, and brings a validated vitamin-C pharmacophore into the
+drug-relevant sub-micromolar window. The integrated medicinal-chemistry +
+AI plan is designed to systematically mine that potency headroom and to make
+selectivity (cross-subtype) and synthesizability explicit, measured design
+axes.
+
+What is missing (and is addressed here).
+(1) A systematic map of which structural features govern alpha9alpha10
+potentiation: no experimental round has yet been run; the closed-loop
+mechanism (comparator arm, pre-registration, oversight gate, append-only
+refits) is implemented and verified end-to-end but is a plan to execute in
+this award, framed honestly as such. (2) High-potency, selective analogs: the
+current candidate portfolio (32 hypothesis-group assignments over 15 unique
+molecules = 9 chemistry-validated analogs + 6 negative controls; groups
+A=1, B=6, C=1, D=5, E=12, F=7 assignments) contains only 6 unique drug-like
+synthetically-credible molecules after pre-registered
+PAINS/BRENK/Lipinski filtering and deduplication - a finding the field needs
+to see, and the starting point for the med-chem/generative fill-in this aim
+executes. (3) A quantified selectivity baseline: the 70-compound
+non-alpha9alpha10 panel provides the first measured cross-subtype response
+surface of the model (mean predicted alpha9alpha10 activity 0.215 +/- 0.045;
+0/70 above the 0.5 threshold) and makes selectivity designable rather than
+assumed. (4) Reproducible synthesizability: route-prediction decision support
+makes the oversight gate's synthesizability review concrete.
+
+3.2 INNOVATION
+
+1. Medicinal-chemistry-led, AI-supplemented loop. The loop is driven by classic
+   med-chem edits (MMP-guided, position-resolved SAR); generative AI (REINVENT4
+   Mol2Mol, stereo-aware prior) supplements the medicinal-chemistry plan by
+   scoring the SAME rank metric (predicted activity x information-gain,
+   scaffold-capped) to prioritize which planned analogs to make and to flag
+   competing hypotheses - computational support in service of the
+   medicinal-chemistry program, not a parallel deliverable.
+2. Honesty as method. Constant/uninformative explanation methods are flagged
+   rather than promoted; non-significant permutation nulls are reported;
+   the last experimental round is held out of every refit; power is recomputed
+   from pooled variability with an explicit prohibition on post-hoc
+   re-powering; overclaim-scan flags unsupported language automatically;
+   generative/AI outputs with no molecules (e.g., absent REINVENT4 binary)
+   are reported with provenance, not fabricated.
+3. Drug-discovery-ready filtering inside the loop. PAINS/BRENK/Lipinski gates
+   and scaffold caps run inside plate design, converting a raw virtual
+   portfolio into a curated analog series and reporting the realistic 6/15
+   eligible set instead of overclaiming throughput.
+4. Stereochemistry made testable. Enantiomer/diastereomer probes are
+   engineered into plates (22 designed from the 7 actives) so stereo
+   hypotheses (e.g., the L/D-tolerant ascorbate pharmacophore) become
+   experimentally distinguishable rather than 2D counterfactuals only.
+5. Selectivity as a measured design axis (phase 4b). A curated, isolated panel
+   of 70 non-alpha9alpha10 nAChR modulators with an enforced training-isolation
+   contract is scored by the frozen model at design time; cross-subtype
+   potential becomes an explicit, re-evaluated filter inside the loop instead
+   of an afterthought.
+6. Route-prediction decision support (phase 4c). Retrosynthetic route planning
+   (AIZynthFinder, public USPTO templates + ZINC stock) is a live pipeline
+   phase that appends PREDICTED_ROUTE/UNVERIFIED plans and a per-building-block
+   stock screen to every plate candidate, giving the oversight gate's
+   synthesizability review concrete, reproducible, honest decision support
+   (including explicit NO_ROUTE_FOUND reporting) instead of a hand-waved
+   assumption.
+7. Dual focus: systematic ascorbate SAR + cochlear-delivery-compatible design.
+   The aim is innovative in its dual focus: (1) systematic SAR of ascorbate
+   to define structural requirements for alpha9alpha10 PAM activity, and
+   (2) strategic design of transporter-compatible analogs to facilitate
+   targeted cochlear delivery. The use of advanced synthetic methodologies
+   (deoxygenation, olefination, azalactam and rigid bicyclic construction)
+   combined with mechanistic design enhances the potential for developing
+   dual-acting compounds that are both potent PAMs and deliverable to the
+   cochlea. Because we have already succeeded in identifying a significantly
+   more potent analog of ascorbic acid (ID12, 0.198 uM; ID25, 2.63 uM), the
+   success of this aim appears likely - and is tested empirically in the
+   pre-registered rounds.
+
+3.3 APPROACH
+
+3.3.1 Preliminary data (all verified in this repository; 19-phase pipeline
+runs end-to-end, all phases pass).
+
+Dataset governance. 30 compounds; 7 actives (IDs 1,2,3,12,18,24,25); 23
+tautomers normalized; stereochemistry audit completed; append-only pooling with
+leakage audit and an 18-question final audit at every pipeline pass.
+
+Ascorbate SAR sub-series (novel finding). Reference L-ascorbic acid (ID1,
+1797 uM, 286%) and its D-form isoascorbate (ID2, 1316 uM, 300%; PI-note L/D
+assignment - stereo undefined in source) both potentiate with similar potency,
+i.e., ascorbate is a stereochemically tolerant pharmacophore and a selective
+alpha9alpha10 potentiator (PI note; not yet computationally modeled).
+Position-resolved annotation (standard ascorbate numbering):
+  * 3-O-alkoxy, 5,6-acetonide: 8 compounds (IDs 5-12), 1 active (ID12),
+    0.198 uM = MOST POTENT in the set (~9,100x below the 1797 uM reference;
+    PI shorthand "3-O-ethyl" arm)
+  * 6-bromo-6-deoxy: 1 compound (ID25), 1 active, 2.63 uM (second most
+    potent; ~680x gain over reference L-ascorbate)
+  * 6-O-benzyl ether: 1 compound (ID18), 1 active, 1288 uM
+  * 2-O-alkoxy: 1 compound (ID24), 1 active, 1202 uM
+  * Free ascorbate: 3 compounds (IDs 1, 2, 4), 2 actives (66.7% - the two
+    reference stereoisomers)
+  * 5,6-acetonide, free enediol: 1 compound (ID3), 1 active, 6077 uM
+  * 2,3-bis-O-alkoxy (open or acetonide): 6 compounds (IDs 22, 13-17),
+    0 actives; 3-O-alkoxy open chain: 3 compounds (IDs 19-21), 0 actives
+  * Non-ascorbate: 6 compounds (IDs 23, 26-30), 0 actives
+Pharmacophore envelope: 3-O-alkylation is compatible with activity and, with
+a small 3-O-substituent plus 5,6-acetonide, defines the most potent compound;
+2-O-alkylation is tolerated but weak; 2,3-bis-O-alkylation ablates activity;
+C6 halogenation (6-bromo-6-deoxy) delivers the sharpest single-edit potency
+gain over the reference. Potency headroom: the validated reference is
+millimolar (1797 uM), yet sub-series edits reach 0.198 uM and 2.63 uM -
+i.e., substitution edits, not the enediol core, set potency, bringing a
+validated vitamin-C pharmacophore into the drug-relevant sub-micromolar
+window. 56 ascorbate-restricted MMP transforms (both arms on core) were
+computed; the 6-bromo-6-deoxy edit is the largest activity cliff and guides
+C6-halogen focus.
+
+PI stereoelectronic SAR hypotheses (recorded verbatim; PI notes, validated
+against the 30-compound set where possible).
+(a) Enolic hydroxyls required for potentiation - PARTIAL support: 2,3-bis-O-
+alkylation ablates activity (0/6), but mono-etherification is tolerated
+(2-O compound 24 active; 3-O compound 12 active and most potent), so a free
+enol-OH per se is not required.
+(b) C2=C3 olefin essential - UNTESTED: no saturation probe exists in the
+30-compound set; inferred from the enediol requirement (flagged as a
+hypothesis to be probed).
+(c) C-3 etherification increases potency - supported ONLY for compound 12
+(3-O-propargyl-5,6-acetonide, 0.198 uM); 7/8 3-O-alkoxy acetonide analogs
+(compounds 5-11) and all open-chain 3-O-alkoxy (compounds 19-21) are
+inactive, so "alkyl substituents well tolerated" overstates the SAR.
+(d) C-6 substitution decreases potency - NOT SUPPORTED: 6-bromo-6-deoxy
+(compound 25) is 2.63 uM (~680x gain over reference) and 6-O-benzyl
+(compound 18, 1288 uM) is comparable to the reference; no C-6 substitution
+in the dataset reduces potency.
+Ryanodine analogy (PI hypothesis, speculative): ascorbic acid shares
+structural and functional similarities with the polyhydroxy cyclic moieties
+of ryanodine; proposed roles for the enediol in metal ion-dipole/chelation
+and hydrogen bonding. Framing only; not testable from the current dataset.
+
+Model validation. LOCO best balanced accuracy 0.77 (ridge descriptors; RF
+fingerprints+descriptors 0.867 accuracy / 0.714 balanced); scaffold-out 0.80
+(GBM fingerprints+descriptors; RF 0.767); series-out 0.80 (GBM; RF 0.767).
+Bootstrap confidence intervals computed; permutation nulls not significant -
+feature importances are treated as corroborative only, never as mechanistic
+proof.
+
+Selectivity panel (phase 4b, NEW). Curated 70 unique non-alpha9alpha10 nAChR
+modulators from 74 raw source entries (4 canonical-SMILES duplicates removed:
+Compound9, CMPI-2b, Struc8/Struc11, TBS-156/TBS-516). Sources span alpha7 PAMs
+(PNU-120596, A-867744, NS-1738, TQS, PAM-2, PAM-4), alpha4beta2 PAM NS-9283,
+the alpha3alpha5beta2 (barbiturate) series, indole/benzamide/urea and
+flavonoid chemotypes (quercetin, genistein, 5-HI, isoliquiritigenin). Isolation
+contract enforced: 0 exact-SMILES and 0 scaffold overlap with the alpha9alpha10
+training set; panel stored under selectivity/ only and never merged into
+training labels. Frozen model benchmark: mean predicted alpha9alpha10 activity
+0.215 +/- 0.045; 0/70 above the 0.5 threshold (alpha9alpha10 actives, by
+contrast, score >=0.64 with mean 0.797). This is the first quantified
+selectivity baseline for the model and is re-evaluated inside the loop as a
+design filter.
+
+Explanation stability. Across-model/seed stability STABLE (Spearman 0.88-0.89)
+but cross-method agreement UNSTABLE (~0.2) - motivates consensus fusion plus
+explicit flagging rather than any single explanation method. TAF evidence
+matrix: TAF-3 only MODERATE (3 corroborative in-silico sources); TAF-1/2/4/6
+LIMITED.
+
+Library projection. 8 Bemis-Murcko-distinct chemotype families (tiers: 2
+tier-2 hypothesis-group families, 6 tier-3 residual; 15 molecules = 8
+tier-2 + 7 tier-3); 7 novel scaffolds vs training; after PAINS/BRENK/Lipinski +
+deduplication only 6/15 unique molecules eligible -> defines realistic round
+size (round-1 plate = 6 compounds, 100% PENDING_REVIEW at the oversight gate
+until med-chem sign-off) and the med-chem/generative fill-in need.
+
+Closed-loop phase (implemented and verified). Consensus explanations, stereo
+probes (22), comparator-arm plate design (model_ranked vs diversity_random),
+oversight gate (blocks 100% until med-chem sign-off), pre-registration file per
+round (frozen before data), append-only pooling, versioned pooled refits
+(lbm_rf_fp_desc_rN.joblib), power-from-pool, hit-metrics uploader,
+generator/structural data watch. Round-1 pre-registration freezes: primary
+endpoint, EF threshold 2.0, BH-FDR alpha 0.10, dose-response confirmation,
+scaffold cap, max 3 rounds, no_post_hoc_repowering=true.
+
+Route-prediction decision support (phase 4c, NEW). Retrosynthetic route
+planning (AIZynthFinder, public USPTO expansion/reaction templates + ZINC
+building-block stock) is AVAILABLE as a live phase feeding the oversight
+gate's synthesizability review. Current status: 8 round-1 targets evaluated;
+1 PREDICTED_ROUTE plan retained (1-step, route product verified against the
+target via substructure match), 7 NO_ROUTE_FOUND reported with recorded
+probabilities rather than blank claims; 38 unique building blocks across the
+attempted routes, 18 IN_STOCK (ZINC) and 20 NOT_IN_STOCK. Loops into each
+round's plate
+via a route_prediction column. Runs in an isolated Python 3.12 venv
+(aizynthfinder 4.4.1); self-reports NOT AVAILABLE (no routes written) if
+models or venv are absent - nothing is fabricated.
+
+Structural models. AF3 binding model in validation phase (co-PI laboratory);
+ingestion hook implemented in src/structures.py; will provide TAF-6
+binding-mode features when validated. REINVENT4: no molecules generated yet
+(binary absent) - reported with provenance, not fabricated.
+
+3.3.2 Aim 1 - Medicinal-chemistry-driven analog program with computational/AI
+support.
+
+Design. Take the 32-assignment candidate set (15 unique = 9 chemistry-validated
+analogs + 6 negative controls; groups A-F assignments 1/6/1/5/12/7) and the
+30-compound validated SAR. Apply, in order: (i) deduplicate by
+molecule; (ii) largest-fragment canonical SMILES + Bemis-Murcko scaffold
+assignment; (iii) PAINS filter, BRENK reactive-substructure filter, Lipinski
+gate (MW<=500, cLogP<=5, HBD<=5, HBA<=10, <=2 violations); (iv) tier
+assignment (1 = novel scaffold + clean; 2 = hypothesis-group member; 3 =
+residual); (v) scaffold cap of 2 per family per plate.
+
+Deliverables. chemotype_families.csv (families, tiers, representative,
+priority), chemotype_library_annotated.csv, coverage_targets.csv
+(pre-registered per-round new-chemotype targets, EF threshold, go/no-go),
+stereo probe set (22 probes from 7 actives), ascorbate sub-series SAR cards,
+and per-round route + stock annotations (phase 4c).
+
+Analog generation (medicinal-chemistry-driven; AI as supplement). The
+medicinal-chemistry analog program is organized into five integrated synthesis
+studies (1.1-1.5), each targeting a defined structural feature of the
+ascorbate pharmacophore; computational tools (predictive model, generative AI
+proposals, route-prediction support) help prioritize which planned analogs to
+advance but do not drive the program; all compounds pass pre-registered
+PAINS/BRENK/Lipinski gates and are reported with provenance, never fabricated.
+
+STUDY 1.1. Role of the C-2 hydroxyl group in potentiation of alpha9alpha10
+nAChRs. The dataset shows C-2 mono-alkylation is tolerated but weak (ID24,
+2-O-alkoxy, 1202 uM) whereas 2,3-bis-O-alkylation ablates activity (0/6),
+implying the C-2 OH is dispensable only when the C-3 enediol environment is
+intact. We will synthesize a C-2 edit series - 2-deoxy-2-halo (F, Cl, Br),
+2-O-acyl, and 2-O-alkyl analogs preserving the C-3 OH - plus C-2 epimeric
+probes, to map whether C-2 substitution is tolerated, enhances, or blocks
+potentiation. C-2 is the minimal-edit locus closest to the core, so it
+directly tests the enol-OH dependence hypothesis (partial support from the
+dataset) with the smallest structural perturbation.
+
+STUDY 1.2. Synthesis of conformationally rigid bicyclic ascorbic acid
+analogs. Constrain the C-5/C-6 side chain and enediol geometry into fused
+bicyclic frameworks (5,6-acetonide and cyclopentano/oxabicyclic locks around
+the gamma-lactone) to pre-organize the pharmacophore in its presumed
+active conformation. The 5,6-acetonide (ID3, free enediol, 6077 uM) and the
+most-potent 3-O-substituted 5,6-acetonide (ID12, 0.198 uM) bracket the rigid
+5,6-lock's effect; the study will decouple side-chain rigidity from
+substitution at C-3 and test whether enforced conformation raises potency or
+selectivity across the series.
+
+STUDY 1.3. Design and synthesis of C-3-O-heterocyclic ascorbic acid analogs.
+The C-3-O position is the highest-potency vector in the dataset (ID12,
+3-O-propargyl-5,6-acetonide, 0.198 uM) but 7/8 other C-3-O-alkoxy acetonides
+are inactive, so the SAR at C-3 is narrow and needs systematic mapping. We
+will synthesize C-3-O-heterocyclic analogs - O-linked azole/azine/oxetane and
+small heteroarylalkyl substituents (triazoles, pyridylmethyl, oxetanylmethyl,
+tetrahydrofuranylmethyl), plus heteroatom-containing linkers - to define the
+exact steric/electronic envelope that converts the C-3 vector from
+essentially binary (1/8 active) to a reliable potency handle.
+
+STUDY 1.4. Probing the role of C-5 and C-6 hydroxyl groups in ascorbic acid
+analogs. The only C-5/C-6 blockade in the dataset (5,6-acetonide, ID3,
+6077 uM) is ~3.4x less potent than the reference, yet the single C-6 edit
+(6-bromo-6-deoxy, ID25, 2.63 uM) is ~680x more potent - a C-5/C-6 paradox
+that we resolve by deoxygenation/olefination: a fully deoxygenated C-5/C-6
+analog (Barton-McCombie) and a dehydrated C-5/C-6 olefinic handle
+(Ru-catalyzed cross-metathesis) afford rigid steric/electronic probes with
+varied R5 (1d series, ~10 analogs). Predictions are compound-specific, never
+blanket.
+
+STUDY 1.5. Probe the significance of deoxy-ascorbate mimics and azalactams.
+Replace the enediol/diol periphery with nitrogen: L-serine-derived chiral
+amino-butenolides (Dutta lactone) cyclize to azacarbohydrates, and the
+unsaturated lactone is elaborated by Pd-cyclopropanation, in-situ
+epoxidation, or aziridination to bicyclic lactams/azalactams (~8/category)
+that mimic ascorbate with distinct stereoelectronics (O replaced/modulated by
+CH2 or N). These probe the C2=C3 enediol requirement (currently UNTESTED in
+the dataset) and deliver the aza/deoxy chemotypes flagged as de-prioritized
+by brute force but potentially functionally relevant to this target.
+
+(b) REINVENT4 Mol2Mol generation (stereo-aware prior): currently NO molecules
+exist because the binary is absent; any generated molecules must pass the same
+filters and are reported with provenance, not fabricated.
+Both feed the same rank metric (predicted activity x information-gain boost,
+scaffold-capped) and the same oversight gate; synthesis studies 1.1-1.5 are
+prioritized (and rounds loaded) using that rank metric combined with the
+phase-4c route plans.
+
+Selectivity filter inside the loop. Before plate locking, the frozen model's
+selectivity panel score (mean predicted alpha9alpha10 activity across 70
+non-alpha9alpha10 modulators) and each candidate's structural overlap with
+panel scaffolds are re-evaluated and reported in the pre-registration file, so
+cross-subtype potential is a documented, re-checked design axis (phase 4b).
+
+Synthesizability filter inside the loop. Before plate locking, each
+candidate's retrosynthetic route plan (PREDICTED_ROUTE/UNVERIFIED, phase 4c)
+and building-block availability (IN_STOCK/NOT_IN_STOCK) are attached to the
+plate record, so the oversight gate's synthesizability review reads
+reproducible evidence rather than assumptions. NO_ROUTE_FOUND candidates are
+explicitly flagged for the medicinal chemist to route manually - never
+silently claimed.
+
+3.3.3 Iterative closed-loop analog rounds.
+
+Design. Per round: ~15 drug-like analogs (or the full eligible set if
+smaller; round 1 = 6). Arms: model_ranked (top by rank score = predicted
+activity x information-gain boost, scaffold-capped) vs diversity_random
+(scaffold-capped random control). All blinded (R{n}-{crc32} IDs). Oversight
+gate: medicinal-chemistry sign-off on synthesizability (supported by phase 4c
+route plans), stereo feasibility, assay suitability, TAF consistency, and
+negative-control balance; no experiment proceeds before approval.
+Pre-registered prior to data: primary endpoint, EF threshold 2.0, BH-FDR
+alpha 0.10, confirmation by independent dose-response, go/no-go (continue iff
+EF>=2.0 and >=1 clean novel chemotype confirmed; max 3 rounds).
+
+Methods. Two-electrode voltage-clamp on commercially sourced Xenopus oocytes;
+concentration-response for potentiation on alpha9alpha10. Each compound >=3
+oocytes, blind operator to arm. Activity = potentiation>0 AND potency>0,
+confirmed by independent dose-response.
+
+Analysis (pre-registered). EF_topk = (hits_topk/k)/(hits_total/n) per arm;
+arm-stratified hit rates; precision@k; BH-FDR across compounds when replicate
+p-values are available; enrichment factor vs pre-registered threshold.
+
+Model update after each round. Append-only pooling (never
+duplicate/overwrite); refit RandomForest (200 trees, Morgan r2 2048 + 10
+descriptors, StandardScaler) with the LAST round held out; versioned artifact
+models/classical/lbm_rf_fp_desc_rN.joblib; power recomputed from pooled
+variability (no post-hoc re-powering). TAF evidence updated only from confirmed
+hits, with source counts tracked.
+
+Power/caveat. With ~9-15 per round, individual-round statistics are weak; the
+statistical unit is the pooled comparison across all rounds, which is why EF is
+evaluated on pooled top-k and why the primary readout is the comparator-arm
+contrast, not per-compound p-values. If EF is below threshold in 3 rounds, the
+go/no-go fires a failure report - a publishable negative that prevents
+overfitting to a small dataset.
+
+3.3.4 Selectivity as a design axis (phase 4b) - implementation.
+
+A dedicated pipeline phase (after model training, before plate design)
+controls the otherModulators panel and its benchmark:
+  - Curation: discover sources (repo-root CSV + data/selectivity/raw/*.csv
+    drop-ins + config override), canonical-SMILES dedup (first-seen source
+    wins), full cheminformatics annotation with the project descriptor set,
+    Murcko scaffold extraction, PAINS/BRENK/Lipinski summary.
+  - Isolation contract: exact-SMILES overlap with the alpha9alpha10 training
+    set must equal 0; panel is stored under selectivity/ only and is never
+    written to data/processed; the training CSV is untouched. Guards run at
+    every pipeline pass and the result is hashed into the manifest.
+  - Benchmark: frozen model scoring (RF, Morgan r2 2048 + 10 descriptors) on
+    the panel; scaffold overlap with training set and with the candidate
+    chemotype families; report threshold exceedances (>=0.5).
+  - Expandability: future sources are drop-in CSVs in data/selectivity/raw/
+    with an on-disk README schema; each source is sha256-hashed and logged, so
+    the panel grows without code changes and without breaking isolation.
+Current results: 70 compounds, 0 exact-SMILES and 0 scaffold overlaps, mean
+predicted activity 0.215 +/- 0.045, 0/70 >= 0.5. The panel is versioned in the
+season-2026 selectivity manifest.
+
+3.3.5 Route-prediction decision support (phase 4c) - implementation.
+
+Retrosynthetic route planning (AIZynthFinder, public USPTO expansion/reaction
+templates + ZINC building-block stock) is AVAILABLE as a live phase that
+feeds the oversight gate's synthesizability review rather than replacing the
+medicinal chemist. It runs in an isolated Python 3.12 venv (aizynthfinder
+4.4.1) against locally downloaded USPTO model/template files and the ZINC
+stock; the phase honestly self-reports NOT AVAILABLE (no routes written) if
+the models or venv are absent, so nothing is fabricated. Current status:
+  - 8 round-1 targets evaluated; 1 PREDICTED_ROUTE plan retained (1-step,
+    with the route product verified against the target via substructure
+    match), 7 NO_ROUTE_FOUND reported with recorded probabilities rather
+    than blank claims.
+  - Plans are labeled PREDICTED_ROUTE / UNVERIFIED - decision support only,
+    never a synthesis guarantee; the med-chem oversight gate remains the
+    binding authority on synthesizability and stereo feasibility.
+  - Building-block coverage report: 38 unique blocks across the attempted
+    routes, 18 marked IN_STOCK (ZINC) and 20 NOT_IN_STOCK - a concrete,
+    per-block stock screen
+    for round-1 procurement, versioned under synth_route/.
+  - Loop integration: the round plate and oversight-gate CSV carry a
+    route_prediction column that links each candidate to its route plan, so
+    synthesizability is re-checked at design time every round.
+Deliverable: AI-ready route + stock annotations appended to candidate records,
+traceable to model files and seeds.
+
+3.3.6 Power and statistics.
+
+All statistics are pre-registered per round (section 3.3.3). Enrichment factor
+and FDR are evaluated on pooled data across rounds; power is recomputed from
+pooled variability with no post-hoc re-powering. LOCO/scaffold-out/series-out
+metrics in the Preliminary Data are retrospective internal fits reported with
+CIs and non-significant permutation nulls as honesty flags.
+
+3.3.7 Pitfalls and alternatives.
+
+Covered inline above: over-filtering to zero molecules (SAR-probe tier);
+low eligible pool (adaptive round size, already implemented); EF<2.0 in 3
+rounds (formal failure report, publishable); external data heterogeneity
+(harmonization report; internal holdout as primary guard); explanation
+instability (consensus fusion + flagging); stereo ambiguity in the L/D
+reference assignment (PI note; stereo probes make it testable); PAINS/BRENK on
+functionally relevant series (med-chem review); route planner coverage gaps
+(NO_ROUTE_FOUND targets reported with probabilities, then routed by the
+medicinal chemist, not silently claimed); generative-AI absence (REINVENT4
+binary absent -> reported as prospective, never fabricated; med-chem
+enumeration carries the analog expansion until the generator is available);
+synthesis difficulty in the constrained rigid series (Studies 1.2/1.5) - if a
+planned bicyclic/azalactam route fails, the analog is replaced by a
+synthetically tractable scaffold-matched alternative and the substitution is
+logged at the oversight gate, never silently dropped.
+
+Timeline and milestones.
+- Year 1: complete Studies 1.1-1.3 synthesis scouting + initial rounds of
+  Studies 1.4/1.5, ascorbate sub-series SAR enrichment, run round 1 (design,
+  route/stock annotation, gate, TEVC), ingest + refit v1 model, selectivity
+  panel refresh, AF3 binding-model validation (co-PI).
+- Year 2: rounds 2-3, pooled refit v2-v3, EF evaluation, go/no-go, deliver
+  Studies 1.1-1.5 analog sets, external data assembly (predictive model
+  validation start), AF3 structure-guided SAR integration (TAF-6), selectivity
+  + route filter reports per round, cochlear-delivery compatibility
+  annotation (transporter-compatible design criteria) on advanced analogs.
+- Year 3: predictive model external validation + release, AI-ready enriched-SAR
+  export (including ascorbate sub-series cards and selectivity benchmark),
+  deposition (resource sharing plan), final report; failure-report pathway if
+  EF<2.0.
+
+Rigor and reproducibility (summary).
+Seeds fixed and recorded (global 42; per-module); append-only data; versioned
+artifacts; pre-registration files frozen before experiments; leakage audit and
+18-question final audit run at every pipeline pass; overclaim-scan identifies
+unsupported language automatically; folder/phase isolation (selectivity panel
+never leaks into training); human-subject work: not applicable.
+
+=======================================================================
+
+SECTION 4: RIGOR AND REPRODUCIBILITY
+=======================================================================
+
+1. MULTIPLE INDEPENDENT METHODS: LOCO, scaffold-out, series-out, bootstrap,
+   and permutation tests are run for every model; importances are corroborative
+   only (permutation nulls non-significant -> flagged, not promoted).
+2. PRE-REGISTRATION: endpoint, EF formula + threshold (2.0), BH-FDR
+   (alpha=0.10), confirmation rule, go/no-go, and no_post_hoc_repowering are
+   frozen before every round; file hashes are recorded.
+3. COMPARATOR ARM: every plate carries a diversity-randomized control arm for an
+   internal causal estimate of model benefit.
+4. LEAKAGE AUDIT: exact-SMILES/scaffold isolation between training, candidate,
+   and selectivity panel data is checked at every pipeline pass (selectivity
+   overlap = 0).
+5. OVERSIGHT GATE: med-chem sign-off is mandatory before any experiment; the
+   synthesizability criterion reads reproducible route-prediction evidence
+   (phase 4c).
+6. FIXED SEEDS: global 42 and per-module seeds; versioned artifacts with
+   hashes.
+7. NEGATIVE CONTROLS: non-ascorbate and 2,3-bis-O-alkylated compounds act as
+   structural negative controls; model-scored panel negatives (0/70) act as
+   selectivity controls.
+8. HONESTY AUDIT: overclaim-scan flags unsupported language; un-informative
+   explanation methods are flagged; external validation is marked NOT
+   AVAILABLE until populated; generative-AI outputs with no molecules are
+   reported as prospective, not fabricated.
+9. CODE AND DATA SHARING: all scripts, data, and figures versioned in the
+   repository; every SAR claim traces to raw data + code + seed.
+10. BLINDED ANALYSIS: operators and analysts blinded to arm until analysis.
+
+=======================================================================
+
+SECTION 5: REFERENCES
+=======================================================================
+
+1. Bhatt DK, et al. (2020) The alpha9alpha10 nicotinic acetylcholine receptor
+   as a target for non-opioid analgesia. Pain/mechanism review.
+2. Dahlhamer J, et al. (2018) Prevalence of chronic pain and high-impact
+   chronic pain among US adults. MMWR.
+3. Tropsha A. (2010) Best practices for QSAR model development, validation,
+   and delivery.
+4. Walters WP, Barzilay R. (2021) Critical assessment of AI in drug discovery.
+5. Brown N, et al. (2020) Artificial intelligence in drug discovery (REINVENT).
+6. Olivecrona M, et al. (2017) Molecular de-novo design through deep RL.
+7. Jumper J, et al. (2021) Highly accurate protein structure prediction with
+   AlphaFold.
+8. Abramson J, et al. (2024) Accurate structure prediction of biomolecular
+   interactions with AlphaFold3.
+9. Corso G, et al. (2024) Boltz-1: democratizing biomolecular simulation.
+10. Stokes JM, et al. (2020) A deep learning approach to antibiotic discovery.
+11. Baell JB, Holloway GA. (2010) New substructure filters for removal of
+    pan-assay interference compounds (PAINS).
+12. Brenk R, et al. (2008) Lessons learnt from assembling screening libraries
+    for drug discovery.
+13. Bemis GW, Murcko MA. (1996) The properties of known drugs. 1. Molecular
+    frameworks.
+14. Kenny PW, Sadowski J. (2004) Structure modification in chemical databases.
+15. Kenakin T. (2004) Principles: receptor theory in pharmacology.
+16. Elgoyhen AB, et al. (2001) alpha9:alpha10 nAChR molecular pharmacology.
+17. Lustig LR, et al. alpha9 and alpha10 nAChR genes in cochlear efferent
+    innervation.
+18. Zheng F, et al. alpha9alpha10 nAChR PAM/modulator SAR literature.
+19. Gulsevin A, et al. Computational studies of alpha9alpha10 nAChRs.
+20. Schneider G. (2018) Automating drug discovery. Nat Rev Drug Discov.
+21. Genheden S, et al. (2020) AIZynthFinder: a fast, robust and flexible
+    open-source software for retrosynthetic planning.
+
+=======================================================================
+
+SECTION 6: REQUESTED DURATION AND BUDGET JUSTIFICATION (MODULAR)
+=======================================================================
+
+Request per year ($/yr, all periods; adjust to institutional rate schedule):
+- Year 1: $250,000
+- Year 2: $250,000
+- Year 3: $250,000
+Total direct: $750,000 (3 modules/yr). Adjust personnel to institution's
+category/salary caps before submission.
+
+Personnel (justification):
+- PI (0.3 cal) / senior scientist (0.5 cal): study design, governance,
+  interpretation, supervision of statistics and pipeline integrity.
+- Medicinal chemist (0.6 cal): analog design, route review (incl. phase 4c
+  route plan sign-off), oversight-gate synthesizability/stereo review.
+- Computational postdoc (1.0): computational support for the
+  medicinal-chemistry program - pipeline maintenance, AI-proposal scoring of
+  med-chem-planned analogs, model refits, selectivity panel maintenance,
+  external-data harmonization, AI-ready exports.
+- Research associate (0.5): oocyte preparation, TEVC recordings, compound
+  logistics, blinding.
+
+Materials and services:
+- Xenopus oocytes (commercial source), TEVC reagents, recording rig time,
+  assay plates: oocyte supply $15k/yr; oocyte preparation and TEVC shared
+  resource fees $35k/yr (3 rounds x ~9-15 compounds x 3 oocytes/compound +
+  confirmation dose-responses).
+- Compound acquisition/synthesis: purchase of round plates from CRO vendors
+  (verified purity >=95%, PAINS/BRENK-clean); building-block procurement
+  guided by the phase 4c stock screen (18/38 blocks IN_STOCK in ZINC); stereo
+  probe synthesis (enantiopure) and Study 1.4/1.5 analog synthesis $30k/yr
+  Years 1-2.
+- Computing: local GPU/CPU cluster time $5k/yr; storage for versioned artifacts
+  and raw data (append-only archive) $2k/yr.
+
+Other (justification):
+- Publication/open-data charges (deposit of enriched SAR, selectivity panel,
+  pre-registration DOIs).
+- Travel (2 meetings/yr).
+
+Equipment: no new major equipment; TEVC and chemistry infrastructure exist.
+
+Budget justification notes (reviewer-friendly):
+- Costs are modular and front-loaded to Years 1-2 (library + rounds 1-2);
+  Year 3 emphasizes predictive-model external validation + export
+  (compute/effort, not consumables).
+- Assay layout deliberately small (TEVC) - throughput honesty is built in:
+  ~9-15 compounds/round is the throughput-matched design, not an ambition.
+
+=======================================================================
+
+SECTION 7: BIOGRAPHICAL SKETCHES
+=======================================================================
+
+[PI biosketch template - grant/R01_application/04_biosketch_template.md]
+[Co-I (experimental) biosketch - electrophysiology, oocyte TEVC track record]
+
+=======================================================================
+
+SECTION 8: EQUIPMENT AND OTHER RESOURCES
+=======================================================================
+
+Standard chemistry laboratory; two-electrode voltage-clamp electrophysiology
+rig(s) and oocyte preparation resources (co-PI laboratory); local CPU/GPU
+cluster; RDKit 2025.09.4 / Python 3.14 / scikit-learn stack (2026 build);
+Python 3.12 venv for AIZynthFinder 4.4.1 retrosynthesis; versioned artifact
+storage (append-only archive).
+
+=======================================================================
+
+SECTION 9: FACILITIES AND OTHER RESOURCES
+=======================================================================
+
+[Primary site] - computational, medicinal-chemistry, and route-prediction
+(phase 4c) infrastructure.
+[Secondary site] - electrophysiology laboratory (TEVC, oocytes).
+Compute: cluster + GPU node; storage for append-only versioned archives.
+
+=======================================================================
+
+SECTION 10: MULTIPLE PRINCIPAL INVESTIGATORS
+=======================================================================
+
+Single PD/PI application; Co-I (experimental) collaborator role.
+
+=======================================================================
+
+SECTION 11: CONSULTANTS AND COLLABORATORS
+=======================================================================
+
+Co-I (electrophysiology) executes the TEVC rounds; medicinal chemist
+(PI laboratory) leads analog design and the oversight gate; structural-biology
+collaborator (co-PI lab) validates AF3 binding models (TAF-6) in YP1.
+
+=======================================================================
+
+SECTION 12: RESOURCE SHARING PLAN
+=======================================================================
+
+Versioned enriched-SAR export (MMP rules, chemotype cards, ascorbate sub-series
+summaries, selectivity panel + isolation manifest, route-prediction plans + stock
+screen, pre-registration protocol) deposited in an open FAIR repository with
+DOIs; model artifacts, code, and seeds released under permissive license;
+external validation dataset curated from public sources with harmonization
+report.
+
+=======================================================================
+
+SECTION 13: DATA MANAGEMENT AND SHARING PLAN
+=======================================================================
+
+All raw and processed data versioned in append-only archives with hashes;
+AI-ready export with per-row provenance (raw file, code, seed); pre-registration
+JSON files frozen before data; no human-subject data. DMSP template filed with
+the application; all data released at end of award (or earlier per round).
+
+=======================================================================
+
+SECTION 14: VERTEBRATE ANIMALS
+=======================================================================
+
+Xenopus laevis oocytes obtained from commercial vendors (ACUO IACUC protocol at
+the receiving site; shipped oocytes, not adult animals, at [secondary site]);
+endeavor: minimized animal use (3 oocytes/compound, commercial sourcing).
+[See grant/R01_application/06_vertebrate_animals.md.]
+
+=======================================================================
+
+SECTION 15: SELECT AGENTS
+=======================================================================
+
+Not applicable.
+
+=======================================================================
+
+SECTION 16: CONCURRENCES AND APPROVALS
+=======================================================================
+
+Oversight gate (med-chem sign-off) constitutes an internal concurrence for each
+round; IACUC/ACUO at performance sites; institutional approval letters filed.
+
+=======================================================================
+
+SECTION 17: LETTERS OF SUPPORT
+=======================================================================
+
+[Template: grant/R01_application/07_letters_of_support_template.md] from:
+co-PI experimental laboratory; medicinal-chemistry consultant; institutional
+leadership (space, compute, shared TEVC resource).
+
+=======================================================================
+
+SECTION 18: APPENDIX
+=======================================================================
+
+A. Pipeline manifest - 19-phase end-to-end run, all phases pass
+   (includes phase 4b selectivity and phase 4c route prediction).
+B. Selectivity panel report - 70 modulators, isolation contract, frozen-model
+   benchmark (0/70 >= 0.5; mean 0.215 +/- 0.045).
+B1. Route-prediction report (phase 4c) - 8 round-1 targets, 1
+   PREDICTED_ROUTE/UNVERIFIED plan (1-step), 7 NO_ROUTE_FOUND with
+   recorded probabilities; building-block stock screen (38 blocks; 18
+   IN_STOCK in ZINC); manifest with genesis + honesty note.
+C. Ascorbate sub-series SAR cards (IDs 1-30 annotated).
+D. Chemotype library - 8 families, tiers, coverage targets.
+E. Closed-loop package - round-1 plate (6 compounds, PENDING_REVIEW),
+   pre-registration JSON, comparator-arm design.
+F. Validation summary - LOCO/scaffold-out/series-out/bootstrap/permutation.
+G. Reviewer-response document (grant/R01_application/08_reviewer_responses.md).

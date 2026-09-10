@@ -22,6 +22,19 @@ from src.common import (
 RDLogger.DisableLog("rdApp.*")
 
 
+def is_valid_single_fragment_smiles(smi: str) -> bool:
+    """Chemistry validation: parseable SMILES that is one connected molecule."""
+    if not isinstance(smi, str) or not smi.strip():
+        return False
+    mol = Chem.MolFromSmiles(smi)
+    if mol is None:
+        return False
+    try:
+        return len(Chem.GetMolFrags(mol)) == 1
+    except Exception:
+        return False
+
+
 def morgan(mol):
     return AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)
 
@@ -140,11 +153,36 @@ class MedChemBaseline:
                      "source", "selection_reason", "scaffold_hop"])
         if len(out):
             out = out.drop_duplicates(subset=["isomeric_SMILES"])
-            out["molecule_id"] = [f"MC-{i}" for i in range(len(out))]
+            # Chemistry gate: keep only analogs that are parseable, single-fragment
+            # molecules. Invalid multi-fragment SMILES are NOT candidate compounds;
+            # they are recorded (with the failure reason) so nothing is fabricated.
+            out["chemistry_status"] = out["isomeric_SMILES"].apply(
+                lambda s: "VALID" if is_valid_single_fragment_smiles(s) else "INVALID_MULTI_FRAGMENT")
+            rejected = out[out["chemistry_status"] != "VALID"].copy()
+            rejected["rejection_reason"] = "SMILES unparseable or multi-fragment (not a single molecule)"
+            valid = out[out["chemistry_status"] == "VALID"].drop(columns=["chemistry_status"])
+            valid = valid.reset_index(drop=True)
+            valid["molecule_id"] = [f"MC-{i}" for i in range(len(valid))]
+            out = valid
+        else:
+            rejected = pd.DataFrame()
         save_df(out, str(self.cfg.resolve("generated/medchem_baseline_analogs.csv")))
-        self.log.info(f"Medchem baseline analogues generated: {len(out)}")
+        if len(rejected):
+            save_df(rejected, str(self.cfg.resolve("generated/medchem_rejected_invalid.csv")))
+        self.log.info(f"Medchem baseline analogues generated: {len(out)} valid "
+                      f"({len(rejected)} rejected as invalid chemistry)")
         save_manifest(
-            make_provenance("medchem_baseline", self.cfg, {"n_parents_used": int(len(df))}),
+            make_provenance("medchem_baseline", self.cfg, {
+                "n_parents_used": int(len(df)),
+                "n_enumerated_analogs": int(len(out)) + int(len(rejected)),
+                "n_valid_analogs": int(len(out)),
+                "n_rejected_invalid_chemistry": int(len(rejected)),
+                "rejection_reason": ("analog SMILES that do not parse to a single "
+                                     "connected molecule (e.g. multi-fragment "
+                                     "substituent-scan outputs) are excluded from "
+                                     "the candidate pipeline"),
+                "valid_analogs_only": True,
+            }),
             str(self.cfg.resolve("chemical_space/medchem_manifest.json")),
         )
         return out

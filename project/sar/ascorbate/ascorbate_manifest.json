@@ -1,14 +1,14 @@
 {
-  "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
   "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
-  "generated_at": "2026-09-09T03:55:20Z",
+  "generated_at": "2026-09-10T19:17:53Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "actives_on_core": 7,
     "ascorbate_core_dataset": 24,
     "ascorbate_mmp_transforms": 56,
     "candidate_panel_core": 8,
-    "candidate_panel_enediol_motif": 27,
+    "candidate_panel_enediol_motif": 15,
     "core_smarts": "OC1=C(O)C(=O)OC1-[#6]",
     "d_form_id": 2,
     "d_form_note": "D-isoascorbic acid / erythorbate; similar potency (1316 uM, 300%) per PI; stereo undefined in source",
@@ -28,7 +28,11 @@
       "High potency arm: 3-O-substituted ascorbate (PI shorthand '3-O-ethyl'). Best-annotated instance: compound 12, 3-O-propargyl-5,6-acetonide, 0.198 uM - no literal O-ethyl analog in the dataset.",
       "Second high potency active: 6-bromo-6-deoxy ascorbate (compound 25, 2.63 uM).",
       "All other validated actives are >1 mM (compounds 3/18/24: 6077/1288/1202 uM), i.e. substantially less potent than compounds 12 and 25.",
-      "Selectivity (PI note): ascorbic acid is a selective potentiator of alpha9alpha10. NOT modeled - no cross-subunit selectivity data in the repository."
+      "Selectivity (PI note): ascorbic acid is a selective potentiator of alpha9alpha10. NOT modeled - no cross-subunit selectivity data in the repository.",
+      "PI stereoelectronic SAR hypotheses (recorded verbatim from PI; NOT all verifiable from the 30-compound set; see honesty flags): (a) enolic hydroxyls required for potentiation - PARTIAL support: 2,3-bis-O-alkylation ablates activity (0/6) but mono-etherification is tolerated (2-O compound 24 active; 3-O compound 12 active/most potent), so a free enol OH per se is not required; (b) C2=C3 olefin essential - UNTESTED: no saturation probe exists in the 30-compound set; (c) C-3 etherification increases potency - supported ONLY for compound 12 (3-O-propargyl-5,6-acetonide, 0.198 uM); 7/8 3-O-alkoxy acetonide analogs (compounds 5-11) and all open-chain 3-O-alkoxy (compounds 19-21) are inactive, so 'alkyl well tolerated' overstates the SAR; (d) C-6 substitution decreases potency - NOT SUPPORTED: 6-bromo-6-deoxy (compound 25) is 2.63 uM (~680x gain over reference) and 6-O-benzyl (compound 18, 1288 uM) is comparable to the reference; no C-6 substitution in the dataset reduces potency.",
+      "Ryanodine analogy (PI hypothesis, SPECULATIVE): ascorbic acid shares structural and functional similarities with the polyhydroxy cyclic moieties of ryanodine; proposed metal ion-dipole/chelation and hydrogen-bonding roles for the enediol. Not testable from the current dataset; framing only.",
+      "Planned synthetic probes (PENDING_SYNTHESIS, NOT executable now; no fabricated molecules): Study 1.4 (C-5/C-6 role) - fully deoxygenated analog 4.1 via Barton-McCombie deoxygenation (C-3 Mitsunobu protection; C-5/C-6 di-imidazole thiocarbonate activation; radical removal of both oxygens); a SEPARATE dehydration/elimination route (deoxygenation does NOT create an alkene) to a rigid C-5/C-6 olefinic handle for Ru-catalyzed cross-metathesis, yielding olefinated analogs 4.3 with varied R5 groups to probe steric/electronic effects; ~10 analogs planned; 4.1 and 4.3 serve as platforms for C-2/C-3 modification. Hypothesis: 4.1 reduced potentiation (compound-specific - ID3 acetonide 6077 uM is ~3.4x weaker than reference, but 6-Br is a counter-example), select rigid 4.3 may retain or enhance activity.",
+      "Planned synthetic probes (PENDING_SYNTHESIS): Study 1.5 (aza/lactam-constrained ascorbate mimics) - L-serine-derived chiral amino-butenolide (Dutta lactone) intermediate affords azacarbohydrates 5.2 via intramolecular cyclization; the unsaturated lactone is then converted to bicyclic lactones via Pd-catalyzed cyclopropanation (5.3a), in-situ peroxy epoxidation (5.3b), or in-situ N-mediated aziridination (5.3c); ~8 analogs planned per category; scaffolds differ from ascorbate in stereoelectronics (oxygen replaced/modulated by CH2 or N)."
     ],
     "reference_id": 1,
     "reference_name": "L-ascorbic acid (potency 1797 uM, 286% potentiation)",

@@ -381,6 +381,16 @@ class ClosedLoop:
         gate["required_review_dimensions"] = (
             "synthesizability; stereochemical feasibility; assay-suitability; "
             "TAF-consistency; negative-control balance")
+        route_md = self.cfg.resolve("synth_route/synth_route_report.md")
+        if route_md.exists():
+            gate["route_prediction"] = (
+                "PREDICTED_ROUTE/UNVERIFIED synth_route decision support "
+                "available (see synth_route/synth_route_report.md); NOT a "
+                "synthesis guarantee")
+        else:
+            gate["route_prediction"] = (
+                "No synth_route predictions (AIZynthFinder/models NOT AVAILABLE); "
+                "route feasibility must be assessed manually at this gate")
         gate["eligible_for_experiment"] = False
         save_df(gate, str(self.cfg.resolve(f"loop/round{round_no}_oversight_gate.csv")))
         n_blocked = int((~gate["eligible_for_experiment"]).sum())

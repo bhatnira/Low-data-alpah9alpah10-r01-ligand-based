@@ -1401,3 +1401,667 @@ method_gini_vs_permutation                 0.200156           1.000000          
 2026-09-08 22:57:34,923 | INFO | === Explanation-preservation analysis (section 26) ===
 2026-09-08 22:57:34,925 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
   FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-09 00:22:06,448 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-09 00:22:06,535 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-09 00:22:15,539 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-09 00:22:15,614 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-09 00:22:15,614 | INFO | === XAI reproducibility (section 13) ===
+2026-09-09 00:22:15,680 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-09 00:22:15,985 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-09 00:22:16,283 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-09 00:22:16,584 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-09 00:22:16,909 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-09 00:22:17,218 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-09 00:22:17,524 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-09 00:22:17,830 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-09 00:22:18,138 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-09 00:22:18,441 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-09 00:22:18,774 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-09 00:22:19,079 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-09 00:22:19,382 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-09 00:22:19,685 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-09 00:22:19,988 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-09 00:22:20,308 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-09 00:22:20,609 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-09 00:22:20,917 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-09 00:22:21,217 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-09 00:22:21,512 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-09 00:22:21,804 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-09 00:22:22,127 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-09 00:22:22,424 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-09 00:22:22,725 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-09 00:22:23,020 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-09 00:22:23,318 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-09 00:22:23,631 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-09 00:22:23,934 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-09 00:22:24,225 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-09 00:22:24,523 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-09 00:22:24,818 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-09 00:22:25,118 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-09 00:22:25,440 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-09 00:22:25,737 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-09 00:22:26,031 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-09 00:22:26,333 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-09 00:22:26,607 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-09 00:22:26,647 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 00:22:26,690 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 00:22:26,739 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-09 00:22:26,784 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 00:22:26,828 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 00:22:26,868 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 00:22:26,915 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-09 00:22:26,957 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-09 00:22:27,024 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-09 00:22:27,070 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-09 00:22:27,121 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-09 00:22:27,163 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 00:22:27,208 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 00:22:27,248 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 00:22:27,291 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 00:22:27,343 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-09 00:22:27,395 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-09 00:22:27,718 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-09 00:22:27,719 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-09 00:22:27,722 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-09 12:56:05,593 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-09 12:56:05,663 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-09 12:56:14,329 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-09 12:56:14,401 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-09 12:56:14,401 | INFO | === XAI reproducibility (section 13) ===
+2026-09-09 12:56:14,468 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-09 12:56:14,760 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-09 12:56:15,047 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-09 12:56:15,354 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-09 12:56:15,645 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-09 12:56:15,937 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-09 12:56:16,225 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-09 12:56:16,532 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-09 12:56:16,827 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-09 12:56:17,115 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-09 12:56:17,403 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-09 12:56:17,693 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-09 12:56:18,001 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-09 12:56:18,291 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-09 12:56:18,576 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-09 12:56:18,864 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-09 12:56:19,153 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-09 12:56:19,461 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-09 12:56:19,739 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-09 12:56:20,020 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-09 12:56:20,301 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-09 12:56:20,579 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-09 12:56:20,871 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-09 12:56:21,170 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-09 12:56:21,451 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-09 12:56:21,730 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-09 12:56:22,013 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-09 12:56:22,293 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-09 12:56:22,589 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-09 12:56:22,870 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-09 12:56:23,155 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-09 12:56:23,438 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-09 12:56:23,720 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-09 12:56:24,001 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-09 12:56:24,305 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-09 12:56:24,586 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-09 12:56:24,845 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-09 12:56:24,883 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 12:56:24,926 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 12:56:24,971 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-09 12:56:25,012 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 12:56:25,055 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 12:56:25,094 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 12:56:25,138 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-09 12:56:25,179 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-09 12:56:25,223 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-09 12:56:25,268 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-09 12:56:25,315 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-09 12:56:25,354 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 12:56:25,398 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 12:56:25,436 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 12:56:25,477 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 12:56:25,527 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-09 12:56:25,578 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-09 12:56:25,915 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-09 12:56:25,915 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-09 12:56:25,917 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-09 13:42:51,520 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-09 13:42:51,587 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-09 13:43:00,015 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-09 13:43:00,086 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-09 13:43:00,086 | INFO | === XAI reproducibility (section 13) ===
+2026-09-09 13:43:00,151 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-09 13:43:00,438 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-09 13:43:00,721 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-09 13:43:01,007 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-09 13:43:01,290 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-09 13:43:01,574 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-09 13:43:01,857 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-09 13:43:02,148 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-09 13:43:02,431 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-09 13:43:02,714 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-09 13:43:02,997 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-09 13:43:03,280 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-09 13:43:03,563 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-09 13:43:03,845 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-09 13:43:04,133 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-09 13:43:04,415 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-09 13:43:04,701 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-09 13:43:04,986 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-09 13:43:05,259 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-09 13:43:05,534 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-09 13:43:05,809 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-09 13:43:06,084 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-09 13:43:06,361 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-09 13:43:06,633 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-09 13:43:06,908 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-09 13:43:07,184 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-09 13:43:07,459 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-09 13:43:07,733 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-09 13:43:08,006 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-09 13:43:08,280 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-09 13:43:08,557 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-09 13:43:08,831 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-09 13:43:09,105 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-09 13:43:09,379 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-09 13:43:09,653 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-09 13:43:09,928 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-09 13:43:10,183 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-09 13:43:10,220 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:43:10,261 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 13:43:10,305 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-09 13:43:10,347 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:43:10,389 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:43:10,427 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:43:10,470 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-09 13:43:10,510 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-09 13:43:10,553 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-09 13:43:10,596 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-09 13:43:10,642 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-09 13:43:10,680 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:43:10,721 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 13:43:10,759 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:43:10,800 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:43:10,850 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-09 13:43:10,899 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-09 13:43:11,214 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-09 13:43:11,214 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-09 13:43:11,216 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-09 13:45:24,370 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-09 13:45:24,437 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-09 13:45:32,806 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-09 13:45:32,877 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-09 13:45:32,877 | INFO | === XAI reproducibility (section 13) ===
+2026-09-09 13:45:32,942 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-09 13:45:33,226 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-09 13:45:33,510 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-09 13:45:33,792 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-09 13:45:34,076 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-09 13:45:34,357 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-09 13:45:34,641 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-09 13:45:34,929 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-09 13:45:35,212 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-09 13:45:35,495 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-09 13:45:35,778 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-09 13:45:36,060 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-09 13:45:36,345 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-09 13:45:36,626 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-09 13:45:36,908 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-09 13:45:37,190 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-09 13:45:37,475 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-09 13:45:37,761 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-09 13:45:38,031 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-09 13:45:38,309 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-09 13:45:38,582 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-09 13:45:38,855 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-09 13:45:39,130 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-09 13:45:39,403 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-09 13:45:39,679 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-09 13:45:39,951 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-09 13:45:40,226 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-09 13:45:40,498 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-09 13:45:40,773 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-09 13:45:41,045 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-09 13:45:41,320 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-09 13:45:41,592 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-09 13:45:41,870 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-09 13:45:42,145 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-09 13:45:42,420 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-09 13:45:42,695 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-09 13:45:42,948 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-09 13:45:42,986 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:45:43,027 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 13:45:43,070 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-09 13:45:43,111 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:45:43,152 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:45:43,189 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:45:43,232 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-09 13:45:43,271 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-09 13:45:43,314 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-09 13:45:43,357 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-09 13:45:43,402 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-09 13:45:43,439 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:45:43,481 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 13:45:43,518 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 13:45:43,559 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 13:45:43,608 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-09 13:45:43,659 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-09 13:45:43,969 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-09 13:45:43,969 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-09 13:45:43,971 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-09 15:59:14,615 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-09 15:59:14,769 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-09 15:59:35,957 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-09 15:59:36,146 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-09 15:59:36,146 | INFO | === XAI reproducibility (section 13) ===
+2026-09-09 15:59:36,353 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-09 15:59:37,096 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-09 15:59:37,924 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-09 15:59:38,685 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-09 15:59:39,452 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-09 15:59:40,225 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-09 15:59:40,992 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-09 15:59:41,740 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-09 15:59:42,435 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-09 15:59:43,138 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-09 15:59:43,898 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-09 15:59:44,593 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-09 15:59:45,300 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-09 15:59:45,961 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-09 15:59:46,627 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-09 15:59:47,274 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-09 15:59:47,901 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-09 15:59:48,533 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-09 15:59:49,166 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-09 15:59:49,800 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-09 15:59:50,439 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-09 15:59:51,110 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-09 15:59:51,744 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-09 15:59:52,387 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-09 15:59:53,073 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-09 15:59:53,798 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-09 15:59:54,450 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-09 15:59:55,077 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-09 15:59:55,731 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-09 15:59:56,420 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-09 15:59:57,168 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-09 15:59:57,818 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-09 15:59:58,497 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-09 15:59:59,137 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-09 15:59:59,797 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-09 16:00:00,441 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-09 16:00:01,051 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-09 16:00:01,143 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 16:00:01,237 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 16:00:01,343 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-09 16:00:01,442 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 16:00:01,540 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 16:00:01,624 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 16:00:01,727 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-09 16:00:01,817 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-09 16:00:01,916 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-09 16:00:02,012 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-09 16:00:02,112 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-09 16:00:02,198 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 16:00:02,288 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-09 16:00:02,367 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-09 16:00:02,456 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-09 16:00:02,563 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-09 16:00:02,666 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-09 16:00:03,350 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-09 16:00:03,351 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-09 16:00:03,355 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-10 13:41:18,867 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-10 13:41:18,935 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-10 13:41:27,476 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-10 13:41:27,546 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-10 13:41:27,546 | INFO | === XAI reproducibility (section 13) ===
+2026-09-10 13:41:27,611 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-10 13:41:27,898 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-10 13:41:28,183 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-10 13:41:28,473 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-10 13:41:28,761 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-10 13:41:29,049 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-10 13:41:29,335 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-10 13:41:29,627 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-10 13:41:29,913 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-10 13:41:30,211 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-10 13:41:30,504 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-10 13:41:30,792 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-10 13:41:31,079 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-10 13:41:31,363 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-10 13:41:31,650 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-10 13:41:31,936 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-10 13:41:32,223 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-10 13:41:32,511 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-10 13:41:32,788 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-10 13:41:33,069 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-10 13:41:33,347 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-10 13:41:33,625 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-10 13:41:33,903 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-10 13:41:34,180 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-10 13:41:34,459 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-10 13:41:34,740 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-10 13:41:35,020 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-10 13:41:35,310 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-10 13:41:35,588 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-10 13:41:35,867 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-10 13:41:36,144 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-10 13:41:36,423 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-10 13:41:36,704 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-10 13:41:36,982 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-10 13:41:37,260 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-10 13:41:37,538 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-10 13:41:37,795 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-10 13:41:37,833 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 13:41:37,874 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 13:41:37,917 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-10 13:41:37,959 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 13:41:38,001 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 13:41:38,038 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 13:41:38,081 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-10 13:41:38,121 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-10 13:41:38,165 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-10 13:41:38,208 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-10 13:41:38,253 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-10 13:41:38,292 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 13:41:38,334 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 13:41:38,372 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 13:41:38,412 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 13:41:38,462 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-10 13:41:38,512 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-10 13:41:38,826 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-10 13:41:38,826 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-10 13:41:38,828 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-10 14:12:32,362 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-10 14:12:32,429 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-10 14:12:41,371 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-10 14:12:41,542 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-10 14:12:41,542 | INFO | === XAI reproducibility (section 13) ===
+2026-09-10 14:12:41,726 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-10 14:12:42,225 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-10 14:12:42,665 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-10 14:12:43,086 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-10 14:12:43,381 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-10 14:12:43,674 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-10 14:12:43,966 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-10 14:12:44,269 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-10 14:12:44,568 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-10 14:12:45,098 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-10 14:12:45,506 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-10 14:12:45,809 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-10 14:12:46,126 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-10 14:12:46,417 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-10 14:12:46,708 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-10 14:12:47,020 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-10 14:12:47,355 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-10 14:12:47,672 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-10 14:12:47,984 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-10 14:12:48,310 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-10 14:12:48,596 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-10 14:12:48,890 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-10 14:12:49,246 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-10 14:12:49,537 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-10 14:12:49,830 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-10 14:12:50,132 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-10 14:12:50,453 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-10 14:12:50,752 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-10 14:12:51,045 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-10 14:12:51,342 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-10 14:12:51,653 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-10 14:12:51,957 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-10 14:12:52,249 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-10 14:12:52,601 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-10 14:12:52,895 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-10 14:12:53,184 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-10 14:12:53,450 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-10 14:12:53,495 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:12:53,537 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 14:12:53,581 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-10 14:12:53,622 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:12:53,663 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:12:53,737 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:12:53,798 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-10 14:12:53,844 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-10 14:12:53,891 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-10 14:12:53,937 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-10 14:12:53,985 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-10 14:12:54,022 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:12:54,064 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 14:12:54,100 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:12:54,147 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:12:54,197 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-10 14:12:54,247 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-10 14:12:54,640 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-10 14:12:54,640 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-10 14:12:54,642 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+2026-09-10 14:19:38,036 | INFO | Fingerprint features used (non-degenerate bits): 183/2048
+2026-09-10 14:19:38,102 | INFO | Top fingerprint bits by Gini: fp_423(0.0738), fp_532(0.0428), fp_1602(0.0374), fp_1096(0.0298), fp_1883(0.0235), fp_1699(0.0210), fp_486(0.0200), fp_2022(0.0177), fp_1(0.0140), fp_1670(0.0130)
+2026-09-10 14:19:46,265 | INFO | === Counterfactual analysis (section 14) ===
+2026-09-10 14:19:46,339 | INFO |                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.665
+     ID01_remove_primary_OH         change_h_bond              True       0.750
+ ID01_move_primary_OH_chain      move_substituent              True       0.600
+             ID25_remove_Br        remove_feature              True       0.845
+              ID25_Br_to_Cl       replace_feature              True       0.865
+             ID25_Br_to_CF3       replace_feature              True       0.770
+         ID25_remove_stereo alter_stereochemistry              True       0.915
+         ID12_remove_stereo alter_stereochemistry              True       0.645
+      ID12_flip_core_stereo alter_stereochemistry              True       0.645
+         ID12_remove_alkyne        remove_feature             False       0.930
+ ID12_alkyne_to_small_chain       replace_feature             False       0.895
+ ID18_ester_to_ether_linker          alter_linker              True       0.520
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic             False       0.545
+        ID24_remove_alcohol        remove_feature             False       0.585
+           ID01_open_pyrone        remove_feature             False       0.750
+2026-09-10 14:19:46,339 | INFO | === XAI reproducibility (section 13) ===
+2026-09-10 14:19:46,404 | INFO | Top fingerprint bits by Gini: fp_423(0.0718), fp_1602(0.0657), fp_501(0.0226), fp_2028(0.0216), fp_1057(0.0206), fp_532(0.0206), fp_80(0.0184), fp_1405(0.0163), fp_516(0.0160), fp_1389(0.0156)
+2026-09-10 14:19:46,698 | INFO | Top fingerprint bits by Gini: fp_423(0.1370), fp_1883(0.0623), fp_1602(0.0465), fp_2028(0.0407), fp_257(0.0281), fp_1096(0.0277), fp_532(0.0238), fp_695(0.0226), fp_1670(0.0206), fp_1389(0.0188)
+2026-09-10 14:19:46,993 | INFO | Top fingerprint bits by Gini: fp_423(0.0982), fp_2028(0.0291), fp_1602(0.0284), fp_486(0.0272), fp_501(0.0253), fp_1883(0.0220), fp_532(0.0200), fp_1699(0.0190), fp_1395(0.0189), fp_2022(0.0189)
+2026-09-10 14:19:47,287 | INFO | Top fingerprint bits by Gini: fp_423(0.0817), fp_1883(0.0407), fp_532(0.0279), fp_1602(0.0275), fp_2028(0.0270), fp_74(0.0252), fp_798(0.0196), fp_1096(0.0191), fp_974(0.0162), fp_794(0.0161)
+2026-09-10 14:19:47,582 | INFO | Top fingerprint bits by Gini: fp_2028(0.0724), fp_532(0.0544), fp_423(0.0521), fp_926(0.0451), fp_227(0.0290), fp_1017(0.0245), fp_971(0.0240), fp_649(0.0238), fp_1043(0.0194), fp_1(0.0185)
+2026-09-10 14:19:47,876 | INFO | Top fingerprint bits by Gini: fp_423(0.0978), fp_1883(0.0348), fp_1602(0.0342), fp_257(0.0335), fp_2028(0.0334), fp_1670(0.0216), fp_1389(0.0168), fp_1452(0.0167), fp_80(0.0137), fp_2022(0.0129)
+2026-09-10 14:19:48,174 | INFO | Top fingerprint bits by Gini: fp_532(0.1008), fp_1096(0.0782), fp_2022(0.0594), fp_423(0.0494), fp_1883(0.0493), fp_486(0.0356), fp_1(0.0257), fp_1923(0.0201), fp_2028(0.0155), fp_1602(0.0145)
+2026-09-10 14:19:48,476 | INFO | Top fingerprint bits by Gini: fp_423(0.0561), fp_2028(0.0354), fp_532(0.0317), fp_1883(0.0284), fp_1602(0.0254), fp_183(0.0237), fp_1306(0.0200), fp_1222(0.0193), fp_674(0.0166), fp_695(0.0165)
+2026-09-10 14:19:48,770 | INFO | Top fingerprint bits by Gini: fp_423(0.0792), fp_532(0.0658), fp_210(0.0360), fp_2028(0.0291), fp_1222(0.0270), fp_501(0.0261), fp_486(0.0230), fp_971(0.0216), fp_1057(0.0199), fp_76(0.0185)
+2026-09-10 14:19:49,062 | INFO | Top fingerprint bits by Gini: fp_423(0.0695), fp_1883(0.0580), fp_1602(0.0465), fp_516(0.0379), fp_1389(0.0342), fp_695(0.0322), fp_2028(0.0252), fp_257(0.0195), fp_80(0.0188), fp_1444(0.0187)
+2026-09-10 14:19:49,360 | INFO | Top fingerprint bits by Gini: fp_423(0.0524), fp_257(0.0346), fp_2028(0.0242), fp_1(0.0197), fp_227(0.0180), fp_591(0.0170), fp_1883(0.0153), fp_971(0.0144), fp_1066(0.0138), fp_532(0.0130)
+2026-09-10 14:19:49,653 | INFO | Top fingerprint bits by Gini: fp_486(0.0538), fp_971(0.0360), fp_222(0.0325), fp_423(0.0314), fp_1883(0.0273), fp_1699(0.0268), fp_257(0.0262), fp_2022(0.0249), fp_926(0.0187), fp_1602(0.0164)
+2026-09-10 14:19:49,947 | INFO | Top fingerprint bits by Gini: fp_1096(0.1115), fp_423(0.0683), fp_532(0.0636), fp_1883(0.0627), fp_486(0.0498), fp_2022(0.0435), fp_971(0.0388), fp_926(0.0347), fp_695(0.0291), fp_2028(0.0234)
+2026-09-10 14:19:50,244 | INFO | Top fingerprint bits by Gini: fp_532(0.0793), fp_423(0.0374), fp_1096(0.0368), fp_2022(0.0236), fp_486(0.0208), fp_915(0.0195), fp_2028(0.0192), fp_971(0.0192), fp_974(0.0189), fp_1883(0.0172)
+2026-09-10 14:19:50,538 | INFO | Top fingerprint bits by Gini: fp_1883(0.0909), fp_423(0.0860), fp_695(0.0462), fp_1602(0.0412), fp_1405(0.0398), fp_1389(0.0318), fp_257(0.0279), fp_2028(0.0275), fp_1096(0.0274), fp_486(0.0237)
+2026-09-10 14:19:50,833 | INFO | Top fingerprint bits by Gini: fp_423(0.0472), fp_1602(0.0353), fp_974(0.0318), fp_1883(0.0315), fp_2022(0.0289), fp_915(0.0275), fp_532(0.0242), fp_183(0.0211), fp_486(0.0201), fp_516(0.0201)
+2026-09-10 14:19:51,128 | INFO | Top fingerprint bits by Gini: fp_423(0.0488), fp_486(0.0437), fp_2022(0.0375), fp_532(0.0320), fp_1602(0.0315), fp_1096(0.0252), fp_1389(0.0205), fp_1623(0.0190), fp_1699(0.0170), fp_516(0.0150)
+2026-09-10 14:19:51,423 | INFO | Top fingerprint bits by Gini: fp_423(0.0610), fp_1883(0.0587), fp_1096(0.0534), fp_532(0.0397), fp_1602(0.0288), fp_486(0.0279), fp_2022(0.0270), fp_257(0.0181), fp_971(0.0169), fp_1(0.0166)
+2026-09-10 14:19:51,707 | INFO | Top fingerprint bits by Gini: fp_423(0.1011), fp_1602(0.0623), fp_210(0.0359), fp_2028(0.0264), fp_1873(0.0239), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_1918(0.0209), fp_532(0.0203)
+2026-09-10 14:19:52,019 | INFO | Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+2026-09-10 14:19:52,308 | INFO | Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0413), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0251), fp_1395(0.0211), fp_1918(0.0204), fp_76(0.0202)
+2026-09-10 14:19:52,594 | INFO | Top fingerprint bits by Gini: fp_423(0.0749), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1371(0.0279), fp_1602(0.0252), fp_974(0.0247), fp_1096(0.0230), fp_251(0.0230)
+2026-09-10 14:19:52,880 | INFO | Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0648), fp_2028(0.0639), fp_532(0.0628), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0306), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0281)
+2026-09-10 14:19:53,169 | INFO | Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+2026-09-10 14:19:53,455 | INFO | Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+2026-09-10 14:19:53,741 | INFO | Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+2026-09-10 14:19:54,029 | INFO | Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0448), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+2026-09-10 14:19:54,317 | INFO | Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0267), fp_1057(0.0188)
+2026-09-10 14:19:54,606 | INFO | Top fingerprint bits by Gini: fp_423(0.0750), fp_257(0.0639), fp_2028(0.0315), fp_1405(0.0256), fp_1699(0.0240), fp_1883(0.0229), fp_1670(0.0228), fp_532(0.0228), fp_1(0.0226), fp_2042(0.0200)
+2026-09-10 14:19:54,890 | INFO | Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+2026-09-10 14:19:55,176 | INFO | Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+2026-09-10 14:19:55,464 | INFO | Top fingerprint bits by Gini: fp_532(0.1004), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_550(0.0306), fp_1918(0.0303), fp_2028(0.0294), fp_974(0.0278), fp_1602(0.0277)
+2026-09-10 14:19:55,753 | INFO | Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+2026-09-10 14:19:56,040 | INFO | Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+2026-09-10 14:19:56,330 | INFO | Top fingerprint bits by Gini: fp_423(0.0648), fp_2022(0.0475), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0270), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0220), fp_183(0.0206)
+2026-09-10 14:19:56,618 | INFO | Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0349), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+2026-09-10 14:19:56,883 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+2026-09-10 14:19:56,920 | INFO | Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:19:56,961 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 14:19:57,004 | INFO | Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+2026-09-10 14:19:57,045 | INFO | Top fingerprint bits by Gini: fp_532(0.8333), fp_926(0.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:19:57,086 | INFO | Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:19:57,124 | INFO | Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:19:57,167 | INFO | Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1623(0.0358), fp_915(0.0340), fp_1143(0.0302), fp_183(0.0294), fp_591(0.0252), fp_1523(0.0225)
+2026-09-10 14:19:57,206 | INFO | Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+2026-09-10 14:19:57,249 | INFO | Top fingerprint bits by Gini: fp_1883(0.2994), fp_423(0.2591), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0126), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+2026-09-10 14:19:57,292 | INFO | Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+2026-09-10 14:19:57,337 | INFO | Top fingerprint bits by Gini: fp_1699(0.2840), fp_486(0.1520), fp_2022(0.0724), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+2026-09-10 14:19:57,374 | INFO | Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_222(0.0000), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:19:57,416 | INFO | Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_1(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000)
+2026-09-10 14:19:57,452 | INFO | Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000)
+2026-09-10 14:19:57,492 | INFO | Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_1345(0.0000), fp_1366(0.0000), fp_1371(0.0000), fp_1380(0.0000), fp_1384(0.0000), fp_1387(0.0000), fp_1389(0.0000), fp_1394(0.0000)
+2026-09-10 14:19:57,542 | INFO | Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0846), fp_1426(0.0435), fp_974(0.0323), fp_183(0.0316), fp_832(0.0211), fp_1623(0.0211), fp_1523(0.0180), fp_550(0.0080)
+2026-09-10 14:19:57,590 | INFO | Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1031), fp_80(0.0407), fp_423(0.0270), fp_658(0.0213), fp_1444(0.0195), fp_832(0.0134), fp_1670(0.0122), fp_125(0.0085)
+2026-09-10 14:19:57,900 | INFO |                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.566105           1.499651                 0.375472          0.577315       MARGINAL
+  across_seeds_fixed_model                 0.878788           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.892705           1.666667                 0.400000          0.866667         STABLE
+method_gini_vs_permutation                 0.200156           1.000000                 0.416667          0.192490       UNSTABLE
+   method_gini_vs_ablation                 0.266342           1.000000                 0.414815          0.179321       UNSTABLE
+2026-09-10 14:19:57,900 | INFO | === Explanation-preservation analysis (section 26) ===
+2026-09-10 14:19:57,902 | INFO | top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac               shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+  FractionCSP3,LogP,MW                 HBD,HBA                         0.938                          0.062                                 1.0 FractionCSP3,LogP,HeavyAtomCount                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised

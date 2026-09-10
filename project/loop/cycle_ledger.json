@@ -1,8 +1,8 @@
 [
   {
     "round": 1,
-    "plate_designed": 31,
-    "oversight_pending": 9,
+    "plate_designed": 28,
+    "oversight_pending": 6,
     "pooled_round_processed": [],
     "refit_artifact": [],
     "hit_metrics_rounds": [],
@@ -13,7 +13,7 @@
       "structural_ingest": "NOT AVAILABLE - no AF3/Boltz outputs"
     },
     "provenance": {
-      "generated_at": "2026-09-09T03:57:36Z",
+      "generated_at": "2026-09-10T19:23:46Z",
       "module": "loop",
       "python": "3.14.2",
       "rdkit": "2025.09.4",
@@ -28,7 +28,7 @@
         "bootstrap": 42,
         "reinvent": 42
       },
-      "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+      "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
       "input_hashes": {
         "round": 1,
         "updates": [

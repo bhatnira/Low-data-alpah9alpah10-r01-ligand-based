@@ -1,6 +1,6 @@
 {
   "contamination_guard": "No retraining or TAF redefinition will occur on the basis of these results before the round is complete and reported.",
-  "locked_at": "2026-09-09T03:57:36Z",
+  "locked_at": "2026-09-10T19:19:58Z",
   "prespecified_responder_criterion": "compound active if potency>0 uM AND potentiation>0%",
   "round": 1,
   "statistics": {

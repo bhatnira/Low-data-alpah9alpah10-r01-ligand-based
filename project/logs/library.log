@@ -112,3 +112,103 @@
   CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
   CHT-009                       c1ccccc1     2             2               1
   CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-09 00:22:29,127 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-09 00:22:29,242 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-09 00:22:29,244 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-09 12:56:27,218 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-09 12:56:27,323 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-09 12:56:27,324 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-09 13:43:12,479 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-09 13:43:12,585 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-09 13:43:12,586 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-09 13:45:45,209 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-09 13:45:45,313 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-09 13:45:45,314 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-09 16:00:06,094 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-09 16:00:06,315 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-09 16:00:06,318 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-10 13:41:40,098 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-10 13:41:40,201 | INFO | Chemotype families: 26 (novel scaffolds: 24)
+2026-09-10 13:41:40,202 | INFO | family_id             chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       C1CCCCC1     1             3               1
+  CHT-002                O=C(Br)C(O)=CBr     2            15               1
+  CHT-003                     O=C1C=CCO1     2            12               0
+  CHT-004                        C1COCO1     2             3               1
+  CHT-005 O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             3               1
+  CHT-006         O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007      O=P(O)(O)C(O)=C(O)CC(O)CO     2             2               1
+  CHT-008  O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             2               1
+  CHT-009                       c1ccccc1     2             2               1
+  CHT-010                O=C(Cl)C(O)=CCl     3            14               1
+2026-09-10 14:12:55,232 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-10 14:12:55,277 | INFO | Chemotype families: 8 (novel scaffolds: 6)
+2026-09-10 14:12:55,278 | INFO | family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             4               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-005    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-006           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007                         c1ccccc1     2             2               1
+  CHT-008 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     3             2               1
+2026-09-10 14:19:58,443 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-10 14:19:58,489 | INFO | Chemotype families: 8 (novel scaffolds: 6)
+2026-09-10 14:19:58,490 | INFO | family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             4               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-005    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-006           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007                         c1ccccc1     2             2               1
+  CHT-008 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     3             2               1

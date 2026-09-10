@@ -1,10 +1,10 @@
 {
-  "candidate_library_hash": "bab74e412b2e98c22e2271c127b43cc27a0f1b72cee1dbac3495ee4fca6c8c0e",
+  "candidate_library_hash": "5ce784f0a3317f8dfdc30f6683e9c0a1c6af6e8be956c17e7695997c30fbd256",
   "candidate_selection_algorithm": "portfolio groups A-F; multi-axis; NO single-score sorting",
-  "configuration_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "configuration_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
-    "candidate_library": "bab74e412b2e98c22e2271c127b43cc27a0f1b72cee1dbac3495ee4fca6c8c0e",
+    "candidate_library": "5ce784f0a3317f8dfdc30f6683e9c0a1c6af6e8be956c17e7695997c30fbd256",
     "canonical_dataset": "57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5",
     "sar_mmp": "f87b8aba3d6e0be5f3c8c3faa662a102ed0d3f9e612f86437098458c0835b3ae",
     "taf_evidence": "37339a3540fa5b68ffe3765173f9ca1a2724abdda5488ad71b2bb3b05e016369",
@@ -12,7 +12,7 @@
     "xai_stability": "a7f3f78f2463279d4f8cd4488fdccd9189f591b12c5b8b261ef7bd6c7c769f55"
   },
   "lock_reason": "Pre-prospective synthesis freeze. NO computational redesign after experimental outcomes are revealed except as an explicitly labeled exploratory cycle.",
-  "locked_at": "2026-09-09T03:57:36Z",
+  "locked_at": "2026-09-10T19:19:58Z",
   "model_architecture": "classical interpretable panel (logreg/ridge/RF/ExtraTrees/GBM)",
   "model_weights_referenced_by": "reproducible retraining from frozen config + data hash",
   "preprocessing": "StandardScaler per fold; fingerprints Morgan r2 2048 + 10 descriptors",
@@ -30,7 +30,7 @@
     "reinvent/configs/taf_disrupting_staged_learning.toml": "0ae32d6abe94cd3e2a123ad3c36abc6444905ac92eb07719e2c7336382eb156c",
     "reinvent/generation_plan.csv": "1755ef91f09cd9e2f82a34c8ac00a5edb52fa76f0b51692b67f981106498b21c",
     "reinvent/inception.smi": "5d8eca5328bf85383f50b3e40113057e89b4b75ea5f32cb1c07f97433c6d8d2b",
-    "reinvent/reinvent_manifest.json": "2122f2d5ebf2a4fd179a70cc685b2e2f524e8941efa31bc58bd1c3296b1186e1",
+    "reinvent/reinvent_manifest.json": "f76f6ad99658156349914a358953503fd042d0b056eb9f2306522390a5348560",
     "reinvent/run_generation.sh": "cab5e02345df2160826f4e080991f653d6c36c8b0ce75c6acff44770a1b5286b",
     "reinvent/scaffolds_libinvent.smi": "ded655c8256bdcb8d6511b3187f6b68029d7107353ea37b54dcbd9781b1fbab1",
     "reinvent/score_lbm.py": "2ae7a1571c5274625c7e1552c7356496c8c368f801beee4ba4dee586805628ed"

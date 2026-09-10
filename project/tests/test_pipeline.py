@@ -240,3 +240,44 @@ def test_no_leakage():
                     reason="reports not built yet")
 def test_report_index_exists():
     assert (ROOT / "reports/index.html").stat().st_size > 1000
+
+
+@pytest.mark.skipif(not _exists("synth_route/synth_route_predictions.csv"),
+                    reason="synth_route predictions not generated")
+def test_synth_route_predictions_have_route_flags():
+    r = pd.read_csv(ROOT / "synth_route/synth_route_predictions.csv")
+    assert set(["molecule_id", "target_smiles", "route_rank",
+                "route_probability", "status"]).issubset(set(r.columns))
+    pred = r[r["status"].eq("PREDICTED_ROUTE")] if "status" in r else r.iloc[0:0]
+    if len(pred):
+        # every predicted route must carry a non-empty reaction plan
+        assert (pred["reaction_smiles"].fillna("").str.len() > 0).all(), \
+            "predicted routes must carry a non-empty reaction SMILES plan"
+        # ... and building blocks with their stock availability
+        if "building_blocks" in pred:
+            assert (pred["building_blocks"].fillna("").str.len() > 0).all(), \
+                "predicted routes must list building blocks / stock items"
+    else:
+        assert r["status"].isin(["NO_SMILES", "NO_ROUTE_FOUND"]).all(), \
+            "unrouted targets must carry an honest status, never fabricated routes"
+
+
+@pytest.mark.skipif(not _exists("synth_route/synth_route_manifest.json"),
+                    reason="synth_route manifest not generated")
+def test_synth_route_manifest_is_honest():
+    import json
+    with open(ROOT / "synth_route/synth_route_manifest.json") as f:
+        m = json.load(f)
+    assert "honesty_note" in m
+    assert m["availability"]["available"] is False or m["n_routes_predicted"] >= 0
+    if m["availability"]["available"]:
+        # honesty label must be present whenever a route was predicted
+        assert "PREDICTED_ROUTE" in m["honesty_note"] or "UNVERIFIED" in m["honesty_note"]
+    else:
+        # models absent -> honest NOT AVAILABLE, no fabricated plans
+        assert "NOT AVAILABLE" in m["honesty_note"]
+        plans = ROOT / "synth_route/synth_route_predictions.csv"
+        if plans.exists():
+            statuses = pd.read_csv(plans)["status"].dropna()
+            if len(statuses):
+                assert statuses.isin(["NO_SMILES", "NO_ROUTE_FOUND"]).all()

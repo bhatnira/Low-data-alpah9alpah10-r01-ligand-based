@@ -10,3 +10,9 @@ __pycache__/
 # checksums are verified at runtime by src/reinvent.py.
 project/priors/
 *.prior
+
+# AIZynthFinder virtualenv + public model/stock files (synthetic-route phase).
+# Models are regenerated via `download_public_data`; the 663MB ZINC stock and
+# ONNX weights must never be committed.
+project/venvs/
+project/synth_route/models/

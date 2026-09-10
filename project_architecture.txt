@@ -1,0 +1,198 @@
+================================================================================
+PROJECT ARCHITECTURE + PIPELINE MAP  (alpha9alpha10 nAChR PAM discovery)
+Branch: synth-route-prediction | Latest run: 2026-09-09 (synth_route added) | 19/19 phases OK
+================================================================================
+
+1. DATA INPUTS  (repo root, immutable sources)
+--------------------------------------------------------------------------------
+  modulator-dataset-a9a10.csv   -> the 30 validated alpha9alpha10 compounds
+                                   (7 PAM actives / 23 inactive; ascorbate core)
+  otherModulators.csv           -> 70 non-alpha9alpha10 nAChR modulators
+                                   (74 raw - 4 dedup by canonical SMILES)
+                                   = selectivity / decoys panel
+
+2. PROJECT LAYOUT  (project/ root = /Users/nb/Documents/ligand-based-modeling/project)
+--------------------------------------------------------------------------------
+  configs/         config.yaml (single source of truth; schema v2.0.0; seed 42)
+  src/             pipeline modules (one per phase, below)
+  workflows/       run_all.py  (orchestrator: dependency-ordered phases)
+  data/
+    experimental/   raw input provenance, dataset manifest, round* append-only
+    processed/      data_analysis_ready.csv (canonical, tautomerized, stereo-audited)
+    selectivity/    raw expansion drop-ins (future panel sources) + README
+  sar/             MMP, fragments, competing hypotheses, ascorbate sub-series
+  models/          classical/ model artifacts + model_card.json (frozen RF)
+  selectivity/     panel, scores, scaffold scan, physchem, report, manifest
+  validation/      LOCO / scaffold-out / series-out / bootstrap / permutation
+  xai/             explanation stability across seeds/methods
+  taf/             transferable-activity-functions evidence matrix
+  structures/      AF3/Boltz consensus (NOT AVAILABLE - no outputs)
+  medchem/         traditional medicinal-chemistry baseline analogs
+  reinvent/        REINVENT4 configs + generation plan (binary absent -> 0 mols)
+  chemical_space/  expansion manifold reports
+  candidates/      prioritized candidate portfolio (32 rows / 15 unique mols)
+  prospective/     round-1 lock + plan (PENDING_REVIEW)
+  synth_route/     retrosynthetic route predictions + report + manifest
+                   (AVAILABLE: 1 PREDICTED_ROUTE/UNVERIFIED target of 8;
+                   3 route rows; product verified against target)
+  loop/            closed-loop: plate, oversight gate, pre-registration
+                   coverage_targets, stereo probes, data_watch, cycle_ledger
+  selectivity/     (above) phase-4b outputs
+  reports/         index.html (combined audit trail), workflow_run_manifest.json
+  logs/            phase-by-phase logs (append-only)
+  tests/           unit tests
+  figures/         generated figures
+  notebooks/       analysis notebooks
+
+3. PIPELINE  (run:  cd project && python3 workflows/run_all.py)
+--------------------------------------------------------------------------------
+ EXECUTION ORDER (dependency chain, left -> right):
+
+   audit -> dataset -> sar -> sar_ascorbate -> models -> selectivity -> xai
+   -> taf -> structures -> medchem -> reinvent -> chemspace -> candidates
+   -> library -> lock -> prospective -> synth_route -> loop -> [final]
+   audit -> reports
+
+ ASCII FLOW
+--------------------------------------------------------------------------------
+ [SOURCE DATA]                          [SELECTIVITY/DECOYS PANEL]
+ modulator-dataset-a9a10.csv            otherModulators.csv
+        |                                        |
+        v                                        v
+ +--------------+                     +---------------------------+
+ | 1. audit     | inspect-before-    |  4b. selectivity          |
+ | (Phase 1)    | modify, provenance |  curate(70)->isolate->    |
+ +--------------+                     |  benchmark frozen model   |
+        v                             |  report + manifest        |
+ +--------------+ returns == audit    +---------------------------+
+ | 2. dataset   |                       (isolation guard: 0 exact /
+ | (Phase 2)    |  governance, stereo   | 0 scaffold overlap w/ training)
+ +--------------+  audit, tautomers    |
+        v                             |
+ +--------------+                     |
+ | 3. sar       |  MMP / fragments /  |
+ | (Phase 3)    |  scaffolds / hypoth  |
+ +--------------+                     |
+        v                             |
+ +------------------+                 |
+ | 3b. sar_ascorbate| ascorbate-core  |   <- PI domain notes (10)
+ | (phase 3b, R01)  | subseries + MMP  |      SAR hypotheses, Study 1.4/1.5
+ +------------------+                 |
+        v                             |
+ +--------------+  model panel + LOCO + scaffolding
+ | 4. models    |  scaffold/series out| bootstrap/permutation
+ | (Phase 4)    |  -> frozen RF artifact (lbm_rf_fp_desc.joblib)
+ +--------------+
+        v
+ +--------------+  explanation stability (STABLE across seeds 0.88-0.89;
+ | 5. xai       |  UNSTABLE across methods ~0.2 -> consensus + flags)
+ | (Phase 5)    |
+ +--------------+
+        v
+ +--------------+  TAF evidence matrix (TAF-3 MODERATE only; falsifiable)
+ | 6. taf       |
+ | (Phase 6)    |
+ +--------------+
+        v
+ +--------------+  structural hypotheses === NOT AVAILABLE (no AF3/Boltz)
+ | 7. structures|  AF3 validation pending at co-PI lab -> TAF-6 later
+ | (Phase 7)    |
+ +--------------+
+        v
+ +--------------+  traditional med-chem baseline analogs (fills in where
+ | 8. medchem   |  AI has no molecules; BLIND comparison)
+ | (Phase 8)    |
+ +--------------+
+        v
+ +--------------+  REINVENT4 configs + generation plan
+ | 9-11. reinvent| (binary absent -> NO molecules generated; provenance kept)
+ +--------------+
+        v
+ +--------------+  synthetic-feasibility (SAScore) + chemical-space report
+ | 12. chemspace|
+ +--------------+
+        v
++--------------+  prioritize 32 rows (15 unique mols) -> portfolio groups
+| 13. candidates| row counts A=1 B=6 C=1 D=5 E=12 F=7 (unique mols by first
+|              |  group assignment: A=1 B=6 C=1 D=4 E=3 F=0)
++--------------+
+        v
++--------------+  chemotype-library projection (R01 Aim 1)
+| 19. library  |  8 Bemis-Murcko families (tiers: 2 tier-2 + 6 tier-3),
+|              |  7 novel scaffolds; after PAINS/BRENK/Lipinski + dedup
+|              |  only 6/15 drug-like -> realistic round size
++--------------+
+        v
+ +--------------+  model lock BEFORE prospective testing (freeze artifact)
+ | 14. lock     |
+ +--------------+
+        v
++--------------+  round-1 plan + result-ingestion template (PENDING_REVIEW)
+  | 15-18. prospect|
+  +--------------+
+        v
+  +--------------+  retrosynthetic route prediction (AIZynthFinder 4.4.1,
+  | 4c. synth_   |  public USPTO/ZINC models, Python-3.12 venv worker) for
+  |   route      |  round-1 candidates. AVAILABLE: 8 targets evaluated,
+  |              |  1 with PREDICTED_ROUTE/UNVERIFIED (1-step; route product
+  |              |  verified vs target), 7 NO_ROUTE_FOUND with recorded
+  |              |  probabilities; per-block stock screen (38 blocks,
+  |              |  18 IN_STOCK / 20 NOT_IN_STOCK) -> decision support
+  |              |  for oversight gate. Auto-skips if tools missing; nothing
+  |              |  fabricated.
+  +--------------+
+        v
+  +--------------+  === CLOSED-LOOP EXPERIMENT (R01 Aim 2) ===
+  | 19-24. loop  |  design plate (model_ranked + diversity_random arms,
+  |  (loop)      |  scaffold-capped, blinded R{n}-{crc32} IDs)
+  |              |  oversight gate: med-chem sign-off (blocks until approved)
+  |              |  + route_prediction column (synth_route report link)
+  |              |  pre-registration per round (EF>=2.0, BH-FDR 0.10, max 3)
+  |              |  append-only pooling + versioned refits (last round held out)
+  |              |  power-from-pool, hit metrics, no post-hoc re-powering
+  +--------------+
+        v
+ +--------------+  FINAL AUDIT (leakage + 18-question) repeats
+ | audit        |  e.g. PENDING_EXPERIMENT, XAI ELEVATED-RISK
+ +--------------+
+        v
+ +--------------+  combined HTML report (reports/index.html) - every
+ | reports      |  SAR claim traces to raw file + code + seed
+ +--------------+
+
+4. R01 MAPPING  (what the grant calls the pipeline)
+--------------------------------------------------------------------------------
+  Aim 1 = library curation (phase 19 + selectivity 4b + stereo probes)
+          + ascorbate sub-series SAR (phase 3b)
+  Aim 2 = closed-loop experiment (phase loop: two-arm TEVC rounds)
+  Aim 3 = external validation + SAR packaging + selectivity benchmark
+  Phase 4b = selectivity panel (NEW in v2 of the R01)
+  Planned synthesis (not data): Study 1.4 (C-5/C-6), Study 1.5 (aza-lactams)
+          = PENDING_SYNTHESIS summary notes, feeding the oversight gate.
+
+5. HONESTY/GOOD-GO NOTES (checked by audit phase at every pass)
+--------------------------------------------------------------------------------
+  * No experimental round run yet -> PENDING_EXPERIMENT everywhere.
+  * REINVENT has produced 0 molecules (binary absent) - reported, not faked.
+  * AF3/Boltz structures NOT AVAILABLE - no structural claims.
+  * Synth-route predictions AVAILABLE (AIZynthFinder installed) but labeled
+    PREDICTED_ROUTE / UNVERIFIED - the round-1 gate reviews them as decision
+    support only.
+  * Permutation nulls non-significant -> importances corroborative only.
+  * Selectivity panel isolated (0 exact / 0 scaffold overlap with training).
+  * Oversight gate currently blocks all 6 round-1 plate compounds (PENDING_REVIEW).
+
+6. NEW PHASE IMPLEMENTED (this branch: synth_route)
+--------------------------------------------------------------------------------
+  inserted after prospective / before loop:
+    synth_route -> per-candidate retrosynthetic route prediction (AIZynthFinder)
+                   ranked multi-step routes + building-block availability
+                   PREDICTED_ROUTE / UNVERIFIED labels -> feeds oversight gate
+                   auto-skips if aizynthfinder/model files absent (honest
+                   NOT AVAILABLE manifest; gate then says "route feasibility
+                   must be assessed manually"); models in synth_route/models/
+                   {policy.model, templates_uspto.hdf5, stock.csv.gz, config.yml}
+  status: phase + gate linkage + tests PASSING (22/22); predictions AVAILABLE
+          (8 targets evaluated, 1 PREDICTED_ROUTE 1-step, 7 NO_ROUTE_FOUND;
+          38 blocks, 18 IN_STOCK / 20 NOT_IN_STOCK)
+================================================================================

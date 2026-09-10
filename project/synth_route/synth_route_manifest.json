@@ -1,0 +1,44 @@
+{
+  "availability": {
+    "aizynthfinder_installed": true,
+    "available": true,
+    "model_files": {
+      "config": true,
+      "filter": true,
+      "policy": true,
+      "ringbreaker": true,
+      "stock": true,
+      "templates": true
+    },
+    "models_present": true,
+    "note": "PREDICTED_ROUTE / UNVERIFIED route plans; decision support for the med-chem oversight gate, not a synthesis guarantee",
+    "venv_aizynth312": true
+  },
+  "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
+  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
+  "counting_note": "n_routes_predicted counts distinct targets with at least one PREDICTED_ROUTE (not route rows); n_targets_with_clean_route further requires the recorded route product to equal the target.",
+  "generated_at": "2026-09-10T19:23:46Z",
+  "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
+  "honesty_note": "Routes are PREDICTED_ROUTE / UNVERIFIED; they aid - do not replace - the med-chem oversight gate.",
+  "input_hashes": {},
+  "module": "synth_route",
+  "n_predicted_route_rows": 3,
+  "n_routes_predicted": 1,
+  "n_targets": 8,
+  "n_targets_unrouted": 7,
+  "n_targets_with_clean_route": 1,
+  "numpy": "2.5.3",
+  "pandas": "2.3.3",
+  "python": "3.14.2",
+  "rdkit": "2025.09.4",
+  "round": 1,
+  "scikit_learn": "1.8.0",
+  "seeds": {
+    "bootstrap": 42,
+    "conformer_etkdgv3": 42,
+    "global": 42,
+    "models": 42,
+    "reinvent": 42,
+    "tsne": 42
+  }
+}

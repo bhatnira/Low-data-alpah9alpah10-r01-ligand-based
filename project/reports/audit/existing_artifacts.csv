@@ -94,6 +94,7 @@ report,reports,reports/qc_report.txt
 report,reports,reports/strategy_comparison.csv
 report,reports,reports/workflow_run_manifest.json
 generated,generated,generated/medchem_baseline_analogs.csv
+generated,generated,generated/medchem_rejected_invalid.csv
 notebook,notebooks,notebooks/01_data_discovery_qc.py
 notebook,notebooks,notebooks/02_cheminformatics.py
 notebook,notebooks,notebooks/03_scaffold_mmp.py

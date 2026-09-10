@@ -78,8 +78,7 @@ therapeutic target for chronic pain, inflammatory conditions, and
 neuropsychiatric disorders. Unlike the extensively studied α7 nAChR,
 the α9α10 subtype remains pharmacologically underexplored, with no
 FDA-approved modulators and limited structure-activity relationship
-(SAR) data. Positive allosteric modulators (PAMs) offer a promising
-mechanism to enhance cholinergic signaling with improved selectivity.
+(SAR) data. the 
 However, the lack of large datasets for this target creates a
 fundamental barrier to conventional machine learning approaches.
 This project addresses this gap by developing a novel computational
@@ -363,8 +362,8 @@ data yields better models. This assumption fails when:
 
 For α9α10 PAMs, all four conditions apply. The dataset is small (30
 compounds), the series spans diverse scaffolds (17 unique Murcko
-scaffolds), activity cliffs are observed (e.g., ID 12 vs ID 9:
->30,000-fold potency difference), and the target is novel.
+scaffolds), activity cliffs are observed (e.g., ID 12 at 0.198 uM vs
+ID 3 at 6077 uM: >30,000-fold potency difference), and the target is novel.
 
 3.1.4 The TAF Solution
 

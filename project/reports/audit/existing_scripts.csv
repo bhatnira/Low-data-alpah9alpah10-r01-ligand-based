@@ -1,5 +1,6 @@
 category,dir,path
 script,src,src/__init__.py
+script,src,src/aizynth_worker.py
 script,src,src/audit.py
 script,src,src/candidates.py
 script,src,src/chemspace.py
@@ -10,6 +11,7 @@ script,src,src/lock.py
 script,src,src/loop.py
 script,src,src/medchem.py
 script,src,src/models.py
+script,src,src/other_modulators.py
 script,src,src/project_audit.py
 script,src,src/prospective.py
 script,src,src/reinvent.py
@@ -17,6 +19,7 @@ script,src,src/reports.py
 script,src,src/sar.py
 script,src,src/sar_ascorbate.py
 script,src,src/structures.py
+script,src,src/synth_route.py
 script,src,src/taf.py
 script,src,src/xai.py
 script,workflows,workflows/run_all.py

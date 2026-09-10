@@ -1,7 +1,7 @@
 {
-  "config_hash": "90de2908f682d1f0eb40c073567103d15d3b12c036bcf33edb94c3c5e1207398",
+  "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
   "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
-  "generated_at": "2026-09-09T03:57:36Z",
+  "generated_at": "2026-09-10T19:19:58Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "external": {
@@ -10,12 +10,11 @@
       "source": "search of data/external for published a9a10 / nicotinic PAM datasets",
       "validation": "models NOT yet validated on external data"
     },
-    "n_families": 26,
-    "n_novel_scaffolds": 24,
+    "n_families": 8,
+    "n_novel_scaffolds": 6,
     "tier_counts": {
-      "1": 1,
-      "2": 8,
-      "3": 17
+      "2": 7,
+      "3": 1
     },
     "tier_rule": "tier1 = novel Bemis-Murcko scaffold vs training; tier2 = known scaffold in hypothesis groups A/B/C/E; tier3 = residual uncertainty-reduction set (mostly F)"
   },

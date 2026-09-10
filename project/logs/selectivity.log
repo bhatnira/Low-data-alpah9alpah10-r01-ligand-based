@@ -1,0 +1,85 @@
+2026-09-09 00:13:05,517 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:13:05,716 | INFO | Panel rows: 74; parseable: 74; unparseable: 0
+2026-09-09 00:13:35,000 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:13:35,174 | INFO | Panel rows: 74; parseable: 74; unparseable: 0
+2026-09-09 00:13:36,208 | INFO | Panel summary: {"n_panel": 74, "n_parseable": 74, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.21552477477477477, "pred_activity_std": 0.043880178645427904, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:13:59,788 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:13:59,966 | INFO | Panel rows: 74; parseable: 74; unparseable: 0
+2026-09-09 00:14:01,010 | INFO | Panel summary: {"n_panel": 74, "n_parseable": 74, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.21552477477477477, "pred_activity_std": 0.043880178645427904, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:17:22,319 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:17:22,350 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 00:17:22,513 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 00:17:22,514 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 00:17:23,510 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 00:17:23,531 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:17:23,531 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 00:17:43,146 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:17:43,171 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 00:17:43,321 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 00:17:43,321 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 00:17:44,339 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 00:17:44,356 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:17:44,357 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 00:18:10,643 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:18:10,675 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 00:18:10,837 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 00:18:10,837 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 00:18:11,967 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 00:18:11,990 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:18:11,991 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 00:22:05,252 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:22:05,274 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 00:22:05,428 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 00:22:05,428 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 00:22:06,411 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 00:22:06,432 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 00:22:06,432 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 12:56:04,403 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 12:56:04,424 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 12:56:04,604 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 12:56:04,604 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 12:56:05,561 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 12:56:05,577 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 12:56:05,577 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 13:42:50,346 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 13:42:50,364 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 13:42:50,561 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 13:42:50,561 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 13:42:51,487 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 13:42:51,505 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 13:42:51,505 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 13:45:23,256 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 13:45:23,275 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 13:45:23,422 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 13:45:23,423 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 13:45:24,337 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 13:45:24,355 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 13:45:24,355 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-09 15:59:12,058 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 15:59:12,103 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 15:59:12,457 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-09 15:59:12,457 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-09 15:59:14,550 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-09 15:59:14,583 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-09 15:59:14,583 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-10 13:41:17,674 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-10 13:41:17,693 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-10 13:41:17,845 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-10 13:41:17,845 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-10 13:41:18,835 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-10 13:41:18,852 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-10 13:41:18,852 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-10 14:12:31,240 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-10 14:12:31,258 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-10 14:12:31,403 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-10 14:12:31,404 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-10 14:12:32,329 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-10 14:12:32,347 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-10 14:12:32,347 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-10 14:19:36,910 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-10 14:19:36,929 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-10 14:19:37,072 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-10 14:19:37,072 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-10 14:19:38,003 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-10 14:19:38,021 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.2148904761904762, "pred_activity_std": 0.04454760870118383, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-10 14:19:38,021 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}

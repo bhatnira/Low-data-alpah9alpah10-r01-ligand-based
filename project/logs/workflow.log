@@ -927,3 +927,371 @@ SyntaxError: from __future__ imports must occur at the beginning of the file
 2026-09-08 22:57:36,891 | INFO | === reports -> Reports: build combined HTML report ===
 2026-09-08 22:57:36,938 | INFO | reports completed
 2026-09-08 22:57:36,953 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-09 00:17:42,754 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 00:17:44,361 | INFO | selectivity completed
+2026-09-09 00:17:44,372 | INFO | workflow results: {'selectivity': 'OK'}
+2026-09-09 00:20:16,103 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-09 00:20:16,246 | INFO | audit completed
+2026-09-09 00:20:16,246 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-09 00:20:16,765 | INFO | dataset completed
+2026-09-09 00:20:16,765 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-09 00:20:17,004 | INFO | sar completed
+2026-09-09 00:20:17,004 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-09 00:20:17,048 | INFO | sar_ascorbate completed
+2026-09-09 00:20:17,048 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-09 00:22:05,244 | INFO | models completed
+2026-09-09 00:22:05,245 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 00:22:06,436 | INFO | selectivity completed
+2026-09-09 00:22:06,436 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-09 00:22:27,739 | INFO | xai completed
+2026-09-09 00:22:27,740 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-09 00:22:27,793 | INFO | taf completed
+2026-09-09 00:22:27,793 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-09 00:22:27,812 | INFO | structures completed
+2026-09-09 00:22:27,812 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-09 00:22:27,869 | INFO | medchem completed
+2026-09-09 00:22:27,869 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-09 00:22:28,025 | INFO | reinvent completed
+2026-09-09 00:22:28,025 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-09 00:22:28,053 | INFO | chemspace completed
+2026-09-09 00:22:28,053 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-09 00:22:29,106 | INFO | candidates completed
+2026-09-09 00:22:29,106 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-09 00:22:29,245 | INFO | library completed
+2026-09-09 00:22:29,245 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-09 00:22:29,358 | INFO | lock completed
+2026-09-09 00:22:29,358 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-09 00:22:29,389 | INFO | prospective completed
+2026-09-09 00:22:29,389 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-09 00:22:29,525 | INFO | loop completed
+2026-09-09 00:22:29,525 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-09 00:22:29,573 | INFO | audit completed
+2026-09-09 00:22:29,573 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-09 00:22:29,614 | INFO | reports completed
+2026-09-09 00:22:29,629 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-09 12:54:15,122 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-09 12:54:15,243 | INFO | audit completed
+2026-09-09 12:54:15,243 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-09 12:54:16,033 | INFO | dataset completed
+2026-09-09 12:54:16,033 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-09 12:54:16,235 | INFO | sar completed
+2026-09-09 12:54:16,235 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-09 12:54:16,277 | INFO | sar_ascorbate completed
+2026-09-09 12:54:16,277 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-09 12:56:04,395 | INFO | models completed
+2026-09-09 12:56:04,396 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 12:56:05,582 | INFO | selectivity completed
+2026-09-09 12:56:05,582 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-09 12:56:25,933 | INFO | xai completed
+2026-09-09 12:56:25,933 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-09 12:56:25,983 | INFO | taf completed
+2026-09-09 12:56:25,984 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-09 12:56:26,003 | INFO | structures completed
+2026-09-09 12:56:26,003 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-09 12:56:26,056 | INFO | medchem completed
+2026-09-09 12:56:26,056 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-09 12:56:26,206 | INFO | reinvent completed
+2026-09-09 12:56:26,206 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-09 12:56:26,234 | INFO | chemspace completed
+2026-09-09 12:56:26,234 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-09 12:56:27,197 | INFO | candidates completed
+2026-09-09 12:56:27,198 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-09 12:56:27,325 | INFO | library completed
+2026-09-09 12:56:27,325 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-09 12:56:27,430 | INFO | lock completed
+2026-09-09 12:56:27,431 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-09 12:56:27,456 | INFO | prospective completed
+2026-09-09 12:56:27,456 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-09 12:56:27,586 | INFO | loop completed
+2026-09-09 12:56:27,586 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-09 12:56:27,631 | INFO | audit completed
+2026-09-09 12:56:27,631 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-09 12:56:27,669 | INFO | reports completed
+2026-09-09 12:56:27,681 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-09 13:37:57,360 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:37:57,392 | INFO | synth_route completed
+2026-09-09 13:37:57,401 | INFO | workflow results: {'synth_route': 'OK'}
+2026-09-09 13:38:28,016 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:38:28,044 | INFO | synth_route completed
+2026-09-09 13:38:28,055 | INFO | workflow results: {'synth_route': 'OK'}
+2026-09-09 13:40:07,534 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:40:07,563 | ERROR | synth_route FAILED: name 'own' is not defined
+2026-09-09 13:40:07,563 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 99, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 61, in <lambda>
+    {"key": "synth_route", "fn": lambda cfg: __import__("src.synth_route", fromlist=["run_phase_synth_route"]).run_phase_synth_route(cfg),
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/synth_route.py", line 323, in run_phase_synth_route
+    return planner.run_round(round_no=1)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/synth_route.py", line 259, in run_round
+    return own
+           ^^^
+NameError: name 'own' is not defined
+
+2026-09-09 13:40:07,573 | INFO | workflow results: {'synth_route': "FAILED: name 'own' is not defined"}
+2026-09-09 13:40:36,236 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:40:36,270 | INFO | synth_route completed
+2026-09-09 13:40:36,281 | INFO | workflow results: {'synth_route': 'OK'}
+2026-09-09 13:41:05,301 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-09 13:41:05,422 | INFO | audit completed
+2026-09-09 13:41:05,422 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-09 13:41:05,826 | INFO | dataset completed
+2026-09-09 13:41:05,826 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-09 13:41:06,029 | INFO | sar completed
+2026-09-09 13:41:06,030 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-09 13:41:06,069 | INFO | sar_ascorbate completed
+2026-09-09 13:41:06,069 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-09 13:42:50,339 | INFO | models completed
+2026-09-09 13:42:50,339 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 13:42:51,509 | INFO | selectivity completed
+2026-09-09 13:42:51,509 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-09 13:43:11,233 | INFO | xai completed
+2026-09-09 13:43:11,234 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-09 13:43:11,284 | INFO | taf completed
+2026-09-09 13:43:11,284 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-09 13:43:11,303 | INFO | structures completed
+2026-09-09 13:43:11,303 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-09 13:43:11,355 | INFO | medchem completed
+2026-09-09 13:43:11,355 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-09 13:43:11,501 | INFO | reinvent completed
+2026-09-09 13:43:11,501 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-09 13:43:11,529 | INFO | chemspace completed
+2026-09-09 13:43:11,529 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-09 13:43:12,458 | INFO | candidates completed
+2026-09-09 13:43:12,458 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-09 13:43:12,587 | INFO | library completed
+2026-09-09 13:43:12,587 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-09 13:43:12,710 | INFO | lock completed
+2026-09-09 13:43:12,710 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-09 13:43:12,737 | INFO | prospective completed
+2026-09-09 13:43:12,737 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:43:12,757 | INFO | synth_route completed
+2026-09-09 13:43:12,757 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-09 13:43:12,761 | ERROR | loop FAILED: unexpected indent (loop.py, line 381)
+2026-09-09 13:43:12,762 | ERROR | Traceback (most recent call last):
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 99, in main
+    phase["fn"](args.config)
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/workflows/run_all.py", line 63, in <lambda>
+    {"key": "loop", "fn": lambda cfg: __import__("src.loop", fromlist=["run_phase_loop"]).run_phase_loop(cfg),
+                                      ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nb/Documents/ligand-based-modeling/project/src/loop.py", line 381
+    gate["required_review_dimensions"] = (
+IndentationError: unexpected indent
+
+2026-09-09 13:43:12,762 | ERROR | pipeline halted at failing phase (use --only to resume later phases)
+2026-09-09 13:43:12,773 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'FAILED: unexpected indent (loop.py, line 381)'}
+2026-09-09 13:43:39,767 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-09 13:43:39,883 | INFO | audit completed
+2026-09-09 13:43:39,883 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-09 13:43:40,373 | INFO | dataset completed
+2026-09-09 13:43:40,373 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-09 13:43:40,568 | INFO | sar completed
+2026-09-09 13:43:40,568 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-09 13:43:40,605 | INFO | sar_ascorbate completed
+2026-09-09 13:43:40,605 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-09 13:45:23,249 | INFO | models completed
+2026-09-09 13:45:23,250 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 13:45:24,359 | INFO | selectivity completed
+2026-09-09 13:45:24,359 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-09 13:45:43,989 | INFO | xai completed
+2026-09-09 13:45:43,989 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-09 13:45:44,036 | INFO | taf completed
+2026-09-09 13:45:44,036 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-09 13:45:44,056 | INFO | structures completed
+2026-09-09 13:45:44,056 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-09 13:45:44,106 | INFO | medchem completed
+2026-09-09 13:45:44,106 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-09 13:45:44,258 | INFO | reinvent completed
+2026-09-09 13:45:44,258 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-09 13:45:44,284 | INFO | chemspace completed
+2026-09-09 13:45:44,284 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-09 13:45:45,189 | INFO | candidates completed
+2026-09-09 13:45:45,189 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-09 13:45:45,315 | INFO | library completed
+2026-09-09 13:45:45,315 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-09 13:45:45,422 | INFO | lock completed
+2026-09-09 13:45:45,422 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-09 13:45:45,447 | INFO | prospective completed
+2026-09-09 13:45:45,447 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 13:45:45,467 | INFO | synth_route completed
+2026-09-09 13:45:45,467 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-09 13:45:45,598 | INFO | loop completed
+2026-09-09 13:45:45,598 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-09 13:45:45,641 | INFO | audit completed
+2026-09-09 13:45:45,641 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-09 13:45:45,680 | INFO | reports completed
+2026-09-09 13:45:45,692 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-09 15:20:07,931 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 15:26:31,151 | INFO | synth_route completed
+2026-09-09 15:26:31,162 | INFO | workflow results: {'synth_route': 'OK'}
+2026-09-09 15:39:21,601 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 15:45:58,555 | INFO | synth_route completed
+2026-09-09 15:45:58,571 | INFO | workflow results: {'synth_route': 'OK'}
+2026-09-09 15:55:19,611 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-09 15:55:19,866 | INFO | audit completed
+2026-09-09 15:55:19,866 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-09 15:55:21,169 | INFO | dataset completed
+2026-09-09 15:55:21,169 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-09 15:55:21,873 | INFO | sar completed
+2026-09-09 15:55:21,873 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-09 15:55:21,983 | INFO | sar_ascorbate completed
+2026-09-09 15:55:21,983 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-09 15:59:12,043 | INFO | models completed
+2026-09-09 15:59:12,044 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-09 15:59:14,592 | INFO | selectivity completed
+2026-09-09 15:59:14,592 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-09 16:00:03,388 | INFO | xai completed
+2026-09-09 16:00:03,388 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-09 16:00:03,494 | INFO | taf completed
+2026-09-09 16:00:03,494 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-09 16:00:03,534 | INFO | structures completed
+2026-09-09 16:00:03,534 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-09 16:00:03,652 | INFO | medchem completed
+2026-09-09 16:00:03,652 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-09 16:00:03,934 | INFO | reinvent completed
+2026-09-09 16:00:03,934 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-09 16:00:03,993 | INFO | chemspace completed
+2026-09-09 16:00:03,994 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-09 16:00:06,051 | INFO | candidates completed
+2026-09-09 16:00:06,051 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-09 16:00:06,320 | INFO | library completed
+2026-09-09 16:00:06,320 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-09 16:00:06,520 | INFO | lock completed
+2026-09-09 16:00:06,520 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-09 16:00:06,573 | INFO | prospective completed
+2026-09-09 16:00:06,573 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-09 16:08:07,837 | INFO | synth_route completed
+2026-09-09 16:08:07,838 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-09 16:08:08,181 | INFO | loop completed
+2026-09-09 16:08:08,181 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-09 16:08:08,281 | INFO | audit completed
+2026-09-09 16:08:08,281 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-09 16:08:08,375 | INFO | reports completed
+2026-09-09 16:08:08,395 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-10 13:39:31,327 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-10 13:39:31,523 | INFO | audit completed
+2026-09-10 13:39:31,523 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-10 13:39:32,248 | INFO | dataset completed
+2026-09-10 13:39:32,248 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-10 13:39:32,478 | INFO | sar completed
+2026-09-10 13:39:32,478 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-10 13:39:32,518 | INFO | sar_ascorbate completed
+2026-09-10 13:39:32,518 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-10 13:41:17,666 | INFO | models completed
+2026-09-10 13:41:17,666 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-10 13:41:18,856 | INFO | selectivity completed
+2026-09-10 13:41:18,856 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-10 13:41:38,845 | INFO | xai completed
+2026-09-10 13:41:38,845 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-10 13:41:38,894 | INFO | taf completed
+2026-09-10 13:41:38,894 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-10 13:41:38,913 | INFO | structures completed
+2026-09-10 13:41:38,913 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-10 13:41:38,963 | INFO | medchem completed
+2026-09-10 13:41:38,963 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-10 13:41:39,110 | INFO | reinvent completed
+2026-09-10 13:41:39,110 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-10 13:41:39,137 | INFO | chemspace completed
+2026-09-10 13:41:39,137 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-10 13:41:40,078 | INFO | candidates completed
+2026-09-10 13:41:40,078 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-10 13:41:40,203 | INFO | library completed
+2026-09-10 13:41:40,203 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-10 13:41:40,313 | INFO | lock completed
+2026-09-10 13:41:40,313 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-10 13:41:40,338 | INFO | prospective completed
+2026-09-10 13:41:40,338 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-10 13:45:38,624 | INFO | synth_route completed
+2026-09-10 13:45:38,625 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-10 13:45:38,759 | INFO | loop completed
+2026-09-10 13:45:38,760 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-10 13:45:38,808 | INFO | audit completed
+2026-09-10 13:45:38,808 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-10 13:45:38,849 | INFO | reports completed
+2026-09-10 13:45:38,859 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-10 14:10:47,588 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-10 14:10:47,708 | INFO | audit completed
+2026-09-10 14:10:47,708 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-10 14:10:48,183 | INFO | dataset completed
+2026-09-10 14:10:48,183 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-10 14:10:48,375 | INFO | sar completed
+2026-09-10 14:10:48,376 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-10 14:10:48,424 | INFO | sar_ascorbate completed
+2026-09-10 14:10:48,424 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-10 14:12:31,231 | INFO | models completed
+2026-09-10 14:12:31,232 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-10 14:12:32,351 | INFO | selectivity completed
+2026-09-10 14:12:32,351 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-10 14:12:54,668 | INFO | xai completed
+2026-09-10 14:12:54,668 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-10 14:12:54,717 | INFO | taf completed
+2026-09-10 14:12:54,717 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-10 14:12:54,735 | INFO | structures completed
+2026-09-10 14:12:54,735 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-10 14:12:54,795 | INFO | medchem completed
+2026-09-10 14:12:54,795 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-10 14:12:54,939 | INFO | reinvent completed
+2026-09-10 14:12:54,939 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-10 14:12:54,978 | INFO | chemspace completed
+2026-09-10 14:12:54,978 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-10 14:12:55,212 | INFO | candidates completed
+2026-09-10 14:12:55,212 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-10 14:12:55,278 | INFO | library completed
+2026-09-10 14:12:55,278 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-10 14:12:55,383 | INFO | lock completed
+2026-09-10 14:12:55,383 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-10 14:12:55,407 | INFO | prospective completed
+2026-09-10 14:12:55,407 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-10 14:16:11,451 | INFO | synth_route completed
+2026-09-10 14:16:11,452 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-10 14:16:11,534 | INFO | loop completed
+2026-09-10 14:16:11,534 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-10 14:16:11,582 | INFO | audit completed
+2026-09-10 14:16:11,582 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-10 14:16:11,618 | INFO | reports completed
+2026-09-10 14:16:11,628 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}
+2026-09-10 14:17:52,793 | INFO | === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+2026-09-10 14:17:52,912 | INFO | audit completed
+2026-09-10 14:17:52,912 | INFO | === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+2026-09-10 14:17:53,407 | INFO | dataset completed
+2026-09-10 14:17:53,408 | INFO | === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+2026-09-10 14:17:53,601 | INFO | sar completed
+2026-09-10 14:17:53,601 | INFO | === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+2026-09-10 14:17:53,634 | INFO | sar_ascorbate completed
+2026-09-10 14:17:53,634 | INFO | === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+2026-09-10 14:19:36,903 | INFO | models completed
+2026-09-10 14:19:36,903 | INFO | === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+2026-09-10 14:19:38,025 | INFO | selectivity completed
+2026-09-10 14:19:38,025 | INFO | === xai -> Phase 5: explainable AI + stability ===
+2026-09-10 14:19:57,918 | INFO | xai completed
+2026-09-10 14:19:57,918 | INFO | === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+2026-09-10 14:19:57,966 | INFO | taf completed
+2026-09-10 14:19:57,966 | INFO | === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+2026-09-10 14:19:57,986 | INFO | structures completed
+2026-09-10 14:19:57,986 | INFO | === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+2026-09-10 14:19:58,042 | INFO | medchem completed
+2026-09-10 14:19:58,043 | INFO | === reinvent -> Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules) ===
+2026-09-10 14:19:58,178 | INFO | reinvent completed
+2026-09-10 14:19:58,178 | INFO | === chemspace -> Phase 12: chemical-space expansion report ===
+2026-09-10 14:19:58,206 | INFO | chemspace completed
+2026-09-10 14:19:58,206 | INFO | === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+2026-09-10 14:19:58,424 | INFO | candidates completed
+2026-09-10 14:19:58,424 | INFO | === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+2026-09-10 14:19:58,490 | INFO | library completed
+2026-09-10 14:19:58,491 | INFO | === lock -> Phase 14: model lock before prospective testing ===
+2026-09-10 14:19:58,587 | INFO | lock completed
+2026-09-10 14:19:58,587 | INFO | === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+2026-09-10 14:19:58,611 | INFO | prospective completed
+2026-09-10 14:19:58,612 | INFO | === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+2026-09-10 14:23:46,722 | INFO | synth_route completed
+2026-09-10 14:23:46,723 | INFO | === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+2026-09-10 14:23:46,803 | INFO | loop completed
+2026-09-10 14:23:46,803 | INFO | === audit -> Audit: leakage + 18-question final audit ===
+2026-09-10 14:23:46,852 | INFO | audit completed
+2026-09-10 14:23:46,852 | INFO | === reports -> Reports: build combined HTML report ===
+2026-09-10 14:23:46,885 | INFO | reports completed
+2026-09-10 14:23:46,896 | INFO | workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK', 'reinvent': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}

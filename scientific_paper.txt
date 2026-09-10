@@ -7,7 +7,7 @@
                             PROJECT PIPELINE VERSION: v0-prospective
                             COMPUTATIONAL CYCLE: 0 (pre-experimental)
                             REPORT DATE: 2026-09-07
-                            PIPELINE STATUS: ALL PIPELINE PHASES PASSED ('OK', 17 phase-runs incl. library + loop + ascorbate SAR)
+                            PIPELINE STATUS: ALL PIPELINE PHASES PASSED ('OK', 19 phase keys; 20 phase-runs incl. audit)
 ================================================================================
 
 TABLE OF CONTENTS
@@ -83,13 +83,14 @@ Headline findings (computational, hypothesis-generating).
      100% (1/1, 1202 uM), free ascorbate 66.7% (2/3), 5,6-acetonide free
      enediol 100% (1/1, 6077 uM), 2,3-bis-O-alkoxy 0% (0/6), open-chain
      3-O-alkoxy 0% (0/3), non-ascorbate 0% (0/6). 56 ascorbate-restricted MMP
-     transforms. 8/99 prospective candidates preserve the core. PI notes:
+     transforms. 8/15 prospective candidates preserve the core. PI notes:
      ascorbic acid is a selective alpha9alpha10 potentiator (not yet modeled),
      and the 3-O-ethyl analog describes a high-potency arm that is absent
      verbatim from the dataset (closest = ID12 3-O-propargyl). This sub-series
      envelope defines the ascorbate pharmacophore for Aim 1.
-   - A 141-molecule candidate portfolio was stratified into 6 pre-registered
-    portfolio groups (A-F) and frozen in a model-lock manifest before
+   - A 15-molecule candidate portfolio (32 hypothesis-group assignments) was
+    stratified into 6 pre-registered portfolio groups (A-F) and frozen in a
+    model-lock manifest before
     experimental testing; a pre-specified power analysis (no post-hoc
     re-powering) and a continuity-corrected confirmatory statistical plan with
     effect-size CIs, bootstrap, and sensitivity analyses were locked.
@@ -293,15 +294,20 @@ scaffold_out, bootstrap, permutation).
     that the model is dominated by potency-driving size/lipophilicity axes that
     are experimentally corroborated; this is flagged for reviewer attention.
 
-5.7 Candidate portfolio (141 molecules; 6 groups; all untested).
-  - A_high_confidence_taf_preserving: 1 (MC-6; TAF_score 0.75; max active
+5.7 Candidate portfolio (32 assignment rows / 15 unique molecules; 6 groups;
+    all untested).
+  - A_high_confidence_taf_preserving: 1 (MC-4; TAF_score 0.75; max active
     similarity 0.6)
-  - B_taf_disrupting: 6 (negative controls; predicted activity mixture)
-  - C_scaffold_transfer: 2
-  - D_chemically_novel: 29
-  - E_information_gain: 12 (highest information-gain scores 0.30-0.475;
-    includes NEG-1/2-no_OH probes)
-  - F_uncertainty_reduction: 91
+  - B_taf_disrupting: 6 (ALL negative controls: NEG-1/2/18/24/25-no_OH and
+    NEG-25-no_Br_or_alkyne; predicted activity mixture)
+  - C_scaffold_transfer: 1 (MC-10)
+  - D_chemically_novel: 5 rows (MC-0/1/2/7/10)
+  - E_information_gain: 12 rows (MC-0/1/3/4/5/6/10 + NEG-1/2/18/24/25-no_OH;
+    includes the 6 highest information-gain probes, 0.30-0.475)
+  - F_uncertainty_reduction: 7 rows (all duplicate molecules of the above)
+  Group counts are row-based (32); some molecules carry multiple group
+  assignments, so row counts overstate the unique portfolio. Unique-molecule
+  distribution by first group assignment: A=1, B=6, C=1, D=4, E=3, F=0.
   selection is multi-axis (novelty, uncertainty, information-gain, scaffold
   distance, applicability domain) with NO single-score sorting; provenance
   columns (molecule_id, parent, generation_mode, source, created_at) present.
@@ -393,10 +399,14 @@ REINVENT4 (Phase 9-11).
     SAScore, and curated custom-alert filter (excludes our own TAF bits).
   - Diversity filters configured per mode.
 
-Medicinal-chemistry baseline (Model E). 97 analogs; MMP transformations,
-bioisosteric replacement, substituent scanning; used as comparator only.
+Medicinal-chemistry baseline (Model E). 97 analog SMILES enumerated (MMP
+transformations, bioisosteric replacement, substituent scanning); used as
+comparator only. 86 of 97 fail the connected-fragment chemistry gate
+(multi-fragment outputs; C#C/C=C/Cl substituent scans), leaving 11
+chemistry-valid analogs (MC-0..10), recorded in medchem_rejected_invalid.csv.
 
-Candidate triage. 141 candidates -> groups A-F; negative controls included
+Candidate triage. 32 candidate rows -> groups A-F (15 unique molecules = 9
+MC analogs + 6 negative controls); negative controls included
 (TAF-disrupting; OH-depleted); provenance columns present for every molecule;
 all experimental_status=untested.
 
@@ -481,7 +491,7 @@ JSON; data hash manifests document input integrity.
 
 Reproducibility: config.yaml + data hash manifests + frozen model reference +
 per-mode REINVENT4 TOML configs + run_generation.sh wrapper => the entire
-pipeline is rerunnable via workflows/run_all.py (all 17 phases pass).
+pipeline is rerunnable via workflows/run_all.py (all 19 phase keys pass).
 
 Every generated molecule carries provenance (molecule_id, parent,
 generation_mode, source) and experimental_status=untested.
@@ -525,8 +535,10 @@ repository for reuse as templates.
    evidence is corroborative, never sole.
 7. All prospective results are PENDING_EXPERIMENT. Nothing in this report is
    an in vivo or confirmatory claim.
-8. Candidate portfolio is large (141) but majority lies in uncertainty group;
-   prioritization is multi-axis without a single ranked hit list; final
+8. Candidate portfolio is small (32 rows / 15 unique molecules, all
+   untested); most *rows* fall in the uncertainty-reduction group but those
+   rows duplicate already-counted molecules; prioritization is multi-axis
+   without a single ranked hit list; final
    selection must be made by the medicinal-chemistry oversight checklist
    (PENDING_REVIEW).
 
@@ -542,10 +554,11 @@ append-only, contamination-guarded way. The cycle is:
   -> update power/portfolio -> repeat.
 
 Implemented and verified this cycle:
-- Chemotype library projection (phase 19, src/library.py): 26 Bemis-Murcko
-  chemotype families from 141 portfolio rows (24 novel vs training); after
-  deduplication to 99 unique molecules and pre-registered PAINS/BRENK/Lipinski
-  gates only 9 are drug-like -> the honest round-1 test set, plus round-wise
+- Chemotype library projection (phase 19, src/library.py): 8 Bemis-Murcko
+  chemotype families from the 15-molecule candidate portfolio (7 novel vs
+  training); after
+  deduplication to 15 unique molecules and pre-registered PAINS/BRENK/Lipinski
+  gates only 6 are drug-like -> the honest round-1 test set, plus round-wise
   coverage targets and go/no-go criteria (loop/library/, Appendix H).
 - Ascorbate-focused SAR enrichment (phase 3b, src/sar_ascorbate.py): the
   dataset is ascorbate-derived (24/30 compounds share the gamma-lactone enediol
@@ -559,8 +572,8 @@ Implemented and verified this cycle:
   2-O-alkoxy (1/1, ID24, 1202 uM); free ascorbate (2/3, IDs 1,2,4);
   5,6-acetonide free enediol (1/1, ID3, 6077 uM); 2,3-bis-O-alkoxy (0/6,
   IDs 22,13-17); open-chain 3-O-alkoxy (0/3, IDs 19-21); non-ascorbate
-  (0/6, IDs 23,26-30). 56 ascorbate-restricted MMP transforms. 8/99
-  prospective candidates preserve the core; 27/99 carry the open enediol motif.
+  (0/6, IDs 23,26-30). 56 ascorbate-restricted MMP transforms. 8/15
+  prospective candidates preserve the core; 15/15 carry the open enediol motif.
   PI notes: ascorbic acid is a selective alpha9alpha10 potentiator (not yet
   modeled); the 3-O-ethyl analog describes a high-potency arm that is absent
   verbatim from the dataset (closest = ID12 3-O-propargyl). This sub-series
@@ -635,7 +648,7 @@ in the closed-loop system rather than by an overclaim:
   7. all prospective PENDING     -> the round cycle IS the mechanism: plate
                                     design now, ingestion + pooled refit
                                     implemented and dormant until real results
-  8. 141 candidates / no rank    -> fixed-size balanced plates per round with a
+  8. 15 candidates (32 rows)     -> fixed-size balanced plates per round with a
                                     single ranked shortlist + mandatory med-chem
                                     oversight gate that BLOCKS experiment until
                                     APPROVED

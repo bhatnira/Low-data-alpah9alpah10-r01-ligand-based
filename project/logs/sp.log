@@ -1,0 +1,5 @@
+2026-09-09 00:17:56,468 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-09 00:17:56,496 | INFO | Source /Users/nb/Documents/ligand-based-modeling/otherModulators.csv: +74 rows
+2026-09-09 00:17:56,497 | INFO | Source /Users/nb/Documents/ligand-based-modeling/project/data/selectivity/raw/test_expand.csv: +2 rows
+2026-09-09 00:17:56,648 | INFO | Deduped 4 duplicate canonical SMILES; kept 72 unique
+2026-09-09 00:17:56,648 | INFO | Panel rows: 72; parseable: 72; unparseable: 0

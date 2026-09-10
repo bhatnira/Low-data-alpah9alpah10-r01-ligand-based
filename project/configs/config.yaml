@@ -181,6 +181,24 @@ structures:
   boltz: {present: false, note: NOT AVAILABLE - no Boltz outputs in repository}
   consensus_rule: require reproduction across independent predictions
 
+synth_route:
+  available: true
+  model_dir: synth_route/models
+  policy_file: uspto_model.onnx
+  template_file: uspto_templates.csv.gz
+  ringbreaker_model: uspto_ringbreaker_model.onnx
+  ringbreaker_templates: uspto_ringbreaker_templates.csv.gz
+  filter_model: uspto_filter_model.onnx
+  stock_file: zinc_stock.hdf5
+  venv_aizynth312: venvs/aizynth312/bin/python
+  n_routes_per_target: 3
+  note: >
+    Retrosynthetic route prediction (AIZynthFinder 4.4.1, public USPTO/ZINC
+    models) for high-priority candidates. PREDICTED_ROUTE / UNVERIFIED route
+    plans are decision support for the med-chem oversight gate, never a
+    synthesis guarantee. Phase auto-skips (NOT AVAILABLE) if aizynthfinder or
+    the model files are absent; no route is fabricated.
+
 candidate_selection:
   tuneable: false
   freeze_before_prospective: true

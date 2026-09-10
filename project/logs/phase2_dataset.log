@@ -424,3 +424,203 @@ Activity (uM)          0
 2026-09-08 22:55:20,043 | INFO | Label distribution (active=1): {0: 23, 1: 7}
 2026-09-08 22:55:20,061 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
 2026-09-08 22:55:20,061 | INFO | === Phase 2 complete ===
+2026-09-09 00:20:16,633 | INFO | === Loading raw experimental dataset ===
+2026-09-09 00:20:16,635 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-09 00:20:16,635 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-09 00:20:16,650 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-09 00:20:16,655 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-09 00:20:16,721 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-09 00:20:16,725 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-09 00:20:16,728 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-09 00:20:16,729 | INFO | Conflicting duplicate groups: 0
+2026-09-09 00:20:16,742 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-09 00:20:16,744 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-09 00:20:16,744 | INFO | === QC summary ===
+2026-09-09 00:20:16,744 | INFO | Total rows: 30
+2026-09-09 00:20:16,744 | INFO | Valid SMILES parsed: 30
+2026-09-09 00:20:16,744 | INFO | Active compounds: 7
+2026-09-09 00:20:16,744 | INFO | Compounds with undefined stereo: 7
+2026-09-09 00:20:16,744 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-09 00:20:16,745 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-09 00:20:16,764 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-09 00:20:16,764 | INFO | === Phase 2 complete ===
+2026-09-09 12:54:15,893 | INFO | === Loading raw experimental dataset ===
+2026-09-09 12:54:15,894 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-09 12:54:15,894 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-09 12:54:15,907 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-09 12:54:15,912 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-09 12:54:15,979 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-09 12:54:15,983 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-09 12:54:15,986 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-09 12:54:15,988 | INFO | Conflicting duplicate groups: 0
+2026-09-09 12:54:16,010 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-09 12:54:16,011 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-09 12:54:16,011 | INFO | === QC summary ===
+2026-09-09 12:54:16,011 | INFO | Total rows: 30
+2026-09-09 12:54:16,011 | INFO | Valid SMILES parsed: 30
+2026-09-09 12:54:16,011 | INFO | Active compounds: 7
+2026-09-09 12:54:16,012 | INFO | Compounds with undefined stereo: 7
+2026-09-09 12:54:16,012 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-09 12:54:16,013 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-09 12:54:16,032 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-09 12:54:16,032 | INFO | === Phase 2 complete ===
+2026-09-09 13:41:05,700 | INFO | === Loading raw experimental dataset ===
+2026-09-09 13:41:05,702 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-09 13:41:05,702 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-09 13:41:05,715 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-09 13:41:05,721 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-09 13:41:05,787 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-09 13:41:05,792 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-09 13:41:05,794 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-09 13:41:05,795 | INFO | Conflicting duplicate groups: 0
+2026-09-09 13:41:05,808 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-09 13:41:05,809 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-09 13:41:05,809 | INFO | === QC summary ===
+2026-09-09 13:41:05,809 | INFO | Total rows: 30
+2026-09-09 13:41:05,810 | INFO | Valid SMILES parsed: 30
+2026-09-09 13:41:05,810 | INFO | Active compounds: 7
+2026-09-09 13:41:05,810 | INFO | Compounds with undefined stereo: 7
+2026-09-09 13:41:05,810 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-09 13:41:05,810 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-09 13:41:05,825 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-09 13:41:05,826 | INFO | === Phase 2 complete ===
+2026-09-09 13:43:40,247 | INFO | === Loading raw experimental dataset ===
+2026-09-09 13:43:40,249 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-09 13:43:40,249 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-09 13:43:40,262 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-09 13:43:40,269 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-09 13:43:40,336 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-09 13:43:40,340 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-09 13:43:40,342 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-09 13:43:40,343 | INFO | Conflicting duplicate groups: 0
+2026-09-09 13:43:40,355 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-09 13:43:40,355 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-09 13:43:40,355 | INFO | === QC summary ===
+2026-09-09 13:43:40,356 | INFO | Total rows: 30
+2026-09-09 13:43:40,356 | INFO | Valid SMILES parsed: 30
+2026-09-09 13:43:40,356 | INFO | Active compounds: 7
+2026-09-09 13:43:40,356 | INFO | Compounds with undefined stereo: 7
+2026-09-09 13:43:40,356 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-09 13:43:40,356 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-09 13:43:40,372 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-09 13:43:40,372 | INFO | === Phase 2 complete ===
+2026-09-09 15:55:20,818 | INFO | === Loading raw experimental dataset ===
+2026-09-09 15:55:20,823 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-09 15:55:20,823 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-09 15:55:20,850 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-09 15:55:20,866 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-09 15:55:21,054 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-09 15:55:21,077 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-09 15:55:21,085 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-09 15:55:21,089 | INFO | Conflicting duplicate groups: 0
+2026-09-09 15:55:21,122 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-09 15:55:21,127 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-09 15:55:21,127 | INFO | === QC summary ===
+2026-09-09 15:55:21,127 | INFO | Total rows: 30
+2026-09-09 15:55:21,127 | INFO | Valid SMILES parsed: 30
+2026-09-09 15:55:21,128 | INFO | Active compounds: 7
+2026-09-09 15:55:21,128 | INFO | Compounds with undefined stereo: 7
+2026-09-09 15:55:21,128 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-09 15:55:21,132 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-09 15:55:21,167 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-09 15:55:21,168 | INFO | === Phase 2 complete ===
+2026-09-10 13:39:32,123 | INFO | === Loading raw experimental dataset ===
+2026-09-10 13:39:32,124 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-10 13:39:32,124 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-10 13:39:32,137 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-10 13:39:32,142 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-10 13:39:32,206 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-10 13:39:32,209 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-10 13:39:32,214 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-10 13:39:32,216 | INFO | Conflicting duplicate groups: 0
+2026-09-10 13:39:32,229 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-10 13:39:32,230 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-10 13:39:32,231 | INFO | === QC summary ===
+2026-09-10 13:39:32,231 | INFO | Total rows: 30
+2026-09-10 13:39:32,231 | INFO | Valid SMILES parsed: 30
+2026-09-10 13:39:32,231 | INFO | Active compounds: 7
+2026-09-10 13:39:32,231 | INFO | Compounds with undefined stereo: 7
+2026-09-10 13:39:32,231 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-10 13:39:32,232 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-10 13:39:32,247 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-10 13:39:32,247 | INFO | === Phase 2 complete ===
+2026-09-10 14:10:48,060 | INFO | === Loading raw experimental dataset ===
+2026-09-10 14:10:48,061 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-10 14:10:48,061 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-10 14:10:48,074 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-10 14:10:48,079 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-10 14:10:48,145 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-10 14:10:48,149 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-10 14:10:48,152 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-10 14:10:48,152 | INFO | Conflicting duplicate groups: 0
+2026-09-10 14:10:48,165 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-10 14:10:48,166 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-10 14:10:48,167 | INFO | === QC summary ===
+2026-09-10 14:10:48,167 | INFO | Total rows: 30
+2026-09-10 14:10:48,167 | INFO | Valid SMILES parsed: 30
+2026-09-10 14:10:48,167 | INFO | Active compounds: 7
+2026-09-10 14:10:48,167 | INFO | Compounds with undefined stereo: 7
+2026-09-10 14:10:48,167 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-10 14:10:48,167 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-10 14:10:48,182 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-10 14:10:48,183 | INFO | === Phase 2 complete ===
+2026-09-10 14:17:53,286 | INFO | === Loading raw experimental dataset ===
+2026-09-10 14:17:53,288 | INFO | Loaded 30 rows from /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+2026-09-10 14:17:53,288 | INFO | Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+2026-09-10 14:17:53,301 | INFO | Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+2026-09-10 14:17:53,306 | INFO | Salt/solvate check: 0 multi-component entries
+2026-09-10 14:17:53,370 | INFO | Tautomer normalization: 23 compounds had tautomer change
+2026-09-10 14:17:53,374 | INFO | Charge normalization: 0 compounds with non-zero net charge
+2026-09-10 14:17:53,377 | INFO | Exact canonical duplicates: 0 compound-rows
+2026-09-10 14:17:53,377 | INFO | Conflicting duplicate groups: 0
+2026-09-10 14:17:53,390 | INFO | Series assignment: 17 series from 17 unique Murcko scaffolds
+2026-09-10 14:17:53,391 | INFO | Activity IQR outlier threshold (upper): 4419.1 uM
+2026-09-10 14:17:53,391 | INFO | === QC summary ===
+2026-09-10 14:17:53,391 | INFO | Total rows: 30
+2026-09-10 14:17:53,391 | INFO | Valid SMILES parsed: 30
+2026-09-10 14:17:53,391 | INFO | Active compounds: 7
+2026-09-10 14:17:53,391 | INFO | Compounds with undefined stereo: 7
+2026-09-10 14:17:53,391 | INFO | No compounds were silently deleted; every exclusion is flagged and reasoned.
+2026-09-10 14:17:53,392 | INFO | Label distribution (active=1): {0: 23, 1: 7}
+2026-09-10 14:17:53,407 | INFO | Canonical dataset hash: 57370fd667a8bfee309cea8c459be3c46ed40e5b17f508136806d1729e9888a5
+2026-09-10 14:17:53,407 | INFO | === Phase 2 complete ===
