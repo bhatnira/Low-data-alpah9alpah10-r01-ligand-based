@@ -1,4 +1,4 @@
 dir,present,files,status
 structures/af3,False,[],NOT AVAILABLE
 structures/boltz,False,[],NOT AVAILABLE
-structures/consensus,True,"['structures/consensus/structural_benchmarks.csv', 'structures/consensus/structural_manifest.json', 'structures/consensus/structural_consensus_report.csv']",AVAILABLE
+structures/consensus,True,"['structures/consensus/structural_benchmarks.csv', 'structures/consensus/structural_consensus_report.csv', 'structures/consensus/structural_manifest.json']",AVAILABLE

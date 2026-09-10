@@ -1,7 +1,7 @@
 {
-  "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
-  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
-  "generated_at": "2026-09-10T19:19:38Z",
+  "config_hash": "ef25a7f0bc4a002ab3a352d42ad5b9d850387f7dce79196fc5748007f0d6e406",
+  "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml",
+  "generated_at": "2026-09-10T22:05:19Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "isolation": {
@@ -12,13 +12,13 @@
     "n_deduped_by_canonical_smiles": 4,
     "n_panel": 70,
     "n_parseable": 70,
-    "panel_data_hash": "332504765f59632f807a887a5a4e9cd3f9d7ccb0615f4fdaaa5c6758f2499b86",
+    "panel_data_hash": "46fd48509524a95af97a88dd1934fb88634695c930a6b9176f32d56430d1116c",
     "raw_other_modulators_hash": "otherModulators.csv=ea4a511f3dcc0c40728dfc3039797612c08587bfc1d5aa57ab0ad91d6bb8f0e1",
     "source_counts": {
       "otherModulators.csv": 70
     },
     "source_hashes": {
-      "/Users/nb/Documents/ligand-based-modeling/otherModulators.csv": "ea4a511f3dcc0c40728dfc3039797612c08587bfc1d5aa57ab0ad91d6bb8f0e1"
+      "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/otherModulators.csv": "ea4a511f3dcc0c40728dfc3039797612c08587bfc1d5aa57ab0ad91d6bb8f0e1"
     },
     "summary": {
       "a9a10_training_scaffold_hit_ids": "",
@@ -27,16 +27,16 @@
       "n_panel": 70,
       "n_parseable": 70,
       "pred_activity_ge_0_5_frac": 0.0,
-      "pred_activity_mean": 0.2148904761904762,
-      "pred_activity_std": 0.04454760870118383
+      "pred_activity_mean": 0.3116428571428571,
+      "pred_activity_std": 0.05656035271252119
     }
   },
   "module": "selectivity",
   "numpy": "2.5.3",
-  "pandas": "2.3.3",
-  "python": "3.14.2",
-  "rdkit": "2025.09.4",
-  "scikit_learn": "1.8.0",
+  "pandas": "3.0.5",
+  "python": "3.12.14",
+  "rdkit": "2026.03.6",
+  "scikit_learn": "1.9.1",
   "seeds": {
     "bootstrap": 42,
     "conformer_etkdgv3": 42,

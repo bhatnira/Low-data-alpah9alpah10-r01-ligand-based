@@ -1,6 +1,6 @@
 project:
   name: alpha9alpha10-nAChR-PAM-TAF
-  root: /Users/nb/Documents/ligand-based-modeling/project
+  root: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project
   schema_version: "2.0.0"
   cycle: 0
   description: >
@@ -10,7 +10,7 @@ project:
     medicinal-chemist review -> synthesis -> electrophysiology -> update.
 
 data:
-  raw_csv: /Users/nb/Documents/ligand-based-modeling/modulator-dataset-a9a10.csv
+  raw_csv: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/modulator-dataset-a9a10.csv
   id_column: Identifier
   smiles_column: Smiles
   activity_columns:
@@ -177,7 +177,7 @@ reinvent:
   # Optional path to a REINVENT4 CLI binary (overrides PATH/venv detection).
   # Empty = auto-detect: $REINVENT_BIN, reinvent/reinvent4/reInvent on PATH, or
   # project/venvs/reinvent*/bin/{reinvent,reinvent4,reInvent}.
-  binary: ""
+  binary: "venvs/reinvent312/bin/reInvent"
   # Python used to run reinvent/score_lbm.py (ExternalProcess scoring bridge).
   # Empty = the interpreter running the pipeline itself (sys.executable),
   # which already has rdkit/scikit-learn/joblib.
@@ -227,11 +227,11 @@ prospective:
     chemically novel alpha9alpha10 nAChR modulators.
 
 reports:
-  out_dir: /Users/nb/Documents/ligand-based-modeling/project/reports
+  out_dir: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reports
   formats: [csv, html]
 
 logging:
-  dir: /Users/nb/Documents/ligand-based-modeling/project/logs
+  dir: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/logs
   level: INFO
 
 benchmarks:

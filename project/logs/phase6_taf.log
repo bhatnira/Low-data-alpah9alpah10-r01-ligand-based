@@ -248,3 +248,33 @@
  TAF-6      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
 2026-09-10 14:19:57,953 | INFO | === TAF blueprint ===
 2026-09-10 14:19:57,953 | INFO | === Falsification framework (section 33) ===
+2026-09-10 17:41:48,917 | INFO | === TAF evidence matrix ===
+2026-09-10 17:41:48,993 | INFO | taf_id      evidence_class  n_independent_sources                 status
+ TAF-1      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-2      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-3 MODERATE_CONFIDENCE                      3 PROSPECTIVE_HYPOTHESIS
+ TAF-4      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-5      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-6      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+2026-09-10 17:41:48,993 | INFO | === TAF blueprint ===
+2026-09-10 17:41:48,999 | INFO | === Falsification framework (section 33) ===
+2026-09-10 18:00:52,136 | INFO | === TAF evidence matrix ===
+2026-09-10 18:00:52,206 | INFO | taf_id      evidence_class  n_independent_sources                 status
+ TAF-1      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-2      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-3 MODERATE_CONFIDENCE                      3 PROSPECTIVE_HYPOTHESIS
+ TAF-4      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-5      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-6      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+2026-09-10 18:00:52,206 | INFO | === TAF blueprint ===
+2026-09-10 18:00:52,213 | INFO | === Falsification framework (section 33) ===
+2026-09-10 18:05:51,591 | INFO | === TAF evidence matrix ===
+2026-09-10 18:05:51,645 | INFO | taf_id      evidence_class  n_independent_sources                 status
+ TAF-1      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-2      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-3 MODERATE_CONFIDENCE                      3 PROSPECTIVE_HYPOTHESIS
+ TAF-4      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-5      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-6      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+2026-09-10 18:05:51,645 | INFO | === TAF blueprint ===
+2026-09-10 18:05:51,650 | INFO | === Falsification framework (section 33) ===

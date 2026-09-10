@@ -46,3 +46,11 @@
 2026-09-10 14:19:58,618 | INFO | targets from prospective/round1_plan.csv: 8
 2026-09-10 14:23:46,673 | INFO | worker returned 24 predicted/declared rows
 2026-09-10 14:23:46,722 | INFO | 3 PREDICTED_ROUTE rows over 1 targets; clean routes for 1 (targets=8)
+2026-09-10 18:01:44,376 | INFO | === Synth route prediction for round 1 ===
+2026-09-10 18:01:44,378 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-10 18:01:44,380 | INFO | targets from prospective/round1_plan.csv: 7
+2026-09-10 18:01:44,405 | INFO | 0 PREDICTED_ROUTE rows over 0 targets; clean routes for 0 (targets=7)
+2026-09-10 19:28:17,536 | INFO | === Synth route prediction for round 1 ===
+2026-09-10 19:28:17,537 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-10 19:28:17,544 | INFO | targets from prospective/round1_plan.csv: 7
+2026-09-10 19:28:17,569 | INFO | 0 PREDICTED_ROUTE rows over 0 targets; clean routes for 0 (targets=7)

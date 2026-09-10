@@ -142,3 +142,81 @@
 2026-09-10 14:19:58,159 | INFO | Inception seed (7 active SMILES) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/inception.smi
 2026-09-10 14:19:58,161 | INFO | LibInvent scaffolds (7) -> /Users/nb/Documents/ligand-based-modeling/project/reinvent/scaffolds_libinvent.smi
 2026-09-10 14:19:58,178 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 and run reinvent/run_generation.sh to populate reinvent/out/<mode>/.
+2026-09-10 17:45:23,299 | INFO | === REINVENT 4 integration ===
+2026-09-10 17:45:37,090 | INFO | REINVENT binary: detected
+2026-09-10 17:45:37,534 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:45:37,822 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:45:37,833 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 17:45:37,888 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=v3_subcommand, device=cuda)
+2026-09-10 17:45:44,831 | INFO | mode de_novo: FAILED (returncode=2)
+2026-09-10 17:45:51,495 | INFO | mode local_analog: FAILED (returncode=2)
+2026-09-10 17:45:57,995 | INFO | mode scaffold_hopping: FAILED (returncode=2)
+2026-09-10 17:46:04,290 | INFO | mode taf_disrupting: FAILED (returncode=2)
+2026-09-10 17:46:10,385 | INFO | mode information_gain: FAILED (returncode=2)
+2026-09-10 17:46:16,751 | INFO | mode local_analog_libinvent: FAILED (returncode=2)
+2026-09-10 17:46:16,759 | INFO | collected 0 unique canonical molecules (RUN_FAILED)
+2026-09-10 17:46:40,731 | INFO | === REINVENT 4 integration ===
+2026-09-10 17:46:48,068 | INFO | REINVENT binary: detected
+2026-09-10 17:46:48,352 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:46:48,630 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:46:48,638 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 17:46:48,672 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+2026-09-10 17:46:56,246 | INFO | mode de_novo: FAILED (returncode=1)
+2026-09-10 17:47:03,523 | INFO | mode local_analog: FAILED (returncode=1)
+2026-09-10 17:47:10,571 | INFO | mode scaffold_hopping: FAILED (returncode=1)
+2026-09-10 17:47:17,619 | INFO | mode taf_disrupting: FAILED (returncode=1)
+2026-09-10 17:47:25,346 | INFO | mode information_gain: FAILED (returncode=1)
+2026-09-10 17:47:32,791 | INFO | mode local_analog_libinvent: FAILED (returncode=1)
+2026-09-10 17:47:32,802 | INFO | collected 0 unique canonical molecules (RUN_FAILED)
+2026-09-10 17:48:11,192 | INFO | === REINVENT 4 integration ===
+2026-09-10 17:48:19,215 | INFO | REINVENT binary: detected
+2026-09-10 17:48:19,500 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:48:19,780 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:48:19,788 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 17:48:19,825 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+2026-09-10 17:48:28,870 | INFO | mode de_novo: FAILED (returncode=1)
+2026-09-10 17:48:37,189 | INFO | mode local_analog: FAILED (returncode=1)
+2026-09-10 17:48:44,423 | INFO | mode scaffold_hopping: FAILED (returncode=1)
+2026-09-10 17:48:51,427 | INFO | mode taf_disrupting: FAILED (returncode=1)
+2026-09-10 17:48:58,451 | INFO | mode information_gain: FAILED (returncode=1)
+2026-09-10 17:49:05,769 | INFO | mode local_analog_libinvent: FAILED (returncode=1)
+2026-09-10 17:49:05,773 | INFO | collected 0 unique canonical molecules (RUN_FAILED)
+2026-09-10 17:50:11,899 | INFO | === REINVENT 4 integration ===
+2026-09-10 17:50:19,326 | INFO | REINVENT binary: detected
+2026-09-10 17:50:19,613 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:50:19,891 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 17:50:19,900 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 17:50:19,970 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+2026-09-10 17:50:59,964 | INFO | mode de_novo: OK (returncode=0)
+2026-09-10 17:51:44,966 | INFO | mode local_analog: OK (returncode=0)
+2026-09-10 17:52:27,589 | INFO | mode scaffold_hopping: OK (returncode=0)
+2026-09-10 17:53:07,191 | INFO | mode taf_disrupting: OK (returncode=0)
+2026-09-10 17:53:49,129 | INFO | mode information_gain: OK (returncode=0)
+2026-09-10 17:55:21,595 | INFO | mode local_analog_libinvent: OK (returncode=0)
+2026-09-10 17:55:21,934 | INFO | collected 945 unique canonical molecules (RUN_COMPLETED)
+2026-09-10 18:00:52,346 | INFO | === REINVENT 4 integration ===
+2026-09-10 18:01:12,392 | INFO | REINVENT binary: detected
+2026-09-10 18:01:12,506 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 18:01:12,599 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 18:01:12,607 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 18:01:12,646 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=v3_subcommand, device=cuda)
+2026-09-10 18:01:19,444 | INFO | mode de_novo: FAILED (returncode=2)
+2026-09-10 18:01:24,400 | INFO | mode local_analog: FAILED (returncode=2)
+2026-09-10 18:01:28,768 | INFO | mode scaffold_hopping: FAILED (returncode=2)
+2026-09-10 18:01:33,278 | INFO | mode taf_disrupting: FAILED (returncode=2)
+2026-09-10 18:01:38,279 | INFO | mode information_gain: FAILED (returncode=2)
+2026-09-10 18:01:42,636 | INFO | mode local_analog_libinvent: FAILED (returncode=2)
+2026-09-10 18:01:42,871 | INFO | collected 945 unique canonical molecules (RUN_FAILED)
+2026-09-10 18:05:51,765 | INFO | === REINVENT 4 integration ===
+2026-09-10 18:05:57,753 | INFO | REINVENT binary: detected
+2026-09-10 18:05:57,849 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 18:05:57,941 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-10 18:05:57,947 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-10 18:05:57,977 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+2026-09-10 18:14:01,777 | INFO | mode de_novo: OK (returncode=0)
+2026-09-10 18:22:05,731 | INFO | mode local_analog: OK (returncode=0)
+2026-09-10 18:30:11,438 | INFO | mode scaffold_hopping: OK (returncode=0)
+2026-09-10 18:38:08,790 | INFO | mode taf_disrupting: OK (returncode=0)
+2026-09-10 18:46:08,297 | INFO | mode information_gain: OK (returncode=0)
+2026-09-10 19:15:26,771 | INFO | mode local_analog_libinvent: OK (returncode=0)
+2026-09-10 19:15:33,475 | INFO | collected 31397 unique canonical molecules (RUN_COMPLETED)

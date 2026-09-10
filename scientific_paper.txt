@@ -384,8 +384,7 @@ Falsification criteria (pre-written, per TAF, tested BEFORE results are seen):
  8. GENERATIVE CHEMISTRY INTEGRATIONS
 ================================================================================
 REINVENT4 (Phase 9-11).
-  - Status: configs written and checksum-validated; binary NOT AVAILABLE in
-    repository -> generation pending; NO molecules fabricated.
+  - Status: configs written and checksum-validated; binary present -> generation run (RUN_COMPLETED); 31397 molecules collected; no molecules fabricated.
   - Priors: reinvent_pubchem.prior (Mol2Mol), libinvent.prior; both
     checksum-verified against Zenodo record 20701824.
   - Stereochemistry: only the Mol2Mol prior supports stereo; isomeric_smiles
@@ -529,8 +528,7 @@ repository for reuse as templates.
    favorite method.
 4. No structural data (AF3/Boltz) and no 3D outputs. TAF-6 rests on packaged
    computed descriptors only; structural layer is NOT AVAILABLE.
-5. REINVENT binary absent. Generative novelty metrics are computed only when
-   molecules exist; none fabricated.
+5. REINVENT binary present (31397 molecules generated). Generative novelty metrics are computed only when molecules exist; none fabricated.
 6. Permutation per-feature nulls not significant at dataset level; importance
    evidence is corroborative, never sole.
 7. All prospective results are PENDING_EXPERIMENT. Nothing in this report is
@@ -640,8 +638,7 @@ in the closed-loop system rather than by an overclaim:
                                     method; constant signals flagged
   4. no AF3/Boltz structural     -> data-watch ingests outputs into TAF-6 when
                                     they appear; honest NOT AVAILABLE until then
-  5. REINVENT binary absent      -> generator registry scans for newly produced
-                                    molecules each cycle; nothing fabricated
+  5. REINVENT binary present (31397 molecules) -> generator registry scans for newly produced molecules each cycle; nothing fabricated
   6. permutation nulls not sig.  -> feature support gated on permutation
                                     significance + bootstrap CI; importances
                                     are corroborative only

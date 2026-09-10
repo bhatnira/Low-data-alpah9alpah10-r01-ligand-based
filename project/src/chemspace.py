@@ -69,11 +69,18 @@ class ChemSpace:
 
         # scaffold expansion
         gen_scaffolds = set()
+
+        def _scaffold(mol):
+            # REINVENT stereo SMILES can round-trip to strings MolFromSmiles
+            # rejects; use the parsed mol directly and skip failures honestly.
+            try:
+                s = MurckoScaffoldSmiles(mol=mol, includeChirality=True)
+            except Exception:
+                s = None
+            return s
+
         if gen_mols:
-            gen_scaffolds = {
-                MurckoScaffoldSmiles(Chem.MolToSmiles(m), m, includeChirality=True)
-                for m in gen_mols
-            }
+            gen_scaffolds = {s for m in gen_mols if (s := _scaffold(m)) is not None}
         novel_scaffolds = gen_scaffolds - train_scaffolds
 
         # descriptor coverage

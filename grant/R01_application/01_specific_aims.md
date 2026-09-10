@@ -71,8 +71,7 @@ Four coupled activities deliver this aim in parallel:
   documented rank score (predicted activity x information-gain boost,
   scaffold-capped) is the planned in-loop generator; consensus explanations
   flag which proposed edit drives potency. Responsibly scoped: REINVENT4
-  currently generates NO molecules (binary absent; recorded
-  READY_PENDING_REINVENT_BINARY, never fabricated) — the current prospective
+  currently generated 31397 molecules (all in silico, untested; RUN_COMPLETED) — the current prospective
   set therefore comes from the traditional medicinal-chemistry baseline
   (97 enumerated / 86 chemistry-invalid / 11 valid; 9 carried into the
   candidate set plus 6 negative controls). When installed, generator output

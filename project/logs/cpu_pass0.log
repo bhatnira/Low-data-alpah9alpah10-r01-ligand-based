@@ -1,0 +1,355 @@
+[INFO] === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+[INFO] === Phase 1: initial project audit (section 3) ===
+[INFO] existing_datasets: 10 entries
+[INFO] existing_models: 4 entries
+[INFO] existing_scripts: 25 entries
+[INFO] existing_artifacts: 101 entries
+[INFO] structural_status: 3 entries
+[INFO] Phase 1 audit complete; no duplicate work will be created.
+[INFO] audit completed
+[INFO] === dataset -> Phase 2: dataset governance + stereochemistry audit ===
+[INFO] === Loading raw experimental dataset ===
+[INFO] Loaded 30 rows from /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/modulator-dataset-a9a10.csv
+[INFO] Columns: ['Identifier', 'Smiles', 'Activity (uM)', '%Potentiation']
+[INFO] Missing values:
+        field  n_missing
+   Identifier          0
+       Smiles          0
+Activity (uM)          0
+%Potentiation          0
+[INFO] Salt/solvate check: 0 multi-component entries
+[INFO] Tautomer normalization: 23 compounds had tautomer change
+[INFO] Charge normalization: 0 compounds with non-zero net charge
+[INFO] Exact canonical duplicates: 0 compound-rows
+[INFO] Conflicting duplicate groups: 0
+[INFO] Series assignment: 17 series from 17 unique Murcko scaffolds
+[INFO] Activity IQR outlier threshold (upper): 4419.1 uM
+[INFO] === QC summary ===
+[INFO] Total rows: 30
+[INFO] Valid SMILES parsed: 30
+[INFO] Active compounds: 7
+[INFO] Compounds with undefined stereo: 7
+[INFO] No compounds were silently deleted; every exclusion is flagged and reasoned.
+[INFO] Label distribution (active=1): {0: 23, 1: 7}
+[INFO] Canonical dataset hash: f2c517aa953361799fbd5be414fd6b3b74dc649573ddd8ac308a3f5e8086cd3a
+[INFO] === Phase 2 complete ===
+[INFO] dataset completed
+[INFO] === sar -> Phase 3: experimental SAR (MMP, fragments, scaffolds, hypotheses) ===
+[INFO] Loaded analysis-ready dataset: 30 rows
+[INFO] === MMP analysis (section 6.1) ===
+[INFO] activity_change
+no_change            10
+lost_activity         8
+gained_activity       3
+increased_potency     2
+[INFO] MMP pairs: 23
+[INFO] === MMP transformation analysis (section 6.1, true MMP) ===
+[INFO] Transformation classes:
+transformation_class
+alkyl_chain_extension       30
+other                       15
+aromatic_substitution        8
+EWG_introduction_removal     3
+[INFO] Activity changes:
+activity_change
+no_change            31
+lost_activity        16
+increased_potency     4
+gained_activity       4
+decreased_potency     1
+[INFO] === Fragment enrichment analysis (section 6.2) ===
+[INFO]         Feature          SMARTS  Active  Active_tot  Active_%  Inactive  Inactive_tot  Inactive_%   Enrichment  Fisher_p
+       Nitrogen            [#7]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+        Bromine            [Br]       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Alkyne             C#C       1           7      14.3         0            23         0.0 1.428571e+09    0.2333
+         Benzyl       c1ccccc1C       1           7      14.3         2            23         8.7 1.643000e+00    1.0000
+         Acetal [OR0][CR0][OR0]       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+        Lactone     C(=O)O[C,C]       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Hydroxyl       [CX4][OH]       5           7      71.4         9            23        39.1 1.825000e+00    0.2040
+          Ether   [C!H0]O[C!H0]       0           7       0.0         2            23         8.7 0.000000e+00    1.0000
+CarboxylicEster          C(=O)O       7           7     100.0        22            23        95.7 1.045000e+00    1.0000
+       Chlorine            [Cl]       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+      Dioxolane         C1OCCO1       2           7      28.6        15            23        65.2 4.380000e-01    0.1897
+           Enol          C=C(O)       7           7     100.0        17            23        73.9 1.353000e+00    0.2901
+  DefinedStereo           [C@H]       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+     SmallAlkyl             CCC       7           7     100.0        23            23       100.0 1.000000e+00    1.0000
+        Nitrile             C#N       0           7       0.0         1            23         4.3 0.000000e+00    1.0000
+  AliphaticRing  [C]1[C][C][C]1       0           7       0.0         0            23         0.0 0.000000e+00    1.0000
+[INFO] === Scaffold-specific fragment analysis (section 6.2) ===
+[INFO] Scaffold-specific fragment rows: 80
+[INFO] === Descriptor analysis (section 6.3) ===
+[INFO] === Fingerprint + similarity (section 6.4) ===
+[INFO] Morgan: active-active mean=0.422, active-inactive mean=0.307
+[INFO] === Scaffold analysis (section 6.5) ===
+[INFO] Unique Murcko scaffolds: 17
+[INFO] === Stereochemical SAR (section 6.6) ===
+[INFO]  is_active stereo_stereo_status  count
+         0              defined     17
+         0      undefined/mixed      6
+         1              defined      6
+         1      undefined/mixed      1
+[INFO] === Competing SAR hypotheses (section 7) ===
+[INFO] sar completed
+[INFO] === sar_ascorbate -> Phase 3b: ascorbate-focused SAR enrichment (R01 aim 1 deliverable) ===
+[INFO] === Ascorbate-focused SAR enrichment (phase 3b) ===
+[INFO] Dataset ascorbate-core: 24/30 (actives on core: 7)
+[INFO] Candidate panel: 15 rows, ascorbate-core: 8, enediol motif: 15
+[INFO]  ascorbate_core                                        subseries  n  active  active_fraction  potency_uM_min  potency_uM_max                  member_ids
+              1                                       2-O-alkoxy  1       1            1.000          1202.0          1202.0                        [24]
+              1     5,6-O-isopropylidene acetonide, free enediol  1       1            1.000          6077.0          6077.0                         [3]
+              1                            6-O-benzyl-type ether  1       1            1.000          1288.0          1288.0                        [18]
+              1                                  6-bromo-6-deoxy  1       1            1.000             2.6             2.6                        [25]
+              1                                   free ascorbate  3       2            0.667             0.0          1797.0                   [1, 2, 4]
+              1       5,6-O-isopropylidene acetonide, 3-O-alkoxy  8       1            0.125             0.0             0.2 [5, 6, 7, 8, 9, 10, 11, 12]
+              1                                 2,3-bis-O-alkoxy  1       0            0.000             0.0             0.0                        [22]
+              1                                       3-O-alkoxy  3       0            0.000             0.0             0.0                [19, 20, 21]
+              1 5,6-O-isopropylidene acetonide, 2,3-bis-O-alkoxy  5       0            0.000             0.0             0.0        [13, 14, 15, 16, 17]
+              0                                    non_ascorbate  6       0            0.000             0.0             0.0    [23, 26, 27, 28, 29, 30]
+[INFO] sar_ascorbate completed
+[INFO] === models -> Phase 4: model panel + LOCO/scaffold-out/bootstrap/permutation ===
+[INFO] === Leave-one-compound-out (LOCO) ===
+[INFO]             model                representation    n  n_correct  accuracy  balanced_accuracy
+      extra_trees              descriptors_only 30.0       21.0    0.7000             0.5559
+      extra_trees        fingerprints_morgan_r2 30.0       25.0    0.8333             0.6925
+      extra_trees fingerprints_plus_descriptors 30.0       26.0    0.8667             0.7143
+gradient_boosting              descriptors_only 30.0       23.0    0.7667             0.6988
+gradient_boosting        fingerprints_morgan_r2 30.0       24.0    0.8000             0.6708
+gradient_boosting fingerprints_plus_descriptors 30.0       24.0    0.8000             0.6708
+      logreg_desc              descriptors_only 30.0       23.0    0.7667             0.6988
+      logreg_desc        fingerprints_morgan_r2 30.0       24.0    0.8000             0.7205
+      logreg_desc fingerprints_plus_descriptors 30.0       23.0    0.7667             0.6491
+         majority              descriptors_only 30.0       23.0    0.7667             0.5000
+         majority        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+         majority fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+           random              descriptors_only 30.0       23.0    0.7667             0.5000
+           random        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+           random fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+    random_forest              descriptors_only 30.0       21.0    0.7000             0.6056
+    random_forest        fingerprints_morgan_r2 30.0       23.0    0.7667             0.6988
+    random_forest fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+            ridge              descriptors_only 30.0       24.0    0.8000             0.7702
+            ridge        fingerprints_morgan_r2 30.0       21.0    0.7000             0.6056
+            ridge fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+[INFO] === Leave-murcko_scaffold-out ===
+[INFO] scaffold-out summary (accuracy): {'extra_trees': model
+extra_trees    0.7000
+extra_trees    0.7333
+extra_trees    0.7667
+Name: accuracy, dtype: float64, 'gradient_boosting': model
+gradient_boosting    0.7667
+gradient_boosting    0.7000
+gradient_boosting    0.8000
+Name: accuracy, dtype: float64, 'logreg_desc': model
+logreg_desc    0.7667
+logreg_desc    0.7667
+logreg_desc    0.7667
+Name: accuracy, dtype: float64, 'majority': model
+majority    0.7667
+majority    0.7667
+majority    0.7667
+Name: accuracy, dtype: float64, 'random': model
+random    0.7333
+random    0.7333
+random    0.7333
+Name: accuracy, dtype: float64, 'random_forest': model
+random_forest    0.7333
+random_forest    0.7667
+random_forest    0.8000
+Name: accuracy, dtype: float64, 'ridge': model
+ridge    0.7667
+ridge    0.7000
+ridge    0.7000
+Name: accuracy, dtype: float64}
+[INFO] === Leave-one-series-out ===
+[INFO] series-out summary written (n series = 17)
+[INFO] === Chemical-distance validation ===
+[INFO] === Bootstrap performance uncertainty ===
+[INFO]             model   mean    std  ci_low  ci_high
+      extra_trees 0.9305 0.0412  0.8333   1.0000
+gradient_boosting 0.9231 0.0446  0.8333   1.0000
+      logreg_desc 0.9191 0.0406  0.8333   1.0000
+    random_forest 0.9171 0.0442  0.8317   1.0000
+            ridge 0.9118 0.0400  0.8333   0.9667
+[INFO] === Permutation test (chance-level null) ===
+[INFO]         model  observed_accuracy  perm_mean  perm_std  perm_p_value  n_permutations
+random_forest                1.0      0.986     0.019          0.62             200
+[INFO] === Applicability domain (section 10) ===
+[INFO] applicability_domain
+IN-DOMAIN    30
+[INFO] === Uncertainty axes (section 11) ===
+[INFO]  compound_id  predictive_uncertainty  model_disagreement  ad_uncertainty
+           1                  0.0705              0.0023          0.0000
+           2                  0.0705              0.0023          0.0000
+           3                  0.2862              0.0412          0.0000
+           4                  0.4271              0.1128          0.2333
+           5                  0.4142              0.1033          0.0000
+           6                  0.3470              0.0656          0.0029
+           7                  0.3470              0.0656          0.0000
+           8                  0.2932              0.0444          0.0000
+           9                  0.2375              0.0279          0.0000
+          10                  0.2862              0.0421          0.0000
+          11                  0.2280              0.0256          0.0274
+          12                  0.3190              0.0531          0.0000
+          13                  0.2789              0.0397          0.1000
+          14                  0.2465              0.0303          0.1591
+          15                  0.1838              0.0161          0.1406
+          16                  0.1561              0.0114          0.1206
+          17                  0.3883              0.0868          0.0500
+          18                  0.2789              0.0390          0.0000
+          19                  0.4514              0.1340          0.0500
+          20                  0.4684              0.1528          0.0136
+          21                  0.4625              0.1458          0.0500
+          22                  0.4386              0.1222          0.1250
+          23                  0.3417              0.0633          0.4132
+          24                  0.2280              0.0249          0.0000
+          25                  0.1838              0.0155          0.0000
+          26                  0.3842              0.0845          0.2611
+          27                  0.3883              0.0868          0.1622
+          28                  0.3129              0.0515          0.4068
+          29                  0.3619              0.0727          0.4305
+          30                  0.3470              0.0656          0.4326
+[INFO] === Export frozen model artifact for prospective scoring ===
+[INFO] Exported frozen model artifact -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/models/classical/lbm_rf_fp_desc.joblib
+[INFO] models completed
+[INFO] === selectivity -> Phase 4b: non-a9a10 nAChR modulator selectivity/decoys panel (curation + chemotype scan + benchmark) ===
+[INFO] === Curate non-alpha9alpha10 nAChR selectivity panel ===
+[INFO] Source /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/otherModulators.csv: +74 rows
+[INFO] Deduped 4 duplicate canonical SMILES; kept 70 unique
+[INFO] Panel rows: 70; parseable: 70; unparseable: 0
+[INFO] Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+[INFO] Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.3116428571428571, "pred_activity_std": 0.05656035271252119, "pred_activity_ge_0_5_frac": 0.0}
+[INFO] Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+[INFO] selectivity completed
+[INFO] === xai -> Phase 5: explainable AI + stability ===
+[INFO] Fingerprint features used (non-degenerate bits): 183/2048
+[INFO] Top fingerprint bits by Gini: fp_423(0.0721), fp_1602(0.0432), fp_532(0.0422), fp_2022(0.0258), fp_1883(0.0194), fp_1699(0.0157), fp_974(0.0155), fp_486(0.0134), fp_915(0.0125), fp_1096(0.0121)
+[INFO] === Counterfactual analysis (section 14) ===
+[INFO]                       probe              category  predicted_active  confidence
+    ID01_break_lactone_ring        remove_feature              True       0.795
+     ID01_remove_primary_OH         change_h_bond              True       0.880
+ ID01_move_primary_OH_chain      move_substituent              True       0.760
+             ID25_remove_Br        remove_feature              True       0.950
+              ID25_Br_to_Cl       replace_feature              True       0.980
+             ID25_Br_to_CF3       replace_feature              True       0.880
+         ID25_remove_stereo alter_stereochemistry              True       0.980
+         ID12_remove_stereo alter_stereochemistry              True       0.880
+      ID12_flip_core_stereo alter_stereochemistry              True       0.880
+         ID12_remove_alkyne        remove_feature             False       0.755
+ ID12_alkyne_to_small_chain       replace_feature             False       0.770
+ ID18_ester_to_ether_linker          alter_linker              True       0.665
+ID18_benzyl_to_ortho_methyl     alter_hydrophobic              True       0.640
+        ID24_remove_alcohol        remove_feature              True       0.600
+           ID01_open_pyrone        remove_feature             False       0.695
+[INFO] === XAI reproducibility (section 13) ===
+[INFO] Top fingerprint bits by Gini: fp_423(0.0800), fp_1602(0.0689), fp_80(0.0258), fp_2028(0.0222), fp_1873(0.0163), fp_741(0.0149), fp_1405(0.0141), fp_1257(0.0131), fp_1389(0.0127), fp_1623(0.0126)
+[INFO] Top fingerprint bits by Gini: fp_423(0.1449), fp_1883(0.0833), fp_532(0.0475), fp_2028(0.0438), fp_1602(0.0232), fp_1096(0.0229), fp_257(0.0192), fp_695(0.0185), fp_2022(0.0183), fp_516(0.0145)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0838), fp_1602(0.0525), fp_1883(0.0239), fp_532(0.0233), fp_2022(0.0188), fp_318(0.0180), fp_1395(0.0158), fp_974(0.0152), fp_210(0.0152), fp_29(0.0148)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0836), fp_1883(0.0325), fp_532(0.0322), fp_2028(0.0311), fp_74(0.0243), fp_550(0.0190), fp_1096(0.0158), fp_1602(0.0150), fp_915(0.0142), fp_974(0.0142)
+[INFO] Top fingerprint bits by Gini: fp_532(0.0550), fp_926(0.0463), fp_2028(0.0455), fp_423(0.0453), fp_649(0.0287), fp_1819(0.0249), fp_18(0.0247), fp_1017(0.0242), fp_971(0.0221), fp_227(0.0197)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0784), fp_1883(0.0336), fp_2028(0.0311), fp_257(0.0294), fp_1602(0.0281), fp_807(0.0208), fp_1699(0.0187), fp_278(0.0168), fp_1389(0.0167), fp_80(0.0137)
+[INFO] Top fingerprint bits by Gini: fp_532(0.1291), fp_423(0.0731), fp_2022(0.0660), fp_486(0.0612), fp_1096(0.0383), fp_1883(0.0340), fp_227(0.0278), fp_1(0.0228), fp_971(0.0175), fp_1923(0.0166)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0711), fp_2028(0.0458), fp_1883(0.0406), fp_1602(0.0340), fp_532(0.0332), fp_1873(0.0245), fp_183(0.0216), fp_674(0.0179), fp_1623(0.0165), fp_1918(0.0160)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0826), fp_1222(0.0484), fp_532(0.0483), fp_210(0.0312), fp_2028(0.0301), fp_1699(0.0273), fp_1602(0.0253), fp_1883(0.0213), fp_501(0.0181), fp_1405(0.0180)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0658), fp_1883(0.0606), fp_516(0.0564), fp_1602(0.0445), fp_1389(0.0320), fp_2028(0.0290), fp_1444(0.0266), fp_257(0.0233), fp_695(0.0189), fp_1452(0.0145)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0473), fp_257(0.0344), fp_2028(0.0292), fp_1883(0.0203), fp_1(0.0197), fp_278(0.0191), fp_482(0.0164), fp_1699(0.0164), fp_591(0.0149), fp_532(0.0131)
+[INFO] Top fingerprint bits by Gini: fp_486(0.0469), fp_257(0.0430), fp_1699(0.0327), fp_2022(0.0319), fp_971(0.0298), fp_423(0.0291), fp_1602(0.0291), fp_482(0.0232), fp_694(0.0227), fp_222(0.0226)
+[INFO] Top fingerprint bits by Gini: fp_1096(0.0732), fp_532(0.0605), fp_1883(0.0478), fp_486(0.0444), fp_971(0.0436), fp_926(0.0417), fp_423(0.0363), fp_2022(0.0342), fp_1057(0.0306), fp_695(0.0273)
+[INFO] Top fingerprint bits by Gini: fp_532(0.0683), fp_423(0.0632), fp_1096(0.0422), fp_486(0.0285), fp_550(0.0240), fp_974(0.0219), fp_1602(0.0210), fp_2028(0.0204), fp_227(0.0194), fp_1395(0.0191)
+[INFO] Top fingerprint bits by Gini: fp_1883(0.0789), fp_423(0.0720), fp_1096(0.0357), fp_695(0.0340), fp_1670(0.0289), fp_1389(0.0280), fp_1405(0.0278), fp_2028(0.0266), fp_532(0.0237), fp_1452(0.0224)
+[INFO] Top fingerprint bits by Gini: fp_1602(0.0429), fp_423(0.0337), fp_486(0.0290), fp_1883(0.0271), fp_532(0.0233), fp_941(0.0223), fp_550(0.0220), fp_1389(0.0210), fp_1623(0.0204), fp_1699(0.0203)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0463), fp_2022(0.0393), fp_486(0.0351), fp_1602(0.0293), fp_1623(0.0241), fp_532(0.0234), fp_1883(0.0184), fp_1918(0.0173), fp_227(0.0164), fp_1096(0.0161)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0479), fp_1883(0.0466), fp_486(0.0430), fp_1096(0.0426), fp_532(0.0344), fp_1602(0.0311), fp_516(0.0265), fp_1487(0.0263), fp_2022(0.0256), fp_1389(0.0204)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0996), fp_1602(0.0618), fp_210(0.0359), fp_2028(0.0259), fp_1873(0.0239), fp_1918(0.0227), fp_1405(0.0226), fp_1670(0.0222), fp_1057(0.0219), fp_532(0.0203)
+[INFO] Top fingerprint bits by Gini: fp_423(0.1544), fp_2028(0.0807), fp_1883(0.0690), fp_1602(0.0573), fp_532(0.0523), fp_1405(0.0330), fp_1096(0.0282), fp_695(0.0268), fp_1389(0.0230), fp_1873(0.0225)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0953), fp_1883(0.0528), fp_532(0.0416), fp_1602(0.0395), fp_915(0.0319), fp_550(0.0273), fp_2028(0.0258), fp_1395(0.0223), fp_1918(0.0204), fp_76(0.0202)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0745), fp_532(0.0587), fp_1883(0.0481), fp_2028(0.0412), fp_1395(0.0302), fp_1602(0.0270), fp_1371(0.0269), fp_974(0.0251), fp_1096(0.0230), fp_251(0.0230)
+[INFO] Top fingerprint bits by Gini: fp_926(0.0708), fp_423(0.0682), fp_532(0.0628), fp_2028(0.0605), fp_1819(0.0353), fp_1(0.0343), fp_227(0.0312), fp_2022(0.0293), fp_649(0.0286), fp_486(0.0275)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0939), fp_1883(0.0546), fp_257(0.0437), fp_1602(0.0408), fp_2028(0.0375), fp_532(0.0326), fp_1670(0.0249), fp_1405(0.0237), fp_717(0.0180), fp_745(0.0180)
+[INFO] Top fingerprint bits by Gini: fp_532(0.1347), fp_423(0.1017), fp_486(0.0806), fp_1096(0.0503), fp_1883(0.0455), fp_2022(0.0434), fp_2028(0.0393), fp_1(0.0332), fp_1819(0.0314), fp_649(0.0239)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0791), fp_2028(0.0506), fp_532(0.0462), fp_1602(0.0381), fp_1883(0.0369), fp_1873(0.0325), fp_674(0.0271), fp_183(0.0234), fp_278(0.0210), fp_1306(0.0207)
+[INFO] Top fingerprint bits by Gini: fp_423(0.1162), fp_2028(0.0522), fp_1222(0.0443), fp_532(0.0410), fp_257(0.0388), fp_501(0.0347), fp_278(0.0335), fp_1883(0.0292), fp_1602(0.0284), fp_1405(0.0260)
+[INFO] Top fingerprint bits by Gini: fp_1883(0.0792), fp_423(0.0646), fp_1602(0.0518), fp_516(0.0420), fp_1389(0.0388), fp_1444(0.0372), fp_257(0.0365), fp_2028(0.0302), fp_695(0.0278), fp_1057(0.0181)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0759), fp_257(0.0632), fp_2028(0.0328), fp_1405(0.0256), fp_1699(0.0244), fp_1883(0.0229), fp_532(0.0228), fp_1(0.0226), fp_1670(0.0215), fp_717(0.0192)
+[INFO] Top fingerprint bits by Gini: fp_257(0.0560), fp_423(0.0535), fp_1699(0.0517), fp_2022(0.0431), fp_486(0.0398), fp_926(0.0277), fp_2028(0.0268), fp_1602(0.0267), fp_694(0.0257), fp_1883(0.0255)
+[INFO] Top fingerprint bits by Gini: fp_1096(0.1102), fp_423(0.0896), fp_1883(0.0803), fp_532(0.0734), fp_926(0.0557), fp_971(0.0496), fp_2022(0.0358), fp_695(0.0302), fp_1819(0.0274), fp_1057(0.0258)
+[INFO] Top fingerprint bits by Gini: fp_532(0.0984), fp_423(0.0727), fp_1096(0.0424), fp_915(0.0376), fp_486(0.0328), fp_2028(0.0309), fp_1918(0.0303), fp_1395(0.0296), fp_550(0.0293), fp_974(0.0291)
+[INFO] Top fingerprint bits by Gini: fp_423(0.1560), fp_1883(0.1443), fp_695(0.0566), fp_2028(0.0532), fp_1602(0.0463), fp_278(0.0415), fp_516(0.0410), fp_1389(0.0365), fp_1405(0.0311), fp_1670(0.0281)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0819), fp_1602(0.0571), fp_532(0.0493), fp_1623(0.0396), fp_674(0.0337), fp_1883(0.0277), fp_1699(0.0257), fp_1918(0.0257), fp_941(0.0251), fp_550(0.0223)
+[INFO] Top fingerprint bits by Gini: fp_423(0.0653), fp_2022(0.0469), fp_1602(0.0438), fp_532(0.0366), fp_1883(0.0272), fp_1395(0.0227), fp_926(0.0225), fp_486(0.0223), fp_1623(0.0211), fp_183(0.0206)
+[INFO] Top fingerprint bits by Gini: fp_1883(0.0627), fp_1096(0.0557), fp_423(0.0544), fp_532(0.0423), fp_2022(0.0337), fp_1602(0.0311), fp_486(0.0275), fp_1389(0.0255), fp_926(0.0241), fp_516(0.0220)
+[INFO] Top fingerprint bits by Gini: fp_423(0.6049), fp_183(0.0670), fp_550(0.0527), fp_1137(0.0355), fp_674(0.0351), fp_1918(0.0309), fp_1523(0.0282), fp_1722(0.0234), fp_658(0.0211), fp_1904(0.0172)
+[INFO] Top fingerprint bits by Gini: fp_423(1.0000), fp_18(0.0000), fp_2(0.0000), fp_1(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_13(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_423(0.7600), fp_974(0.0934), fp_1395(0.0708), fp_1918(0.0450), fp_915(0.0220), fp_550(0.0088), fp_1(0.0000), fp_29(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_423(0.6049), fp_1395(0.0793), fp_1918(0.0513), fp_974(0.0454), fp_1722(0.0362), fp_915(0.0311), fp_832(0.0282), fp_802(0.0189), fp_334(0.0151), fp_1137(0.0136)
+[INFO] Top fingerprint bits by Gini: fp_532(0.8333), fp_1(0.0000), fp_13(0.0000), fp_2(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_18(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_423(0.7600), fp_1(0.0000), fp_13(0.0000), fp_2(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_18(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_532(1.0000), fp_1(0.0000), fp_13(0.0000), fp_2(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_18(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_423(0.4900), fp_550(0.0600), fp_1395(0.0592), fp_974(0.0460), fp_1143(0.0398), fp_1623(0.0358), fp_915(0.0340), fp_183(0.0294), fp_1523(0.0225), fp_591(0.0210)
+[INFO] Top fingerprint bits by Gini: fp_423(0.7143), fp_1904(0.0778), fp_1921(0.0464), fp_658(0.0438), fp_334(0.0344), fp_1911(0.0081), fp_832(0.0046), fp_660(0.0031), fp_1137(0.0016), fp_125(0.0011)
+[INFO] Top fingerprint bits by Gini: fp_1883(0.4034), fp_423(0.1551), fp_591(0.0553), fp_1722(0.0309), fp_832(0.0295), fp_1143(0.0200), fp_1137(0.0128), fp_802(0.0091), fp_1904(0.0051), fp_294(0.0015)
+[INFO] Top fingerprint bits by Gini: fp_423(0.4734), fp_832(0.0506), fp_125(0.0260), fp_802(0.0210), fp_1523(0.0080), fp_1921(0.0040), fp_660(0.0030), fp_591(0.0012), fp_658(0.0010), fp_1143(0.0002)
+[INFO] Top fingerprint bits by Gini: fp_1699(0.1716), fp_486(0.1689), fp_2022(0.1679), fp_1671(0.0386), fp_694(0.0376), fp_1366(0.0359), fp_1670(0.0342), fp_1003(0.0264), fp_1955(0.0236), fp_931(0.0202)
+[INFO] Top fingerprint bits by Gini: fp_532(0.6628), fp_1096(0.3372), fp_13(0.0000), fp_1(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_2(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_532(0.7600), fp_974(0.0914), fp_1395(0.0655), fp_1918(0.0647), fp_550(0.0108), fp_915(0.0077), fp_728(0.0000), fp_29(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_1883(0.7499), fp_423(0.2501), fp_13(0.0000), fp_1(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_2(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_694(0.5333), fp_1(0.0000), fp_13(0.0000), fp_2(0.0000), fp_29(0.0000), fp_38(0.0000), fp_74(0.0000), fp_18(0.0000), fp_80(0.0000), fp_107(0.0000)
+[INFO] Top fingerprint bits by Gini: fp_423(0.4073), fp_532(0.0919), fp_674(0.0765), fp_1426(0.0650), fp_183(0.0313), fp_974(0.0312), fp_1911(0.0270), fp_1623(0.0208), fp_1523(0.0180), fp_1918(0.0114)
+[INFO] Top fingerprint bits by Gini: fp_532(0.3619), fp_1096(0.1236), fp_1883(0.1046), fp_80(0.0407), fp_423(0.0255), fp_1405(0.0187), fp_1444(0.0157), fp_832(0.0134), fp_125(0.0085), fp_802(0.0056)
+/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/src/xai.py:379: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  rho, _ = spearmanr([a[k] for k in keys], [b[k] for k in keys])
+/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/src/xai.py:432: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  rho, _ = spearmanr([ra[k] for k in keys], [rb[k] for k in keys])
+[INFO]                  dimension  spearman_rank_corr_mean  topk_overlap_mean  jaccard_topk_similarity  sign_consistency classification
+across_models_seeds_splits                 0.567503           1.496855                 0.373166          0.568240       MARGINAL
+  across_seeds_fixed_model                 0.911111           1.666667                 0.400000          1.000000         STABLE
+  across_models_fixed_seed                 0.844109           2.000000                 0.500000          0.866667         STABLE
+method_gini_vs_permutation                 0.042706           1.000000                 0.420370          0.215586       UNSTABLE
+   method_gini_vs_ablation                 0.238477           1.000000                 0.401852          0.200412       UNSTABLE
+[INFO] === Explanation-preservation analysis (section 26) ===
+[INFO]     top_generic_descriptor top_specific_descriptor  generic_descriptor_gini_frac  specific_descriptor_gini_frac  fragment_experimental_support_frac         shap_top3_features  shap_includes_specific  generic_dominated_flag  weak_experimental_fragment_support_flag  flag_artifact_exploitation                                                                            interpretation
+FractionCSP3,LogP,RotBonds                 HBD,HBA                         0.903                          0.097                                 1.0 FractionCSP3,LogP,RotBonds                       0                    True                                    False                       False Model top features retain experimental specificity; artifact-exploitation flag NOT raised
+[INFO] xai completed
+[INFO] === taf -> Phase 6: TAF evidence matrix + falsification framework ===
+[INFO] === TAF evidence matrix ===
+[INFO] taf_id      evidence_class  n_independent_sources                 status
+ TAF-1      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-2      LOW_CONFIDENCE                      2 PROSPECTIVE_HYPOTHESIS
+ TAF-3 MODERATE_CONFIDENCE                      3 PROSPECTIVE_HYPOTHESIS
+ TAF-4      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-5      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+ TAF-6      LOW_CONFIDENCE                      1 PROSPECTIVE_HYPOTHESIS
+[INFO] === TAF blueprint ===
+[INFO] === Falsification framework (section 33) ===
+[INFO] taf completed
+[INFO] === structures -> Phase 7: structural hypotheses (NOT AVAILABLE without AF3/Boltz) ===
+[INFO] === Structural consensus audit ===
+[WARNING] No AF3/Boltz/structural outputs found. Structural hypotheses are REQUIRES_EXPERIMENTAL_VALIDATION / NOT AVAILABLE.
+[INFO] structures completed
+[INFO] === medchem -> Phase 8: traditional medicinal chemistry baseline ===
+[INFO] === Traditional medicinal-chemistry baseline ===
+[INFO] Medchem baseline analogues generated: 11 valid (86 rejected as invalid chemistry)
+[INFO] medchem completed
+[INFO] === audit -> Audit: leakage + 18-question final audit ===
+[INFO] === Data leakage audit (section 40) ===
+[INFO] === Final 18-question audit (section 51) ===
+[INFO]  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+[INFO]          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+[INFO] {'PENDING_REVIEW': 6}
+[INFO] audit completed
+[INFO] workflow results: {'audit': 'OK', 'dataset': 'OK', 'sar': 'OK', 'sar_ascorbate': 'OK', 'models': 'OK', 'selectivity': 'OK', 'xai': 'OK', 'taf': 'OK', 'structures': 'OK', 'medchem': 'OK'}

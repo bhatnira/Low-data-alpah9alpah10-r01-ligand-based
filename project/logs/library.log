@@ -212,3 +212,25 @@
   CHT-006           O=C1C=C(OCc2ccccc2)CO1     2             2               0
   CHT-007                         c1ccccc1     2             2               1
   CHT-008 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     3             2               1
+2026-09-10 18:01:44,010 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-10 18:01:44,098 | INFO | Chemotype families: 8 (novel scaffolds: 6)
+2026-09-10 18:01:44,099 | INFO | family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             5               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     2             3               1
+  CHT-005        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-006    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-007           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-008                         c1ccccc1     2             2               1
+2026-09-10 19:28:17,104 | INFO | === Chemotype library projection (R01 deliverable, phase 19) ===
+2026-09-10 19:28:17,231 | INFO | Chemotype families: 8 (novel scaffolds: 6)
+2026-09-10 19:28:17,233 | INFO | family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             5               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     2             3               1
+  CHT-005        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-006    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-007           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-008                         c1ccccc1     2             2               1

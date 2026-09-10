@@ -7,18 +7,27 @@
     "refit_artifact": [],
     "hit_metrics_rounds": [],
     "data_watch": {
-      "reinvent_molecule_dirs": 5,
+      "reinvent_molecule_dirs": 6,
+      "generated_molecules_count": 31397,
+      "generated_molecules_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/generated_molecules.csv",
+      "generated_by_mode": {
+        "reinvent_de_novo": 6314,
+        "reinvent_scaffold_hopping": 6308,
+        "reinvent_information_gain": 6277,
+        "reinvent_local_analog": 6273,
+        "reinvent_taf_disrupting": 6225
+      },
       "structural_outputs_found": 0,
-      "reinvent_ingest": "pending until molecule files appear",
+      "reinvent_ingest": "ingested 31397 molecules",
       "structural_ingest": "NOT AVAILABLE - no AF3/Boltz outputs"
     },
     "provenance": {
-      "generated_at": "2026-09-10T19:23:46Z",
+      "generated_at": "2026-09-10T23:28:17Z",
       "module": "loop",
-      "python": "3.14.2",
-      "rdkit": "2025.09.4",
-      "scikit_learn": "1.8.0",
-      "pandas": "2.3.3",
+      "python": "3.12.14",
+      "rdkit": "2026.03.6",
+      "scikit_learn": "1.9.1",
+      "pandas": "3.0.5",
       "numpy": "2.5.3",
       "seeds": {
         "global": 42,
@@ -28,7 +37,7 @@
         "bootstrap": 42,
         "reinvent": 42
       },
-      "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
+      "config_hash": "05bcbb61e76ffdc56987f329f4d971e537eec49f5ed0e012dc192bf8005cc01e",
       "input_hashes": {
         "round": 1,
         "updates": [
@@ -41,7 +50,7 @@
         ]
       },
       "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
-      "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml"
+      "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml"
     }
   }
 ]

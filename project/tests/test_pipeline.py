@@ -107,7 +107,9 @@ def test_all_reinvent_toml_configs_parse():
         ex = next(c["ExternalProcess"] for c in st["component"] if "ExternalProcess" in c)
         # every LbM endpoint must call the scoring payload and request a property
         for e in ex["endpoint"]:
-            assert "score_lbm.py" in e["params"]["args"][0]
+            # REINVENT4 >= 4.8 ExternalProcess schema: executable/args are
+            # plain strings (not lists); the score payload path must appear
+            assert "score_lbm.py" in e["params"]["args"]
             assert e["params"]["property"]
 
 

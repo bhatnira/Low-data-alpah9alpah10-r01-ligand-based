@@ -1,6 +1,15 @@
 {
-  "reinvent_ingest": "pending until molecule files appear",
-  "reinvent_molecule_dirs": 5,
+  "generated_by_mode": {
+    "reinvent_de_novo": 6314,
+    "reinvent_information_gain": 6277,
+    "reinvent_local_analog": 6273,
+    "reinvent_scaffold_hopping": 6308,
+    "reinvent_taf_disrupting": 6225
+  },
+  "generated_molecules_count": 31397,
+  "generated_molecules_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/generated_molecules.csv",
+  "reinvent_ingest": "ingested 31397 molecules",
+  "reinvent_molecule_dirs": 6,
   "structural_ingest": "NOT AVAILABLE - no AF3/Boltz outputs",
   "structural_outputs_found": 0
 }

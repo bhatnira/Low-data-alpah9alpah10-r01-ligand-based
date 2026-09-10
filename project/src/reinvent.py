@@ -183,7 +183,7 @@ class ReinventManager:
         if name in ("reInvent", "reinvent4"):
             return "direct"
         if name == "reinvent":
-            if version_line and ("Reinvent 4" in version_line or "Reinvent4" in version_line):
+            if version_line and "reinvent 4" in version_line.lower():
                 return "direct"
             return "v3_subcommand"
         return "direct"
@@ -434,7 +434,9 @@ class ReinventManager:
         L.append("use_checkpoint = false")
         L.append("purge_memories = false")
         L.append(f'batch_size = {r.get("batch_size", 64)}')
-        L.append("unique_sequences = true")
+        # NOTE: REINVENT4 >= 4.8 validates [parameters]; unique_sequences
+        # was removed from the schema (uniqueness handled by the diversity
+        # filter + the repository-level canonical-SMILES dedup on collect).
         L.append("randomize_smiles = true")
         # stereochemistry is first-class only for the Mol2Mol prior; the
         # LibInvent prior does NOT support stereo, so isomeric_smiles is
@@ -480,8 +482,8 @@ class ReinventManager:
             L.append("[[stage.scoring.component.ExternalProcess.endpoint]]")
             L.append(f'name = "{label}"')
             L.append(f"weight = {float(weight):g}")
-            L.append(f'params.executable = ["{scoring_python}"]')
-            L.append(f'params.args = ["{score_script}"]')
+            L.append(f'params.executable = "{scoring_python}"')
+            L.append(f'params.args = "{score_script}"')
             L.append(f'params.property = "{prop}"')
         L.append("")
 
@@ -553,7 +555,7 @@ class ReinventManager:
               ARGS=()
               case "$BASE" in
                 reinvent)
-                  if "$COMMAND" --version 2>/dev/null | grep -q 'Reinvent 4'; then
+                  if "$COMMAND" --version 2>/dev/null | grep -qi 'reinvent 4'; then
                     ARGS=()
                   else
                     ARGS=( reinvent )
@@ -629,6 +631,10 @@ class ReinventManager:
             if not summary_files:
                 # REINVENT4 also writes {prefix}.summary.csv.gz on some builds
                 summary_files = sorted(out_dir.glob("*summary.csv.gz"))
+            if not summary_files:
+                # REINVENT4 >= 4.8 writes per-stage progress CSVs named
+                # {summary_csv_prefix}_{stage_no}.csv in the run directory
+                summary_files = sorted(out_dir.glob("*_[0-9]*.csv"))
             for sfile in summary_files:
                 try:
                     df = pd.read_csv(sfile, compression="infer")

@@ -205,8 +205,7 @@ parallel, not as sequential aims):
     scaffold-capped) is the planned in-loop generator; consensus
     explanations flag which proposed edit is expected to drive potency;
     planned synthetic probes are prioritized by route-prediction decision
-    support (phase 4c). Responsibly scoped: REINVENT4 generates NO molecules
-    (binary absent; recorded READY_PENDING_REINVENT_BINARY, never fabricated),
+    support (phase 4c). Responsibly scoped: REINVENT4 generated 31397 molecules (all in silico, untested; RUN_COMPLETED, never fabricated),
     so the current prospective set derives from the traditional
     medicinal-chemistry baseline (components pool via study 1a, 97 enumerated
     / 86 chemistry-invalid / 11 valid; 9 carried into the candidate set plus 6
@@ -479,8 +478,8 @@ models or venv are absent - nothing is fabricated.
 
 Structural models. AF3 binding model in validation phase (co-PI laboratory);
 ingestion hook implemented in src/structures.py; will provide TAF-6
-binding-mode features when validated. REINVENT4: no molecules generated yet
-(binary absent) - reported with provenance, not fabricated.
+binding-mode features when validated. REINVENT4: 31,397 molecules generated
+(in silico, untested, RUN_COMPLETED on GPU) - reported with provenance, not fabricated.
 
 3.3.2 Aim 1 - Medicinal-chemistry-driven analog program with computational/AI
 support.
@@ -559,8 +558,7 @@ CH2 or N). These probe the C2=C3 enediol requirement (currently UNTESTED in
 the dataset) and deliver the aza/deoxy chemotypes flagged as de-prioritized
 by brute force but potentially functionally relevant to this target.
 
-(b) REINVENT4 Mol2Mol generation (stereo-aware prior): currently NO molecules
-exist because the binary is absent; any generated molecules must pass the same
+(b) REINVENT4 Mol2Mol generation (stereo-aware prior): currently 31397 molecules generated (all in silico, untested; RUN_COMPLETED); any generated molecules must pass the same
 filters and are reported with provenance, not fabricated.
 Both feed the same rank metric (predicted activity x information-gain boost,
 scaffold-capped) and the same oversight gate; synthesis studies 1.1-1.5 are
@@ -684,7 +682,8 @@ reference assignment (PI note; stereo probes make it testable); PAINS/BRENK on
 functionally relevant series (med-chem review); route planner coverage gaps
 (NO_ROUTE_FOUND targets reported with probabilities, then routed by the
 medicinal chemist, not silently claimed); generative-AI absence (REINVENT4
-binary absent -> reported as prospective, never fabricated; med-chem
+REINVENT4 generation completed (binary present, 31,397 molecules, RUN_COMPLETED) ->
+reported as prospective, never fabricated; med-chem
 enumeration carries the analog expansion until the generator is available);
 synthesis difficulty in the constrained rigid series (Studies 1.2/1.5) - if a
 planned bicyclic/azalactam route fails, the analog is replaced by a

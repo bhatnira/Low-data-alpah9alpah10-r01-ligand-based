@@ -28,7 +28,7 @@ Branch: synth-route-prediction | Latest run: 2026-09-09 (synth_route added) | 19
   taf/             transferable-activity-functions evidence matrix
   structures/      AF3/Boltz consensus (NOT AVAILABLE - no outputs)
   medchem/         traditional medicinal-chemistry baseline analogs
-  reinvent/        REINVENT4 configs + generation plan (binary absent -> 0 mols)
+  reinvent/        REINVENT4 configs + generation plan (31397 mols generated, untested)
   chemical_space/  expansion manifold reports
   candidates/      prioritized candidate portfolio (32 rows / 15 unique mols)
   prospective/     round-1 lock + plan (PENDING_REVIEW)
@@ -105,7 +105,7 @@ Branch: synth-route-prediction | Latest run: 2026-09-09 (synth_route added) | 19
  +--------------+
         v
  +--------------+  REINVENT4 configs + generation plan
- | 9-11. reinvent| (binary absent -> NO molecules generated; provenance kept)
+ | 9-11. reinvent| (31397 molecules generated, untested; provenance kept)
  +--------------+
         v
  +--------------+  synthetic-feasibility (SAScore) + chemical-space report
@@ -173,7 +173,7 @@ Branch: synth-route-prediction | Latest run: 2026-09-09 (synth_route added) | 19
 5. HONESTY/GOOD-GO NOTES (checked by audit phase at every pass)
 --------------------------------------------------------------------------------
   * No experimental round run yet -> PENDING_EXPERIMENT everywhere.
-  * REINVENT has produced 0 molecules (binary absent) - reported, not faked.
+  * REINVENT has produced 31397 molecules (in silico, untested) - reported with provenance, not faked.
   * AF3/Boltz structures NOT AVAILABLE - no structural claims.
   * Synth-route predictions AVAILABLE (AIZynthFinder installed) but labeled
     PREDICTED_ROUTE / UNVERIFIED - the round-1 gate reviews them as decision

@@ -178,7 +178,7 @@ molecules pass, Aim 1 includes two honest fill-in strategies: (a) expert
 medicinal-chemistry expansion of the clean families by MMP-guided analog
 enumeration around confirmed actives - the primary driver of analog supply;
 (b) REINVENT4 Mol2Mol generation (stereo-aware prior) as computational
-supplement - currently NO molecules exist because the binary is absent; any
+supplement - currently generated 31397 molecules (all in silico, untested; RUN_COMPLETED); any
 generated molecules must pass the same filters and are reported with
 provenance, not fabricated.
 

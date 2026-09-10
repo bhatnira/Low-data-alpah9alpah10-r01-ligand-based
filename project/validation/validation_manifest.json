@@ -1,17 +1,17 @@
 {
-  "config_hash": "3e00d717384c8fc6d256feda8825224dea1e9e4f3a191c0ba236e77d053777f4",
-  "config_path": "/Users/nb/Documents/ligand-based-modeling/project/configs/config.yaml",
-  "generated_at": "2026-09-10T19:19:36Z",
+  "config_hash": "ef25a7f0bc4a002ab3a352d42ad5b9d850387f7dce79196fc5748007f0d6e406",
+  "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml",
+  "generated_at": "2026-09-10T22:05:16Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "n_compounds": 30
   },
   "module": "validation",
   "numpy": "2.5.3",
-  "pandas": "2.3.3",
-  "python": "3.14.2",
-  "rdkit": "2025.09.4",
-  "scikit_learn": "1.8.0",
+  "pandas": "3.0.5",
+  "python": "3.12.14",
+  "rdkit": "2026.03.6",
+  "scikit_learn": "1.9.1",
   "seeds": {
     "bootstrap": 42,
     "conformer_etkdgv3": 42,

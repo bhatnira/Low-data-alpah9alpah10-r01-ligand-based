@@ -1,11 +1,11 @@
 feature,mean_rank,agreement_gini_perm,agreement_gini_ablation,agreement_perm_ablation,mean_agreement,n_agreement_pairs,uninformative_methods,consensus_rank
-FractionCSP3,2.5,0.522,,,0.522,1,"accuracy_drop, perm_importance",1
-LogP,4.5,0.522,,,0.522,1,"accuracy_drop, perm_importance",2
-MW,4.833333333333333,0.522,,,0.522,1,"accuracy_drop, perm_importance",3
-RotBonds,5.166666666666667,0.522,,,0.522,1,"accuracy_drop, perm_importance",4
-HeavyAtomCount,5.5,0.522,,,0.522,1,"accuracy_drop, perm_importance",5
-TPSA,5.833333333333333,0.522,,,0.522,1,"accuracy_drop, perm_importance",6
-HBD,6.166666666666667,0.522,,,0.522,1,"accuracy_drop, perm_importance",7
-RingCount,6.5,0.522,,,0.522,1,"accuracy_drop, perm_importance",8
-AromaticRings,6.833333333333333,0.522,,,0.522,1,"accuracy_drop, perm_importance",9
-HBA,7.166666666666667,0.522,,,0.522,1,"accuracy_drop, perm_importance",10
+FractionCSP3,4.0,,,,,0,"accuracy_drop, perm_importance",1
+LogP,4.333333333333333,,,,,0,"accuracy_drop, perm_importance",2
+RotBonds,4.666666666666667,,,,,0,"accuracy_drop, perm_importance",3
+MW,5.0,,,,,0,"accuracy_drop, perm_importance",4
+HeavyAtomCount,5.333333333333333,,,,,0,"accuracy_drop, perm_importance",5
+HBD,5.666666666666667,,,,,0,"accuracy_drop, perm_importance",6
+TPSA,6.0,,,,,0,"accuracy_drop, perm_importance",7
+RingCount,6.333333333333333,,,,,0,"accuracy_drop, perm_importance",8
+AromaticRings,6.666666666666667,,,,,0,"accuracy_drop, perm_importance",9
+HBA,7.0,,,,,0,"accuracy_drop, perm_importance",10

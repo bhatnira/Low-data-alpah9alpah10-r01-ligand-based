@@ -17,7 +17,7 @@ The compounds in `<repo>/otherModulators.csv` are modulators of **other** nAChR 
 
 ## 3. Frozen a9alpha10 model on the panel (selectivity baseline)
 
-- Mean predicted a9alpha10 PAM activity: **0.215** ± 0.045
+- Mean predicted a9alpha10 PAM activity: **0.312** ± 0.057
 - Fraction predicted active (>=0.5): **0.000**
 
 > Interpretation: the frozen a9alpha10 model was trained only on the ascorbate chemistry. A low predicted-activity / low blacklisted fraction for this panel is the desired selectivity behaviour; a high fraction means designed hits could cross-react. The 7 a9alpha10 actives (ascorbate core) should separate clearly from this panel.
@@ -26,21 +26,21 @@ The compounds in `<repo>/otherModulators.csv` are modulators of **other** nAChR 
 
 | panel_id | predicted_a9a10 | novelty | scaffold_in_a9a10 | source_label | subtype_note |
 |---|---|---|---|---|---|
-| 5,7-dihydroxy-4-phenylcoumarin.mol | 0.364 | 0.622 | 0 | 0.0 | flavonoid nAChR modulator |
-| Genistein.mol | 0.324 | 0.709 | 0 | 0.0 | isoflavone nAChR modulator (natural product) |
-| NS-206.mol | 0.324 | 0.658 | 0 | 1.0 | alpha7 PAM (benzoxanthin/quinoxalinone NS series) |
-| 6.mol | 0.299 | 0.786 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| 5.mol | 0.294 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| Isoliquirigenin.mol | 0.294 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| 5-hydroxyindole (5-HI).mol | 0.284 | 0.749 | 0 | 0.0 | alpha7 PAM (5-HI) |
-| NS-1738 (1).mol | 0.280 | 0.838 | 0 | 0.0 | alpha7 PAM (thiophene-urea) |
-| Quercetin.mol | 0.279 | 0.718 | 0 | 0.0 | flavonoid nAChR modulator (natural product) |
-| RGM079.mol | 0.274 | 0.768 | 0 | 0.0 | flavonoid nAChR modulator |
-| TBS-156.mol | 0.274 | 0.755 | 0 | 0.0 | alpha7 PAM (triazine-sulfonamide series) |
-| Struc12.mol | 0.259 | 0.790 | 0 | 0.0 | indole PAM series (a7-type) |
-| 12a.mol | 0.249 | 0.782 | 0 | 1.0 | isoxazole-piperazine PAM series (a7-type) |
-| PAM-4.mol | 0.249 | 0.734 | 0 | 0.0 | alpha7 PAM (cinnamide NS-1738 analog) |
-| TQS.mol | 0.239 | 0.834 | 0 | 0.0 | alpha7 PAM (quinoxalin-2-one Type I/II) |
+| NS-206.mol | 0.495 | 0.658 | 0 | 1.0 | alpha7 PAM (benzoxanthin/quinoxalinone NS series) |
+| 5,7-dihydroxy-4-phenylcoumarin.mol | 0.465 | 0.622 | 0 | 0.0 | flavonoid nAChR modulator |
+| Genistein.mol | 0.440 | 0.709 | 0 | 0.0 | isoflavone nAChR modulator (natural product) |
+| 5-hydroxyindole (5-HI).mol | 0.430 | 0.749 | 0 | 0.0 | alpha7 PAM (5-HI) |
+| 6.mol | 0.430 | 0.786 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| Quercetin.mol | 0.415 | 0.718 | 0 | 0.0 | flavonoid nAChR modulator (natural product) |
+| TBS-156.mol | 0.410 | 0.755 | 0 | 0.0 | alpha7 PAM (triazine-sulfonamide series) |
+| 5.mol | 0.400 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| Isoliquirigenin.mol | 0.400 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| RGM079.mol | 0.400 | 0.768 | 0 | 0.0 | flavonoid nAChR modulator |
+| NS-1738 (1).mol | 0.370 | 0.838 | 0 | 0.0 | alpha7 PAM (thiophene-urea) |
+| Struc12.mol | 0.365 | 0.790 | 0 | 0.0 | indole PAM series (a7-type) |
+| PAM-4.mol | 0.345 | 0.734 | 0 | 0.0 | alpha7 PAM (cinnamide NS-1738 analog) |
+| Struc3.mol | 0.345 | 0.884 | 0 | 0.0 | indole PAM series (a7-type) |
+| Com20.mol | 0.340 | 0.813 | 0 | 0.0 | indole PAM series (a7-type) |
 
 ## 4. Chemotype (Bemis-Murcko) scan vs ascorbate candidates
 
@@ -58,7 +58,7 @@ Fraction of the other-subtype panel that falls inside the a9alpha10 training des
 | a9a10_actives | MW | 176.124 | 266.249 | 0.271 |
 | a9a10_actives | LogP | -1.407 | 0.483 | 0.000 |
 | a9a10_actives | TPSA | 74.220 | 107.220 | 0.200 |
-| a9a10_actives | HBA | 5.000 | 6.000 | 0.400 |
+| a9a10_actives | HBA | 5.000 | 6.000 | 0.143 |
 | a9a10_actives | RotBonds | 1.000 | 5.000 | 0.914 |
 | a9a10_actives | RingCount | 1.000 | 2.000 | 0.500 |
 | a9a10_actives | AromaticRings | 0.000 | 1.000 | 0.014 |
@@ -66,7 +66,7 @@ Fraction of the other-subtype panel that falls inside the a9alpha10 training des
 | a9a10_inactives | MW | 148.114 | 396.439 | 0.886 |
 | a9a10_inactives | LogP | -3.013 | 3.709 | 0.500 |
 | a9a10_inactives | TPSA | 63.220 | 110.800 | 0.243 |
-| a9a10_inactives | HBA | 5.000 | 8.000 | 0.414 |
+| a9a10_inactives | HBA | 5.000 | 8.000 | 0.157 |
 | a9a10_inactives | RotBonds | 1.000 | 8.000 | 0.971 |
 | a9a10_inactives | RingCount | 1.000 | 4.000 | 0.971 |
 | a9a10_inactives | AromaticRings | 0.000 | 2.000 | 0.586 |

@@ -2590,3 +2590,369 @@ IN-DOMAIN    30
           30                  0.3000              0.0468          0.4326
 2026-09-10 14:19:36,791 | INFO | === Export frozen model artifact for prospective scoring ===
 2026-09-10 14:19:36,890 | INFO | Exported frozen model artifact -> /Users/nb/Documents/ligand-based-modeling/project/models/classical/lbm_rf_fp_desc.joblib
+2026-09-10 17:33:25,646 | INFO | === Leave-one-compound-out (LOCO) ===
+2026-09-10 17:33:48,220 | INFO |             model                representation    n  n_correct  accuracy  balanced_accuracy
+      extra_trees              descriptors_only 30.0       21.0    0.7000             0.5559
+      extra_trees        fingerprints_morgan_r2 30.0       25.0    0.8333             0.6925
+      extra_trees fingerprints_plus_descriptors 30.0       26.0    0.8667             0.7143
+gradient_boosting              descriptors_only 30.0       23.0    0.7667             0.6988
+gradient_boosting        fingerprints_morgan_r2 30.0       24.0    0.8000             0.6708
+gradient_boosting fingerprints_plus_descriptors 30.0       24.0    0.8000             0.6708
+      logreg_desc              descriptors_only 30.0       23.0    0.7667             0.6988
+      logreg_desc        fingerprints_morgan_r2 30.0       24.0    0.8000             0.7205
+      logreg_desc fingerprints_plus_descriptors 30.0       23.0    0.7667             0.6491
+         majority              descriptors_only 30.0       23.0    0.7667             0.5000
+         majority        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+         majority fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+           random              descriptors_only 30.0       23.0    0.7667             0.5000
+           random        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+           random fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+    random_forest              descriptors_only 30.0       21.0    0.7000             0.6056
+    random_forest        fingerprints_morgan_r2 30.0       23.0    0.7667             0.6988
+    random_forest fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+            ridge              descriptors_only 30.0       24.0    0.8000             0.7702
+            ridge        fingerprints_morgan_r2 30.0       21.0    0.7000             0.6056
+            ridge fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+2026-09-10 17:33:48,220 | INFO | === Leave-murcko_scaffold-out ===
+2026-09-10 17:34:00,822 | INFO | scaffold-out summary (accuracy): {'extra_trees': model
+extra_trees    0.7000
+extra_trees    0.7333
+extra_trees    0.7667
+Name: accuracy, dtype: float64, 'gradient_boosting': model
+gradient_boosting    0.7667
+gradient_boosting    0.7000
+gradient_boosting    0.8000
+Name: accuracy, dtype: float64, 'logreg_desc': model
+logreg_desc    0.7667
+logreg_desc    0.7667
+logreg_desc    0.7667
+Name: accuracy, dtype: float64, 'majority': model
+majority    0.7667
+majority    0.7667
+majority    0.7667
+Name: accuracy, dtype: float64, 'random': model
+random    0.7333
+random    0.7333
+random    0.7333
+Name: accuracy, dtype: float64, 'random_forest': model
+random_forest    0.7333
+random_forest    0.7667
+random_forest    0.8000
+Name: accuracy, dtype: float64, 'ridge': model
+ridge    0.7667
+ridge    0.7000
+ridge    0.7000
+Name: accuracy, dtype: float64}
+2026-09-10 17:34:00,822 | INFO | === Leave-one-series-out ===
+2026-09-10 17:34:14,110 | INFO | series-out summary written (n series = 17)
+2026-09-10 17:34:14,110 | INFO | === Chemical-distance validation ===
+2026-09-10 17:34:16,962 | INFO | === Bootstrap performance uncertainty ===
+2026-09-10 17:35:45,544 | INFO | === Leave-one-compound-out (LOCO) ===
+2026-09-10 17:36:06,303 | INFO |             model                representation    n  n_correct  accuracy  balanced_accuracy
+      extra_trees              descriptors_only 30.0       21.0    0.7000             0.5559
+      extra_trees        fingerprints_morgan_r2 30.0       25.0    0.8333             0.6925
+      extra_trees fingerprints_plus_descriptors 30.0       26.0    0.8667             0.7143
+gradient_boosting              descriptors_only 30.0       23.0    0.7667             0.6988
+gradient_boosting        fingerprints_morgan_r2 30.0       24.0    0.8000             0.6708
+gradient_boosting fingerprints_plus_descriptors 30.0       24.0    0.8000             0.6708
+      logreg_desc              descriptors_only 30.0       23.0    0.7667             0.6988
+      logreg_desc        fingerprints_morgan_r2 30.0       24.0    0.8000             0.7205
+      logreg_desc fingerprints_plus_descriptors 30.0       23.0    0.7667             0.6491
+         majority              descriptors_only 30.0       23.0    0.7667             0.5000
+         majority        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+         majority fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+           random              descriptors_only 30.0       23.0    0.7667             0.5000
+           random        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+           random fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+    random_forest              descriptors_only 30.0       21.0    0.7000             0.6056
+    random_forest        fingerprints_morgan_r2 30.0       23.0    0.7667             0.6988
+    random_forest fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+            ridge              descriptors_only 30.0       24.0    0.8000             0.7702
+            ridge        fingerprints_morgan_r2 30.0       21.0    0.7000             0.6056
+            ridge fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+2026-09-10 17:36:06,303 | INFO | === Leave-murcko_scaffold-out ===
+2026-09-10 17:36:18,163 | INFO | scaffold-out summary (accuracy): {'extra_trees': model
+extra_trees    0.7000
+extra_trees    0.7333
+extra_trees    0.7667
+Name: accuracy, dtype: float64, 'gradient_boosting': model
+gradient_boosting    0.7667
+gradient_boosting    0.7000
+gradient_boosting    0.8000
+Name: accuracy, dtype: float64, 'logreg_desc': model
+logreg_desc    0.7667
+logreg_desc    0.7667
+logreg_desc    0.7667
+Name: accuracy, dtype: float64, 'majority': model
+majority    0.7667
+majority    0.7667
+majority    0.7667
+Name: accuracy, dtype: float64, 'random': model
+random    0.7333
+random    0.7333
+random    0.7333
+Name: accuracy, dtype: float64, 'random_forest': model
+random_forest    0.7333
+random_forest    0.7667
+random_forest    0.8000
+Name: accuracy, dtype: float64, 'ridge': model
+ridge    0.7667
+ridge    0.7000
+ridge    0.7000
+Name: accuracy, dtype: float64}
+2026-09-10 17:36:18,163 | INFO | === Leave-one-series-out ===
+2026-09-10 17:36:30,347 | INFO | series-out summary written (n series = 17)
+2026-09-10 17:36:30,348 | INFO | === Chemical-distance validation ===
+2026-09-10 17:36:33,096 | INFO | === Bootstrap performance uncertainty ===
+2026-09-10 17:40:37,185 | INFO |             model   mean    std  ci_low  ci_high
+      extra_trees 0.9305 0.0412  0.8333   1.0000
+gradient_boosting 0.9231 0.0446  0.8333   1.0000
+      logreg_desc 0.9191 0.0406  0.8333   1.0000
+    random_forest 0.9171 0.0442  0.8317   1.0000
+            ridge 0.9118 0.0400  0.8333   0.9667
+2026-09-10 17:40:37,186 | INFO | === Permutation test (chance-level null) ===
+2026-09-10 17:40:57,136 | INFO |         model  observed_accuracy  perm_mean  perm_std  perm_p_value  n_permutations
+random_forest                1.0      0.986     0.019          0.62             200
+2026-09-10 17:40:57,136 | INFO | === Applicability domain (section 10) ===
+2026-09-10 17:40:57,146 | INFO | applicability_domain
+IN-DOMAIN    30
+2026-09-10 17:40:57,146 | INFO | === Uncertainty axes (section 11) ===
+2026-09-10 17:40:57,485 | INFO |  compound_id  predictive_uncertainty  model_disagreement  ad_uncertainty
+           1                  0.0705              0.0023          0.0000
+           2                  0.0705              0.0023          0.0000
+           3                  0.2862              0.0412          0.0000
+           4                  0.4271              0.1128          0.2333
+           5                  0.4142              0.1033          0.0000
+           6                  0.3470              0.0656          0.0029
+           7                  0.3470              0.0656          0.0000
+           8                  0.2932              0.0444          0.0000
+           9                  0.2375              0.0279          0.0000
+          10                  0.2862              0.0421          0.0000
+          11                  0.2280              0.0256          0.0274
+          12                  0.3190              0.0531          0.0000
+          13                  0.2789              0.0397          0.1000
+          14                  0.2465              0.0303          0.1591
+          15                  0.1838              0.0161          0.1406
+          16                  0.1561              0.0114          0.1206
+          17                  0.3883              0.0868          0.0500
+          18                  0.2789              0.0390          0.0000
+          19                  0.4514              0.1340          0.0500
+          20                  0.4684              0.1528          0.0136
+          21                  0.4625              0.1458          0.0500
+          22                  0.4386              0.1222          0.1250
+          23                  0.3417              0.0633          0.4132
+          24                  0.2280              0.0249          0.0000
+          25                  0.1838              0.0155          0.0000
+          26                  0.3842              0.0845          0.2611
+          27                  0.3883              0.0868          0.1622
+          28                  0.3129              0.0515          0.4068
+          29                  0.3619              0.0727          0.4305
+          30                  0.3470              0.0656          0.4326
+2026-09-10 17:40:57,485 | INFO | === Export frozen model artifact for prospective scoring ===
+2026-09-10 17:40:57,715 | INFO | Exported frozen model artifact -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/models/classical/lbm_rf_fp_desc.joblib
+2026-09-10 17:56:47,750 | INFO | === Leave-one-compound-out (LOCO) ===
+2026-09-10 17:57:02,215 | INFO |             model                representation    n  n_correct  accuracy  balanced_accuracy
+      extra_trees              descriptors_only 30.0       21.0    0.7000             0.5559
+      extra_trees        fingerprints_morgan_r2 30.0       25.0    0.8333             0.6925
+      extra_trees fingerprints_plus_descriptors 30.0       26.0    0.8667             0.7143
+gradient_boosting              descriptors_only 30.0       23.0    0.7667             0.6988
+gradient_boosting        fingerprints_morgan_r2 30.0       24.0    0.8000             0.6708
+gradient_boosting fingerprints_plus_descriptors 30.0       24.0    0.8000             0.6708
+      logreg_desc              descriptors_only 30.0       23.0    0.7667             0.6988
+      logreg_desc        fingerprints_morgan_r2 30.0       24.0    0.8000             0.7205
+      logreg_desc fingerprints_plus_descriptors 30.0       23.0    0.7667             0.6491
+         majority              descriptors_only 30.0       23.0    0.7667             0.5000
+         majority        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+         majority fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+           random              descriptors_only 30.0       23.0    0.7667             0.5000
+           random        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+           random fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+    random_forest              descriptors_only 30.0       21.0    0.7000             0.6056
+    random_forest        fingerprints_morgan_r2 30.0       23.0    0.7667             0.6988
+    random_forest fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+            ridge              descriptors_only 30.0       24.0    0.8000             0.7702
+            ridge        fingerprints_morgan_r2 30.0       21.0    0.7000             0.6056
+            ridge fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+2026-09-10 17:57:02,216 | INFO | === Leave-murcko_scaffold-out ===
+2026-09-10 17:57:10,414 | INFO | scaffold-out summary (accuracy): {'extra_trees': model
+extra_trees    0.7000
+extra_trees    0.7333
+extra_trees    0.7667
+Name: accuracy, dtype: float64, 'gradient_boosting': model
+gradient_boosting    0.7667
+gradient_boosting    0.7000
+gradient_boosting    0.8000
+Name: accuracy, dtype: float64, 'logreg_desc': model
+logreg_desc    0.7667
+logreg_desc    0.7667
+logreg_desc    0.7667
+Name: accuracy, dtype: float64, 'majority': model
+majority    0.7667
+majority    0.7667
+majority    0.7667
+Name: accuracy, dtype: float64, 'random': model
+random    0.7333
+random    0.7333
+random    0.7333
+Name: accuracy, dtype: float64, 'random_forest': model
+random_forest    0.7333
+random_forest    0.7667
+random_forest    0.8000
+Name: accuracy, dtype: float64, 'ridge': model
+ridge    0.7667
+ridge    0.7000
+ridge    0.7000
+Name: accuracy, dtype: float64}
+2026-09-10 17:57:10,414 | INFO | === Leave-one-series-out ===
+2026-09-10 17:57:18,593 | INFO | series-out summary written (n series = 17)
+2026-09-10 17:57:18,593 | INFO | === Chemical-distance validation ===
+2026-09-10 17:57:20,465 | INFO | === Bootstrap performance uncertainty ===
+2026-09-10 18:00:01,751 | INFO |             model   mean    std  ci_low  ci_high
+      extra_trees 0.9305 0.0412  0.8333   1.0000
+gradient_boosting 0.9231 0.0446  0.8333   1.0000
+      logreg_desc 0.9191 0.0406  0.8333   1.0000
+    random_forest 0.9171 0.0442  0.8317   1.0000
+            ridge 0.9118 0.0400  0.8333   0.9667
+2026-09-10 18:00:01,752 | INFO | === Permutation test (chance-level null) ===
+2026-09-10 18:00:15,887 | INFO |         model  observed_accuracy  perm_mean  perm_std  perm_p_value  n_permutations
+random_forest                1.0      0.986     0.019          0.62             200
+2026-09-10 18:00:15,887 | INFO | === Applicability domain (section 10) ===
+2026-09-10 18:00:15,895 | INFO | applicability_domain
+IN-DOMAIN    30
+2026-09-10 18:00:15,895 | INFO | === Uncertainty axes (section 11) ===
+2026-09-10 18:00:16,137 | INFO |  compound_id  predictive_uncertainty  model_disagreement  ad_uncertainty
+           1                  0.0705              0.0023          0.0000
+           2                  0.0705              0.0023          0.0000
+           3                  0.2862              0.0412          0.0000
+           4                  0.4271              0.1128          0.2333
+           5                  0.4142              0.1033          0.0000
+           6                  0.3470              0.0656          0.0029
+           7                  0.3470              0.0656          0.0000
+           8                  0.2932              0.0444          0.0000
+           9                  0.2375              0.0279          0.0000
+          10                  0.2862              0.0421          0.0000
+          11                  0.2280              0.0256          0.0274
+          12                  0.3190              0.0531          0.0000
+          13                  0.2789              0.0397          0.1000
+          14                  0.2465              0.0303          0.1591
+          15                  0.1838              0.0161          0.1406
+          16                  0.1561              0.0114          0.1206
+          17                  0.3883              0.0868          0.0500
+          18                  0.2789              0.0390          0.0000
+          19                  0.4514              0.1340          0.0500
+          20                  0.4684              0.1528          0.0136
+          21                  0.4625              0.1458          0.0500
+          22                  0.4386              0.1222          0.1250
+          23                  0.3417              0.0633          0.4132
+          24                  0.2280              0.0249          0.0000
+          25                  0.1838              0.0155          0.0000
+          26                  0.3842              0.0845          0.2611
+          27                  0.3883              0.0868          0.1622
+          28                  0.3129              0.0515          0.4068
+          29                  0.3619              0.0727          0.4305
+          30                  0.3470              0.0656          0.4326
+2026-09-10 18:00:16,138 | INFO | === Export frozen model artifact for prospective scoring ===
+2026-09-10 18:00:16,316 | INFO | Exported frozen model artifact -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/models/classical/lbm_rf_fp_desc.joblib
+2026-09-10 18:01:49,432 | INFO | === Leave-one-compound-out (LOCO) ===
+2026-09-10 18:02:03,679 | INFO |             model                representation    n  n_correct  accuracy  balanced_accuracy
+      extra_trees              descriptors_only 30.0       21.0    0.7000             0.5559
+      extra_trees        fingerprints_morgan_r2 30.0       25.0    0.8333             0.6925
+      extra_trees fingerprints_plus_descriptors 30.0       26.0    0.8667             0.7143
+gradient_boosting              descriptors_only 30.0       23.0    0.7667             0.6988
+gradient_boosting        fingerprints_morgan_r2 30.0       24.0    0.8000             0.6708
+gradient_boosting fingerprints_plus_descriptors 30.0       24.0    0.8000             0.6708
+      logreg_desc              descriptors_only 30.0       23.0    0.7667             0.6988
+      logreg_desc        fingerprints_morgan_r2 30.0       24.0    0.8000             0.7205
+      logreg_desc fingerprints_plus_descriptors 30.0       23.0    0.7667             0.6491
+         majority              descriptors_only 30.0       23.0    0.7667             0.5000
+         majority        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+         majority fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+           random              descriptors_only 30.0       23.0    0.7667             0.5000
+           random        fingerprints_morgan_r2 30.0       23.0    0.7667             0.5000
+           random fingerprints_plus_descriptors 30.0       23.0    0.7667             0.5000
+    random_forest              descriptors_only 30.0       21.0    0.7000             0.6056
+    random_forest        fingerprints_morgan_r2 30.0       23.0    0.7667             0.6988
+    random_forest fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+            ridge              descriptors_only 30.0       24.0    0.8000             0.7702
+            ridge        fingerprints_morgan_r2 30.0       21.0    0.7000             0.6056
+            ridge fingerprints_plus_descriptors 30.0       21.0    0.7000             0.6056
+2026-09-10 18:02:03,679 | INFO | === Leave-murcko_scaffold-out ===
+2026-09-10 18:02:11,783 | INFO | scaffold-out summary (accuracy): {'extra_trees': model
+extra_trees    0.7000
+extra_trees    0.7333
+extra_trees    0.7667
+Name: accuracy, dtype: float64, 'gradient_boosting': model
+gradient_boosting    0.7667
+gradient_boosting    0.7000
+gradient_boosting    0.8000
+Name: accuracy, dtype: float64, 'logreg_desc': model
+logreg_desc    0.7667
+logreg_desc    0.7667
+logreg_desc    0.7667
+Name: accuracy, dtype: float64, 'majority': model
+majority    0.7667
+majority    0.7667
+majority    0.7667
+Name: accuracy, dtype: float64, 'random': model
+random    0.7333
+random    0.7333
+random    0.7333
+Name: accuracy, dtype: float64, 'random_forest': model
+random_forest    0.7333
+random_forest    0.7667
+random_forest    0.8000
+Name: accuracy, dtype: float64, 'ridge': model
+ridge    0.7667
+ridge    0.7000
+ridge    0.7000
+Name: accuracy, dtype: float64}
+2026-09-10 18:02:11,784 | INFO | === Leave-one-series-out ===
+2026-09-10 18:02:19,875 | INFO | series-out summary written (n series = 17)
+2026-09-10 18:02:19,875 | INFO | === Chemical-distance validation ===
+2026-09-10 18:02:21,713 | INFO | === Bootstrap performance uncertainty ===
+2026-09-10 18:05:02,202 | INFO |             model   mean    std  ci_low  ci_high
+      extra_trees 0.9305 0.0412  0.8333   1.0000
+gradient_boosting 0.9231 0.0446  0.8333   1.0000
+      logreg_desc 0.9191 0.0406  0.8333   1.0000
+    random_forest 0.9171 0.0442  0.8317   1.0000
+            ridge 0.9118 0.0400  0.8333   0.9667
+2026-09-10 18:05:02,203 | INFO | === Permutation test (chance-level null) ===
+2026-09-10 18:05:16,197 | INFO |         model  observed_accuracy  perm_mean  perm_std  perm_p_value  n_permutations
+random_forest                1.0      0.986     0.019          0.62             200
+2026-09-10 18:05:16,198 | INFO | === Applicability domain (section 10) ===
+2026-09-10 18:05:16,205 | INFO | applicability_domain
+IN-DOMAIN    30
+2026-09-10 18:05:16,205 | INFO | === Uncertainty axes (section 11) ===
+2026-09-10 18:05:16,445 | INFO |  compound_id  predictive_uncertainty  model_disagreement  ad_uncertainty
+           1                  0.0705              0.0023          0.0000
+           2                  0.0705              0.0023          0.0000
+           3                  0.2862              0.0412          0.0000
+           4                  0.4271              0.1128          0.2333
+           5                  0.4142              0.1033          0.0000
+           6                  0.3470              0.0656          0.0029
+           7                  0.3470              0.0656          0.0000
+           8                  0.2932              0.0444          0.0000
+           9                  0.2375              0.0279          0.0000
+          10                  0.2862              0.0421          0.0000
+          11                  0.2280              0.0256          0.0274
+          12                  0.3190              0.0531          0.0000
+          13                  0.2789              0.0397          0.1000
+          14                  0.2465              0.0303          0.1591
+          15                  0.1838              0.0161          0.1406
+          16                  0.1561              0.0114          0.1206
+          17                  0.3883              0.0868          0.0500
+          18                  0.2789              0.0390          0.0000
+          19                  0.4514              0.1340          0.0500
+          20                  0.4684              0.1528          0.0136
+          21                  0.4625              0.1458          0.0500
+          22                  0.4386              0.1222          0.1250
+          23                  0.3417              0.0633          0.4132
+          24                  0.2280              0.0249          0.0000
+          25                  0.1838              0.0155          0.0000
+          26                  0.3842              0.0845          0.2611
+          27                  0.3883              0.0868          0.1622
+          28                  0.3129              0.0515          0.4068
+          29                  0.3619              0.0727          0.4305
+          30                  0.3470              0.0656          0.4326
+2026-09-10 18:05:16,446 | INFO | === Export frozen model artifact for prospective scoring ===
+2026-09-10 18:05:16,616 | INFO | Exported frozen model artifact -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/models/classical/lbm_rf_fp_desc.joblib

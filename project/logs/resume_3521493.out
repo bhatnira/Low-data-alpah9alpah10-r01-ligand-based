@@ -1,0 +1,138 @@
+=== RESUME downstream phases (chemspace -> reports) ===
+[INFO] === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+[INFO] === Phase 1: initial project audit (section 3) ===
+[INFO] existing_datasets: 10 entries
+[INFO] existing_models: 4 entries
+[INFO] existing_scripts: 25 entries
+[INFO] existing_artifacts: 138 entries
+[INFO] structural_status: 3 entries
+[INFO] Phase 1 audit complete; no duplicate work will be created.
+[INFO] audit completed
+[INFO] === chemspace -> Phase 12: chemical-space expansion report ===
+[INFO] === Chemical-space expansion (section 23) ===
+[INFO]                                            metric      value                                                                                                                    note
+               fingerprint_space_mean_nn_distance     0.8593                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+                fingerprint_space_frac_beyond_0.4     1.0000                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+                             novel_scaffold_count 22506.0000                                                                  Bemis-Murcko scaffolds not present in the training set
+                                  generated_count 31397.0000                                                                    count alone is NOT meaningful expansion (section 23)
+                            new_sar_relationships 31397.0000 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+descriptor_space_coverage_fraction_in_train_range     0.7116                                                       fraction of generated descriptor values within experimental range
+[INFO] chemspace completed
+[INFO] === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+[INFO] === Candidate prioritization ===
+[INFO] === Candidate scoring (multi-axis) ===
+[INFO] === Candidate scoring (multi-axis) ===
+[INFO] === Candidate portfolio (groups A-F) ===
+[INFO] Portfolio size: 34; groups reflexive overlap expected
+[INFO] candidates completed
+[INFO] === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+[INFO] === Chemotype library projection (R01 deliverable, phase 19) ===
+[INFO] Chemotype families: 8 (novel scaffolds: 6)
+[INFO] family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             5               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     2             3               1
+  CHT-005        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-006    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-007           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-008                         c1ccccc1     2             2               1
+[INFO] library completed
+[INFO] === lock -> Phase 14: model lock before prospective testing ===
+[INFO] === Model lock ===
+[INFO] Model lock manifest written; prospective cycle is FROZEN.
+[INFO] lock completed
+[INFO] === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+[INFO] === Prospective experimental plan ===
+[INFO] === Sample-size / power analysis (section 32) ===
+[INFO] prospective completed
+[INFO] === synth_route -> Phase 4c: retrosynthetic route prediction for high-priority candidates (AIZynthFinder; auto-skips when models absent) ===
+[INFO] === Synth route prediction for round 1 ===
+[WARNING] AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+[INFO] targets from prospective/round1_plan.csv: 7
+[INFO] 0 PREDICTED_ROUTE rows over 0 targets; clean routes for 0 (targets=7)
+[INFO] synth_route completed
+[INFO] === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+[INFO] === Closed-loop cycle ===
+[INFO] === Consensus explanation (Borda fusion, section 13b) ===
+[INFO] Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+[INFO]        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   4.000000                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               1
+          LogP   4.333333                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               2
+      RotBonds   4.666667                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               3
+            MW   5.000000                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.333333                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               5
+           HBD   5.666667                  NaN                      NaN                      NaN             NaN                  0 accuracy_drop, perm_importance               6
+[INFO] === Stereo probe design (section 14b) ===
+[INFO] Stereo probes designed: 22 (append to plate)
+[INFO] === Design round 1 plate (comparator-arm, size-fixed) ===
+[INFO] Eligible (drug-like) candidates for plate: 6/15
+[INFO] arm              portfolio_group   
+diversity_topup  B_taf_disrupting      2
+                 E_information_gain    1
+model_ranked     B_taf_disrupting      3
+[INFO] arm              matched_tier
+diversity_topup  2               3
+model_ranked     2               3
+[INFO] Plate size 6; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+[INFO] === Oversight gate for round 1 ===
+[WARNING] 6/6 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+[INFO] Round 1 pre-registered (hash e3f80267d76f...)
+[INFO] === Data watch (generator + structural availability) ===
+[INFO] {'reinvent_molecule_dirs': 6, 'generated_molecules_count': 31397, 'generated_molecules_file': '/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/generated_molecules.csv', 'generated_by_mode': {'reinvent_de_novo': 6314, 'reinvent_scaffold_hopping': 6308, 'reinvent_information_gain': 6277, 'reinvent_local_analog': 6273, 'reinvent_taf_disrupting': 6225}, 'structural_outputs_found': 0, 'reinvent_ingest': 'ingested 31397 molecules', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+[INFO] loop completed
+[INFO] === audit -> Audit: leakage + 18-question final audit ===
+[INFO] === Data leakage audit (section 40) ===
+[INFO] === Final 18-question audit (section 51) ===
+[INFO]  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+[INFO]          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+[INFO] {'PENDING_REVIEW': 6}
+[INFO] audit completed
+[INFO] === reports -> Reports: build combined HTML report ===
+[INFO] Reports written to /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reports/index.html
+[INFO] reports completed
+[INFO] workflow results: {'audit': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'synth_route': 'OK', 'loop': 'OK', 'reports': 'OK'}
+=== TESTS ===
+......................                                                   [100%]
+=============================== warnings summary ===============================
+venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:47
+  /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:47: PendingDeprecationWarning: The set_bad function will be deprecated in a future version. Use cmap.with_extremes(bad=...) or Colormap(bad=...) instead.
+    red_blue.set_bad(gray_rgb.tolist(), 1.0)
+
+venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:48
+  /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:48: PendingDeprecationWarning: The set_over function will be deprecated in a future version. Use cmap.with_extremes(over=...) or Colormap(over=...) instead.
+    red_blue.set_over(gray_rgb.tolist(), 1.0)
+
+venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:49
+  /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/lib/python3.12/site-packages/shap/plots/colors/_colors.py:49: PendingDeprecationWarning: The set_under function will be deprecated in a future version. Use cmap.with_extremes(under=...) or Colormap(under=...) instead.
+    red_blue.set_under(gray_rgb.tolist(), 1.0)  # "under" is incorrectly used instead of "bad" in the scatter plot
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 3 warnings in 6.90s
+=== DOC SYNC ===
+facts: n=31397 status=RUN_COMPLETED device=cuda version=REINVENT 4.8.24 (C) AstraZeneca 2017, 2023 using PyTorch 2.12.0+cu126.
+  - grant/R01_application/01_specific_aims.md: 1 replacement(s) applied 
+  - grant/R01_application/02_research_strategy.md: 1 replacement(s) applied 
+  - nih_r01_application_v2.txt: 2 replacement(s) applied 
+  - scientific_paper.txt: 3 replacement(s) applied 
+  - project_architecture.txt: 3 replacement(s) applied 
+STALE REINVENT sentinels (fix manually or rerun after a run):
+  nih_r01_application_v2.txt:481: binding-mode features when validated. REINVENT4: no molecules generated yet
+  nih_r01_application_v2.txt:482: (binary absent) - reported with provenance, not fabricated.
+  nih_r01_application_v2.txt:685: binary absent -> reported as prospective, never fabricated; med-chem

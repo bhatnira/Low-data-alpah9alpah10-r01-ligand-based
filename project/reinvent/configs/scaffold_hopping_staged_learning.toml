@@ -7,18 +7,17 @@
 # scoring     : ExternalProcess -> reinvent/score_lbm.py (frozen Phase-4 model + real TAF SMARTS)
 
 run_type = "staged_learning"
-device = "cpu"
+device = "cuda"
 tb_logdir = "tb_logs"
 json_out_config = "_scaffold_hopping.json"
 
 [parameters]
-prior_file = "/Users/nb/Documents/ligand-based-modeling/project/priors/reinvent_pubchem.prior"
-agent_file = "/Users/nb/Documents/ligand-based-modeling/project/priors/reinvent_pubchem.prior"
+prior_file = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/priors/reinvent_pubchem.prior"
+agent_file = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/priors/reinvent_pubchem.prior"
 summary_csv_prefix = "scaffold_hopping"
 use_checkpoint = false
 purge_memories = false
 batch_size = 64
-unique_sequences = true
 randomize_smiles = true
 isomeric_smiles = true  # stereochemistry supported only by the Mol2Mol prior: True
 sample_strategy = "multinomial"
@@ -35,7 +34,7 @@ bucket_size = 25
 minscore = 0.4
 
 [[stage]]
-chkpt_file = "/Users/nb/Documents/ligand-based-modeling/project/reinvent/out/scaffold_hopping/chkpt_scaffold_hopping.chkpt"
+chkpt_file = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/out/scaffold_hopping/chkpt_scaffold_hopping.chkpt"
 termination = "simple"
 max_score = 0.9
 min_steps = 25
@@ -49,32 +48,32 @@ type = "geometric_mean"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "predicted_activity"
 weight = 1
-params.executable = ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3"]
-params.args = ["/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py"]
+params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "predicted_activity"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "taf_consistency"
 weight = 0.8
-params.executable = ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3"]
-params.args = ["/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py"]
+params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "taf_consistency"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "scaffold_novelty"
 weight = 1
-params.executable = ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3"]
-params.args = ["/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py"]
+params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "scaffold_novelty"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "novelty"
 weight = 0.6
-params.executable = ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3"]
-params.args = ["/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py"]
+params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "novelty"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "stereo_validity"
 weight = 0.3
-params.executable = ["/Library/Frameworks/Python.framework/Versions/3.14/bin/python3"]
-params.args = ["/Users/nb/Documents/ligand-based-modeling/project/reinvent/score_lbm.py"]
+params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "stereo_validity"
 
 [[stage.scoring.component]]
