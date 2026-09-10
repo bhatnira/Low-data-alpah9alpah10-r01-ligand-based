@@ -98,6 +98,12 @@ in `configs/config.yaml` and re-verified at runtime by `src/reinvent.py`):
 
 Run with `--force` to re-download. Never commit priors.
 
+Direct links (REINVENT4 priors, DOI **10.5281/zenodo.20701824** =
+<https://doi.org/10.5281/zenodo.20701824>):
+
+- Mol2Mol prior — <https://zenodo.org/records/20701824/files/reinvent_pubchem.prior?download=1>
+- LibInvent prior — <https://zenodo.org/records/20701824/files/libinvent.prior?download=1>
+
 ---
 
 ## 4. Configure + run
