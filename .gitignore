@@ -16,3 +16,10 @@ project/priors/
 # ONNX weights must never be committed.
 project/venvs/
 project/synth_route/models/
+
+# REINVENT4 run artifacts - regenerated on a GPU machine by phase 9-11.
+# The runbook (project/GPU_RUNBOOK.md) + scripts/sync_generated_docs.py read
+# these from disk on the run machine; only configs/manifests are committed.
+project/reinvent/out/
+project/reinvent/logs/
+project/reinvent/generated_molecules.csv

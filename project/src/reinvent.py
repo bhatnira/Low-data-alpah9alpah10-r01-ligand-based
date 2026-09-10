@@ -26,6 +26,9 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
+import subprocess
+import sys
 import textwrap
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -36,7 +39,7 @@ from rdkit import Chem, RDLogger
 from rdkit.Chem import AllChem, DataStructs, RWMol
 
 from src.common import (
-    ProjectConfig, ManagedLogger, check_external_tools, make_provenance,
+    ProjectConfig, ManagedLogger, make_provenance,
     save_df, save_manifest, sha256_file, sha256_text, utcnow,
 )
 
@@ -151,11 +154,130 @@ class ReinventManager:
         self.cfg = cfg
         self.log = logger
         self.reinv = cfg.raw.get("reinvent", {})
+        self._binary: Optional[Dict[str, Any]] = None
+        self._device: Optional[str] = None
+        self._version_cache: Dict[str, Optional[str]] = {}
+
+    # ------------------------------------------------------ binary detection
+    def _probe_version(self, path: str) -> Optional[str]:
+        """First line of `<binary> --version` (cached). None on any failure."""
+        if path in self._version_cache:
+            return self._version_cache[path]
+        try:
+            proc = subprocess.run([path, "--version"], stdout=subprocess.PIPE,
+                                  stderr=subprocess.STDOUT, text=True, timeout=20)
+            line = (proc.stdout or "").strip().splitlines()[0].strip()
+        except Exception:
+            line = ""
+        self._version_cache[path] = line or None
+        return self._version_cache[path]
+
+    @staticmethod
+    def _invocation_style(name: str, version_line: Optional[str]) -> str:
+        """How to call the binary with a config.
+
+        Reinvent4 (pip console script `reinvent`, or `reInvent`/`reinvent4`
+        binaries):  <binary> <config.toml>
+        Legacy Reinvent v3 CLI: <binary> reinvent <config.toml>
+        """
+        if name in ("reInvent", "reinvent4"):
+            return "direct"
+        if name == "reinvent":
+            if version_line and ("Reinvent 4" in version_line or "Reinvent4" in version_line):
+                return "direct"
+            return "v3_subcommand"
+        return "direct"
+
+    def _detect_binary(self) -> Optional[Dict[str, Any]]:
+        """Locate the REINVENT executable.
+
+        Priority: $REINVENT_BIN (env) > reinvent.binary (config) > `reinvent` /
+        `reinvent4` / `reInvent` on PATH > project/venvs/reinvent*/bin/*.
+        Returns {"binary": str, "style": "direct"|"v3_subcommand"} or None.
+        """
+        def _probe(path: str) -> Optional[Dict[str, Any]]:
+            if not path:
+                return None
+            p = Path(path).expanduser()
+            if not p.is_file() or not os.access(str(p), os.X_OK):
+                return None
+            ver = self._probe_version(str(p))
+            return {"binary": str(p),
+                    "style": self._invocation_style(p.name, ver)}
+
+        # 1) explicit env override
+        hit = _probe(os.environ.get("REINVENT_BIN", ""))
+        if hit is not None:
+            return hit
+        # 2) config path
+        hit = _probe(str(self.reinv.get("binary", "")))
+        if hit is not None:
+            return hit
+        # 3) on PATH
+        for cand in ("reinvent", "reinvent4", "reInvent"):
+            w = shutil.which(cand)
+            if w is not None:
+                hit = _probe(w)
+                if hit is not None:
+                    return hit
+        # 4) project venv (e.g. project/venvs/reinvent312/bin/reinvent)
+        venv_root = self.cfg.resolve("venvs")
+        if venv_root.is_dir():
+            for sub in sorted(venv_root.glob("reinvent*/bin")):
+                for cand in ("reinvent", "reinvent4", "reInvent"):
+                    hit = _probe(str(sub / cand))
+                    if hit is not None:
+                        return hit
+        return None
 
     @property
     def available(self) -> bool:
-        tools = check_external_tools()
-        return bool(tools.get("reinvent", False))
+        if self._binary is None:
+            self._binary = self._detect_binary()
+        return self._binary is not None
+
+    @property
+    def runnable(self) -> Optional[Dict[str, Any]]:
+        self.available  # populate cache
+        return self._binary
+
+    # ------------------------------------------------------------ device
+    @staticmethod
+    def _gpu_available() -> bool:
+        try:
+            import torch  # type: ignore
+            if torch.cuda.is_available():
+                return True
+        except Exception:
+            pass
+        return shutil.which("nvidia-smi") is not None
+
+    def resolve_device(self) -> str:
+        """Config-device -> concrete device written into every TOML + manifest.
+
+        "auto" (default) = cuda when a GPU is detected, else cpu.
+        """
+        if self._device is None:
+            requested = str(self.reinv.get("device", "auto")).strip().lower()
+            if requested == "auto":
+                self._device = "cuda" if self._gpu_available() else "cpu"
+            else:
+                self._device = requested if requested in ("cpu", "cuda") else "cpu"
+        return self._device
+
+    def scoring_python(self) -> str:
+        """Python used to run reinvent/score_lbm.py (ExternalProcess bridge).
+
+        Defaults to the interpreter running the pipeline (sys.executable),
+        which has rdkit/scikit-learn/joblib.  A configured value overrides it.
+        """
+        want = str(self.reinv.get("scoring_python", "") or "").strip()
+        if want and Path(want).expanduser().is_file():
+            return want
+        if want:
+            self.log.warn(f"configured reinvent.scoring_python not found "
+                          f"({want}); falling back to sys.executable")
+        return sys.executable
 
     @property
     def project_root(self) -> Path:
@@ -281,10 +403,11 @@ class ReinventManager:
             # LibInvent prior is SMILES-fragment based and does NOT carry
             # stereochemistry; drop the stereo endpoint entirely.
             endpoints = [e for e in endpoints if e[1] != "stereo_validity"]
-        scoring_python = r["scoring_python"]
+        scoring_python = self.scoring_python()
         score_script = str(self.cfg.resolve("reinvent/score_lbm.py"))
         out_dir = Path(str(self.cfg.resolve("reinvent/out", mode))).resolve()
         out_dir.mkdir(parents=True, exist_ok=True)
+        device = self.resolve_device()
 
         L: List[str] = []
         L.append("# REINVENT4 staged_learning (reinforcement learning) configuration")
@@ -298,7 +421,7 @@ class ReinventManager:
                  "(frozen Phase-4 model + real TAF SMARTS)")
         L.append("")
         L.append('run_type = "staged_learning"')
-        L.append(f'device = "{r.get("device", "cpu")}"')
+        L.append(f'device = "{device}"')
         L.append(f'tb_logdir = "tb_logs"')
         L.append(f'json_out_config = "_{mode}.json"')
         L.append("")
@@ -399,35 +522,155 @@ class ReinventManager:
 
     # ----------------------------------------------------------- runner
     def _write_run_script(self) -> str:
-        """Wrapper that runs every staged-learning config with the REINVENT4 binary."""
+        """Wrapper that runs every staged-learning config with the REINVENT
+        binary or pip-installed console script (style-aware invocation)."""
         p = self.cfg.resolve("reinvent/run_generation.sh")
         test = textwrap.dedent(f"""\
             #!/usr/bin/env bash
-            # Run REINVENT4 staged-learning for every generated per-mode config.
+            # Run REINVENT staged-learning for every generated per-mode config.
             # Usage: REINVENT_BIN=/path/to/reinvent ./reinvent/run_generation.sh
+            # Invocation style is resolved per binary:
+            #   - Reinvent4 console script / reInvent / reinvent4:  <bin> <config.toml>
+            #   - legacy Reinvent v3 CLI:                            <bin> reinvent <config.toml>
             set -euo pipefail
             ROOT="$(cd "$(dirname "${{BASH_SOURCE[0]}}")/.." && pwd)"
             COMMAND="${{REINVENT_BIN:-}}"
             if [ -z "$COMMAND" ]; then
-              for cand in reinvent reinvent4; do
+              for cand in reinvent reinvent4 reInvent; do
                 if command -v "$cand" >/dev/null 2>&1; then COMMAND="$(command -v "$cand")"; break; fi
               done
             fi
             if [ -z "$COMMAND" ]; then
-              echo "REINVENT4 binary not found. Set REINVENT_BIN or install REINVENT4." >&2
+              echo "REINVENT binary not found. Set REINVENT_BIN or install REINVENT4." >&2
               exit 1
             fi
+            BASE="$(basename "$COMMAND")"
             for toml in "$ROOT"/reinvent/configs/*_staged_learning.toml; do
               mode="$(basename "$toml" | sed 's/_staged_learning\\.toml//')"
               echo "==> $mode  (${{toml##*/}})"
               outdir="$ROOT/reinvent/out/$mode"
               mkdir -p "$outdir"
-              (cd "$outdir" && "$COMMAND" reinvent "$toml")
+              ARGS=()
+              case "$BASE" in
+                reinvent)
+                  if "$COMMAND" --version 2>/dev/null | grep -q 'Reinvent 4'; then
+                    ARGS=()
+                  else
+                    ARGS=( reinvent )
+                  fi ;;
+                reinvent4|reInvent) ARGS=() ;;
+                *) ARGS=() ;;
+              esac
+              (cd "$outdir" && "$COMMAND" "${{ARGS[@]}}" "$toml")
             done
             """)
         p.write_text(test)
         p.chmod(0o755)
         return str(p)
+
+    # ------------------------------------------------------------- execute
+    def _run_mode(self, mode: str, toml: Path, binary: Dict[str, Any]) -> Dict[str, Any]:
+        """Run one staged-learning config in reinvent/out/<mode>."""
+        out_dir = Path(str(self.cfg.resolve("reinvent/out", mode)))
+        out_dir.mkdir(parents=True, exist_ok=True)
+        log_dir = self.cfg.resolve("reinvent/logs")
+        log_dir.mkdir(parents=True, exist_ok=True)
+        logf = log_dir / f"{mode}.log"
+        if binary["style"] == "v3_subcommand":
+            argv = [binary["binary"], "reinvent", str(toml)]
+        else:
+            argv = [binary["binary"], str(toml)]
+        started = utcnow()
+        rc = None
+        with open(str(logf), "w") as fh:
+            try:
+                proc = subprocess.run(argv, cwd=str(out_dir), stdout=fh, stderr=subprocess.STDOUT,
+                                      check=False, text=True)
+                rc = proc.returncode
+                ok = rc == 0
+            except Exception as exc:  # interpreter launch failures
+                fh.write(f"\nFATAL: {exc}\n")
+                ok = False
+        return {
+            "mode": mode, "config": str(toml), "command": " ".join(argv),
+            "started_utc": started, "finished_utc": utcnow(),
+            "returncode": rc,
+            "success": ok, "log": str(logf),
+        }
+
+    def _run_generation(self, paths: Dict[str, Dict[str, Any]],
+                        binary: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+        """Run all modes; never fabricate; record failures honestly."""
+        self.log.info(f"REINVENT binary: {binary['binary']} "
+                      f"(style={binary['style']}, device={self.resolve_device()})")
+        results: Dict[str, Dict[str, Any]] = {}
+        for mode in paths:
+            toml = Path(paths[mode]["file"])
+            if not toml.exists():
+                results[mode] = {"success": False, "note": "config missing"}
+                continue
+            results[mode] = self._run_mode(mode, toml, binary)
+            self.log.info(f"mode {mode}: {'OK' if results[mode]['success'] else 'FAILED'} "
+                          f"(returncode={results[mode].get('returncode')})")
+        return results
+
+    # ------------------------------------------------------------ collect
+    def _collect_summaries(self) -> pd.DataFrame:
+        """Pool REINVENT4 per-mode *summary.csv outputs into generated_molecules.csv."""
+        rows: List[Dict[str, Any]] = []
+        out_root = self.cfg.resolve("reinvent/out")
+        if not out_root.exists():
+            return pd.DataFrame()
+        for mode in sorted(MODE_DIRS):
+            out_dir = out_root / mode
+            if not out_dir.is_dir():
+                continue
+            summary_files = sorted(out_dir.glob("*summary.csv"))
+            if not summary_files:
+                # REINVENT4 also writes {prefix}.summary.csv.gz on some builds
+                summary_files = sorted(out_dir.glob("*summary.csv.gz"))
+            for sfile in summary_files:
+                try:
+                    df = pd.read_csv(sfile, compression="infer")
+                except Exception:
+                    continue
+                col = next((c for c in ("SMILES", "Canonical_SMILES", "molecules")
+                            if c in df.columns), None)
+                if col is None:
+                    continue
+                for _, r in df.iterrows():
+                    smi = str(r[col]).strip()
+                    if not smi or smi.lower() in ("nan", "none", ""):
+                        continue
+                    canon = None
+                    try:
+                        canon = Chem.MolToSmiles(Chem.MolFromSmiles(smi))
+                    except Exception:
+                        canon = None
+                    if not canon:
+                        continue  # unparseable -> record NOTHING (never fabricate)
+                    row = {
+                        "molecule_id": f"REV-{mode.upper()}-{len(rows)}",
+                        "generation_mode": f"reinvent_{mode}",
+                        "source": "reinvent4_staged_learning",
+                        "isomeric_SMILES": smi,
+                        "canonical_SMILES": canon,
+                        "parent_id": "NA",
+                        "experimental_status": "untested",
+                        "created_at": utcnow(),
+                        "summary_file": sfile.name,
+                    }
+                    for extra in ("score", "Score", "score1", "score2", "activity decoder"):
+                        if extra in r and pd.notna(r[extra]):
+                            row[f"reinvent_{extra.replace(' ', '_')}"] = float(r[extra])
+                    rows.append(row)
+        if not rows:
+            return pd.DataFrame()
+        out = pd.DataFrame(rows)
+        # authority: the canonical isomeric SMILES
+        out = out.drop_duplicates(subset=["isomeric_SMILES"])
+        save_df(out, str(self.cfg.resolve("reinvent/generated_molecules.csv")))
+        return out
 
     # ------------------------------------------------------------- plans
     def configs(self, df: pd.DataFrame) -> Dict[str, Dict[str, Any]]:
@@ -496,7 +739,7 @@ class ReinventManager:
                 "diversity_filter": MODE_DIVERSITY.get(mode, MODE_DIVERSITY["de_novo"])[0],
                 "seed_file": inception if mode == "local_analog" else "",
                 "n_target": int(self.reinv.get("n_generate", 10000)),
-                "device": self.reinv.get("device", "cpu"),
+                "device": self.resolve_device(),
                 "experimental_status": "untested",
                 "status": "READY_PENDING_REINVENT_BINARY" if not self.available
                           else "READY_RUNNABLE",
@@ -509,23 +752,65 @@ class ReinventManager:
         if taf_evidence is None:
             taf_evidence = "PROSPECTIVE"
         self.log.step("REINVENT 4 integration")
-        self.log.info(f"REINVENT available: {self.available}")
+        self.log.info(f"REINVENT binary: {'detected' if self.available else 'NOT FOUND'}")
         priors = self.verify_priors()
         inception = self._write_actives_seed(df)
         paths = self.configs(df)
         blueprint = self.build_generation_plan(df, paths, priors, inception)
         save_df(blueprint, str(self.cfg.resolve("reinvent/generation_plan.csv")))
         run_script = self._write_run_script()
+
+        run_status = "NOT_RUN_BINARY_ABSENT"
+        run_results: Dict[str, Any] = {}
+        n_generated = 0
+        generated = pd.DataFrame()
+        binary = self.runnable
+        if binary is not None:
+            run_results = self._run_generation(paths, binary)
+            expected = len(run_results)
+            n_ok = sum(1 for r in run_results.values() if r.get("success"))
+            if expected and n_ok == expected:
+                run_status = "RUN_COMPLETED"
+            elif n_ok == 0:
+                run_status = "RUN_FAILED"
+            else:
+                run_status = "PARTIAL_RUN_FAILURES"
+            generated = self._collect_summaries()
+            n_generated = int(len(generated))
+            self.log.info(f"collected {n_generated} unique canonical molecules "
+                          f"({run_status})")
+
+        if generated.empty:
+            guard = (
+                "NO molecules fabricated: config-only run. "
+                f"run_status={run_status}. Once a REINVENT binary is present "
+                "the pipeline generates and collects reinvent/generated_molecules.csv."
+            )
+        else:
+            guard = (
+                f"NO fabricated molecules: generated_molecules.csv holds {n_generated} "
+                "real REINVENT4 outputs, ALL 'untested' / prospective. Docs must NOT "
+                "claim experimental validation or clinical value."
+            )
+
         save_manifest({
             "reinvent_available": self.available,
-            "reinvent_version": "NOT AVAILABLE" if not self.available else "UNKNOWN",
+            "reinvent_binary": binary["binary"] if binary else None,
+            "reinvent_invocation_style": binary["style"] if binary else None,
+            "reinvent_version": self._query_version(binary) if binary else "NOT AVAILABLE",
+            "device_resolved": self.resolve_device(),
+            "device_requested": str(self.reinv.get("device", "auto")),
+            "scoring_python_resolved": self.scoring_python(),
+            "scoring_script": str(self.cfg.resolve("reinvent/score_lbm.py")),
             "prior_source": self.reinv.get("prior_source", "https://zenodo.org/records/20701824"),
             "priors": priors,
             "config_files": {m: meta["file"] for m, meta in paths.items()},
             "config_hashes": {m: meta["sha256"] for m, meta in paths.items()},
-            "scoring_script": str(self.cfg.resolve("reinvent/score_lbm.py")),
-            "scoring_python": self.reinv.get("scoring_python"),
             "run_script": run_script,
+            "run_status": run_status,
+            "run_results": run_results,
+            "n_generated": n_generated,
+            "generated_molecules_file": str(self.cfg.resolve("reinvent/generated_molecules.csv")),
             "stereochemistry_note": (
                 "Only the Mol2Mol prior (reinvent_pubchem.prior) supports "
                 "stereochemistry; LibInvent prior does not -> local_analog_libinvent "
@@ -535,20 +820,27 @@ class ReinventManager:
                 "n_mode_configs": len(paths),
                 "n_prior_verified": sum(1 for p in priors.values() if p["verified"]),
             }),
-            "fabrication_guard": (
-                "NO molecules fabricated: config generation only. Run "
-                "reinvent/run_generation.sh once the REINVENT4 binary is present."
-            ),
+            "fabrication_guard": guard,
         }, str(self.cfg.resolve("reinvent/reinvent_manifest.json")))
         if not self.available:
             self.log.warn(
                 "REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written "
                 "(validated against REINVENT4 main configs/PARAMS.md schema), priors "
-                "checksum-verified. No molecules generated. Install REINVENT4 and run "
-                "reinvent/run_generation.sh to populate reinvent/out/<mode>/."
+                "checksum-verified. No molecules generated. Install REINVENT4 "
+                "(see GPU_RUNBOOK.md) and rerun this phase to populate "
+                "reinvent/generated_molecules.csv."
             )
         return {"blueprint": blueprint, "configs": paths, "priors": priors,
-                "run_script": run_script}
+                "run_script": run_script, "run_status": run_status,
+                "n_generated": n_generated, "generated": generated,
+                "run_results": run_results}
+
+    def _query_version(self, binary: Optional[Dict[str, Any]]) -> str:
+        """Best-effort version probe (never blocks forever); cached."""
+        if not binary:
+            return "NOT AVAILABLE"
+        line = self._probe_version(binary["binary"])
+        return line or "UNKNOWN"
 
 
 def run_phase9_11(cfg_path: str, df: Optional[pd.DataFrame] = None, taf_evidence=None):

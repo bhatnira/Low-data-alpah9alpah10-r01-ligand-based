@@ -156,7 +156,8 @@ reinvent:
     - applicability_domain
   n_generate: 10000
   batch_size: 64
-  device: cpu
+  # device: cpu | cuda | auto (auto = cuda when a GPU is present, else cpu)
+  device: auto
   max_steps: 100
   learning:
     type: dap
@@ -173,7 +174,14 @@ reinvent:
       md5: fea30c293909216fe183bb0d1b7ca432
   prior_source: https://zenodo.org/records/20701824
   libinvent_scaffolds_enabled: true
-  scoring_python: /Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+  # Optional path to a REINVENT4 CLI binary (overrides PATH/venv detection).
+  # Empty = auto-detect: $REINVENT_BIN, reinvent/reinvent4/reInvent on PATH, or
+  # project/venvs/reinvent*/bin/{reinvent,reinvent4,reInvent}.
+  binary: ""
+  # Python used to run reinvent/score_lbm.py (ExternalProcess scoring bridge).
+  # Empty = the interpreter running the pipeline itself (sys.executable),
+  # which already has rdkit/scikit-learn/joblib.
+  scoring_python: ""
 
 structures:
   available: false

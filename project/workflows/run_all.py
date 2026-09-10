@@ -47,7 +47,7 @@ PHASES: List[Dict[str, Callable]] = [
     {"key": "medchem", "fn": lambda cfg: __import__("src.medchem", fromlist=["run_phase8"]).run_phase8(cfg),
      "desc": "Phase 8: traditional medicinal chemistry baseline"},
     {"key": "reinvent", "fn": lambda cfg: __import__("src.reinvent", fromlist=["run_phase9_11"]).run_phase9_11(cfg),
-     "desc": "Phases 9-11: REINVENT configs + generation plan (no binary -> no molecules)"},
+     "desc": "Phases 9-11: REINVENT configs, generation + collection (auto-runs on GPU when binary present)"},
     {"key": "chemspace", "fn": lambda cfg: __import__("src.chemspace", fromlist=["run_phase12"]).run_phase12(cfg),
      "desc": "Phase 12: chemical-space expansion report"},
     {"key": "candidates", "fn": lambda cfg: __import__("src.candidates", fromlist=["run_phase13"]).run_phase13(cfg),

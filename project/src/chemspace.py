@@ -142,6 +142,10 @@ def run_phase12(cfg_path: str, df: Optional[pd.DataFrame] = None,
     from src.common import ProjectConfig, ManagedLogger
     cfg = ProjectConfig(cfg_path)
     logger = ManagedLogger("phase12_chemspace", str(cfg.resolve("logs")))
+    if generated is None:
+        # auto-ingest whatever REINVENT generation produced (if anything)
+        gen_csv = cfg.resolve("reinvent/generated_molecules.csv")
+        generated = pd.read_csv(gen_csv) if gen_csv.exists() else pd.DataFrame()
     if df is None:
         p = str(cfg.resolve("data/processed/data_analysis_ready.csv"))
         df = pd.read_csv(p)

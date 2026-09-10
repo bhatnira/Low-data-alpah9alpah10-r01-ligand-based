@@ -634,16 +634,32 @@ class ClosedLoop:
     def data_watch(self) -> Dict[str, Any]:
         """Scan for newly available generative / structural outputs each cycle."""
         self.log.step("Data watch (generator + structural availability)")
-        rein_outputs = list(self.cfg.resolve("reinvent/out").glob("*/") ) if \
-            self.cfg.resolve("reinvent/out").exists() else []
+        gen_csv = self.cfg.resolve("reinvent/generated_molecules.csv")
+        n_generated = 0
+        gen_by_mode = {}
+        if gen_csv.exists():
+            try:
+                gdf = pd.read_csv(gen_csv)
+                n_generated = int(len(gdf))
+                gen_by_mode = gdf["generation_mode"].value_counts().to_dict() \
+                    if "generation_mode" in gdf.columns else {}
+            except Exception:
+                n_generated = 0
+        # per-mode file scan as fallback when CSV not yet consolidated
+        mode_dirs = list(self.cfg.resolve("reinvent/out").glob("*/")) \
+            if self.cfg.resolve("reinvent/out").exists() else []
         struct_dirs = [self.cfg.resolve(d) for d in ("structures/af3",
                                                      "structures/boltz")]
         found_struct = [str(p) for d in struct_dirs if d.exists() for p in d.rglob("*")
                         if p.suffix.lower() in {".pdb", ".cif", ".json"}]
         out = {
-            "reinvent_molecule_dirs": len(rein_outputs),
+            "reinvent_molecule_dirs": len(mode_dirs),
+            "generated_molecules_count": n_generated,
+            "generated_molecules_file": str(gen_csv) if gen_csv.exists() else None,
+            "generated_by_mode": gen_by_mode,
             "structural_outputs_found": len(found_struct),
-            "reinvent_ingest": "pending until molecule files appear",
+            "reinvent_ingest": (f"ingested {n_generated} molecules"
+                                if n_generated else "pending until molecules generated"),
             "structural_ingest": ("ingested -> TAF-6 upgrade" if found_struct
                                   else "NOT AVAILABLE - no AF3/Boltz outputs"),
         }
