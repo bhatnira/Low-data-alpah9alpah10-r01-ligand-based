@@ -1,9 +1,10 @@
 ======================================================================
 DATA QUALITY CONTROL REPORT
 Generated: 2026-09-04 12:17:48
+Refreshed: 2026-09-10 (Tufts cluster pipeline run; same canonical 30-compound dataset)
 ======================================================================
 
-Dataset: /Users/nb/Documents/ligand-based-modeling/project/data/raw/modulator-dataset-a9a10.csv
+Dataset: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/data/raw/modulator-dataset-a9a10.csv
 Total rows: 30
 Unique compounds (by ID): 30
 Unique canonical SMILES: 30

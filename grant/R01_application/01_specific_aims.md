@@ -74,8 +74,8 @@ Four coupled activities deliver this aim in parallel:
   currently generated 31397 molecules (all in silico, untested; RUN_COMPLETED) — the current prospective
   set therefore comes from the traditional medicinal-chemistry baseline
   (97 enumerated / 86 chemistry-invalid / 11 valid; 9 carried into the
-  candidate set plus 6 negative controls). When installed, generator output
-  passes the same pre-registered filters and is reported as prospective;
+  candidate set plus 6 negative controls). Generator output passes the same
+  pre-registered filters and is reported as prospective;
   computational proposals feed, they do not replace, the medicinal-chemistry
   analog plan.
 - **1c. Iterative electrophysiological evaluation.** Each round tests drug-like

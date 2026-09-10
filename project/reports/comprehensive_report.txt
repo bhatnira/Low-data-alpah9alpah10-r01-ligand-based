@@ -173,7 +173,8 @@ Generated: 2026-09-04 12:35:30
 
   NEXT STEPS:
     1. Screen purchasable libraries for TAF-compatible molecules
-    2. Generate novel scaffolds using REINVENT 4
+    2. Generate novel scaffolds using REINVENT 4 [DONE: 31,397 molecules
+       across 5 pooled modes, RUN_COMPLETED on GPU, all untested]
     3. Prioritize compounds that:
        a. Retain lactone core or bioisostere
        b. Have EWG (Br, alkyne, nitrile, etc.)
@@ -225,7 +226,8 @@ Generated: 2026-09-04 12:35:30
   Phase 2 (After Phase 1 results):
     - Update TAFs with new data
     - Test novel scaffolds from library screening
-    - Test REINVENT-generated molecules
+    - Test REINVENT-generated molecules (31,397 collected; all untested,
+      prioritized via the candidate portfolio A-F)
     - Focus on scaffold hopping validation
 
   Phase 3 (Prospective):

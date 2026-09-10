@@ -59,13 +59,13 @@ ligand-based-modeling/
     │   └── 3D/
     │       └── shape_analysis.csv            # 3D conformer shape descriptors
     │
-    ├── models/                              # (Reserved for trained models)
+    ├── models/                              # trained models (classical RF/FP: lbm_rf_fp_desc.joblib)
     │
     ├── screening/
     │   ├── purchasable/                     # (Reserved for library screening)
-    │   └── reinvent/                        # (Reserved for REINVENT output)
+    │   └── reinvent/                        # REINVENT4 output (see project/reinvent/: 6 mode dirs, 31,397 collected)
     │
-    ├── candidates/                          # (Reserved for candidate selection)
+    ├── candidates/                          # candidate portfolio A-F (15 unique molecules)
     │
     ├── figures/
     │   ├── 01_data_overview.png             # Activity distributions, property plots

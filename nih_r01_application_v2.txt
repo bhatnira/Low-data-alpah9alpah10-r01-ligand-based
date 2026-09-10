@@ -209,7 +209,7 @@ parallel, not as sequential aims):
     so the current prospective set derives from the traditional
     medicinal-chemistry baseline (components pool via study 1a, 97 enumerated
     / 86 chemistry-invalid / 11 valid; 9 carried into the candidate set plus 6
-    negative controls). Once installed, generator output will stream through
+    negative controls). Generator output streams through
     the same pre-registered filters and be reported as prospective; the
     computational proposals feed - they do not replace - the
     medicinal-chemistry analog plan.

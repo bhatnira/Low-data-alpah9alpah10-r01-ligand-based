@@ -97,12 +97,16 @@ Headline findings (computational, hypothesis-generating).
 
 State of prospective experimentation. NO experimental rounds have been run at
 the time of this report. All prospective validation is PENDING_EXPERIMENT and
-is explicitly labeled as such. Structures/REINVENT4 binaries and AF3/Boltz
-outputs were NOT AVAILABLE in the repository; the co-PI laboratory is validating
-Alphafold3 binding models for the ascorbate-PAM series (ingestion hook in
-src/structures.py ready to integrate as TAF-6 binding-mode features when
-validated). Generative configs were written and checksum-validated, but NO
-molecules were fabricated.
+is explicitly labeled as such. AF3/Boltz outputs were NOT AVAILABLE in the
+repository; the co-PI laboratory is validating Alphafold3 binding models for the
+ascorbate-PAM series (ingestion hook in src/structures.py ready to integrate as
+TAF-6 binding-mode features when validated). REINVENT4 generation COMPLETED on
+GPU: 31,397 unique canonical molecules pooled from the 5 curated modes (de novo,
+local analog, scaffold hopping, TAF-disrupting, information-gain); the LibInvent
+strategy also ran and its raw outputs are retained under
+reinvent/out/local_analog_libinvent/. Generative configs were written,
+checksum-validated, and run with reinvent_manifest.json run_status=RUN_COMPLETED.
+NO molecules were fabricated; every generated row is experimental_status=untested.
 
 ================================================================================
  2. SIGNIFICANCE AND SPECIFIC AIMS
@@ -313,8 +317,14 @@ scaffold_out, bootstrap, permutation).
   columns (molecule_id, parent, generation_mode, source, created_at) present.
 
 5.8 Chemical-space expansion.
-  - generated count 0 for REINVENT/LibInvent (no binary) -> novelty metrics
-    NOT_AVAILABLE honestly (NaN in report) rather than fabricated.
+  - generated count 31,397 unique canonical molecules pooled from the 5
+    curated REINVENT4 modes (de novo, local analog, scaffold hopping,
+    TAF-disrupting, information-gain); the LibInvent strategy also ran and
+    its raw outputs are retained under reinvent/out/local_analog_libinvent/.
+  - novelty metrics computed from real generation
+    (chemical_space/chemical_space_report.csv): mean NN Tanimoto distance
+    0.859, fraction beyond 0.4 = 1.0, 22,506 novel Bemis-Murcko scaffolds,
+    descriptor-space coverage in experimental range 0.712.
   - SAR-space expansion = number of NEW experimentally testable hypotheses
     (to be recorded after rounds).
 
@@ -328,7 +338,9 @@ scaffold_out, bootstrap, permutation).
 ================================================================================
 Leakage controls (all explicitly checked, none severe):
   - no duplicate molecule across splits
-  - generated/ directory exists but is NOT mixed into training (REVIEW flag)
+  - generated_molecules.csv (31,397 REINVENT4 molecules,
+    experimental_status=untested) exists but is NOT mixed into training (REVIEW
+    flag)
   - no experimental-outcome leakage (0 round files exist; confirmatory cycle
     locked)
   - SHAP background uses training data; documented
@@ -459,8 +471,10 @@ Failure-mode analysis (10 explicit modes; determinations from real evidence).
                                                UNSTABLE, rho ~0.2)
   4 structural_hypotheses_disagree             NOT_AVAILABLE (no structural
                                                outputs)
-  5 reinvent_unrealistic_molecules             NOT_AVAILABLE (no generated
-                                               molecules)
+  5 reinvent_unrealistic_molecules             NOT-TRIGGERED (collection keeps
+                                               only RDKit-valid canonical SMILES;
+                                               31,397 molecules; invalid dropped,
+                                               nothing fabricated)
   6 generated_stay_in_original_space           NOT-TRIGGERED (scaffold/chemical-
                                                distance metrics present)
   7 predicted_activity_fails_experimentally    PENDING_EXPERIMENT
@@ -599,12 +613,16 @@ Implemented and verified this cycle:
 - Hit metrics (loop/hit_metrics_roundN.csv): arm-stratified hit rates,
   enrichment factor at top-k, precision@k, and BH-FDR where replicate
   p-values exist - populated when round results land.
-- Data watch (loop/data_watch.json): honest availability scan. REINVENT strategy
-  directories exist (5) but contain no molecule files, so generative ingest stays
-  'pending'; AF3/Boltz outputs absent (co-PI validating Alphafold3 models for
-  the ascorbate-PAM series; ingestion hook in src/structures.py ready to
-  integrate as TAF-6 binding-mode features when validated), so structural/T (F)
-  upgrade stays NOT AVAILABLE. Nothing is fabricated.
+- Data watch (loop/data_watch.json): honest availability scan. Six REINVENT
+  strategy directories populated; 31,397 molecules ingested
+  (reinvent_ingest: "ingested 31397 molecules"; per-mode: de_novo 6314,
+  information_gain 6277, local_analog 6273, scaffold_hopping 6308,
+  taf_disrupting 6225). The LibInvent strategy also ran but is outside the
+  pooled MODE_DIRS set, so its raw outputs do not add to the count. AF3/Boltz
+  outputs absent (co-PI validating Alphafold3 models for the ascorbate-PAM
+  series; ingestion hook in src/structures.py ready to integrate as TAF-6
+  binding-mode features when validated), so structural/T (F) upgrade stays NOT
+  AVAILABLE. Nothing is fabricated.
 - Cycle ledger (loop/cycle_ledger.json): append-only provenance (upserted per
   round) of every cycle: design, gate count, rounds pooled, refit artifacts,
   hit-metric rounds, data-watch state.
@@ -662,8 +680,10 @@ in the closed-loop system rather than by an overclaim:
 3. Integrate AF3/Boltz structures (co-PI validating Alphafold3 binding models
    for the ascorbate-PAM series) to upgrade TAF-6 and provide a structural
    hypothesis layer (currently NOT AVAILABLE; ingestion hook in src/structures.py).
-4. Run REINVENT4 (Mol2Mol prior, stereo-aware; LibInvent config without stereo
-   endpoint) to populate real generated-molecule novelty/SAR-space metrics.
+4. REINVENT4 generation now complete (Mol2Mol prior, stereo-aware; LibInvent
+   config without stereo endpoint): 31,397 molecules, RUN_COMPLETED on GPU;
+   generated-molecule novelty/SAR-space metrics are populated from real
+   generation (chemical_space/chemical_space_report.csv).
 5. Definitively test TAF-4 (stereo) with the designed enantiomeric/
    diastereomeric probes rather than 2D counterfactuals only.
 6. Enforce the dedicated decision framework (strategy comparison table) and
