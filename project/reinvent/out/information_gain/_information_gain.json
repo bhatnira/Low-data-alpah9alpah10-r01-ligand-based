@@ -1,0 +1,152 @@
+{
+    "run_type": "staged_learning",
+    "device": "cuda",
+    "tb_logdir": "tb_logs",
+    "json_out_config": "_information_gain.json",
+    "seed": null,
+    "parameters": {
+        "prior_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/priors/reinvent_pubchem.prior",
+        "agent_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/priors/reinvent_pubchem.prior",
+        "summary_csv_prefix": "information_gain",
+        "use_checkpoint": false,
+        "purge_memories": false,
+        "smiles_file": null,
+        "sample_strategy": "multinomial",
+        "distance_threshold": 99999,
+        "batch_size": 64,
+        "randomize_smiles": true,
+        "isomeric_smiles": true,
+        "temperature": 1.0,
+        "tb_isim": false
+    },
+    "scoring": null,
+    "scheduler": null,
+    "responder": null,
+    "filter": null,
+    "stage": [
+        {
+            "max_steps": 100,
+            "max_score": 0.9,
+            "chkpt_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/out/information_gain/chkpt_information_gain.chkpt",
+            "termination": "simple",
+            "min_steps": 25,
+            "scoring": {
+                "type": "geometric_mean",
+                "component": [
+                    {
+                        "ExternalProcess": {
+                            "endpoint": [
+                                {
+                                    "name": "predicted_activity",
+                                    "weight": 0.5,
+                                    "params": {
+                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
+                                        "property": "predicted_activity"
+                                    }
+                                },
+                                {
+                                    "name": "prediction_uncertainty",
+                                    "weight": 1,
+                                    "params": {
+                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
+                                        "property": "uncertainty"
+                                    }
+                                },
+                                {
+                                    "name": "novelty",
+                                    "weight": 0.8,
+                                    "params": {
+                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
+                                        "property": "novelty"
+                                    }
+                                },
+                                {
+                                    "name": "stereo_validity",
+                                    "weight": 0.3,
+                                    "params": {
+                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
+                                        "property": "stereo_validity"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "MolecularWeight": {
+                            "endpoint": [
+                                {
+                                    "name": "MW_window",
+                                    "weight": 1.0,
+                                    "transform": {
+                                        "type": "step",
+                                        "low": 175.0,
+                                        "high": 550.0
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SAScore": {
+                            "endpoint": [
+                                {
+                                    "name": "synthetic_feasibility",
+                                    "weight": 0.5,
+                                    "transform": {
+                                        "type": "double_sigmoid",
+                                        "low": 1.0,
+                                        "high": 6.0,
+                                        "coef_div": 500.0,
+                                        "coef_si": 20.0,
+                                        "coef_se": 20.0
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "custom_alerts": {
+                            "endpoint": [
+                                {
+                                    "name": "curated alerts filter",
+                                    "weight": 0.0,
+                                    "params": {
+                                        "smarts": [
+                                            "[*;r{8-17}]",
+                                            "[#8][#8]",
+                                            "[#6;+]",
+                                            "[#16][#16]",
+                                            "[#7;!n][S;!$(S(=O)=O)]",
+                                            "[#7;!n][#7;!n]",
+                                            "[#16;!s][C;!$(C(=[O,N])[N,O])][#16;!s]"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "filename": null
+            },
+            "diversity_filter": null
+        }
+    ],
+    "learning_strategy": {
+        "type": "dap",
+        "sigma": 128,
+        "rate": 0.0001
+    },
+    "diversity_filter": {
+        "type": "PenalizeSameSmiles",
+        "bucket_size": 25,
+        "minscore": 0.0,
+        "minsimilarity": 0.4,
+        "penalty_multiplier": 0.5
+    },
+    "intrinsic_penalty": null,
+    "inception": null
+}

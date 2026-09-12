@@ -5,21 +5,10 @@
 __pycache__/
 *.py[cod]
 
-# Large model weights - not committed to git.
-# Download from Zenodo record 20701824 (configs/config.yaml: prior_source);
-# checksums are verified at runtime by src/reinvent.py.
-project/priors/
-*.prior
-
-# AIZynthFinder virtualenv + public model/stock files (synthetic-route phase).
-# Models are regenerated via `download_public_data`; the 663MB ZINC stock and
-# ONNX weights must never be committed.
+# AIZynthFinder + REINVENT virtualenv (8.1G) - regenerable, and files exceed
+# GitHub's 100MB/file hard limit, so it must never be committed.
 project/venvs/
-project/synth_route/models/
 
-# REINVENT4 run artifacts - regenerated on a GPU machine by phase 9-11.
-# The runbook (project/GPU_RUNBOOK.md) + scripts/sync_generated_docs.py read
-# these from disk on the run machine; only configs/manifests are committed.
-project/reinvent/out/
-project/reinvent/logs/
-project/reinvent/generated_molecules.csv
+# Public AIZynthFinder model/stock files (663MB ZINC stock + ONNX weights),
+# regenerated via `download_public_data`. Tracked by Git LFS if ever committed.
+project/synth_route/models/
