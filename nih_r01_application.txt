@@ -2,6 +2,16 @@
 NIH R01 GRANT APPLICATION
 ================================================================================
 
+*** SUPERSEDED DRAFT (v1) - DEPRECATED ***
+This file is the ORIGINAL v1 draft (5-year, 3-Aim structure, ZINC22/Enamine
+purchasable-screening scope). It is preserved for reference only. The current,
+canonical submission text is `nih_r01_application_v2.txt` (single integrated
+Aim, 3-year budget, verified pipeline numbers), assembled in
+`grant/R01_application/`. Fabricated references and overstated completed-run
+claims present in v1 have been corrected below; plan-language text (e.g.,
+future purchasable-library screening) is legacy scope and does NOT reflect
+completed work.
+
 ASSIGNMENT BOARD: Pharmacology of Drug Abuse (PA)
 ACTIVITY CODE: R01
 APPLICATION TYPE: New
@@ -238,8 +248,9 @@ groups: (A) high-confidence transfer, (B) high novelty, (C) stereo-
 chemical test pairs, (D) mechanistic test compounds, (E) exploratory
 candidates, and (F) negative controls.
 
-MILESTONE: Candidate portfolio of 50-100 prioritized compounds with
-multi-objective scores. Target completion: Month 24.
+MILESTONE: Candidate portfolio of 15 unique molecules (34 assignment rows
+across groups A-F; 6 drug-like eligible for round 1) with multi-objective
+scores. Target completion: Month 24.
 
 SPECIFIC AIM 3: Experimentally validate TAF transferability.
 
@@ -313,7 +324,7 @@ promising target for pain management. Unlike α7 nAChR which has been
 extensively studied, α9α10 remains pharmacologically underexplored.
 Recent studies have demonstrated that α9α10 nAChR is expressed in
 dorsal root ganglia (DRG) neurons and modulates nociceptive signaling
-(Bhatt et al., J Neurosci, 2020). Positive allosteric modulators
+(Vincler et al., PNAS, 2006). Positive allosteric modulators
 (PAMs) of α9α10 represent a mechanism to enhance cholinergic
 analgesic signaling without direct receptor activation, potentially
 offering improved selectivity and reduced side effects.
@@ -573,11 +584,14 @@ testing on structurally distinct scaffolds.
 COMPOUNDS (not biological subjects):
 
   Training set: 30 compounds (7 active, 23 inactive)
-  Screening set: ~1,000,000 compounds (ZINC22, Enamine REAL)
-  Generated set: ~10,000 compounds (REINVENT 4)
-  Candidate set: 50-100 prioritized compounds
-  Test set: 15-20 compounds per experimental round
-  Total experimental: 45-60 compounds over 3 rounds
+  Generated set: 31,397 compounds (REINVENT 4, six run modes; all
+    in silico, untested; RUN_COMPLETED - see reinvent_manifest.json)
+  Candidate portfolio: 15 unique molecules (9 chemistry-validated analogs + 6
+    negative controls; 34 assignment rows across portfolio groups A-F)
+  Eligible round-1 set: 6 drug-like compounds (currently BLOCKED pending
+    med-chem sign-off; no large-scale purchasable screen was executed)
+  Test set: up to ~15 compounds per experimental round (round 1 = 6)
+  Total experimental: ~15-45 compounds over up to 3 rounds
 
 SAMPLE SIZE JUSTIFICATION:
 
@@ -603,7 +617,7 @@ activity-associated features.
 Approach:
 
 Step 1.1: Data Discovery and Quality Control
-  - Parse all SMILES using RDKit (v2025.09.4)
+  - Parse all SMILES using RDKit (v2026.03.6)
   - Canonicalize structures while preserving stereochemistry
   - Calculate molecular descriptors: MW, LogP, TPSA, HBD, HBA,
     RotBonds, FractionCSP3, RingCount, AromaticRings
@@ -695,7 +709,11 @@ METHOD 2: LIBRARY SCREENING AND GENERATIVE DESIGN (AIM 2)
 Objective: Identify novel scaffolds using TAF-guided screening and
 generative design.
 
-Sub-aim 2a: Purchasable Library Screening
+Sub-aim 2a: Purchasable Library Screening (NOT EXECUTED in the current
+build: no ZINC22/Enamine library screen was run. Vestigial from the earlier
+v1 scope - the realized candidate supply is the MMP-guided medchem baseline
+(97 enumerated / 11 chemistry-valid) and REINVENT4 generation (31,397, all
+in silico, untested). Kept here as the original plan; superseded by v2.)
 
   Step 2.1: Database Acquisition
     - Download ZINC22 subset (drug-like, ≤500 Da)
@@ -746,7 +764,8 @@ Sub-aim 2b: REINVENT 4 Generative Design
     - Diversity score: distance from already generated molecules
 
   Step 2.7: Generation and Selection
-    - Generate ~10,000 molecules per mode
+    - Generate ~6,000-6,300 molecules per pooled mode (six modes written and
+      run; 31,397 total, all in silico, untested; RUN_COMPLETED)
     - Apply filters (validity, drug-likeness, TAF threshold)
     - Multi-objective scoring
     - Select top 30-50 compounds
@@ -972,9 +991,9 @@ Key rigor measures:
 SECTION 5: REFERENCES (Selected)
 ========================================================================
 
-1. Bhatt DK, et al. (2020) The α9α10 nicotinic acetylcholine
-   receptor: a novel target for pain management. J Neurosci
-   40(12): 2456-2470.
+1. Vincler M, et al. (2006) alpha9alpha10 nicotinic acetylcholine
+   receptors and nicotinic antagonists for the treatment of pain.
+   Proc Natl Acad Sci USA 103: 17880-17885.
 
 2. Dahlhamer J, et al. (2018) Prevalence of chronic pain and
    high-impact chronic pain among adults—United States, 2016.
@@ -986,18 +1005,17 @@ SECTION 5: REFERENCES (Selected)
 4. Walters WP, Barzilay R. (2021) Critical assessment of AI in
    drug discovery. Expert Opin Drug Discov 16: 937-947.
 
-5. Brown N, et al. (2020) Artificial intelligence in drug
-   discovery. J Comput Aided Mol Des 34: 709-725.
+5. Stokes JM, et al. (2020) A deep learning approach to antibiotic
+   discovery. Cell 180: 688-702.
 
-6. Merediz-Espin F, et al. (2021) The chemical similarity space
-   and its relation to molecular properties. J Chem Inf Model
-   61: 2807-2820.
+6. Bemis GW, Murcko MA. (1996) The properties of known drugs.
+   1. Molecular frameworks. J Med Chem 39: 2887-2904.
 
 7. Olivecrona M, et al. (2017) Molecular de-novo design through
    deep reinforcement learning. J Cheminform 9: 48.
 
-8. Blaschke T, et al. (2017) REINVENTing drug design: a review
-   of generative models. J Chem Inf Model 57: 2095-2108.
+8. Schneider G. (2018) Automating drug discovery. Nat Rev Drug
+   Discov 17: 97-113.
 
 9. Senior AW, et al. (2020) Improved protein structure prediction
    using potentials from deep learning. Nature 577: 706-710.
@@ -1049,7 +1067,7 @@ YEAR 1 (TAF Discovery): $250,000
   Personnel: Postdoc (100%) - $55,000 + benefits
   Personnel: Graduate student (50%) - $25,000 + benefits
   Supplies: Computing resources (cloud/HPC) - $30,000
-  Supplies: Software licenses (REINVENT 4, Schrodinger) - $25,000
+  Supplies: Open-source software tooling + versioned artifact storage - $5,000
   Travel: Conference presentations - $5,000
   Other: Publication costs - $10,000
   Indirect costs: $100,000 (F&A at negotiated rate)
@@ -1200,10 +1218,11 @@ SECTION 11: FACILITIES AND OTHER RESOURCES
 ========================================================================
 
 COMPUTATIONAL RESOURCES:
-  - Institutional high-performance computing cluster (1000+ cores)
-  - Cloud computing allocation (AWS/GCP) for REINVENT 4
+  - Institutional high-performance computing cluster (CPU/GPU)
+  - Cloud computing allocation for REINVENT 4 generation (as needed)
   - RDKit, scikit-learn, PyTorch software environments
-  - Licensed software: REINVENT 4, Schrodinger Suite
+  - Open-source software only: RDKit, scikit-learn, REINVENT 4 (no paid
+    licenses; no commercial suites are used or budgeted)
 
 EXPERIMENTAL RESOURCES:
   - Electrophysiology rig with two-electrode voltage-clamp

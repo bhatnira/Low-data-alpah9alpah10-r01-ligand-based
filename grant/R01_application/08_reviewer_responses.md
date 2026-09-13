@@ -65,8 +65,8 @@ implemented in the repo, the grant, and the runnable pipeline. It doubles as the
   curates 70 unique non-alpha9alpha10 nAChR modulators into an isolated panel
   (0 exact-SMILES and 0 scaffold overlap with alpha9alpha10 training; stored
   under `selectivity/`, never merged into training labels) and benchmarks the
-  frozen model at design time (mean predicted alpha9alpha10 activity 0.215 +/-
-  0.045; 0/70 above the 0.5 threshold), making cross-subtype selectivity an
+frozen model at design time (mean predicted alpha9alpha10 activity 0.312 +/-
+   0.057; 0/70 above the 0.5 threshold; max 0.495), making cross-subtype selectivity an
   explicit, re-evaluated design axis inside the loop rather than an afterthought.
 - **Evidence:** filters in `src/library.py` + `design_plate`; MMP export in
   `sar/mmp`; `src/other_modulators.py`; `selectivity/selectivity_report.md`.
@@ -83,7 +83,7 @@ implemented in the repo, the grant, and the runnable pipeline. It doubles as the
 - **Grant:** `01_specific_aims.md`; `02_research_strategy.md` (Rigor).
 
 ## Additional self-critique (not from the prior review)
-- **Duplicate molecule_ids in the portfolio** (32 assignments, 15 unique, see
+- **Duplicate molecule_ids in the portfolio** (34 assignments, 15 unique, see
   groups A-F): plates now dedupe by molecule; the finding is disclosed in the
   Research Strategy.
 - **Non-unique blinding semantics** and **Xenopus as vertebrate work**: both
@@ -114,22 +114,25 @@ implemented in the repo, the grant, and the runnable pipeline. It doubles as the
   benchmarked against 70 curated non-alpha9alpha10 modulators with an enforced
   isolation contract (0 exact-SMILES / 0 scaffold overlap with alpha9alpha10
   training; panel stored under `selectivity/` only). Baseline: mean predicted
-  activity 0.215 +/- 0.045; 0/70 above the 0.5 threshold. Panel is expandable via
+  activity 0.312 +/- 0.057; 0/70 above the 0.5 threshold (max 0.495); the seven
+  alpha9alpha10 actives score in-sample at mean 0.944 (7/7 >= 0.5). Panel is
+  expandable via
   drop-in CSVs in `data/selectivity/raw/` without code changes. See `src/
   other_modulators.py`, `selectivity/selectivity_report.md`, and
   `data/selectivity/raw/README.md`.
 - **Synthesizability decision support (new phase 4c, 19-phase pipeline):**
   AIZynthFinder retrosynthetic route prediction (public USPTO templates + ZINC
-  stock) runs as a standalone phase (`src/synth_route.py` +
-  `src/aizynth_worker.py` in a Python 3.12 venv). It appends
-  PREDICTED_ROUTE/UNVERIFIED plans + a per-building-block stock screen to every
-  round candidate: 8 round-1 targets -> 1 plan (1-step, route product verified
-  against the target), explicit NO_ROUTE_FOUND for the remaining 7; 18/38
-  building blocks IN_STOCK in ZINC. This directly upgrades the oversight gate's
-  "synthesizability" criterion (reviewer C5 concern) from a hand-waved
-  assumption to reproducible decision support; the med-chem sign-off remains
-  binding. Phase auto-skips and self-reports NOT AVAILABLE if models/venv are
-  missing - no fabricated routes. See `synth_route/synth_route_report.md`.
+  stock) is implemented as a standalone phase (`src/synth_route.py` +
+  `src/aizynth_worker.py` in a Python 3.12 venv) but is NOT AVAILABLE in this
+  build: the AIZynthFinder model files are not installed,
+  `synth_route_manifest.json` reports aizynthfinder_installed=false,
+  n_routes_predicted=0, n_targets=7, n_targets_unrouted=7 (route CSVs empty),
+  and the phase self-reports NOT AVAILABLE - no routes predicted, nothing
+  fabricated. When installed, it will append PREDICTED_ROUTE/UNVERIFIED plans +
+  a per-building-block stock screen to every round candidate. This upgrades the
+  oversight gate's "synthesizability" criterion (reviewer C5 concern) from a
+  hand-waved assumption to reproducible decision support once live; the
+  med-chem sign-off remains binding. See `synth_route/synth_route_report.md`.
 
 ---
 ### Where to look in the repo
@@ -141,6 +144,7 @@ implemented in the repo, the grant, and the runnable pipeline. It doubles as the
 - `src/reports.py` - Appendix G (closed-loop) + Appendix H (chemotype library) +
   Appendix I (ascorbate SAR enrichment).
 - `src/synth_route.py` + `src/aizynth_worker.py` - phase 4c route-prediction
-  decision support (PREDICTED_ROUTE/UNVERIFIED + stock screen).
+  decision support (scaffolded; PREDICTED_ROUTE/UNVERIFIED + stock screen once
+  installed).
 - `workflows/run_all.py` - 19-phase e2e; all pass.
 - `scientific_paper.txt` - technical report with limitation-mitigation table.

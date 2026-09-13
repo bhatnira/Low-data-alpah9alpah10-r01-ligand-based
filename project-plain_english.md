@@ -38,9 +38,10 @@ is skipped, and no step is guessed at.
 
 4. **Cross-check for safety and selectivity.** We check the 6 against 70 other
    close-by receptor modulators to make sure our candidates will not grab the
-   wrong target (which is what causes side effects). We also run structural 3D
-   models and route-to-synthesis suggestions; if a tool isn't installed, we
-   honestly say "not available" rather than guess.
+   wrong target (which is what causes side effects). We also would like to run
+   structural 3D models and route-to-synthesis suggestions; those tools are NOT
+   installed, so we honestly say "not available" rather than guess or invent a
+   route or a structure.
 
 5. **Design a fair experiment.** We build two blinded plates: one arm gets our
    best computer-ranked candidates, one gets randomly picked comparison
@@ -66,18 +67,20 @@ is skipped, and no step is guessed at.
 - Structural 3D models (AF3/Boltz) are "NOT AVAILABLE" because those tools
   aren't installed — we say so, and we never invent a structure that doesn't
   exist.
-- The route-to-synthesis tool (AIZynthFinder) IS installed and running. It
-  suggests possible synthesis routes for our best candidates (9 of 11 got a
-  route plan). These are suggestions to help a chemist decide, never a promise
-  that the chemistry will work exactly as predicted.
+- The route-to-synthesis tool (AIZynthFinder) is NOT installed in this build.
+  It has not suggested any routes (0 of 7 candidates have a plan), and we say
+  so. A scaffolded phase is ready to produce route suggestions once the tool is
+  installed — suggestions only, to help a chemist decide, never a promise that
+  the chemistry will work exactly as predicted.
 - Selectivity is reassuring so far: the frozen judge, when shown the 70
   close-relative chemicals, gives none of them a strong score (0 of 70).
 
 ## What the R01 grant wants to do with this
 
-Aim 1: build and defend the balanced chemical library (the 9 + family).
-Aim 2: run the two-arm blinded rounds and prove the judge helps find hits.
-Aim 3: package the findings and validate outside our lab.
+A single integrated Aim: medicinal chemists lead an analog program (five
+planned synthesis studies) around the ascorbate pharmacophore, while an
+AI-guided platform prioritizes and validates which planned candidates to
+advance, in pre-registered, blinded laboratory rounds:
 
 ## Security / privacy notes
 

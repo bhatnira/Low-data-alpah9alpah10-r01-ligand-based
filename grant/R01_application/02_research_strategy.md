@@ -53,11 +53,11 @@ into experimentally confirmed, AI-ready rules.
    engineered into plates (22 designed from the 7 actives) so stereo hypotheses
    become experimentally distinguishable rather than 2D counterfactuals only.
 5. **Selectivity as a measured design axis (phase 4b).** A curated, isolated panel
-   of 70 non-alpha9alpha10 nAChR modulators with an enforced training-isolation
-   contract is scored by the frozen model at design time (baseline: mean
-   predicted alpha9alpha10 activity 0.215 +/- 0.045; 0/70 above the 0.5
-   threshold); cross-subtype potential becomes an explicit, re-evaluated filter
-   inside the loop instead of an afterthought.
+of 70 non-alpha9alpha10 nAChR modulators with an enforced training-isolation
+    contract is scored by the frozen model at design time (baseline: mean
+    predicted alpha9alpha10 activity 0.312 +/- 0.057; 0/70 above the 0.5
+    threshold; max 0.495); cross-subtype potential becomes an explicit, re-evaluated filter
+    inside the loop instead of an afterthought.
 6. **Dual focus: systematic ascorbate SAR + cochlear-delivery-compatible
    design.** The aim is innovative in its dual focus: (1) systematic SAR of
    ascorbate to define structural requirements for alpha9alpha10 PAM activity,
@@ -71,12 +71,15 @@ into experimentally confirmed, AI-ready rules.
    success of this aim appears likely - and is tested empirically in the
    pre-registered rounds.
 7. **Route-prediction decision support (phase 4c).** Retrosynthetic route
-   planning (AIZynthFinder, public USPTO templates + ZINC stock) is a live
-   pipeline phase that appends PREDICTED_ROUTE/UNVERIFIED plans and a
-   per-building-block stock screen to every plate candidate, giving the
-   oversight gate's synthesizability review concrete, reproducible, honest
-   decision support (including explicit NO_ROUTE_FOUND reporting) instead of
-   a hand-waved assumption.
+    planning (AIZynthFinder, public USPTO templates + ZINC stock) is scaffolded
+    as a pipeline phase but is NOT yet live in this build: the AIZynthFinder
+    model files are not installed, the phase self-reports NOT AVAILABLE, and
+    0 of 7 round-1 targets have a PREDICTED_ROUTE plan (7/7 unrouted). When the
+    binary and stock data are in place the phase appends PREDICTED_ROUTE/
+    UNVERIFIED plans and a per-building-block stock screen to every plate
+    candidate, giving the oversight gate's synthesizability review concrete,
+    reproducible, honest decision support (including explicit NO_ROUTE_FOUND
+    reporting) instead of a hand-waved assumption. No routes are fabricated.
 
 ## C. APPROACH
 
@@ -121,8 +124,10 @@ into experimentally confirmed, AI-ready rules.
 - Validation: LOCO best 0.77 (ridge, descriptors); scaffold/series-out 0.80
   (GBM, fingerprints+descriptors); bootstrap CIs computed; permutation nulls
   not significant -> importances treated as corroborative only.
-- Explanations: across-model/seed stability STABLE (Spearman 0.88-0.89) but
-  cross-method agreement UNSTABLE (~0.2) - motivates consensus fusion + flagging.
+- Explanations: across-model/seed stability STABLE (Spearman 0.91 across
+  seeds, 0.84 across models) but
+  cross-method agreement UNSTABLE (Gini vs permutation 0.04; vs ablation
+  0.24) - motivates consensus fusion + flagging.
 - SAR: 56 MMP transforms; the 6-bromo-6-deoxy edit (free ascorbate 1797 uM ->
   ID25 2.63 uM, ~680x) is the largest activity cliff and guides C6-halogen
   focus; TAF-3 only MODERATE (3 corroborative in-silico sources);
@@ -131,8 +136,10 @@ into experimentally confirmed, AI-ready rules.
   curated with an enforced isolation contract (0 exact-SMILES and 0 scaffold
   overlap with alpha9alpha10 training; stored under `selectivity/` only, never
   merged into training labels). Frozen-model baseline: mean predicted alpha9alpha10
-  activity 0.215 +/- 0.045; 0/70 above the 0.5 threshold (alpha9alpha10 actives
-  score >=0.64, mean 0.797). Panel is expandable via drop-in CSVs without code
+  activity 0.312 +/- 0.057; 0/70 above the 0.5 threshold (max 0.495). By
+  contrast the frozen model scores the seven alpha9alpha10 actives in-sample at
+  mean 0.944 (7/7 >= 0.5) - a clear prior separation of the target class from
+  the decoy panel. Panel is expandable via drop-in CSVs without code
   changes.
 - Library projection: 8 Bemis-Murcko-distinct chemotype families (tiers: 2
   tier-2 hypothesis-group families, 6 tier-3 residual); 7 novel scaffolds vs
@@ -146,13 +153,14 @@ into experimentally confirmed, AI-ready rules.
   hit-metrics uploader, generator/structural data watch.
 - Route-prediction decision support (phase 4c, NEW): AIZynthFinder retrosynthetic
   route planning (public USPTO expansion/templates + ZINC stock, Python 3.12
-  venv worker) appends PREDICTED_ROUTE/UNVERIFIED plans and a per-building-block
-  stock screen to round candidates (1/8 round-1 targets has a PREDICTED_ROUTE,
-  1-step with the route product verified against the target; 18/38 building
-  blocks IN_STOCK in ZINC; explicit NO_ROUTE_FOUND for the other 7, with recorded
-  probabilities, never fabricated). The oversight gate's synthesizability
-  criterion is now reviewable against this reproducible evidence; the phase
-  self-reports NOT AVAILABLE if models/venv are absent. See
+  venv worker) is scaffolded but NOT AVAILABLE in this build (AIZynthFinder
+  model files not installed; synth_route_manifest.json reports
+  aizynthfinder_installed=false, n_routes_predicted=0, n_targets=7,
+  n_targets_unrouted=7, route CSVs empty; the phase self-reports NOT AVAILABLE
+  - no routes predicted, nothing fabricated). When installed, the phase appends
+  PREDICTED_ROUTE/UNVERIFIED plans and a per-building-block
+  stock screen to round candidates; the oversight gate's synthesizability
+  criterion is then reviewable against this reproducible evidence. See
   `src/synth_route.py`, `synth_route/synth_route_report.md`.
 - AF3 binding model: in validation phase (co-PI laboratory); ingestion hook
   implemented in `src/structures.py`; will provide TAF-6 binding-mode features
@@ -161,8 +169,8 @@ into experimentally confirmed, AI-ready rules.
 ### Aim 1 (single integrated aim) - Medicinal-chemistry-driven analog program
 ### with computational/AI support
 
-*Design.* Take the 15-compound portfolio (groups A-F across 32 assignment
-rows: 1/6/1/5/12/7; unique molecules: 9 analogs + 6 negative controls). Apply,
+*Design.* Take the 15-compound portfolio (groups A-F across 34 assignment
+rows: 1/6/1/5/14/7; unique molecules: 9 analogs + 6 negative controls). Apply,
 in order: (i) deduplicate by molecule; (ii) largest-fragment canonical SMILES +
 Bemis-Murcko scaffold assignment; (iii) PAINS filter, BRENK reactive-substructure
 filter, Lipinski gate (MW<=500, cLogP<=5, HBD<=5, HBA<=10, <=2 violations);
@@ -178,7 +186,10 @@ molecules pass, Aim 1 includes two honest fill-in strategies: (a) expert
 medicinal-chemistry expansion of the clean families by MMP-guided analog
 enumeration around confirmed actives - the primary driver of analog supply;
 (b) REINVENT4 Mol2Mol generation (stereo-aware prior) as computational
-supplement - currently generated 31397 molecules (all in silico, untested; RUN_COMPLETED); any
+supplement - currently generated 31397 molecules (six run modes; five Mol2Mol
+modes pooled - de novo / information_gain / local_analog / scaffold_hopping /
+taf_disrupting - and the LibInvent mode kept separate; all in silico, untested;
+RUN_COMPLETED); any
 generated molecules must pass the same filters and are reported with
 provenance, not fabricated.
 
@@ -253,6 +264,10 @@ synthesizability criterion is concretized by route-prediction decision support
 (phase 4c): each candidate's plate record carries PREDICTED_ROUTE/UNVERIFIED
 retrosynthetic plans + building-block stock status, so the gate reviews
 reproducible evidence (including NO_ROUTE_FOUND) instead of an assumption.
+The phase is scaffolded but NOT yet live in this build (AIZynthFinder not
+installed; 0/7 round-1 targets routed; NOT AVAILABLE), so the gate currently
+reviews the tier/common-filter and med-chem sign-off evidence and re-checks
+route status once the phase is installed.
 Pre-registered
 prior to data: primary endpoint, EF threshold 2.0, BH-FDR alpha 0.10,
 confirmation by independent dose-response, go/no-go (continue iff EF>=2.0 and
@@ -307,7 +322,8 @@ labels into training without a governing audit.
 ### Timeline and milestones
 - Year 1: complete SAR-guided analog enumeration (Aim 1a), ascorbate sub-series
   SAR enrichment (phase 3b), generate fill-in chemotypes, AF3 binding-model
-  validation (co-PI), run round 1 (design, route/stock annotation, gate, TEVC),
+  validation (co-PI), install and validate phase 4c route prediction, run round 1
+  (design, route/stock annotation, gate, TEVC),
   ingest + refit v1 predictive model.
 - Year 2: rounds 2-3, pooled refit v2-v3, EF evaluation, go/no-go, external
   data assembly (predictive-model validation start), AF3 structure-guided SAR

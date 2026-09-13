@@ -36,8 +36,9 @@ A single-file consolidated submission draft is available at
    molecules (a real finding, see 02 section on library curation).
 6. Endpoint too narrow -> add secondary selectivity/physchem gates + a curated
    non-alpha9alpha10 selectivity panel (phase 4b, 70 modulators, isolation
-   contract enforced), plus route-prediction decision support (phase 4c)
-   making synthesizability reproducible in-loop.
+   contract enforced), plus route-prediction decision support (phase 4c,
+   scaffolded, NOT AVAILABLE until AIZynthFinder is installed) intended to make
+   synthesizability reproducible in-loop.
 7. No statistical pre-specification -> pre-registration files per round with
    EF threshold, FDR method, calibration, confirmation criteria, go/no-go.
 
@@ -52,8 +53,10 @@ A single-file consolidated submission draft is available at
 - Kept the phase-4b selectivity panel (74 raw entries -> 70 curated, isolation
   contract) and added the phase-4c retrosynthetic route-prediction decision
   support
-  (AIZynthFinder, public USPTO/ZINC models; PREDICTED_ROUTE/UNVERIFIED plans +
-  building-block stock screen feeding the oversight gate; explicit
+  (AIZynthFinder, public USPTO/ZINC models; scaffolded in this build - the
+  model files are not installed, 0/7 targets routed, phase self-reports NOT
+  AVAILABLE; when installed it will provide PREDICTED_ROUTE/UNVERIFIED plans +
+  building-block stock screen feeding the oversight gate, with explicit
   NO_ROUTE_FOUND, never fabricated). These are in-loop design axes (Innovation
   #5/#6, 3.3.4/3.3.5), not separate aims.
 - Pipeline upgraded from 17 to 19 phases with the new `selectivity` phase

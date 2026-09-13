@@ -23,12 +23,11 @@ medicinal-chemistry-driven analog series of high-potency, selective
 alpha9alpha10 PAMs, supported by an AI-guided platform that prioritizes and
 validates candidates for any future drug-discovery or preclinical program.
 
-Route-prediction decision support (AIZynthFinder retrosynthesis) is live:
-1/8 round-1 candidates carries a PREDICTED_ROUTE/UNVERIFIED plan (1-step,
-route product verified against the target) plus a per-building-block stock
-screen (18/38 blocks IN_STOCK in ZINC) for route-planning review, so
-"synthesizable" is reviewed against reproducible evidence, and explicit
-NO_ROUTE_FOUND (7/8 targets) is reported rather than fabricated.
+Route-prediction decision support (AIZynthFinder retrosynthesis) is
+scaffolded as a pipeline phase but is NOT yet live: the AIZynthFinder model
+files are not installed in the repository, 0 of 7 round-1 targets have a
+PREDICTED_ROUTE plan, 7/7 are unrouted, and the phase self-reports NOT
+AVAILABLE — we report NO_ROUTE_PREDICTED rather than fabricating routes.
 
 **Aim 1 (single integrated aim). Develop high potency and selective
 ascorbate-derived alpha9alpha10 positive allosteric modulators through an
@@ -71,7 +70,8 @@ Four coupled activities deliver this aim in parallel:
   documented rank score (predicted activity x information-gain boost,
   scaffold-capped) is the planned in-loop generator; consensus explanations
   flag which proposed edit drives potency. Responsibly scoped: REINVENT4
-  currently generated 31397 molecules (all in silico, untested; RUN_COMPLETED) — the current prospective
+  currently generated 31397 molecules (six run modes; five Mol2Mol modes
+  pooled, LibInvent kept separate; all in silico, untested; RUN_COMPLETED) — the current prospective
   set therefore comes from the traditional medicinal-chemistry baseline
   (97 enumerated / 86 chemistry-invalid / 11 valid; 9 carried into the
   candidate set plus 6 negative controls). Generator output passes the same
@@ -101,9 +101,10 @@ Four coupled activities deliver this aim in parallel:
 Selectivity and synthesizability are enforced inside the loop, not as separate
 aims: before plate locking, each analog's frozen-model score across a curated,
 isolated 70-compound non-alpha9alpha10 panel (phase 4b; 0 exact-SMILES / 0
-scaffold overlap; baseline 0/70 >= 0.5, mean 0.215 +/- 0.045) and its
-route-prediction plan + building-block stock status (phase 4c) are re-checked
-and reported in the pre-registration file.
+scaffold overlap; baseline 0/70 >= 0.5, mean 0.312 +/- 0.057) and its
+route-prediction plan + building-block stock status (phase 4c; currently
+scaffolded with 0/7 targets routed, NOT AVAILABLE) are re-checked and
+reported in the pre-registration file.
 
 **Impact:** First experimentally enumerated, high-potency and selective
 ascorbate-derived alpha9alpha10 PAM series; a validated predictive model of

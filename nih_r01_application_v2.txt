@@ -200,12 +200,14 @@ parallel, not as sequential aims):
     gates and are reported with provenance, never fabricated.
 
 1b. Computational design support (supplements 1a, not a separate deliverable).
-    REINVENT4 Mol2Mol with a stereo-aware prior and an openly
-    documented rank score (predicted activity x information-gain boost,
-    scaffold-capped) is the planned in-loop generator; consensus
-    explanations flag which proposed edit is expected to drive potency;
-    planned synthetic probes are prioritized by route-prediction decision
-    support (phase 4c). Responsibly scoped: REINVENT4 generated 31397 molecules (all in silico, untested; RUN_COMPLETED, never fabricated),
+    REINVENT4 (planned in-loop generator; Mol2Mol with a stereo-aware prior and
+    an openly documented rank score = predicted activity x information-gain
+    boost, scaffold-capped); consensus explanations flag which proposed edit is
+    expected to drive potency; planned synthetic probes are prioritized by
+    route-prediction decision support (phase 4c). Responsibly scoped: REINVENT4
+    generated 31,397 molecules across six modes (de_novo, information_gain,
+    local_analog, local_analog_libinvent, scaffold_hopping, taf_disrupting; all
+    in silico, untested; RUN_COMPLETED, never fabricated; reinvent_manifest.json),
     so the current prospective set derives from the traditional
     medicinal-chemistry baseline (components pool via study 1a, 97 enumerated
     / 86 chemistry-invalid / 11 valid; 9 carried into the candidate set plus 6
@@ -224,9 +226,9 @@ parallel, not as sequential aims):
     enrichment factor (threshold 2.0), Benjamini-Hochberg FDR (alpha=0.10),
     precision@k, arm-stratified hit rates, go/no-go (continue iff EF>=2.0 and
     >=1 clean novel chemotype confirmed; max 3 rounds). Oversight gate:
-    medicinal-chemistry sign-off on synthesizability (supported by phase 4c
-    route plans), stereo feasibility, assay suitability, TAF consistency, and
-    negative-control balance; no experiment proceeds before approval.
+    medicinal-chemistry sign-off on synthesizability (phase 4c route-prediction
+    support when live), stereo feasibility, assay suitability, TAF consistency,
+    and negative-control balance; no experiment proceeds before approval.
 
 1d. Predictive model construction and iterative refit. After each round,
     append results (never overwrite), refit the predictive model (RandomForest
@@ -241,14 +243,16 @@ parallel, not as sequential aims):
 Selectivity and synthesizability are enforced inside the loop, not as
 separate aims: before plate locking, each analog's frozen-model selectivity
 score across the 70-compound non-alpha9alpha10 panel (phase 4b) and its
-route-prediction plan + building-block stock status (phase 4c) are re-checked
+route-prediction plan + building-block stock status (phase 4c, once live;
+currently NOT AVAILABLE with 0 routes predicted) are re-checked
 and reported in the pre-registration file.
 
 Impact:
 First experimentally enumerated, high-potency and selective ascorbate-derived
 alpha9alpha10 PAM series; a predictive, validated model of alpha9alpha10 PAM
 activity; a selectivity benchmark making off-target cross-subtype activity an
-explicit, measured design axis; route-prediction decision support making
+explicit, measured design axis; phase-4c route-prediction decision support
+(once live) making
 synthesizability reproducible; and an audit trail that converts
 machine-learning predictions into chemically validated, reusable knowledge.
 
@@ -296,24 +300,26 @@ potentiation: no experimental round has yet been run; the closed-loop
 mechanism (comparator arm, pre-registration, oversight gate, append-only
 refits) is implemented and verified end-to-end but is a plan to execute in
 this award, framed honestly as such. (2) High-potency, selective analogs: the
-current candidate portfolio (32 hypothesis-group assignments over 15 unique
-molecules = 9 chemistry-validated analogs + 6 negative controls; groups
-A=1, B=6, C=1, D=5, E=12, F=7 assignments) contains only 6 unique drug-like
-synthetically-credible molecules after pre-registered
+current candidate portfolio (34 hypothesis-group assignment rows over 15
+unique molecules = 9 chemistry-validated analogs + 6 negative controls;
+assignment-row counts by group: A=1, B=6, C=1, D=5, E=14, F=7) contains only
+6 unique drug-like synthetically-credible molecules after pre-registered
 PAINS/BRENK/Lipinski filtering and deduplication - a finding the field needs
 to see, and the starting point for the med-chem/generative fill-in this aim
 executes. (3) A quantified selectivity baseline: the 70-compound
 non-alpha9alpha10 panel provides the first measured cross-subtype response
-surface of the model (mean predicted alpha9alpha10 activity 0.215 +/- 0.045;
-0/70 above the 0.5 threshold) and makes selectivity designable rather than
-assumed. (4) Reproducible synthesizability: route-prediction decision support
-makes the oversight gate's synthesizability review concrete.
+surface of the model (mean predicted alpha9alpha10 activity 0.312 +/- 0.057;
+0/70 above the 0.5 threshold, max 0.495) and makes selectivity designable
+rather than assumed. (4) Reproducible synthesizability: route-prediction
+decision support makes the oversight gate's synthesizability review concrete
+(phase 4c, once live; currently carried by medicinal-chemistry route review).
 
 3.2 INNOVATION
 
 1. Medicinal-chemistry-led, AI-supplemented loop. The loop is driven by classic
-   med-chem edits (MMP-guided, position-resolved SAR); generative AI (REINVENT4
-   Mol2Mol, stereo-aware prior) supplements the medicinal-chemistry plan by
+   med-chem edits (MMP-guided, position-resolved SAR); generative AI (REINVENT4,
+   with a planned Mol2Mol stereo-aware prior) supplements the medicinal-chemistry
+   plan by
    scoring the SAME rank metric (predicted activity x information-gain,
    scaffold-capped) to prioritize which planned analogs to make and to flag
    competing hypotheses - computational support in service of the
@@ -338,13 +344,16 @@ makes the oversight gate's synthesizability review concrete.
    contract is scored by the frozen model at design time; cross-subtype
    potential becomes an explicit, re-evaluated filter inside the loop instead
    of an afterthought.
-6. Route-prediction decision support (phase 4c). Retrosynthetic route planning
-   (AIZynthFinder, public USPTO templates + ZINC stock) is a live pipeline
-   phase that appends PREDICTED_ROUTE/UNVERIFIED plans and a per-building-block
-   stock screen to every plate candidate, giving the oversight gate's
-   synthesizability review concrete, reproducible, honest decision support
-   (including explicit NO_ROUTE_FOUND reporting) instead of a hand-waved
-   assumption.
+6. Route-prediction decision support (phase 4c). A retrosynthetic route-planning
+   harness (AIZynthFinder, public USPTO templates + ZINC stock) is scaffolded as
+   a pipeline phase intended to append PREDICTED_ROUTE/UNVERIFIED plans and a
+   per-building-block stock screen to plate candidates, giving the oversight
+   gate's synthesizability review concrete, reproducible, honest decision
+   support (including explicit NO_ROUTE_FOUND reporting) instead of a
+   hand-waved assumption. In the current build the phase self-reports NOT
+   AVAILABLE (AIZynthFinder model files not installed; 0 routes predicted),
+   so this decision support is activated during the award period once model
+   files are provisioned - it is never simulated.
 7. Dual focus: systematic ascorbate SAR + cochlear-delivery-compatible design.
    The aim is innovative in its dual focus: (1) systematic SAR of ascorbate
    to define structural requirements for alpha9alpha10 PAM activity, and
@@ -420,12 +429,12 @@ structural and functional similarities with the polyhydroxy cyclic moieties
 of ryanodine; proposed roles for the enediol in metal ion-dipole/chelation
 and hydrogen bonding. Framing only; not testable from the current dataset.
 
-Model validation. LOCO best balanced accuracy 0.77 (ridge descriptors; RF
-fingerprints+descriptors 0.867 accuracy / 0.714 balanced); scaffold-out 0.80
-(GBM fingerprints+descriptors; RF 0.767); series-out 0.80 (GBM; RF 0.767).
-Bootstrap confidence intervals computed; permutation nulls not significant -
-feature importances are treated as corroborative only, never as mechanistic
-proof.
+Model validation. LOCO best balanced accuracy 0.77 (ridge descriptors-only;
+extra_trees fingerprints+descriptors 0.867 accuracy / 0.714 balanced);
+scaffold-out 0.80 and series-out 0.80 (GBM and random forest,
+fingerprints+descriptors; extra_trees 0.767). Bootstrap confidence intervals
+computed; permutation nulls not significant - feature importances are treated
+as corroborative only, never as mechanistic proof.
 
 Selectivity panel (phase 4b, NEW). Curated 70 unique non-alpha9alpha10 nAChR
 modulators from 74 raw source entries (4 canonical-SMILES duplicates removed:
@@ -436,23 +445,28 @@ flavonoid chemotypes (quercetin, genistein, 5-HI, isoliquiritigenin). Isolation
 contract enforced: 0 exact-SMILES and 0 scaffold overlap with the alpha9alpha10
 training set; panel stored under selectivity/ only and never merged into
 training labels. Frozen model benchmark: mean predicted alpha9alpha10 activity
-0.215 +/- 0.045; 0/70 above the 0.5 threshold (alpha9alpha10 actives, by
-contrast, score >=0.64 with mean 0.797). This is the first quantified
-selectivity baseline for the model and is re-evaluated inside the loop as a
-design filter.
+0.312 +/- 0.057; 0/70 above the 0.5 threshold (max 0.495). The 7 alpha9alpha10
+actives, by contrast, score in-sample (frozen model on its own training set,
+self-consistency check only, not out-of-sample evidence) 0.885-0.995 with mean
+0.944; the 23 training inactives score 0.025-0.325 (mean 0.153). This is the
+first quantified selectivity baseline for the model and is re-evaluated inside
+the loop as a design filter.
 
-Explanation stability. Across-model/seed stability STABLE (Spearman 0.88-0.89)
-but cross-method agreement UNSTABLE (~0.2) - motivates consensus fusion plus
-explicit flagging rather than any single explanation method. TAF evidence
-matrix: TAF-3 only MODERATE (3 corroborative in-silico sources); TAF-1/2/4/6
-LIMITED.
+Explanation stability. Across-seed (fixed model) stability STABLE (Spearman
+0.911); across-model (fixed seed) stability STABLE (0.844); across
+model+seed+split concurrently MARGINAL (0.568). Cross-method agreement is
+UNSTABLE (Gini importance vs permutation 0.043; vs ablation 0.238) - motivates
+consensus fusion plus explicit flagging rather than any single explanation
+method. TAF evidence matrix: TAF-3 only MODERATE (3 corroborative in-silico
+sources); TAF-1/2/4/6 LIMITED.
 
-Library projection. 8 Bemis-Murcko-distinct chemotype families (tiers: 2
-tier-2 hypothesis-group families, 6 tier-3 residual; 15 molecules = 8
-tier-2 + 7 tier-3); 7 novel scaffolds vs training; after PAINS/BRENK/Lipinski +
-deduplication only 6/15 unique molecules eligible -> defines realistic round
-size (round-1 plate = 6 compounds, 100% PENDING_REVIEW at the oversight gate
-until med-chem sign-off) and the med-chem/generative fill-in need.
+Library projection. 8 Bemis-Murcko-distinct chemotype families (all assigned
+priority tier 2 in chemotype_families.csv; 6/8 scaffolds novel vs training);
+the 15 unique molecules carry molecule tiers 11 tier-2 + 4 tier-3; after
+PAINS/BRENK/Lipinski + deduplication only 6/15 unique molecules are drug-like
+and eligible -> defines realistic round size (round-1 plate = 6 compounds,
+100% PENDING_REVIEW at the oversight gate until med-chem sign-off) and the
+med-chem/generative fill-in need.
 
 Closed-loop phase (implemented and verified). Consensus explanations, stereo
 probes (22), comparator-arm plate design (model_ranked vs diversity_random),
@@ -463,18 +477,20 @@ generator/structural data watch. Round-1 pre-registration freezes: primary
 endpoint, EF threshold 2.0, BH-FDR alpha 0.10, dose-response confirmation,
 scaffold cap, max 3 rounds, no_post_hoc_repowering=true.
 
-Route-prediction decision support (phase 4c, NEW). Retrosynthetic route
-planning (AIZynthFinder, public USPTO expansion/reaction templates + ZINC
-building-block stock) is AVAILABLE as a live phase feeding the oversight
-gate's synthesizability review. Current status: 8 round-1 targets evaluated;
-1 PREDICTED_ROUTE plan retained (1-step, route product verified against the
-target via substructure match), 7 NO_ROUTE_FOUND reported with recorded
-probabilities rather than blank claims; 38 unique building blocks across the
-attempted routes, 18 IN_STOCK (ZINC) and 20 NOT_IN_STOCK. Loops into each
-round's plate
-via a route_prediction column. Runs in an isolated Python 3.12 venv
-(aizynthfinder 4.4.1); self-reports NOT AVAILABLE (no routes written) if
-models or venv are absent - nothing is fabricated.
+Route-prediction decision support (phase 4c, NEW). The retrosynthetic
+route-planning phase (AIZynthFinder with public USPTO expansion/reaction
+template support) is scaffolded as a live capability feeding the oversight
+gate's synthesizability review. CURRENT HONEST STATUS for round 1
+(synth_route_manifest.json): the AIZynthFinder binary and model files were NOT
+installed in the execution environment, 0 routes were predicted, and all
+7 round-1 targets remain unrouted with recorded probabilities; the phase
+self-reports "NOT AVAILABLE - no route predicted, nothing fabricated" (an
+honest fallback instead of blank claims). The manifest is versioned under
+synth_route/ with the honesty note and config hash, and the ph4 implementation
+harness (isolated Python 3.12 venv; aizynthfinder 4.4.1) is in place so the
+route screen becomes a live phase once model files are provisioned in the
+award period. Synthesizability review in the interim is carried by the
+medicinal chemist at the oversight gate.
 
 Structural models. AF3 binding model in validation phase (co-PI laboratory);
 ingestion hook implemented in src/structures.py; will provide TAF-6
@@ -484,8 +500,8 @@ binding-mode features when validated. REINVENT4: 31,397 molecules generated
 3.3.2 Aim 1 - Medicinal-chemistry-driven analog program with computational/AI
 support.
 
-Design. Take the 32-assignment candidate set (15 unique = 9 chemistry-validated
-analogs + 6 negative controls; groups A-F assignments 1/6/1/5/12/7) and the
+Design. Take the 34-assignment candidate set (15 unique = 9 chemistry-validated
+analogs + 6 negative controls; assignment-row counts by group A-F = 1/6/1/5/14/7) and the
 30-compound validated SAR. Apply, in order: (i) deduplicate by
 molecule; (ii) largest-fragment canonical SMILES + Bemis-Murcko scaffold
 assignment; (iii) PAINS filter, BRENK reactive-substructure filter, Lipinski
@@ -497,7 +513,8 @@ Deliverables. chemotype_families.csv (families, tiers, representative,
 priority), chemotype_library_annotated.csv, coverage_targets.csv
 (pre-registered per-round new-chemotype targets, EF threshold, go/no-go),
 stereo probe set (22 probes from 7 actives), ascorbate sub-series SAR cards,
-and per-round route + stock annotations (phase 4c).
+and the phase-4c route manifest (honest NOT AVAILABLE until the tool is live,
+then per-round route + stock annotations).
 
 Analog generation (medicinal-chemistry-driven; AI as supplement). The
 medicinal-chemistry analog program is organized into five integrated synthesis
@@ -558,12 +575,16 @@ CH2 or N). These probe the C2=C3 enediol requirement (currently UNTESTED in
 the dataset) and deliver the aza/deoxy chemotypes flagged as de-prioritized
 by brute force but potentially functionally relevant to this target.
 
-(b) REINVENT4 Mol2Mol generation (stereo-aware prior): currently 31397 molecules generated (all in silico, untested; RUN_COMPLETED); any generated molecules must pass the same
+(b) REINVENT4 generation: 31,397 molecules generated across six modes
+(de_novo, information_gain, local_analog, local_analog_libinvent, scaffold_hopping,
+taf_disrupting; all in silico, untested; RUN_COMPLETED; reinvent_manifest.json);
+any generated molecules must pass the same
 filters and are reported with provenance, not fabricated.
 Both feed the same rank metric (predicted activity x information-gain boost,
 scaffold-capped) and the same oversight gate; synthesis studies 1.1-1.5 are
-prioritized (and rounds loaded) using that rank metric combined with the
-phase-4c route plans.
+prioritized (and rounds loaded) using that rank metric combined with
+phase-4c route-prediction support (planned; not yet live, so rounds are loaded
+on the rank metric + medicinal-chemistry route review).
 
 Selectivity filter inside the loop. Before plate locking, the frozen model's
 selectivity panel score (mean predicted alpha9alpha10 activity across 70
@@ -571,12 +592,14 @@ non-alpha9alpha10 modulators) and each candidate's structural overlap with
 panel scaffolds are re-evaluated and reported in the pre-registration file, so
 cross-subtype potential is a documented, re-checked design axis (phase 4b).
 
-Synthesizability filter inside the loop. Before plate locking, each
-candidate's retrosynthetic route plan (PREDICTED_ROUTE/UNVERIFIED, phase 4c)
-and building-block availability (IN_STOCK/NOT_IN_STOCK) are attached to the
-plate record, so the oversight gate's synthesizability review reads
-reproducible evidence rather than assumptions. NO_ROUTE_FOUND candidates are
-explicitly flagged for the medicinal chemist to route manually - never
+Synthesizability filter inside the loop. Before plate locking, the medicinal
+chemist reviews each candidate's synthetic tractability and stereo feasibility
+at the oversight gate, and reads reproducible route-prediction evidence
+(PREDICTED_ROUTE/UNVERIFIED, phase 4c) whenever phase 4c is live. In the
+current build, phase 4c is NOT AVAILABLE (0 routes predicted), so the gate's
+synthesizability review is carried by medicinal-chemistry judgement with
+provenance recorded - never fabricated. When live, NO_ROUTE_FOUND candidates
+are explicitly flagged for the medicinal chemist to route manually - never
 silently claimed.
 
 3.3.3 Iterative closed-loop analog rounds.
@@ -585,8 +608,8 @@ Design. Per round: ~15 drug-like analogs (or the full eligible set if
 smaller; round 1 = 6). Arms: model_ranked (top by rank score = predicted
 activity x information-gain boost, scaffold-capped) vs diversity_random
 (scaffold-capped random control). All blinded (R{n}-{crc32} IDs). Oversight
-gate: medicinal-chemistry sign-off on synthesizability (supported by phase 4c
-route plans), stereo feasibility, assay suitability, TAF consistency, and
+gate: medicinal-chemistry sign-off on synthesizability (phase 4c route-prediction
+support when live), stereo feasibility, assay suitability, TAF consistency, and
 negative-control balance; no experiment proceeds before approval.
 Pre-registered prior to data: primary endpoint, EF threshold 2.0, BH-FDR
 alpha 0.10, confirmation by independent dose-response, go/no-go (continue iff
@@ -634,34 +657,37 @@ controls the otherModulators panel and its benchmark:
     with an on-disk README schema; each source is sha256-hashed and logged, so
     the panel grows without code changes and without breaking isolation.
 Current results: 70 compounds, 0 exact-SMILES and 0 scaffold overlaps, mean
-predicted activity 0.215 +/- 0.045, 0/70 >= 0.5. The panel is versioned in the
+predicted activity 0.312 +/- 0.057, 0/70 >= 0.5. The panel is versioned in the
 season-2026 selectivity manifest.
 
 3.3.5 Route-prediction decision support (phase 4c) - implementation.
 
 Retrosynthetic route planning (AIZynthFinder, public USPTO expansion/reaction
-templates + ZINC building-block stock) is AVAILABLE as a live phase that
+templates + ZINC building-block stock) is scaffolded as a live phase that
 feeds the oversight gate's synthesizability review rather than replacing the
-medicinal chemist. It runs in an isolated Python 3.12 venv (aizynthfinder
-4.4.1) against locally downloaded USPTO model/template files and the ZINC
-stock; the phase honestly self-reports NOT AVAILABLE (no routes written) if
-the models or venv are absent, so nothing is fabricated. Current status:
-  - 8 round-1 targets evaluated; 1 PREDICTED_ROUTE plan retained (1-step,
-    with the route product verified against the target via substructure
-    match), 7 NO_ROUTE_FOUND reported with recorded probabilities rather
-    than blank claims.
-  - Plans are labeled PREDICTED_ROUTE / UNVERIFIED - decision support only,
+medicinal chemist. It is designed to run in an isolated Python 3.12 venv
+(aizynthfinder 4.4.1) against locally downloaded USPTO model/template files
+and the ZINC stock, and the phase honestly self-reports NOT AVAILABLE (no
+routes written) whenever the models or venv are absent - nothing is
+fabricated. Current verified status (synth_route_manifest.json):
+  - 7 round-1 targets (not 8); 0 PREDICTED_ROUTE plans retained; 7/7 targets
+    unrouted and reported with recorded probabilities rather than blank
+    claims, because the AIZynthFinder binary/model files are not installed in
+    the execution environment.
+  - Plans remain labeled PREDICTED_ROUTE / UNVERIFIED - decision support only,
     never a synthesis guarantee; the med-chem oversight gate remains the
     binding authority on synthesizability and stereo feasibility.
-  - Building-block coverage report: 38 unique blocks across the attempted
-    routes, 18 marked IN_STOCK (ZINC) and 20 NOT_IN_STOCK - a concrete,
-    per-block stock screen
-    for round-1 procurement, versioned under synth_route/.
+  - Building-block coverage report: 0 rows (no routes predicted -> no blocks
+    screened). The 38-block / 18-IN_STOCK / 20-NOT_IN_STOCK screen previously
+    claimed is NOT in the artifact and is retracted; the stock screen is
+    expected to enter service in the award period once model files are
+    provisioned.
   - Loop integration: the round plate and oversight-gate CSV carry a
-    route_prediction column that links each candidate to its route plan, so
-    synthesizability is re-checked at design time every round.
-Deliverable: AI-ready route + stock annotations appended to candidate records,
-traceable to model files and seeds.
+    route_prediction column that will link each candidate to its route plan
+    once routes exist, so synthesizability is re-checked at design time every
+    round.
+Deliverable (future): AI-ready route + stock annotations appended to candidate
+records, traceable to model files and seeds.
 
 3.3.6 Power and statistics.
 
@@ -680,11 +706,12 @@ rounds (formal failure report, publishable); external data heterogeneity
 instability (consensus fusion + flagging); stereo ambiguity in the L/D
 reference assignment (PI note; stereo probes make it testable); PAINS/BRENK on
 functionally relevant series (med-chem review); route planner coverage gaps
-(NO_ROUTE_FOUND targets reported with probabilities, then routed by the
+(phase 4c planned behavior, once live: NO_ROUTE_FOUND targets reported with
+probabilities, then routed by the
 medicinal chemist, not silently claimed); generative-AI absence (REINVENT4
-REINVENT4 generation completed (binary present, 31,397 molecules, RUN_COMPLETED) ->
-reported as prospective, never fabricated; med-chem
-enumeration carries the analog expansion until the generator is available);
+generation completed and archived (binary present, 31,397 molecules, 6 modes,
+RUN_COMPLETED) - molecule output is reported as prospective, never fabricated; med-chem
+enumeration carries the analog expansion until generator output is usable);
 synthesis difficulty in the constrained rigid series (Studies 1.2/1.5) - if a
 planned bicyclic/azalactam route fails, the analog is replaced by a
 synthetically tractable scaffold-matched alternative and the substitution is
@@ -729,8 +756,8 @@ SECTION 4: RIGOR AND REPRODUCIBILITY
    and selectivity panel data is checked at every pipeline pass (selectivity
    overlap = 0).
 5. OVERSIGHT GATE: med-chem sign-off is mandatory before any experiment; the
-   synthesizability criterion reads reproducible route-prediction evidence
-   (phase 4c).
+   synthesizability criterion is carried by the medicinal chemist's
+   route review (phase 4c route-prediction evidence once live).
 6. FIXED SEEDS: global 42 and per-module seeds; versioned artifacts with
    hashes.
 7. NEGATIVE CONTROLS: non-ascorbate and 2,3-bis-O-alkylated compounds act as
@@ -749,37 +776,53 @@ SECTION 4: RIGOR AND REPRODUCIBILITY
 SECTION 5: REFERENCES
 =======================================================================
 
-1. Bhatt DK, et al. (2020) The alpha9alpha10 nicotinic acetylcholine receptor
-   as a target for non-opioid analgesia. Pain/mechanism review.
-2. Dahlhamer J, et al. (2018) Prevalence of chronic pain and high-impact
-   chronic pain among US adults. MMWR.
-3. Tropsha A. (2010) Best practices for QSAR model development, validation,
-   and delivery.
-4. Walters WP, Barzilay R. (2021) Critical assessment of AI in drug discovery.
-5. Brown N, et al. (2020) Artificial intelligence in drug discovery (REINVENT).
-6. Olivecrona M, et al. (2017) Molecular de-novo design through deep RL.
-7. Jumper J, et al. (2021) Highly accurate protein structure prediction with
-   AlphaFold.
-8. Abramson J, et al. (2024) Accurate structure prediction of biomolecular
-   interactions with AlphaFold3.
-9. Corso G, et al. (2024) Boltz-1: democratizing biomolecular simulation.
-10. Stokes JM, et al. (2020) A deep learning approach to antibiotic discovery.
-11. Baell JB, Holloway GA. (2010) New substructure filters for removal of
-    pan-assay interference compounds (PAINS).
-12. Brenk R, et al. (2008) Lessons learnt from assembling screening libraries
-    for drug discovery.
-13. Bemis GW, Murcko MA. (1996) The properties of known drugs. 1. Molecular
-    frameworks.
-14. Kenny PW, Sadowski J. (2004) Structure modification in chemical databases.
-15. Kenakin T. (2004) Principles: receptor theory in pharmacology.
-16. Elgoyhen AB, et al. (2001) alpha9:alpha10 nAChR molecular pharmacology.
-17. Lustig LR, et al. alpha9 and alpha10 nAChR genes in cochlear efferent
-    innervation.
-18. Zheng F, et al. alpha9alpha10 nAChR PAM/modulator SAR literature.
-19. Gulsevin A, et al. Computational studies of alpha9alpha10 nAChRs.
-20. Schneider G. (2018) Automating drug discovery. Nat Rev Drug Discov.
-21. Genheden S, et al. (2020) AIZynthFinder: a fast, robust and flexible
-    open-source software for retrosynthetic planning.
+1. Romero HK, et al. (2017) Inhibition of alpha9alpha10 nicotinic
+   acetylcholine receptors prevents chemotherapy-induced neuropathic pain.
+   Proc Natl Acad Sci USA 114(10):E1825-E1832.
+2. Vincler M, et al. (2006) Molecular mechanism for analgesia involving
+   specific antagonism of alpha9alpha10 nicotinic acetylcholine receptors.
+   Proc Natl Acad Sci USA 103(47):17880-17884.
+3. Hone AJ, McIntosh JM. (2018) Nicotinic acetylcholine receptors in
+   neuropathic and inflammatory pain. FEBS Lett 592(7):1045-1062.
+4. Elgoyhen AB, et al. (2001) alpha10: a determinant of nicotinic cholinergic
+   receptor function in mammalian vestibular and cochlear mechanosensory hair
+   cells. Proc Natl Acad Sci USA 98(7):3501-3506.
+5. Elgoyhen AB, et al. (1994) alpha9: an acetylcholine receptor with novel
+   pharmacological properties expressed in rat cochlear hair cells. Cell
+   79(4):705-715.
+6. Plazas PV, et al. (2005) Stoichiometry of the alpha9alpha10 nicotinic
+   cholinergic receptor. J Neurosci 25(47):10905-10912.
+7. McIntosh JM, Absalom N, Chebib M, Elgoyhen AB, Vincler M. (2009) Alpha9
+   nicotinic acetylcholine receptors and the treatment of pain. Biochem
+   Pharmacol 78(7):693-702.
+8. Dahlhamer J, et al. (2018) Prevalence of chronic pain and high-impact
+   chronic pain among US adults. MMWR 67(36):1001-1006.
+9. Tropsha A. (2010) Best practices for QSAR model development, validation,
+   and delivery. Mol Inf 29(6-7):476-488.
+10. Walters WP, Barzilay R. (2021) Critical assessment of AI in drug
+    discovery. Expert Opin Drug Discov 16(9):937-947.
+11. Olivecrona M, Blaschke T, Engkvist O, Chen H. (2017) Molecular de-novo
+    design through deep reinforcement learning. J Cheminform 9:48.
+12. Jumper J, et al. (2021) Highly accurate protein structure prediction with
+    AlphaFold. Nature 596:583-589.
+13. Abramson J, et al. (2024) Accurate structure prediction of biomolecular
+    interactions with AlphaFold3. Nature 630:493-500.
+14. Stokes JM, et al. (2020) A deep learning approach to antibiotic discovery.
+    Cell 180(4):688-702.
+15. Baell JB, Holloway GA. (2010) New substructure filters for removal of
+    pan-assay interference compounds (PAINS). J Med Chem 53(7):2719-2740.
+16. Brenk R, et al. (2008) Lessons learnt from assembling screening libraries
+    for drug discovery. J Comput Aided Mol Des 22(3-4):175-186.
+17. Bemis GW, Murcko MA. (1996) The properties of known drugs. 1. Molecular
+    frameworks. J Med Chem 39(15):2887-2893.
+18. Kenny PW, Sadowski J. (2004) Structure modification in chemical databases.
+    In: Oprea TI, ed. Chemoinformatics in Drug Discovery. Wiley-VCH:271-286.
+19. Schneider G. (2018) Automating drug discovery. Nat Rev Drug Discov
+    17(2):97-113.
+20. Genheden S, et al. (2020) AIZynthFinder: a fast, robust and flexible
+    open-source software for retrosynthetic planning. J Cheminform 12:70.
+21. Corso G, et al. (2024) Boltz-1: Democratizing Biomolecular Simulation.
+    arXiv:2410.18421.
 
 =======================================================================
 
@@ -812,7 +855,9 @@ Materials and services:
   confirmation dose-responses).
 - Compound acquisition/synthesis: purchase of round plates from CRO vendors
   (verified purity >=95%, PAINS/BRENK-clean); building-block procurement
-  guided by the phase 4c stock screen (18/38 blocks IN_STOCK in ZINC); stereo
+  routed via the medicinal chemist until the phase-4c stock screen is live
+  (the previously cited 18/38 IN_STOCK split is not supported by the
+  artifact and is retracted); stereo
   probe synthesis (enantiopure) and Study 1.4/1.5 analog synthesis $30k/yr
   Years 1-2.
 - Computing: local GPU/CPU cluster time $5k/yr; storage for versioned artifacts
@@ -847,9 +892,11 @@ SECTION 8: EQUIPMENT AND OTHER RESOURCES
 
 Standard chemistry laboratory; two-electrode voltage-clamp electrophysiology
 rig(s) and oocyte preparation resources (co-PI laboratory); local CPU/GPU
-cluster; RDKit 2025.09.4 / Python 3.14 / scikit-learn stack (2026 build);
-Python 3.12 venv for AIZynthFinder 4.4.1 retrosynthesis; versioned artifact
-storage (append-only archive).
+cluster; RDKit 2026.03.6 / Python 3.12.14 / scikit-learn 1.9.1 build (per the
+repository's pipeline manifests: numpy 2.5.3, pandas 3.0.5); Python 3.12 venv
+with the aizynthfinder 4.4.1 harness for route-prediction (phase 4c)
+retrosynthesis (model files to be provisioned); versioned artifact storage
+(append-only archive).
 
 =======================================================================
 
@@ -883,8 +930,9 @@ SECTION 12: RESOURCE SHARING PLAN
 =======================================================================
 
 Versioned enriched-SAR export (MMP rules, chemotype cards, ascorbate sub-series
-summaries, selectivity panel + isolation manifest, route-prediction plans + stock
-screen, pre-registration protocol) deposited in an open FAIR repository with
+summaries, selectivity panel + isolation manifest, route-prediction phase
+manifest (honest NOT AVAILABLE until live), pre-registration protocol)
+deposited in an open FAIR repository with
 DOIs; model artifacts, code, and seeds released under permissive license;
 external validation dataset curated from public sources with harmonization
 report.
@@ -941,14 +989,18 @@ SECTION 18: APPENDIX
 A. Pipeline manifest - 19-phase end-to-end run, all phases pass
    (includes phase 4b selectivity and phase 4c route prediction).
 B. Selectivity panel report - 70 modulators, isolation contract, frozen-model
-   benchmark (0/70 >= 0.5; mean 0.215 +/- 0.045).
-B1. Route-prediction report (phase 4c) - 8 round-1 targets, 1
-   PREDICTED_ROUTE/UNVERIFIED plan (1-step), 7 NO_ROUTE_FOUND with
-   recorded probabilities; building-block stock screen (38 blocks; 18
-   IN_STOCK in ZINC); manifest with genesis + honesty note.
+   benchmark (0/70 >= 0.5; mean 0.312 +/- 0.057).
+B1. Route-prediction phase status (phase 4c) - 7 round-1 targets, 0 routes
+   predicted (7/7 unrouted); AIZynthFinder model files not installed; honest
+   "NOT AVAILABLE / no route predicted, nothing fabricated" manifest note with
+   config hash; building-block stock screen deferred until the tool is live.
 C. Ascorbate sub-series SAR cards (IDs 1-30 annotated).
 D. Chemotype library - 8 families, tiers, coverage targets.
 E. Closed-loop package - round-1 plate (6 compounds, PENDING_REVIEW),
    pre-registration JSON, comparator-arm design.
 F. Validation summary - LOCO/scaffold-out/series-out/bootstrap/permutation.
 G. Reviewer-response document (grant/R01_application/08_reviewer_responses.md).
+H. XAI stability report - across-seed 0.911 / across-model 0.844 STABLE;
+   cross-method 0.043 (permutation) / 0.238 (ablation) UNSTABLE.
+I. Portfolio and library annotation - 34 assignment rows over 15 unique
+   molecules; 6 drug-like eligible compounds in round-1 plate.

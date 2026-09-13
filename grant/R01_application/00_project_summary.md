@@ -47,11 +47,13 @@ alpha9alpha10 PAM activity (last round held out) to guide the next round of
 design. Two in-loop design axes keep the effort honest and reproducible: a
 phase-4b selectivity benchmark scores each analog against a curated, isolated
 panel of 70 non-alpha9alpha10 nicotinic modulators, and phase-4c
-retrosynthetic route prediction (AIZynthFinder) attaches
+retrosynthetic route prediction (AIZynthFinder) is scaffolded as a pipeline
+phase that will attach
 PREDICTED_ROUTE/UNVERIFIED synthesis plans plus a building-block stock screen
-(1/8 round-1 targets has a plan; 18/38 stockable blocks in ZINC) to every
-candidate — so both selectivity and synthesizability are reviewed against
-reproducible evidence. This project delivers the first experimentally
+to every candidate (the phase is NOT yet live: AIZynthFinder is not installed,
+0/7 round-1 targets are routed, and it self-reports NOT AVAILABLE — no routes
+are fabricated) — so both selectivity and synthesizability are reviewed against
+reproducible evidence as soon as the phase is installed. This project delivers the first experimentally
 enumerated, high-potency and selective ascorbate-derived alpha9alpha10 PAM
 series, with a reusable, adaptive AI-guided ligand-design platform that
 supports (not replaces) the medicinal-chemistry program.
