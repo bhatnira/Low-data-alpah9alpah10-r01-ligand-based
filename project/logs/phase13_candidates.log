@@ -122,3 +122,13 @@
 2026-09-10 19:28:16,811 | INFO | === Candidate scoring (multi-axis) ===
 2026-09-10 19:28:16,996 | INFO | === Candidate portfolio (groups A-F) ===
 2026-09-10 19:28:17,024 | INFO | Portfolio size: 34; groups reflexive overlap expected
+2026-09-14 19:34:19,916 | INFO | === Candidate prioritization ===
+2026-09-14 19:34:19,916 | INFO | === Candidate scoring (multi-axis) ===
+2026-09-14 19:34:20,243 | INFO | === Candidate scoring (multi-axis) ===
+2026-09-14 19:34:20,434 | INFO | === Candidate portfolio (groups A-F) ===
+2026-09-14 19:34:20,455 | INFO | Portfolio size: 32; groups reflexive overlap expected
+2026-09-14 21:45:37,325 | INFO | === Candidate prioritization ===
+2026-09-14 21:45:37,326 | INFO | === Candidate scoring (multi-axis) ===
+2026-09-14 21:45:37,694 | INFO | === Candidate scoring (multi-axis) ===
+2026-09-14 21:45:37,833 | INFO | === Candidate portfolio (groups A-F) ===
+2026-09-14 21:45:37,867 | INFO | Portfolio size: 32; groups reflexive overlap expected

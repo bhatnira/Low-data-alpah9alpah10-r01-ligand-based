@@ -14,9 +14,9 @@ majority,fingerprints_plus_descriptors,30.0,23.0,0.7667,0.5
 random,descriptors_only,30.0,23.0,0.7667,0.5
 random,fingerprints_morgan_r2,30.0,23.0,0.7667,0.5
 random,fingerprints_plus_descriptors,30.0,23.0,0.7667,0.5
-random_forest,descriptors_only,30.0,21.0,0.7,0.6056
-random_forest,fingerprints_morgan_r2,30.0,23.0,0.7667,0.6988
-random_forest,fingerprints_plus_descriptors,30.0,21.0,0.7,0.6056
+random_forest,descriptors_only,30.0,23.0,0.7667,0.6491
+random_forest,fingerprints_morgan_r2,30.0,25.0,0.8333,0.6925
+random_forest,fingerprints_plus_descriptors,30.0,26.0,0.8667,0.7143
 ridge,descriptors_only,30.0,24.0,0.8,0.7702
 ridge,fingerprints_morgan_r2,30.0,21.0,0.7,0.6056
 ridge,fingerprints_plus_descriptors,30.0,21.0,0.7,0.6056

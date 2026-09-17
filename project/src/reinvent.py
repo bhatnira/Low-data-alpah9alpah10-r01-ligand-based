@@ -65,18 +65,21 @@ MODE_RULES = {
 MODE_ENDPOINTS: Dict[str, List[Tuple[str, str, float]]] = {
     "de_novo": [
         ("predicted_activity", "predicted_activity", 1.0),
+        ("training_similarity", "training_similarity", 1.0),
         ("taf_consistency", "taf_consistency", 0.8),
         ("novelty", "novelty", 0.5),
         ("stereo_validity", "stereo_validity", 0.4),
     ],
     "local_analog": [
         ("predicted_activity", "predicted_activity", 1.0),
+        ("training_similarity", "training_similarity", 1.0),
         ("taf_consistency", "taf_consistency", 0.8),
         ("novelty", "novelty", 0.2),
         ("stereo_validity", "stereo_validity", 0.5),
     ],
     "scaffold_hopping": [
         ("predicted_activity", "predicted_activity", 1.0),
+        ("training_similarity", "training_similarity", 0.8),
         ("taf_consistency", "taf_consistency", 0.8),
         ("scaffold_novelty", "scaffold_novelty", 1.0),
         ("novelty", "novelty", 0.6),
@@ -84,13 +87,15 @@ MODE_ENDPOINTS: Dict[str, List[Tuple[str, str, float]]] = {
     ],
     "taf_disrupting": [
         ("predicted_activity", "predicted_activity", 0.8),
+        ("training_similarity", "training_similarity", 0.5),
         ("taf_disrupted", "taf_disrupted", 1.0),
         ("novelty", "novelty", 0.3),
         ("stereo_validity", "stereo_validity", 0.4),
     ],
     "information_gain": [
         ("predicted_activity", "predicted_activity", 0.5),
-        ("uncertainty", "prediction_uncertainty", 1.0),
+        ("training_similarity", "training_similarity", 0.6),
+        ("uncertainty", "uncertainty", 1.0),
         ("novelty", "novelty", 0.8),
         ("stereo_validity", "stereo_validity", 0.3),
     ],
@@ -785,6 +790,36 @@ class ReinventManager:
             n_generated = int(len(generated))
             self.log.info(f"collected {n_generated} unique canonical molecules "
                           f"({run_status})")
+        else:
+            existing = self.cfg.resolve("reinvent/generated_molecules.csv")
+            committed = self.cfg.resolve("reinvent/reinvent_manifest.json")
+            reused = False
+            if existing.exists():
+                try:
+                    gen_existing = pd.read_csv(existing)
+                    if len(gen_existing):
+                        generated = gen_existing
+                        n_generated = int(len(gen_existing))
+                        reused = True
+                except Exception as e:  # pragma: no cover
+                    self.log.warn(f"could not reconcile existing generated file: {e}")
+            if reused:
+                # Reuse the committed artifacts from the real GPU run recorded in
+                # the repository (see reinvent_manifest.json RUN_COMPLETED). No
+                # molecule is (re)generated and none is fabricated here.
+                run_status = "RUN_COMPLETED_ARTIFACT_REUSED"
+                if committed.exists():
+                    try:
+                        from src.common import load_df  # noqa: F401  (file probe)
+                        prev = json.loads(committed.read_text())
+                        if prev.get("run_results"):
+                            run_results = prev["run_results"]
+                    except Exception:
+                        run_results = {}
+                self.log.info(f"no REINVENT binary: reused committed generation "
+                              f"artifacts ({n_generated} molecules, historical GPU run)")
+            else:
+                run_results = {}
 
         if generated.empty:
             guard = (
@@ -829,13 +864,22 @@ class ReinventManager:
             "fabrication_guard": guard,
         }, str(self.cfg.resolve("reinvent/reinvent_manifest.json")))
         if not self.available:
-            self.log.warn(
-                "REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written "
-                "(validated against REINVENT4 main configs/PARAMS.md schema), priors "
-                "checksum-verified. No molecules generated. Install REINVENT4 "
-                "(see GPU_RUNBOOK.md) and rerun this phase to populate "
-                "reinvent/generated_molecules.csv."
-            )
+            if run_status == "RUN_COMPLETED_ARTIFACT_REUSED":
+                self.log.warn(
+                    "REINVENT binary NOT AVAILABLE on this host. Per-mode TOML configs "
+                    "re-validated, priors checksum-verified. Reused the committed "
+                    "generation artifacts from the historical GPU run recorded in "
+                    "reinvent_manifest.json (RUN_COMPLETED_ARTIFACT_REUSED) — no "
+                    "molecule was (re)generated or fabricated on this host."
+                )
+            else:
+                self.log.warn(
+                    "REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written "
+                    "(validated against REINVENT4 main configs/PARAMS.md schema), priors "
+                    "checksum-verified. No molecules generated. Install REINVENT4 "
+                    "(see GPU_RUNBOOK.md) and rerun this phase to populate "
+                    "reinvent/generated_molecules.csv."
+                )
         return {"blueprint": blueprint, "configs": paths, "priors": priors,
                 "run_script": run_script, "run_status": run_status,
                 "n_generated": n_generated, "generated": generated,

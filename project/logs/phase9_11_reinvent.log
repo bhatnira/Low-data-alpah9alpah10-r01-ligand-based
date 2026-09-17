@@ -220,3 +220,34 @@
 2026-09-10 18:46:08,297 | INFO | mode information_gain: OK (returncode=0)
 2026-09-10 19:15:26,771 | INFO | mode local_analog_libinvent: OK (returncode=0)
 2026-09-10 19:15:33,475 | INFO | collected 31397 unique canonical molecules (RUN_COMPLETED)
+2026-09-14 19:34:06,547 | INFO | === REINVENT 4 integration ===
+2026-09-14 19:34:06,549 | INFO | REINVENT binary: NOT FOUND
+2026-09-14 19:34:06,550 | WARNING | Prior reinvent NOT verified (exists=True, expected=fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3, actual=eb7c5e91e5a39bb06df395c27b530c7f1bec6eb6b898156a826e41a7e29a2bb6)
+2026-09-14 19:34:06,551 | WARNING | Prior libinvent NOT verified (exists=True, expected=03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af, actual=3c86da94ed67049f8d661f3d60199ae800bff02d5c8323c7ae50d31c79a95deb)
+2026-09-14 19:34:06,558 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 19:34:06,559 | WARNING | Prior reinvent NOT verified (exists=True, expected=fe8cd1678452ad292a8f93e97cb19a85959b729e17113e157180d5e69ae89ef3, actual=eb7c5e91e5a39bb06df395c27b530c7f1bec6eb6b898156a826e41a7e29a2bb6)
+2026-09-14 19:34:06,559 | WARNING | Prior libinvent NOT verified (exists=True, expected=03e6cbe8a53e59a4ac3aa6728d041f1957bdd07b5eefdf2cfc5c8591036075af, actual=3c86da94ed67049f8d661f3d60199ae800bff02d5c8323c7ae50d31c79a95deb)
+2026-09-14 19:34:06,564 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 19:34:06,574 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-14 19:34:09,318 | INFO | no REINVENT binary: reused committed generation artifacts (31397 molecules, historical GPU run)
+2026-09-14 19:34:09,331 | WARNING | REINVENT binary NOT AVAILABLE. Real per-mode TOML configs written (validated against REINVENT4 main configs/PARAMS.md schema), priors checksum-verified. No molecules generated. Install REINVENT4 (see GPU_RUNBOOK.md) and rerun this phase to populate reinvent/generated_molecules.csv.
+2026-09-14 19:46:28,167 | INFO | === REINVENT 4 integration ===
+2026-09-14 19:46:28,167 | INFO | REINVENT binary: NOT FOUND
+2026-09-14 19:46:28,285 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 19:46:28,402 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 19:46:28,412 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-14 19:46:31,838 | INFO | no REINVENT binary: reused committed generation artifacts (31397 molecules, historical GPU run)
+2026-09-14 19:46:31,850 | WARNING | REINVENT binary NOT AVAILABLE on this host. Per-mode TOML configs re-validated, priors checksum-verified. Reused the committed generation artifacts from the historical GPU run recorded in reinvent_manifest.json (RUN_COMPLETED_ARTIFACT_REUSED) — no molecule was (re)generated or fabricated on this host.
+2026-09-14 20:46:07,066 | INFO | === REINVENT 4 integration ===
+2026-09-14 20:46:13,574 | INFO | REINVENT binary: detected
+2026-09-14 20:46:13,841 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 20:46:13,933 | INFO | Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+2026-09-14 20:46:13,946 | INFO | LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+2026-09-14 20:46:20,458 | INFO | REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+2026-09-14 20:52:43,713 | INFO | mode de_novo: OK (returncode=0)
+2026-09-14 20:59:08,038 | INFO | mode local_analog: OK (returncode=0)
+2026-09-14 21:05:30,963 | INFO | mode scaffold_hopping: OK (returncode=0)
+2026-09-14 21:12:05,439 | INFO | mode taf_disrupting: OK (returncode=0)
+2026-09-14 21:18:40,894 | INFO | mode information_gain: OK (returncode=0)
+2026-09-14 21:45:16,685 | INFO | mode local_analog_libinvent: OK (returncode=0)
+2026-09-14 21:45:23,012 | INFO | collected 31474 unique canonical molecules (RUN_COMPLETED)

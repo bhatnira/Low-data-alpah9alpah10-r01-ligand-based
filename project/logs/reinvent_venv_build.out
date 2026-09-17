@@ -1,0 +1,327 @@
+Requirement already satisfied: pip in ./venvs/reinvent312/lib/python3.11/site-packages (24.0)
+Collecting pip
+  Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+Collecting wheel
+  Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting packaging>=24.0 (from wheel)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 13.4 MB/s eta 0:00:00
+Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 3.7 MB/s eta 0:00:00
+Installing collected packages: pip, packaging, wheel
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed packaging-26.3 pip-26.2.1 wheel-0.48.0
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Collecting torch==2.12.0
+  Downloading torch-2.12.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (31 kB)
+Collecting torchvision
+  Downloading torchvision-0.29.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.7 kB)
+Collecting filelock (from torch==2.12.0)
+  Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.12.0)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: setuptools<82 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0) (79.0.1)
+Collecting sympy>=1.13.3 (from torch==2.12.0)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch==2.12.0)
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch==2.12.0)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch==2.12.0)
+  Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==12.6.3 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading cuda_toolkit-12.6.3-py2.py3-none-any.whl (2.3 kB)
+Collecting cuda-bindings<13,>=12.9.4 (from torch==2.12.0)
+  Downloading cuda_bindings-12.9.7-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.6 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch==2.12.0)
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 157.5 MB/s  0:00:06
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch==2.12.0)
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.2/287.2 MB 166.6 MB/s  0:00:01
+Collecting nvidia-nccl-cu12==2.29.3 (from torch==2.12.0)
+  Downloading nvidia_nccl_cu12-2.29.3-py3-none-manylinux_2_18_x86_64.whl (289.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 289.8/289.8 MB 166.7 MB/s  0:00:01
+Collecting nvidia-nvshmem-cu12==3.4.5 (from torch==2.12.0)
+  Downloading nvidia_nvshmem_cu12-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (139.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.1/139.1 MB 134.7 MB/s  0:00:01
+Collecting triton==3.7.0 (from torch==2.12.0)
+  Downloading triton-3.7.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cublas-cu12==12.6.4.1.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cublas_cu12-12.6.4.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (393.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 393.1/393.1 MB 162.5 MB/s  0:00:02
+Collecting nvidia-cuda-runtime-cu12==12.6.77.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cuda_runtime_cu12-12.6.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (897 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.7/897.7 kB 354.4 MB/s  0:00:00
+Collecting nvidia-cufft-cu12==11.3.0.4.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cufft_cu12-11.3.0.4-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (200.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.2/200.2 MB 174.6 MB/s  0:00:01
+Collecting nvidia-cufile-cu12==1.11.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cufile_cu12-1.11.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 360.8 MB/s  0:00:00
+Collecting nvidia-cuda-cupti-cu12==12.6.80.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cuda_cupti_cu12-12.6.80-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 184.6 MB/s  0:00:00
+Collecting nvidia-curand-cu12==10.3.7.77.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_curand_cu12-10.3.7.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 154.3 MB/s  0:00:00
+Collecting nvidia-cusolver-cu12==11.7.1.2.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cusolver_cu12-11.7.1.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (158.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 158.2/158.2 MB 168.4 MB/s  0:00:00
+Collecting nvidia-cusparse-cu12==12.5.4.2.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cusparse_cu12-12.5.4.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.6/216.6 MB 173.0 MB/s  0:00:01
+Collecting nvidia-nvjitlink-cu12==12.6.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_nvjitlink_cu12-12.6.85-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (19.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.7/19.7 MB 182.9 MB/s  0:00:00
+Collecting nvidia-cuda-nvrtc-cu12==12.6.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_cuda_nvrtc_cu12-12.6.85-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (23.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.6/23.6 MB 178.1 MB/s  0:00:00
+Collecting nvidia-nvtx-cu12==12.6.77.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0)
+  Downloading nvidia_nvtx_cu12-12.6.77-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Collecting cuda-pathfinder~=1.1 (from cuda-bindings<13,>=12.9.4->torch==2.12.0)
+  Downloading cuda_pathfinder-1.6.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting numpy (from torchvision)
+  Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+INFO: pip is looking at multiple versions of torchvision to determine which version is compatible with other requirements. This could take a while.
+Collecting torchvision
+  Downloading torchvision-0.28.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.6 kB)
+  Downloading torchvision-0.27.1%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+  Downloading torchvision-0.27.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.12.0)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.12.0)
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading torch-2.12.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl (843.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 843.4/843.4 MB 115.3 MB/s  0:00:05
+Downloading triton-3.7.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (201.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 201.4/201.4 MB 144.4 MB/s  0:00:01
+Downloading cuda_bindings-12.9.7-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (7.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 55.1 MB/s  0:00:00
+Downloading cuda_pathfinder-1.6.0-py3-none-any.whl (54 kB)
+Downloading torchvision-0.27.0%2Bcu126-cp311-cp311-manylinux_2_28_x86_64.whl (7.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 96.6 MB/s  0:00:00
+Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 51.7 MB/s  0:00:00
+Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 79.1 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 93.5 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 11.1 MB/s  0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 116.4 MB/s  0:00:00
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, cuda-toolkit, typing-extensions, triton, sympy, pillow, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, networkx, MarkupSafe, fsspec, filelock, cuda-pathfinder, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, cuda-bindings, nvidia-cusolver-cu12, torch, torchvision
+
+Successfully installed MarkupSafe-3.0.3 cuda-bindings-12.9.7 cuda-pathfinder-1.6.0 cuda-toolkit-12.6.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-cu12-12.6.4.1 nvidia-cuda-cupti-cu12-12.6.80 nvidia-cuda-nvrtc-cu12-12.6.85 nvidia-cuda-runtime-cu12-12.6.77 nvidia-cudnn-cu12-9.10.2.21 nvidia-cufft-cu12-11.3.0.4 nvidia-cufile-cu12-1.11.1.6 nvidia-curand-cu12-10.3.7.77 nvidia-cusolver-cu12-11.7.1.2 nvidia-cusparse-cu12-12.5.4.2 nvidia-cusparselt-cu12-0.7.1 nvidia-nccl-cu12-2.29.3 nvidia-nvjitlink-cu12-12.6.85 nvidia-nvshmem-cu12-3.4.5 nvidia-nvtx-cu12-12.6.77 pillow-12.3.0 sympy-1.14.0 torch-2.12.0+cu126 torchvision-0.27.0+cu126 triton-3.7.0 typing-extensions-4.16.0
+Collecting reinvent
+  Cloning https://github.com/MolecularAI/Reinvent4.git to /tmp/pip-install-b0h1rl5a/reinvent_5682c51a4b604a0994fbf97ab4a63775
+  Running command git clone --filter=blob:none --quiet https://github.com/MolecularAI/Reinvent4.git /tmp/pip-install-b0h1rl5a/reinvent_5682c51a4b604a0994fbf97ab4a63775
+  Resolved https://github.com/MolecularAI/Reinvent4.git to commit ee0d56f4a07472bbb622cd0858184d06f11bff5d
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch==2.12.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from reinvent) (2.12.0+cu126)
+Requirement already satisfied: torchvision in ./venvs/reinvent312/lib/python3.11/site-packages (from reinvent) (0.27.0+cu126)
+Collecting tensorboard<3,>=2 (from reinvent)
+  Downloading tensorboard-2.21.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting rdkit>=2025.09.1 (from reinvent)
+  Downloading rdkit-2026.3.6-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Requirement already satisfied: numpy<3,>=2 in ./venvs/reinvent312/lib/python3.11/site-packages (from reinvent) (2.4.6)
+Collecting pumas>=1.3.0 (from reinvent)
+  Downloading pumas-1.3.0-py3-none-any.whl.metadata (5.9 kB)
+Collecting molvs<0.2,>=0.1.1 (from reinvent)
+  Downloading MolVS-0.1.1.tar.gz (61 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting xxhash<4,>=3 (from reinvent)
+  Downloading xxhash-3.8.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (15 kB)
+Collecting pydantic<3,>=2 (from reinvent)
+  Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+Collecting python-dotenv<2,>=1.0 (from reinvent)
+  Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+Collecting matplotlib<4,>=3.7 (from reinvent)
+  Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting apted<2,>=1.0.3 (from reinvent)
+  Downloading apted-1.0.3-py3-none-any.whl.metadata (6.0 kB)
+Collecting mmpdb<3,>=2.1 (from reinvent)
+  Downloading mmpdb-2.1-py2.py3-none-any.whl.metadata (676 bytes)
+Collecting pandas<4,>=3 (from reinvent)
+  Downloading pandas-3.0.5-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting polars<2 (from reinvent)
+  Downloading polars-1.44.2-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: Pillow>=12.2.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from reinvent) (12.3.0)
+Collecting PyYAML>=6.0 (from reinvent)
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting requests<3,>=2.28 (from reinvent)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting tqdm<5,>=4.64 (from reinvent)
+  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Collecting pytest>=9.0.3 (from reinvent)
+  Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting pytest-mock>=3 (from reinvent)
+  Downloading pytest_mock-3.15.1-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: filelock in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (3.32.3)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (4.16.0)
+Requirement already satisfied: setuptools<82 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (79.0.1)
+Requirement already satisfied: sympy>=1.13.3 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (3.6.1)
+Requirement already satisfied: jinja2 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (2026.7.0)
+Requirement already satisfied: cuda-toolkit==12.6.3 in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.3)
+Requirement already satisfied: cuda-bindings<13,>=12.9.4 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (12.9.7)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (9.10.2.21)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.29.3 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (2.29.3)
+Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (3.4.5)
+Requirement already satisfied: triton==3.7.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from torch==2.12.0->reinvent) (3.7.0)
+Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.4.1)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.77)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (11.3.0.4)
+Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (1.11.1.6)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.80)
+Requirement already satisfied: nvidia-curand-cu12==10.3.7.77.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (10.3.7.77)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (11.7.1.2)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.5.4.2)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.85)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.85.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.85)
+Requirement already satisfied: nvidia-nvtx-cu12==12.6.77.* in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==12.6.3; platform_system == "Linux"->torch==2.12.0->reinvent) (12.6.77)
+Requirement already satisfied: cuda-pathfinder~=1.1 in ./venvs/reinvent312/lib/python3.11/site-packages (from cuda-bindings<13,>=12.9.4->torch==2.12.0->reinvent) (1.6.0)
+Collecting contourpy>=1.0.1 (from matplotlib<4,>=3.7->reinvent)
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib<4,>=3.7->reinvent)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib<4,>=3.7->reinvent)
+  Downloading fonttools-4.65.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (125 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib<4,>=3.7->reinvent)
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Requirement already satisfied: packaging>=20.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from matplotlib<4,>=3.7->reinvent) (26.3)
+Collecting pyparsing>=3 (from matplotlib<4,>=3.7->reinvent)
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil>=2.7 (from matplotlib<4,>=3.7->reinvent)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six (from molvs<0.2,>=0.1.1->reinvent)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting polars-runtime-32==1.44.2 (from polars<2->reinvent)
+  Downloading polars_runtime_32-1.44.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3,>=2->reinvent)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.5 (from pydantic<3,>=2->reinvent)
+  Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic<3,>=2->reinvent)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.28->reinvent)
+  Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.28->reinvent)
+  Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+Collecting urllib3<3,>=1.26 (from requests<3,>=2.28->reinvent)
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting certifi>=2023.5.7 (from requests<3,>=2.28->reinvent)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting absl-py>=0.4 (from tensorboard<3,>=2->reinvent)
+  Downloading absl_py-2.5.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting grpcio<2.0,>=1.74.0 (from tensorboard<3,>=2->reinvent)
+  Downloading grpcio-1.84.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+Collecting markdown>=2.6.8 (from tensorboard<3,>=2->reinvent)
+  Downloading markdown-3.10.3-py3-none-any.whl.metadata (5.1 kB)
+Collecting protobuf<8.0.0,>=6.31.1 (from tensorboard<3,>=2->reinvent)
+  Downloading protobuf-7.36.1-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard<3,>=2->reinvent)
+  Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard<3,>=2->reinvent)
+  Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+Collecting iniconfig>=1.0.1 (from pytest>=9.0.3->reinvent)
+  Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest>=9.0.3->reinvent)
+  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pygments>=2.7.2 (from pytest>=9.0.3->reinvent)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./venvs/reinvent312/lib/python3.11/site-packages (from sympy>=1.13.3->torch==2.12.0->reinvent) (1.3.0)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venvs/reinvent312/lib/python3.11/site-packages (from werkzeug>=1.0.1->tensorboard<3,>=2->reinvent) (3.0.3)
+Downloading apted-1.0.3-py3-none-any.whl (40 kB)
+Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 58.6 MB/s  0:00:00
+Downloading mmpdb-2.1-py2.py3-none-any.whl (188 kB)
+Downloading pandas-3.0.5-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 105.0 MB/s  0:00:00
+Downloading polars-1.44.2-py3-none-any.whl (865 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 865.8/865.8 kB 17.0 MB/s  0:00:00
+Downloading polars_runtime_32-1.44.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 MB 114.5 MB/s  0:00:00
+Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 58.0 MB/s  0:00:00
+Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (262 kB)
+Downloading idna-3.19-py3-none-any.whl (68 kB)
+Downloading tensorboard-2.21.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 71.8 MB/s  0:00:00
+Downloading grpcio-1.84.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 77.6 MB/s  0:00:00
+Downloading protobuf-7.36.1-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 76.7 MB/s  0:00:00
+Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading xxhash-3.8.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (220 kB)
+Downloading absl_py-2.5.0-py3-none-any.whl (137 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.65.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 83.1 MB/s  0:00:00
+Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 34.6 MB/s  0:00:00
+Downloading markdown-3.10.3-py3-none-any.whl (110 kB)
+Downloading pumas-1.3.0-py3-none-any.whl (75 kB)
+Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 27.4 MB/s  0:00:00
+Downloading pytest_mock-3.15.1-py3-none-any.whl (10 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 20.8 MB/s  0:00:00
+Downloading rdkit-2026.3.6-cp311-cp311-manylinux_2_28_x86_64.whl (38.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.2/38.2 MB 45.2 MB/s  0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+Building wheels for collected packages: reinvent, molvs
+  Building wheel for reinvent (pyproject.toml): started
+  Building wheel for reinvent (pyproject.toml): finished with status 'done'
+  Created wheel for reinvent: filename=reinvent-4.8.24-py3-none-any.whl size=4181911 sha256=b27da6d8a139bef8ab8513cd878c2fc8c7ee33337943417342ddf39609a6a39d
+  Stored in directory: /tmp/pip-ephem-wheel-cache-hk95tir8/wheels/f6/29/c8/cb681ab87a760506b5f239276559274aacda9c60e6dcd61745
+  Building wheel for molvs (pyproject.toml): started
+  Building wheel for molvs (pyproject.toml): finished with status 'done'
+  Created wheel for molvs: filename=molvs-0.1.1-py3-none-any.whl size=32457 sha256=20bdcbd959761d423eda85d9405d0dfd381a459a21f9248d8baaee5e6e33c78c
+  Stored in directory: /cluster/home/nbhatt04/.cache/pip/wheels/26/62/a4/147e264c789d9a4e8495f2c3d60f702425761f875bcfdf44e0
+Successfully built reinvent molvs
+Installing collected packages: mmpdb, apted, xxhash, werkzeug, urllib3, typing-inspection, tqdm, tensorboard-data-server, six, rdkit, PyYAML, python-dotenv, pyparsing, pygments, pydantic-core, protobuf, polars-runtime-32, pluggy, markdown, kiwisolver, iniconfig, idna, grpcio, fonttools, cycler, contourpy, charset_normalizer, certifi, annotated-types, absl-py, tensorboard, requests, python-dateutil, pytest, pydantic, polars, molvs, pytest-mock, pumas, pandas, matplotlib, reinvent
+
+Successfully installed PyYAML-6.0.3 absl-py-2.5.0 annotated-types-0.8.0 apted-1.0.3 certifi-2026.7.22 charset_normalizer-3.5.1 contourpy-1.3.3 cycler-0.12.1 fonttools-4.65.0 grpcio-1.84.0 idna-3.19 iniconfig-2.3.0 kiwisolver-1.5.1 markdown-3.10.3 matplotlib-3.11.2 mmpdb-2.1 molvs-0.1.1 pandas-3.0.5 pluggy-1.6.0 polars-1.44.2 polars-runtime-32-1.44.2 protobuf-7.36.1 pumas-1.3.0 pydantic-2.13.5 pydantic-core-2.46.5 pygments-2.21.0 pyparsing-3.3.2 pytest-9.1.1 pytest-mock-3.15.1 python-dateutil-2.9.0.post0 python-dotenv-1.2.3 rdkit-2026.3.6 reinvent-4.8.24 requests-2.34.2 six-1.17.0 tensorboard-2.21.0 tensorboard-data-server-0.7.2 tqdm-4.70.1 typing-inspection-0.4.4 urllib3-2.7.0 werkzeug-3.1.8 xxhash-3.8.1
+== venv ready ==
+Traceback (most recent call last):

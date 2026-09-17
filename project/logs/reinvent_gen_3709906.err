@@ -1,0 +1,2 @@
+/var/spool/slurm/job3709906/slurm_script: line 20: /var/spool/slurm/venvs/reinvent312/bin/reinvent: No such file or directory
+/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python: can't open file '/var/spool/slurm/workflows/run_all.py': [Errno 2] No such file or directory

@@ -1,18 +1,18 @@
 {
-  "config_hash": "ef25a7f0bc4a002ab3a352d42ad5b9d850387f7dce79196fc5748007f0d6e406",
-  "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml",
-  "generated_at": "2026-09-10T22:01:48Z",
+  "config_hash": "05bcbb61e76ffdc56987f329f4d971e537eec49f5ed0e012dc192bf8005cc01e",
+  "config_path": "configs/config.yaml",
+  "generated_at": "2026-09-15T04:21:41Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "raw_csv_hash": "0f50412785186dcef4ab5cce7e988f319030ac0319b326ecd047b1fbbb898c08",
     "raw_rows": 30
   },
   "module": "dataset.pipeline",
-  "numpy": "2.5.3",
+  "numpy": "1.26.4",
   "pandas": "3.0.5",
-  "python": "3.12.14",
-  "rdkit": "2026.03.6",
-  "scikit_learn": "1.9.1",
+  "python": "3.11.16",
+  "rdkit": "2026.03.5",
+  "scikit_learn": "1.6.1",
   "seeds": {
     "bootstrap": 42,
     "conformer_etkdgv3": 42,

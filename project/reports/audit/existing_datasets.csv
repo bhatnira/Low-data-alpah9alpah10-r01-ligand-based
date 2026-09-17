@@ -3,7 +3,7 @@ dataset,data/raw,data/raw/modulator-dataset-a9a10.csv,1548,30.0
 dataset,data/processed,data/processed/data_analysis_ready.csv,21155,30.0
 dataset,data/processed,data/processed/data_cleaned.csv,9323,30.0
 dataset,data/processed,data/processed/data_governed.csv,21155,30.0
-dataset,data/experimental,data/experimental/00_input_provenance.json,709,
+dataset,data/experimental,data/experimental/00_input_provenance.json,710,
 dataset,data/experimental,data/experimental/canonical_experimental_dataset.csv,21155,30.0
 dataset,data/experimental,data/experimental/dataset_manifest.json,182,
 dataset,data/experimental,data/experimental/excluded_compounds.csv,718,0.0

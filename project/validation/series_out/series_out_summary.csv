@@ -15,8 +15,8 @@ series_out,random,descriptors_only,30.0,22.0,0.7333,7.0
 series_out,random,fingerprints_morgan_r2,30.0,22.0,0.7333,7.0
 series_out,random,fingerprints_plus_descriptors,30.0,22.0,0.7333,7.0
 series_out,random_forest,descriptors_only,30.0,22.0,0.7333,7.0
-series_out,random_forest,fingerprints_morgan_r2,30.0,23.0,0.7667,7.0
-series_out,random_forest,fingerprints_plus_descriptors,30.0,24.0,0.8,7.0
+series_out,random_forest,fingerprints_morgan_r2,30.0,22.0,0.7333,7.0
+series_out,random_forest,fingerprints_plus_descriptors,30.0,23.0,0.7667,7.0
 series_out,ridge,descriptors_only,30.0,23.0,0.7667,7.0
 series_out,ridge,fingerprints_morgan_r2,30.0,21.0,0.7,7.0
 series_out,ridge,fingerprints_plus_descriptors,30.0,21.0,0.7,7.0

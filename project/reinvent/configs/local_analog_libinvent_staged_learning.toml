@@ -3,7 +3,7 @@
 # rule        : near-series optimization around the real active parents (inception-guided)
 # prior       : real REINVENT4 prior (Zenodo record 20701824), checksum-verified
 # stereochemistry : NOT supported (LibInvent prior) - isomeric_smiles disabled
-# objectives  : predicted_activity (w=1), taf_consistency (w=0.8), novelty (w=0.2)
+# objectives  : predicted_activity (w=1), training_similarity (w=1), taf_consistency (w=0.8), novelty (w=0.2)
 # scoring     : ExternalProcess -> reinvent/score_lbm.py (frozen Phase-4 model + real TAF SMARTS)
 
 run_type = "staged_learning"
@@ -49,19 +49,25 @@ type = "geometric_mean"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "predicted_activity"
 weight = 1
-params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.executable = "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python"
 params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "predicted_activity"
 [[stage.scoring.component.ExternalProcess.endpoint]]
+name = "training_similarity"
+weight = 1
+params.executable = "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python"
+params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
+params.property = "training_similarity"
+[[stage.scoring.component.ExternalProcess.endpoint]]
 name = "taf_consistency"
 weight = 0.8
-params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.executable = "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python"
 params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "taf_consistency"
 [[stage.scoring.component.ExternalProcess.endpoint]]
 name = "novelty"
 weight = 0.2
-params.executable = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python"
+params.executable = "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python"
 params.args = "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py"
 params.property = "novelty"
 

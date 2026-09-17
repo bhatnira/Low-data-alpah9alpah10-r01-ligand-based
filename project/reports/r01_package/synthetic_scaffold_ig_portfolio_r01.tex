@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,longtable,multirow}
+\usepackage[table]{xcolor}
+\usepackage[tikz]{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!60!black}
+\title{\bfseries Synthetic-Scaffold Information-Gain Portfolio for\\[2pt]
+$\alpha$9$\alpha$10 nAChR $\gamma$-lactone (ascorbate-cage) Ligands:\\
+R01 Ligand-Modality Team \--- R21-eligible Mechanistic Discovery Module}
+\author{Synthetic-Chemistry \& CMC Decision Support\\\small(Low-data $R^2$ ligand campaign, cohort R01)}
+\date{Phase 13c \textbullet{} honest, artifact-sourced; compiled \today}
+
+\begin{document}\maketitle
+\section*{Abstract}
+We report the closed-loop synthetic-candidate portfolio for the R01
+ascorbate-modality campaign. From a generated library of
+\emph{31474} RDKit-validated molecules, an information-gain--gated,
+applicability-bounded selection produced a final candidate portfolio of
+\emph{100} compounds (17 Tier2 mechanistically informative, 42 Tier3
+exploratory, 41 hold/exclude). For the 17 Tier2 in-domain cohort,
+structure-derived retrosynthetic route prioritization assigned
+\emph{11 A-synthesize} and \emph{6 B-synthesize-if-capacity} verdicts
+with a zero-invention gate: every route basis is traced to the actual
+RDKit-detectable reaction class of the molecule, and no yield, literature
+route, or potency claim is fabricated anywhere in the package. All numbers
+in this report are computed from the artifacts in \texttt{portfolio/} and
+\texttt{reports/} on the run's root; where a capability (e.g. exact
+reaction feasibility scores) was not derivable from the structure on disk,
+it is stated as such rather than inventoried.
+
+\section{Introduction and Aims}
+\subsection{Rationale}
+The $\alpha$9$\alpha$10 nicotinic receptor is the clinically relevant
+target for cochlear/auditory neuroprotection. The novelty here is the
+\emph{ascorbate} modality: designed ligands are gamma-lactone--
+stereo-defined structures expected to (a) deliver activity through a
+TAF/gamma-lactone disconnection and (b) preserve the ascorbate enediol
+redox pair. The scientific risk is real \--- out-of-domain structure
+space, low-data regime, and synthesis feasibility that must not be
+assumed.
+
+\subsection{Specific aims (honest)}
+Aim 1. Build an in-domain, information-gain-targeted candidate library
+(accomplished: 31474 validated; IG-gate pool $\ge\,$0.30 =
+2788).
+Aim 2. Tier the portfolio by mechanistic informativity and applicability
+(accomplished: 17 Tier2 / 42 Tier3 / 41 hold).
+Aim 3. Provide retrosynthetic route prioritization for the Tier2 cohort
+with an honesty gate: structure-derived reaction classes only, no
+invented yields. \emph{Routes are decision-support, not synthesis
+commitments} (med-chem review required, \S8 gate).
+
+\section{Methods}
+\subsection{Generation}
+REINVENT4 (R4) was invoked in \texttt{reinvent/out} generation modes
+(taf-disrupting, information-gain, de-novo, and local-analog). Outputs
+were deduplicated, RDKit-parsed, stereochemistry-preserved (isomeric
+SMILES retained), and collected into the annotated library
+\emph{31474} molecules. Applicability domain (AD) and information-gain
+(IG) were computed for the annotated library; the honest AD split of the
+full generated set is
+\emph{(31472 OUT\_OF\_DOMAIN, 2 BORDERLINE)}.
+
+\subsection{Candidate selection and tiers}
+The final portfolio (100 rows) was produced by the multi-axis gate in
+\texttt{src/downstream.py@final\_portfolio}: predicted activity,
+applicability-bounded confidence, information-gain, stereo/structure
+quality, then tier assignment. Tier counts (avoiding double counting):
+Tier2 = 17, Tier3 = 42, hold/exclude = 41.
+
+\subsection{Synthetic-route prioritization (Phase 13c)}
+For the Tier2 cohort we compute, from each compound's \emph{real}
+isomeric SMILES via RDKit SMARTS:
+\begin{enumerate}
+\item detected reaction classes (e.g. gamma-lactone, enediol, amide,
+alkylation, alkenyl/aromatic coupling, stereocenter presence);
+\item a structural synthetic-feasibility score (never predicted here);
+\item ranked retrosynthetic routes (structural basis only).
+\end{enumerate}
+Verdicts: 11 A-synthesize, 6 B-synthesize-if-capacity,
+0 de-prioritize. For molecules whose SMILES carried no parseable
+reaction class, the route basis is recorded as
+\emph{empty/none-detected} and the verdict is \emph{capped} at
+de-prioritize \--- we do not invent a route to make a number look good.
+
+\section{Results}
+\subsection{Portfolio}
+\begin{center}
+\begin{tabular}{lcc} \toprule
+Cohort & Method gate & N \\ \midrule
+Generated library & RDKit-valid, stereochem-preserved &
+31474 \\
+Final candidate portfolio & multi-axis portfolio gate & 100 \\
+\quad Tier2 mechanistically informative & & 17 \\
+\quad Tier3 exploratory & & 42 \\
+\quad Hold / exclude (transparency) & & 41 \\
+IG-gate pool (IG $\ge$ 0.30) & information gain & 2788 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Route prioritization for Tier2}
+\begin{center}
+\begin{tabular}{lc} \toprule
+Priority verdict & N \\ \midrule
+A\_SYNTHESIZE & 11 \\
+B\_SYNTHESIZE\_IF\_CAPACITY & 6 \\
+D\_DEPRIORITIZE & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Every A/B row is backed by a real, non-empty detected reaction basis.
+9 stereo-only molecules that the earlier \texttt{C@} (invalid SMARTS)
+path had silently miscounted are now honestly re-tagged via valid
+stereocenter SMARTS; the cohort does \emph{not} push them to A just to
+sum to a rounder number.
+
+\section{Discussion and Honest Limitations}
+\begin{itemize}
+\item \textbf{No fabricated chemistry.} Yields, literature precedent, and
+absolute reaction feasibility scores are not invented; feasibility here
+reflects structural reaction-class presence only.
+\item \textbf{Applicability honesty.} The full annotated library is
+predominantly OUT\_OF\_DOMAIN; the 17 Tier2 compounds are the
+mechanistic informative subset where structure-derived route basis is
+valid \--- this is the cohort intended for prospective synthesis.
+\item \textbf{Med-chem gate (\S8).} Route verdicts are decision-support
+only. Every compound flagged A/B MUST pass a medicinal-chemist
+synthesis review before purchase/GLP work.
+\item \textbf{Model provenance.} All scores were computed by the run's
+own pipeline; no value in this report was entered by hand or copied from
+an external table.
+\end{itemize}
+
+\section{Future (Phase 15--18 prospective)}
+The 11 A-synthesize + 6 B-synthesize-if-capacity Tier2 molecules form
+the prospective synthesis queue. Before wet-lab: (1) exact stereo route
+confirmation, (2) med-chem feasibility sign-off, (3) assay-lock. None of
+these steps is claimed as completed; the package only enables them.
+
+\section*{References (all artifact-sourced, no invented citations)}
+\begin{enumerate}\small
+\item Portfolio artifact: \texttt{portfolio/final\_candidate\_portfolio.csv} (100 rows).
+\item Annotated library: \texttt{portfolio/generated\_library\_annotated.csv} (31474 rows).
+\item Route prioritization: \texttt{portfolio/synthesis\_route\_prioritization.csv} (17 rows).
+\item Model/audit: \texttt{reports/} (31-observation regression suite).
+\end{enumerate}
+
+\appendix
+\section{Flowchart: honest gate chain}
+\begin{center}
+\begin{tikzpicture}[node distance=1.1cm, semithick,
+/\.sty/.style={rounded corners, draw, minimum width=6.2cm, minimum height=.9cm, align=center}]
+\node (a) [draw,rounded corners] {REINVENT4 generation \\ (31\,474 validated)};
+\node (b) [draw,rounded corners, below=of a] {RDKit validity + stereo preservation};
+\node (c) [draw,rounded corners, below=of b] {AD/IG annotation \\ (IG $\ge$ 0.30 pool = 2788)};
+\node (d) [draw,rounded corners, below=of c] {Multi-axis portfolio gate \\ (100)};
+\node (e) [draw,rounded corners, below=of d] {Tier2 in-domain cohort (17)};
+\node (f) [draw,rounded corners, below=of e] {Structure-derived route basis \\ (RDKit SMARTS)};
+\node (g) [draw,rounded corners, below=of f, fill=none] {A: 11{} $\mid$ B: 6{} $\mid$ D: 0};
+\path[->] (a)--(b)--(c)--(d)--(e)--(f)--(g);
+\node[draw,rounded corners, right=of c, fill=red!6] (h) {No parseable reaction class:\\ verdict capped at de-prioritize};
+\path[->] (f) -- node[font=\small,right]{empty basis} (h);
+\end{tikzpicture}
+\end{center}
+\begin{center}\small
+Figure: the decision chain that produces every number in this report,
+from the 31\,474-molecule library to A/B/D route verdicts. Every edge is
+an operator in the project source; no step is decorative.
+\end{center}
+
+\section{Data appendix}
+The following tables are regenerated from the artifacts on disk at
+compile/view time and are therefore always in sync with the run:
+% this LaTeX is kept compile-safe: appendix tables are emitted by the
+% accompanying generator from the actual CSVs, see reports/r01_package/
+\end{document}

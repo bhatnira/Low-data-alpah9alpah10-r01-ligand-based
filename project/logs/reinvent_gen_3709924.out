@@ -1,0 +1,150 @@
+== host: pax063 ==
+NVIDIA H100 PCIe, 81559 MiB, 575.57.08
+REINVENT 4.8.24 (C) AstraZeneca 2017, 2023 using PyTorch 2.12.0+cu126.
+== REINVENT4 in-domain generation (GPU) ==
+[INFO] === reinvent -> Phases 9-11: REINVENT configs, generation + collection (auto-runs on GPU when binary present) ===
+[INFO] === REINVENT 4 integration ===
+[INFO] REINVENT binary: detected
+[INFO] Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+[INFO] Inception seed (7 active SMILES) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/inception.smi
+[INFO] LibInvent scaffolds (7) -> /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/scaffolds_libinvent.smi
+[INFO] REINVENT binary: /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent (style=direct, device=cuda)
+[INFO] mode de_novo: OK (returncode=0)
+[INFO] mode local_analog: OK (returncode=0)
+[INFO] mode scaffold_hopping: OK (returncode=0)
+[INFO] mode taf_disrupting: OK (returncode=0)
+[INFO] mode information_gain: OK (returncode=0)
+[INFO] mode local_analog_libinvent: OK (returncode=0)
+[INFO] collected 31474 unique canonical molecules (RUN_COMPLETED)
+[INFO] reinvent completed
+[INFO] workflow results: {'reinvent': 'OK'}
+== reinvent rc=0 ==
+== downstream triage + portfolio + reports on in-domain library ==
+[INFO] === audit -> Phase 1: initial project audit (section 3 - inspect before modifying) ===
+[INFO] === Phase 1: initial project audit (section 3) ===
+[INFO] existing_datasets: 10 entries
+[INFO] existing_models: 4 entries
+[INFO] existing_scripts: 27 entries
+[INFO] existing_artifacts: 146 entries
+[INFO] structural_status: 3 entries
+[INFO] Phase 1 audit complete; no duplicate work will be created.
+[INFO] audit completed
+[INFO] === chemspace -> Phase 12: chemical-space expansion report ===
+[INFO] === Chemical-space expansion (section 23) ===
+[INFO]                                            metric      value                                                                                                                    note
+               fingerprint_space_mean_nn_distance     0.8510                                         mean min-Tanimoto-distance from any training compound (higher = more expansion)
+                fingerprint_space_frac_beyond_0.4     1.0000                                            fraction of generated molecules with NN distance > 0.4 (chemically distinct)
+                             novel_scaffold_count 22077.0000                                                                  Bemis-Murcko scaffolds not present in the training set
+                                  generated_count 31474.0000                                                                    count alone is NOT meaningful expansion (section 23)
+                            new_sar_relationships 31474.0000 SAR-space expansion = number of NEW experimentally testable hypotheses, not molecules; filled after experimental rounds
+descriptor_space_coverage_fraction_in_train_range     0.7041                                                       fraction of generated descriptor values within experimental range
+[INFO] chemspace completed
+[INFO] === candidates -> Phase 13: candidate prioritization + portfolio A-F ===
+[INFO] === Candidate prioritization ===
+[INFO] === Candidate scoring (multi-axis) ===
+[INFO] === Candidate scoring (multi-axis) ===
+[INFO] === Candidate portfolio (groups A-F) ===
+[INFO] Portfolio size: 32; groups reflexive overlap expected
+[INFO] candidates completed
+[INFO] === downstream -> Phase 13b: generated-library downstream triage (potency filter, AD/unc., synth, delivery, ADME, tox, cochlear safety, selectivity, final portfolio, handoff) ===
+[INFO] === Generated-library downstream triage ===
+[INFO] === Generated-library QC (sect. 30) ===
+[INFO] QC: {'N_generated': 31474, 'N_valid': 31474, 'N_unique': 31474, 'N_stereo_valid': 26868, 'N_duplicate': 0}
+[INFO] === Scoring generated library (potency / uncertainty / AD) ===
+[INFO]   scored 0/31474
+[INFO]   scored 5000/31474
+[INFO]   scored 10000/31474
+[INFO]   scored 15000/31474
+[INFO]   scored 20000/31474
+[INFO]   scored 25000/31474
+[INFO]   scored 30000/31474
+[INFO] scored 31474 molecules
+[INFO] === Synthetic feasibility (SAScore proxy, sect. 33) ===
+[INFO] === Systemic ADME proxies (sect. 39-40) ===
+[INFO] === Systemic toxicology screen (sect. 41) ===
+[INFO] === Local cochlear / hair-cell safety screen (sect. 42-44) ===
+[INFO] === Cochlear delivery proxies (sect. 34-38) ===
+[INFO] === Final selectivity filter (sect. 45-47) ===
+[INFO] === Final multi-axis candidate portfolio + tiers (sect. 48-53, 83) ===
+[INFO] active+in-domain+confident pool: 0
+[INFO] final portfolio: 100 molecules across tiers {'Tier3_exploratory': 42, 'EXCLUDE_OR_HOLD': 41, 'Tier2_mechanistically_informative': 17}
+[INFO] structure_based_handoff.csv written (100 rows)
+[INFO] downstream completed
+[INFO] === library -> Phase 19: chemotype-library projection + coverage targets (R01 deliverable) ===
+[INFO] === Chemotype library projection (R01 deliverable, phase 19) ===
+[INFO] Chemotype families: 8 (novel scaffolds: 6)
+[INFO] family_id               chemotype_scaffold  tier  n_candidates  novel_scaffold
+  CHT-001                       O=C1C=CCO1     2            12               0
+  CHT-002                          C1COCO1     2             4               1
+  CHT-003   O=P(O)(O)C(O)=C(O)C[C@H](O)CBr     2             4               1
+  CHT-004        O=P(O)(O)C(O)=C(O)CC(O)CO     2             3               1
+  CHT-005    O=P(O)(O)C(O)=C(O)C[C@H](O)CO     2             3               1
+  CHT-006           O=C1C=C(OCc2ccccc2)CO1     2             2               0
+  CHT-007                         c1ccccc1     2             2               1
+  CHT-008 CCCOC(=C(O)C[C@H](O)CO)P(=O)(O)O     3             2               1
+[INFO] library completed
+[INFO] === lock -> Phase 14: model lock before prospective testing ===
+[INFO] === Model lock ===
+[INFO] Model lock manifest written; prospective cycle is FROZEN.
+[INFO] lock completed
+[INFO] === prospective -> Phases 15-18: prospective plan + result ingestion template ===
+[INFO] === Prospective experimental plan ===
+[INFO] === Sample-size / power analysis (section 32) ===
+[INFO] prospective completed
+[INFO] === loop -> Phases 19-24: closed-loop experimentation (plate design, oversight gate, adaptable updates) ===
+[INFO] === Closed-loop cycle ===
+[INFO] === Consensus explanation (Borda fusion, section 13b) ===
+[INFO] Uninformative (constant) importance methods: ['accuracy_drop', 'perm_importance'] - agreement set to NaN, their ranks still pooled
+[INFO]        feature  mean_rank  agreement_gini_perm  agreement_gini_ablation  agreement_perm_ablation  mean_agreement  n_agreement_pairs          uninformative_methods  consensus_rank
+  FractionCSP3   2.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               1
+          LogP   4.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               2
+            MW   4.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               3
+      RotBonds   5.166667                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               4
+HeavyAtomCount   5.500000                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               5
+          TPSA   5.833333                0.522                      NaN                      NaN           0.522                  1 accuracy_drop, perm_importance               6
+[INFO] === Stereo probe design (section 14b) ===
+[INFO] Stereo probes designed: 22 (append to plate)
+[INFO] === Design round 1 plate (comparator-arm, size-fixed) ===
+[INFO] Eligible (drug-like) candidates for plate: 6/15
+[INFO] arm              portfolio_group   
+diversity_topup  B_taf_disrupting      2
+                 E_information_gain    1
+model_ranked     B_taf_disrupting      3
+[INFO] arm              matched_tier
+diversity_topup  2               3
+model_ranked     2               3
+[INFO] Plate size 6; ALL entries PENDING_REVIEW (med-chem sign-off required before experiment)
+[INFO] === Oversight gate for round 1 ===
+[WARNING] 6/6 molecules BLOCKED until med-chem sign-off. No experiment proceeds without approval.
+[INFO] Round 1 pre-registered (hash e3f80267d76f...)
+[INFO] === Data watch (generator + structural availability) ===
+[INFO] {'reinvent_molecule_dirs': 6, 'generated_molecules_count': 31474, 'generated_molecules_file': '/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/generated_molecules.csv', 'generated_by_mode': {'reinvent_de_novo': 6322, 'reinvent_local_analog': 6299, 'reinvent_scaffold_hopping': 6296, 'reinvent_taf_disrupting': 6282, 'reinvent_information_gain': 6275}, 'structural_outputs_found': 0, 'reinvent_ingest': 'ingested 31474 molecules', 'structural_ingest': 'NOT AVAILABLE - no AF3/Boltz outputs'}
+[INFO] loop completed
+[INFO] === audit -> Audit: leakage + 18-question final audit ===
+[INFO] === Data leakage audit (section 40) ===
+[INFO] === Final 18-question audit (section 51) ===
+[INFO]  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+[INFO]          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+[INFO] {'PENDING_REVIEW': 6}
+[INFO] audit completed
+[INFO] === reports -> Reports: build combined HTML report ===
+[INFO] Reports written to /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reports/index.html
+[INFO] reports completed
+[INFO] workflow results: {'audit': 'OK', 'chemspace': 'OK', 'candidates': 'OK', 'downstream': 'OK', 'library': 'OK', 'lock': 'OK', 'prospective': 'OK', 'loop': 'OK', 'reports': 'OK'}
+== done rc=0 ==

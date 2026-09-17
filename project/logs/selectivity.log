@@ -104,3 +104,10 @@
 2026-09-10 18:05:19,172 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
 2026-09-10 18:05:19,202 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.3116428571428571, "pred_activity_std": 0.05656035271252119, "pred_activity_ge_0_5_frac": 0.0}
 2026-09-10 18:05:19,202 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}
+2026-09-14 19:33:21,474 | INFO | === Curate non-alpha9alpha10 nAChR selectivity panel ===
+2026-09-14 19:33:21,510 | INFO | Source /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/otherModulators.csv: +74 rows
+2026-09-14 19:33:21,746 | INFO | Deduped 4 duplicate canonical SMILES; kept 70 unique
+2026-09-14 19:33:21,746 | INFO | Panel rows: 70; parseable: 70; unparseable: 0
+2026-09-14 19:33:24,761 | INFO | Isolation guard OK: 0 exact-SMILES overlap with a9a10 training
+2026-09-14 19:33:24,802 | INFO | Panel summary: {"n_panel": 70, "n_parseable": 70, "n_a9a10_training_scaffold_hits": 0, "a9a10_training_scaffold_hit_ids": "", "n_candidate_family_overlaps": 0, "pred_activity_mean": 0.20807142857142857, "pred_activity_std": 0.04549480665649889, "pred_activity_ge_0_5_frac": 0.0}
+2026-09-14 19:33:24,802 | INFO | Isolation guard: {"contract": "panel stored under selectivity/ only; never written to data/processed; source alpha9alpha10 training CSV untouched", "n_exact_smiles_overlap_with_training": 0, "overlap_panel_ids": ""}

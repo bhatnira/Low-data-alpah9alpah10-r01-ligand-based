@@ -34,8 +34,13 @@ mkdir -p "$ROOT/priors"
 for name in "${!PRIORS[@]}"; do
   dst="$ROOT/priors/$name"
   want="${SHA256[$name]}"
+  if command -v sha256sum >/dev/null 2>&1; then
+    HASH=sha256sum
+  else
+    HASH=shasum
+  fi
   if [ "$FORCE" -eq 0 ] && [ -f "$dst" ]; then
-    got="$(shasum -a 256 "$dst" | awk '{print $1}')"
+    got="$($HASH -a 256 "$dst" | awk '{print $1}')"
     if [ "$got" = "$want" ]; then
       echo "OK  $name (sha256 already verified, skipping)"
       continue
@@ -44,7 +49,7 @@ for name in "${!PRIORS[@]}"; do
   fi
   echo "=> downloading $name"
   curl -fL --retry 3 -o "$dst" "${PRIORS[$name]}"
-  got="$(shasum -a 256 "$dst" | awk '{print $1}')"
+  got="$($HASH -a 256 "$dst" | awk '{print $1}')"
   if [ "$got" != "$want" ]; then
     echo "ERROR $name sha256 mismatch after download: $got != $want" >&2
     rm -f "$dst"

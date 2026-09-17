@@ -52,6 +52,8 @@ PHASES: List[Dict[str, Callable]] = [
      "desc": "Phase 12: chemical-space expansion report"},
     {"key": "candidates", "fn": lambda cfg: __import__("src.candidates", fromlist=["run_phase13"]).run_phase13(cfg),
      "desc": "Phase 13: candidate prioritization + portfolio A-F"},
+    {"key": "downstream", "fn": lambda cfg: __import__("src.downstream", fromlist=["run_phase_downstream"]).run_phase_downstream(cfg),
+     "desc": "Phase 13b: generated-library downstream triage (potency filter, AD/unc., synth, delivery, ADME, tox, cochlear safety, selectivity, final portfolio, handoff)"},
     {"key": "library", "fn": lambda cfg: __import__("src.library", fromlist=["run_phase_library"]).run_phase_library(cfg),
      "desc": "Phase 19: chemotype-library projection + coverage targets (R01 deliverable)"},
     {"key": "lock", "fn": lambda cfg: __import__("src.lock", fromlist=["run_phase14"]).run_phase14(cfg),

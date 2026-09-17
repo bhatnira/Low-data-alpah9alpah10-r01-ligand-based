@@ -1,0 +1,7 @@
+molecule_id,isomeric_SMILES,predicted_potency,portfolio_tier
+REV-SCAFFOLD_HOPPING-18968,C1=CC2CN(c3ccc(-c4ccc(N(c5ccc(-c6ccccc6)cc5)c5cc6ccccc6c6ccccc56)cc4)cc3)c3ccccc3C2C=C1,0.225,EXCLUDE_OR_HOLD
+REV-TAF_DISRUPTING-30572,O=c1cc(CSc2cc(Cl)c(Cl)cc2Cl)occ1O,0.24,Tier3_exploratory
+REV-TAF_DISRUPTING-25887,CCn1c(=C/C=C/C2=C(O)CCCC2)/c(=C\C=[N+](C)CCCCCCO)c2cc([N+](=O)[O-])ccc21,0.24,EXCLUDE_OR_HOLD
+REV-TAF_DISRUPTING-26475,C=CC=CC=CCC1(C)C=CC(CCC)=CC1,0.135,Tier3_exploratory
+REV-TAF_DISRUPTING-30775,Nc1c(Br)nn2cnnc2c1N,0.23,Tier3_exploratory
+REV-INFORMATION_GAIN-7775,N[C@@H]1CC[C@@]23C=C[C@@H]1[C@@H]2CC=C3[N+](=O)[O-],0.145,EXCLUDE_OR_HOLD

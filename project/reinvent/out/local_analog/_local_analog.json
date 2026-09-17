@@ -40,16 +40,25 @@
                                     "name": "predicted_activity",
                                     "weight": 1,
                                     "params": {
-                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "executable": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
                                         "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
                                         "property": "predicted_activity"
+                                    }
+                                },
+                                {
+                                    "name": "training_similarity",
+                                    "weight": 1,
+                                    "params": {
+                                        "executable": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
+                                        "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
+                                        "property": "training_similarity"
                                     }
                                 },
                                 {
                                     "name": "taf_consistency",
                                     "weight": 0.8,
                                     "params": {
-                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "executable": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
                                         "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
                                         "property": "taf_consistency"
                                     }
@@ -58,7 +67,7 @@
                                     "name": "novelty",
                                     "weight": 0.2,
                                     "params": {
-                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "executable": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
                                         "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
                                         "property": "novelty"
                                     }
@@ -67,7 +76,7 @@
                                     "name": "stereo_validity",
                                     "weight": 0.5,
                                     "params": {
-                                        "executable": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+                                        "executable": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
                                         "args": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
                                         "property": "stereo_validity"
                                     }

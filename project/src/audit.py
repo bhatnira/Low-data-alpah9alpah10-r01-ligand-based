@@ -212,13 +212,48 @@ class Auditor:
                 return "UNDETERMINED"
             return "ELEVATED-RISK" if np.mean(vals) < 0.62 else "NOT-TRIGGERED"
 
-        def _novelty_trigger(cand_):
-            if cand_ is None or "novelty" not in cand_:
+        def _library_trigger(lib_dir):
+            """Score the REAL REINVENT library: RDKit validity fraction vs
+            unrealistic-molecule gate. UNDETERMINED only when no library CSVs exist."""
+            if lib_dir is None or not lib_dir.exists():
                 return "UNDETERMINED"
-            nov = cand_["novelty"].dropna()
-            if len(nov) == 0:
+            files = sorted(lib_dir.glob("*/*_1.csv"))
+            if not files:
                 return "UNDETERMINED"
-            return "TRIGGERED" if nov.mean() < 0.3 else "NOT-TRIGGERED"
+            import rdkit
+            from rdkit import Chem
+            from rdkit.Chem import Descriptors, QED
+            valid, n = 0, 0
+            for f in files:
+                try:
+                    df = pd.read_csv(f)
+                except Exception:
+                    continue
+                for c in df.columns:
+                    if c.strip().upper().startswith("SMILES"):
+                        smi_col = c
+                        break
+                else:
+                    continue
+                for s in df[smi_col].dropna().astype(str):
+                    n += 1
+                    try:
+                        m = Chem.MolFromSmiles(s)
+                    except Exception:
+                        m = None
+                    if m is not None:
+                        try:
+                            if QED.qed(m) < 0.1:
+                                continue
+                        except Exception:
+                            pass
+                        valid += 1
+            if n == 0:
+                return "UNDETERMINED"
+            frac = valid / n
+            if frac < 0.80:
+                return "ELEVATED-RISK" if frac >= 0.60 else "TRIGGERED"
+            return "NOT-TRIGGERED"
 
         def _xai_stability_trigger(stab_):
             if stab_ is None:
@@ -233,6 +268,26 @@ class Auditor:
             if "classification" in stab_ and (stab_["classification"] == "UNSTABLE").any():
                 return "ELEVATED-RISK"
             return "NOT-TRIGGERED" if vals.iloc[0] >= 0.5 else "ELEVATED-RISK"
+
+        def _novelty_trigger(cand_):
+            """Mode 6 gate — did prospective candidates STAY in the original
+            chemical space? Uses the real `novelty` (0..1, higher = more outside
+            the training space) + nearest-neighbour Tanimoto on the frozen
+            prospective set. TRIGGERED only when the mean novelty clearly
+            exceeds the training-space envelope; UNDETERMINED only when the
+            prospective table lacks the columns entirely."""
+            if cand_ is None:
+                return "UNDETERMINED"
+            nov = cand_["novelty"].dropna() if "novelty" in cand_ else pd.Series(dtype=float)
+            if len(nov) == 0:
+                return "UNDETERMINED"
+            mean_nov = float(nov.mean())
+            # AD/nearest-neighbour corroboration if present
+            sim = (cand_["similarity_to_train_max"].dropna()
+                   if "similarity_to_train_max" in cand_ else pd.Series(dtype=float))
+            if len(sim) and float(sim.mean()) >= 0.40:
+                return "NOT-TRIGGERED"   # stays well inside training AD
+            return "TRIGGERED" if mean_nov >= 0.60 else "NOT-TRIGGERED"
 
         modes = [
             {
@@ -273,8 +328,8 @@ class Auditor:
             {
                 "mode": 5, "name": "reinvent_unrealistic_molecules",
                 "test": "REINVENT validity / QED / Salibury-ratio heuristics",
-                "evidence": "REINVENT binary: " + ("present" if _has("reinvent/out") else "NOT AVAILABLE"),
-                "triggered": "NOT_AVAILABLE-no_generated_molecules",
+                "evidence": "REINVENT: " + ("present" if _has("reinvent/out") else "NOT AVAILABLE"),
+                "triggered": _library_trigger(self._f("reinvent/out") if _has("reinvent/out") else None),
                 "alternative_strategy": ("apply RDKit sanity filters + medchem review gate "
                                         "before any synthesis nomination"),
             },

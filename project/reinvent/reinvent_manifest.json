@@ -8,18 +8,18 @@
     "taf_disrupting": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/taf_disrupting_staged_learning.toml"
   },
   "config_hashes": {
-    "de_novo": "a89581b241fe50f60c33a825125b423532b22027cb68d629080790f820f439b0",
-    "information_gain": "23d40360f88573b43bdf8d7a237a8f1aaed4937180fcf7dfb71aa6e40ef41311",
-    "local_analog": "298cdc0ab4bf50fccc997a6cb57fefd77260572c53a545164f945764049a7f37",
-    "local_analog_libinvent": "02b0b9f3ad1ef584335fc042e44cb692a1e60da0bee38933ce59573daddbc73a",
-    "scaffold_hopping": "473e350e16ec70c008301d49e5ad1560f19c039a858430f162c3cd4153920682",
-    "taf_disrupting": "16dc894fe3e142fcdc682ed2dd1e5dc7ee88a8e80ed8d28bb374c3b11201c48d"
+    "de_novo": "986da913c4ccce639dd44e76af1b9237af73a7320339ab80ae1a6baee90b9bdd",
+    "information_gain": "9343e780d38f750a27de464996f2a3ccef7e438ea73f81c46def4d1578d16609",
+    "local_analog": "d4c3f15681a58b6527e080f6128df93de19fae032a4dc83767b366005f8f7ab0",
+    "local_analog_libinvent": "c7d0684a5f9c49da7052b384b978129b28e2094728479963eb18db61cb66a3b1",
+    "scaffold_hopping": "7ec046dc144d499f9a14f57b8b852e3eb36703aa7c8ed6aca94a8683c7f95ad2",
+    "taf_disrupting": "9dea684766b8333b26ae78514f6bc5902cbc7bae1cda437424dff3d9e0575784"
   },
   "device_requested": "auto",
   "device_resolved": "cuda",
-  "fabrication_guard": "NO fabricated molecules: generated_molecules.csv holds 31397 real REINVENT4 outputs, ALL 'untested' / prospective. Docs must NOT claim experimental validation or clinical value.",
+  "fabrication_guard": "NO fabricated molecules: generated_molecules.csv holds 31474 real REINVENT4 outputs, ALL 'untested' / prospective. Docs must NOT claim experimental validation or clinical value.",
   "generated_molecules_file": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/generated_molecules.csv",
-  "n_generated": 31397,
+  "n_generated": 31474,
   "prior_source": "https://zenodo.org/records/20701824",
   "priors": {
     "libinvent": {
@@ -42,20 +42,20 @@
     }
   },
   "provenance": {
-    "config_hash": "ef25a7f0bc4a002ab3a352d42ad5b9d850387f7dce79196fc5748007f0d6e406",
+    "config_hash": "05bcbb61e76ffdc56987f329f4d971e537eec49f5ed0e012dc192bf8005cc01e",
     "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml",
-    "generated_at": "2026-09-10T23:15:33Z",
+    "generated_at": "2026-09-15T01:45:23Z",
     "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
     "input_hashes": {
       "n_mode_configs": 6,
       "n_prior_verified": 2
     },
     "module": "reinvent",
-    "numpy": "2.5.3",
+    "numpy": "1.26.4",
     "pandas": "3.0.5",
-    "python": "3.12.14",
-    "rdkit": "2026.03.6",
-    "scikit_learn": "1.9.1",
+    "python": "3.11.16",
+    "rdkit": "2026.03.5",
+    "scikit_learn": "1.6.1",
     "seeds": {
       "bootstrap": 42,
       "conformer_etkdgv3": 42,
@@ -73,67 +73,67 @@
     "de_novo": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/de_novo_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/de_novo_staged_learning.toml",
-      "finished_utc": "2026-09-10T22:14:01Z",
+      "finished_utc": "2026-09-15T00:52:43Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/de_novo.log",
       "mode": "de_novo",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:05:57Z",
+      "started_utc": "2026-09-15T00:46:20Z",
       "success": true
     },
     "information_gain": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/information_gain_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/information_gain_staged_learning.toml",
-      "finished_utc": "2026-09-10T22:46:08Z",
+      "finished_utc": "2026-09-15T01:18:40Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/information_gain.log",
       "mode": "information_gain",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:38:08Z",
+      "started_utc": "2026-09-15T01:12:05Z",
       "success": true
     },
     "local_analog": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/local_analog_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/local_analog_staged_learning.toml",
-      "finished_utc": "2026-09-10T22:22:05Z",
+      "finished_utc": "2026-09-15T00:59:08Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/local_analog.log",
       "mode": "local_analog",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:14:01Z",
+      "started_utc": "2026-09-15T00:52:43Z",
       "success": true
     },
     "local_analog_libinvent": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/local_analog_libinvent_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/local_analog_libinvent_staged_learning.toml",
-      "finished_utc": "2026-09-10T23:15:26Z",
+      "finished_utc": "2026-09-15T01:45:16Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/local_analog_libinvent.log",
       "mode": "local_analog_libinvent",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:46:08Z",
+      "started_utc": "2026-09-15T01:18:40Z",
       "success": true
     },
     "scaffold_hopping": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/scaffold_hopping_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/scaffold_hopping_staged_learning.toml",
-      "finished_utc": "2026-09-10T22:30:11Z",
+      "finished_utc": "2026-09-15T01:05:30Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/scaffold_hopping.log",
       "mode": "scaffold_hopping",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:22:05Z",
+      "started_utc": "2026-09-15T00:59:08Z",
       "success": true
     },
     "taf_disrupting": {
       "command": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/reinvent /cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/taf_disrupting_staged_learning.toml",
       "config": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/configs/taf_disrupting_staged_learning.toml",
-      "finished_utc": "2026-09-10T22:38:08Z",
+      "finished_utc": "2026-09-15T01:12:05Z",
       "log": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/logs/taf_disrupting.log",
       "mode": "taf_disrupting",
       "returncode": 0,
-      "started_utc": "2026-09-10T22:30:11Z",
+      "started_utc": "2026-09-15T01:05:30Z",
       "success": true
     }
   },
   "run_script": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/run_generation.sh",
   "run_status": "RUN_COMPLETED",
-  "scoring_python_resolved": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/pipeline312/bin/python",
+  "scoring_python_resolved": "/cluster/scratch/nbhatt04/conda/envs/polymer_ai/bin/python",
   "scoring_script": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/reinvent/score_lbm.py",
   "stereochemistry_note": "Only the Mol2Mol prior (reinvent_pubchem.prior) supports stereochemistry; LibInvent prior does not -> local_analog_libinvent config sets isomeric_smiles=false and drops stereo_validity endpoint."
 }

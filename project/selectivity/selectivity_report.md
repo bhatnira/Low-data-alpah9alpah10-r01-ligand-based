@@ -17,7 +17,7 @@ The compounds in `<repo>/otherModulators.csv` are modulators of **other** nAChR 
 
 ## 3. Frozen a9alpha10 model on the panel (selectivity baseline)
 
-- Mean predicted a9alpha10 PAM activity: **0.312** ± 0.057
+- Mean predicted a9alpha10 PAM activity: **0.208** ± 0.045
 - Fraction predicted active (>=0.5): **0.000**
 
 > Interpretation: the frozen a9alpha10 model was trained only on the ascorbate chemistry. A low predicted-activity / low blacklisted fraction for this panel is the desired selectivity behaviour; a high fraction means designed hits could cross-react. The 7 a9alpha10 actives (ascorbate core) should separate clearly from this panel.
@@ -26,21 +26,21 @@ The compounds in `<repo>/otherModulators.csv` are modulators of **other** nAChR 
 
 | panel_id | predicted_a9a10 | novelty | scaffold_in_a9a10 | source_label | subtype_note |
 |---|---|---|---|---|---|
-| NS-206.mol | 0.495 | 0.658 | 0 | 1.0 | alpha7 PAM (benzoxanthin/quinoxalinone NS series) |
-| 5,7-dihydroxy-4-phenylcoumarin.mol | 0.465 | 0.622 | 0 | 0.0 | flavonoid nAChR modulator |
-| Genistein.mol | 0.440 | 0.709 | 0 | 0.0 | isoflavone nAChR modulator (natural product) |
-| 5-hydroxyindole (5-HI).mol | 0.430 | 0.749 | 0 | 0.0 | alpha7 PAM (5-HI) |
-| 6.mol | 0.430 | 0.786 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| Quercetin.mol | 0.415 | 0.718 | 0 | 0.0 | flavonoid nAChR modulator (natural product) |
-| TBS-156.mol | 0.410 | 0.755 | 0 | 0.0 | alpha7 PAM (triazine-sulfonamide series) |
-| 5.mol | 0.400 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| Isoliquirigenin.mol | 0.400 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
-| RGM079.mol | 0.400 | 0.768 | 0 | 0.0 | flavonoid nAChR modulator |
-| NS-1738 (1).mol | 0.370 | 0.838 | 0 | 0.0 | alpha7 PAM (thiophene-urea) |
-| Struc12.mol | 0.365 | 0.790 | 0 | 0.0 | indole PAM series (a7-type) |
-| PAM-4.mol | 0.345 | 0.734 | 0 | 0.0 | alpha7 PAM (cinnamide NS-1738 analog) |
-| Struc3.mol | 0.345 | 0.884 | 0 | 0.0 | indole PAM series (a7-type) |
-| Com20.mol | 0.340 | 0.813 | 0 | 0.0 | indole PAM series (a7-type) |
+| 5,7-dihydroxy-4-phenylcoumarin.mol | 0.365 | 0.622 | 0 | 0.0 | flavonoid nAChR modulator |
+| NS-206.mol | 0.320 | 0.658 | 0 | 1.0 | alpha7 PAM (benzoxanthin/quinoxalinone NS series) |
+| Genistein.mol | 0.320 | 0.709 | 0 | 0.0 | isoflavone nAChR modulator (natural product) |
+| 5.mol | 0.290 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| Isoliquirigenin.mol | 0.290 | 0.783 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| 6.mol | 0.290 | 0.786 | 0 | 0.0 | chalcone nAChR modulator (natural product) |
+| 5-hydroxyindole (5-HI).mol | 0.280 | 0.749 | 0 | 0.0 | alpha7 PAM (5-HI) |
+| NS-1738 (1).mol | 0.275 | 0.838 | 0 | 0.0 | alpha7 PAM (thiophene-urea) |
+| RGM079.mol | 0.265 | 0.768 | 0 | 0.0 | flavonoid nAChR modulator |
+| TBS-156.mol | 0.265 | 0.755 | 0 | 0.0 | alpha7 PAM (triazine-sulfonamide series) |
+| Quercetin.mol | 0.265 | 0.718 | 0 | 0.0 | flavonoid nAChR modulator (natural product) |
+| Struc12.mol | 0.255 | 0.790 | 0 | 0.0 | indole PAM series (a7-type) |
+| PAM-4.mol | 0.245 | 0.734 | 0 | 0.0 | alpha7 PAM (cinnamide NS-1738 analog) |
+| 12a.mol | 0.240 | 0.782 | 0 | 1.0 | isoxazole-piperazine PAM series (a7-type) |
+| TQS.mol | 0.235 | 0.834 | 0 | 0.0 | alpha7 PAM (quinoxalin-2-one Type I/II) |
 
 ## 4. Chemotype (Bemis-Murcko) scan vs ascorbate candidates
 

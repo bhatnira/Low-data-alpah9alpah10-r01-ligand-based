@@ -1,7 +1,7 @@
 {
   "config_hash": "05bcbb61e76ffdc56987f329f4d971e537eec49f5ed0e012dc192bf8005cc01e",
   "config_path": "/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/configs/config.yaml",
-  "generated_at": "2026-09-10T23:28:17Z",
+  "generated_at": "2026-09-15T01:50:12Z",
   "git_commit": "NOT_A_GIT_REPO_OR_NOT_COMMITTED",
   "input_hashes": {
     "external": {
@@ -13,16 +13,17 @@
     "n_families": 8,
     "n_novel_scaffolds": 6,
     "tier_counts": {
-      "2": 8
+      "2": 7,
+      "3": 1
     },
     "tier_rule": "tier1 = novel Bemis-Murcko scaffold vs training; tier2 = known scaffold in hypothesis groups A/B/C/E; tier3 = residual uncertainty-reduction set (mostly F)"
   },
   "module": "library",
-  "numpy": "2.5.3",
+  "numpy": "1.26.4",
   "pandas": "3.0.5",
-  "python": "3.12.14",
-  "rdkit": "2026.03.6",
-  "scikit_learn": "1.9.1",
+  "python": "3.11.16",
+  "rdkit": "2026.03.5",
+  "scikit_learn": "1.6.1",
   "seeds": {
     "bootstrap": 42,
     "conformer_etkdgv3": 42,

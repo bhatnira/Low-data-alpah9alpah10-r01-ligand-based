@@ -1,0 +1,44 @@
+2026-09-14 19:34:20,508 | INFO | === Generated-library downstream triage ===
+2026-09-14 19:34:23,523 | INFO | === Generated-library QC (sect. 30) ===
+2026-09-14 19:34:45,819 | INFO | QC: {'N_generated': 31397, 'N_valid': 31397, 'N_unique': 31397, 'N_stereo_valid': 27120, 'N_duplicate': 0}
+2026-09-14 19:34:45,820 | INFO | === Scoring generated library (potency / uncertainty / AD) ===
+2026-09-14 19:35:42,296 | INFO |   scored 0/31397
+2026-09-14 19:35:44,861 | INFO |   scored 5000/31397
+2026-09-14 19:35:47,312 | INFO |   scored 10000/31397
+2026-09-14 19:35:49,887 | INFO |   scored 15000/31397
+2026-09-14 19:35:52,483 | INFO |   scored 20000/31397
+2026-09-14 19:35:55,013 | INFO |   scored 25000/31397
+2026-09-14 19:35:57,576 | INFO |   scored 30000/31397
+2026-09-14 19:35:58,513 | INFO | scored 31397 molecules
+2026-09-14 19:35:58,547 | INFO | === Synthetic feasibility (SAScore proxy, sect. 33) ===
+2026-09-14 19:36:59,296 | INFO | === Systemic ADME proxies (sect. 39-40) ===
+2026-09-14 19:37:30,084 | INFO | === Systemic toxicology screen (sect. 41) ===
+2026-09-14 19:39:50,416 | INFO | === Local cochlear / hair-cell safety screen (sect. 42-44) ===
+2026-09-14 19:40:19,236 | INFO | === Cochlear delivery proxies (sect. 34-38) ===
+2026-09-14 19:40:43,178 | INFO | === Final selectivity filter (sect. 45-47) ===
+2026-09-14 19:40:44,236 | INFO | === Final multi-axis candidate portfolio + tiers (sect. 48-53, 83) ===
+2026-09-14 19:40:46,539 | INFO | active+in-domain+confident pool: 0
+2026-09-14 19:41:18,075 | INFO | final portfolio: 100 molecules across tiers {'Tier3_exploratory': 47, 'EXCLUDE_OR_HOLD': 28, 'Tier2_mechanistically_informative': 25}
+2026-09-14 19:41:18,087 | INFO | structure_based_handoff.csv written (100 rows)
+2026-09-14 21:45:37,922 | INFO | === Generated-library downstream triage ===
+2026-09-14 21:45:40,427 | INFO | === Generated-library QC (sect. 30) ===
+2026-09-14 21:45:56,804 | INFO | QC: {'N_generated': 31474, 'N_valid': 31474, 'N_unique': 31474, 'N_stereo_valid': 26868, 'N_duplicate': 0}
+2026-09-14 21:45:56,806 | INFO | === Scoring generated library (potency / uncertainty / AD) ===
+2026-09-14 21:46:34,888 | INFO |   scored 0/31474
+2026-09-14 21:46:36,611 | INFO |   scored 5000/31474
+2026-09-14 21:46:38,255 | INFO |   scored 10000/31474
+2026-09-14 21:46:39,856 | INFO |   scored 15000/31474
+2026-09-14 21:46:41,512 | INFO |   scored 20000/31474
+2026-09-14 21:46:43,150 | INFO |   scored 25000/31474
+2026-09-14 21:46:44,791 | INFO |   scored 30000/31474
+2026-09-14 21:46:45,477 | INFO | scored 31474 molecules
+2026-09-14 21:46:45,487 | INFO | === Synthetic feasibility (SAScore proxy, sect. 33) ===
+2026-09-14 21:47:25,816 | INFO | === Systemic ADME proxies (sect. 39-40) ===
+2026-09-14 21:47:42,527 | INFO | === Systemic toxicology screen (sect. 41) ===
+2026-09-14 21:49:26,747 | INFO | === Local cochlear / hair-cell safety screen (sect. 42-44) ===
+2026-09-14 21:49:41,817 | INFO | === Cochlear delivery proxies (sect. 34-38) ===
+2026-09-14 21:49:53,154 | INFO | === Final selectivity filter (sect. 45-47) ===
+2026-09-14 21:49:53,830 | INFO | === Final multi-axis candidate portfolio + tiers (sect. 48-53, 83) ===
+2026-09-14 21:49:55,477 | INFO | active+in-domain+confident pool: 0
+2026-09-14 21:50:11,240 | INFO | final portfolio: 100 molecules across tiers {'Tier3_exploratory': 42, 'EXCLUDE_OR_HOLD': 41, 'Tier2_mechanistically_informative': 17}
+2026-09-14 21:50:11,250 | INFO | structure_based_handoff.csv written (100 rows)

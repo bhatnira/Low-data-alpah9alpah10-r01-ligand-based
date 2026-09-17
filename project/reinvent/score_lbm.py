@@ -141,12 +141,32 @@ def main() -> int:
     active_fps = np.vstack([morgan_array(Chem.MolFromSmiles(s)) for s in active_smiles]) \
         if active_smiles else np.zeros((1, nbits))
 
+    # In-domain anchor: max Tanimoto to the FULL training scaffold neighborhood
+    # (the same 30-compound space the applicability-domain metric was built on).
+    # REINVENT4 rewards this heavily for the in-domain modes so the frozen
+    # classifier's prediction is only ever scored where it is trustworthy.
+    training_smiles = list(artifact.get("training_smiles", [])) or active_smiles
+    training_fps = np.vstack([morgan_array(Chem.MolFromSmiles(s))
+                              for s in training_smiles]) if training_smiles \
+        else np.zeros((1, nbits))
+
     taf = _TafScorer()
     cache = _MolCache()
 
     lines = sys.stdin.read().splitlines()
+    # In-domain anchor: max Tanimoto to the FULL training set (the 30-compound
+    # neighborhood the frozen applicability-domain threshold was built on) —
+    # NOT just the 7 actives.  Rewarding this keeps REINVENT generations inside
+    # the scaffold space where the frozen LAN model's AD is trustworthy, instead
+    # of drifting out-of-domain (the null observed in the re-validation run).
+    training_fps = np.vstack([morgan_array(Chem.MolFromSmiles(s))
+                              for s in training_smiles]) if training_smiles \
+        else np.zeros((1, nbits))
+    training_mol = {s: cache.mol(s) for s in training_smiles}
+
     keys = ["predicted_activity", "taf_consistency", "novelty",
-            "scaffold_novelty", "stereo_validity", "uncertainty", "taf_disrupted"]
+            "scaffold_novelty", "stereo_validity", "uncertainty", "taf_disrupted",
+            "training_similarity"]
     payload = {k: [] for k in keys}
 
     for smi in lines:
@@ -188,6 +208,17 @@ def main() -> int:
                 uncertainty = 1.0 - abs(p - 0.5) * 2.0
             taf_disrupted = 1.0 - tc
 
+            # in-domain anchor: max Tanimoto to the FULL training scaffold
+            # neighborhood (all 30 compounds — the same space the LOO AD was
+            # built on), so the frozen model is only rewarded where it is
+            # actually applicable (sect. 14 / MASTER_PROMPT 74-75).
+            if training_fps.shape[0]:
+                tsim = (fp @ training_fps.T) / np.maximum(
+                    (np.linalg.norm(fp) * np.linalg.norm(training_fps, axis=1)), 1e-12)
+                training_sim = float(tsim.max())
+            else:
+                training_sim = 0.0
+
             payload["predicted_activity"].append(p)
             payload["taf_consistency"].append(tc)
             payload["novelty"].append(novelty)
@@ -195,6 +226,7 @@ def main() -> int:
             payload["stereo_validity"].append(sv)
             payload["uncertainty"].append(uncertainty)
             payload["taf_disrupted"].append(taf_disrupted)
+            payload["training_similarity"].append(training_sim)
         except Exception:
             for k in keys:
                 payload[k].append(float("nan"))

@@ -329,27 +329,50 @@ class Validator:
         return summary
 
     def applicability_domain(self, df: pd.DataFrame, sim_matrix: np.ndarray) -> pd.DataFrame:
-        """Threshold distance-based AD: IN/NEAR/OUT based on training-set coverage."""
-        self.log.step("Applicability domain (section 10)")
+        """Threshold distance-based AD with four explicit classes.
+
+        Leave-one-out nearest-neighbour distances are computed with the self
+        similarity (diagonal) explicitly masked, so a compound cannot be
+        declared IN_DOMAIN simply because it is present in the training set
+        (MASTER_PROMPT sect. 14: no self-similarity contamination).
+
+        Classes:
+          IN_DOMAIN      - min distance to any training compound < 0.35
+          BORDERLINE     - min distance to any training compound < 0.6 OR
+                           min distance to an active < 0.45
+          OUT_OF_DOMAIN  - otherwise
+          UNKNOWN        - no valid training distance could be computed
+        """
+        self.log.step("Applicability domain (LOO, self-similarity masked, 4-state)")
         y = df["is_active"].to_numpy()
         active_ids = np.where(y == 1)[0]
         rows = []
         for i in range(len(df)):
             d = 1 - sim_matrix[i, :]
-            d_active = float(d[active_ids].min() if len(active_ids) else np.nan)
-            d_any = float(d.min())
-            med_active = float(np.median(d[active_ids])) if len(active_ids) else np.nan
-            if d_any < 0.35:
-                ad = "IN-DOMAIN"
-            elif d_any < 0.6 or d_active < 0.45:
-                ad = "NEAR-DOMAIN"
+            mask = np.ones(len(df), dtype=bool)
+            mask[i] = False  # exclude self (sect. 14 no-self-similarity)
+            d_nn = d[mask]
+            if len(d_nn) == 0 or np.isinf(d_nn.min()):
+                ad = "UNKNOWN"
+                d_any = np.nan
+                d_active = np.nan
+                med_active = np.nan
             else:
-                ad = "OUT-OF-DOMAIN"
+                d_any = float(d_nn.min())
+                active_mask = np.intersect1d(np.where(mask)[0], active_ids)
+                d_active = float(d[active_mask].min()) if len(active_mask) else np.nan
+                med_active = float(np.median(d[active_mask])) if len(active_mask) else np.nan
+                if d_any < 0.35:
+                    ad = "IN_DOMAIN"
+                elif d_any < 0.6 or (np.isfinite(d_active) and d_active < 0.45):
+                    ad = "BORDERLINE"
+                else:
+                    ad = "OUT_OF_DOMAIN"
             rows.append({
                 "compound_id": int(df.iloc[i]["Identifier"]),
-                "min_distance_to_any": round(d_any, 4),
-                "min_distance_to_active": round(d_active, 4) if not np.isnan(d_active) else np.nan,
-                "median_distance_to_active": round(med_active, 4) if not np.isnan(med_active) else np.nan,
+                "min_distance_to_any": round(d_any, 4) if np.isfinite(d_any) else np.nan,
+                "min_distance_to_active": round(d_active, 4) if np.isfinite(d_active) else np.nan,
+                "median_distance_to_active": round(med_active, 4) if np.isfinite(med_active) else np.nan,
                 "applicability_domain": ad,
                 "is_active": int(y[i]),
             })
@@ -393,8 +416,11 @@ class Validator:
         rows = []
         for i in range(len(df)):
             d = 1 - sim_matrix[i, :]
-            d_any = float(d.min())
-            d_active = float(d[active_ids].min()) if len(active_ids) else np.nan
+            mask = np.ones(len(df), dtype=bool)
+            mask[i] = False  # exclude self (sect. 14 no-self-similarity)
+            d_any = float(d[mask].min())
+            d_active_ids = np.intersect1d(np.where(mask)[0], active_ids)
+            d_active = float(d[d_active_ids].min()) if len(d_active_ids) else np.nan
             rows.append({
                 "compound_id": int(df.iloc[i]["Identifier"]),
                 "predictive_uncertainty": round(float(predictive_unc[i]), 4),

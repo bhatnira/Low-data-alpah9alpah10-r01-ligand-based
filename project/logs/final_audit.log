@@ -489,3 +489,110 @@ unambiguous_causality        0   CLEAR
      certainly_active        0   CLEAR
 unambiguous_causality        0   CLEAR
 2026-09-10 19:28:18,021 | INFO | {'PENDING_REVIEW': 6}
+2026-09-14 19:41:20,022 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 19:41:20,029 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 19:41:20,061 | INFO |  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+2026-09-14 19:41:20,175 | INFO |          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+2026-09-14 19:41:20,185 | INFO | {'PENDING_REVIEW': 6}
+2026-09-14 21:50:12,975 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 21:50:12,990 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 21:50:13,030 | INFO |  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+2026-09-14 21:50:13,203 | INFO |          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+2026-09-14 21:50:13,211 | INFO | {'PENDING_REVIEW': 6}
+2026-09-14 22:17:58,643 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 22:17:58,649 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 22:17:58,695 | INFO |  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules       NOT_AVAILABLE-no_generated_molecules
+            6               generated_stay_in_original_space                              NOT-TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+2026-09-14 22:17:58,788 | INFO |          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+2026-09-14 22:17:58,797 | INFO | {'PENDING_REVIEW': 6}
+2026-09-14 22:29:56,462 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 22:29:56,468 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 22:36:16,185 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 22:36:16,191 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 22:37:41,841 | INFO |  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules                              NOT-TRIGGERED
+            6               generated_stay_in_original_space                                  TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+2026-09-14 22:37:41,928 | INFO |          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+2026-09-14 22:37:41,937 | INFO | {'PENDING_REVIEW': 6}
+2026-09-14 22:41:54,713 | INFO | === Data leakage audit (section 40) ===
+2026-09-14 22:41:54,720 | INFO | === Final 18-question audit (section 51) ===
+2026-09-14 22:43:20,118 | INFO |  failure_mode                                           name                                  triggered
+            1            small_dataset_limits_generalization                              NOT-TRIGGERED
+            2                     tafs_are_scaffold_specific                               UNDETERMINED
+            3                      xai_explanations_unstable                              ELEVATED-RISK
+            4                 structural_hypotheses_disagree        NOT_AVAILABLE-no_structural_outputs
+            5                 reinvent_unrealistic_molecules                              NOT-TRIGGERED
+            6               generated_stay_in_original_space                                  TRIGGERED
+            7        predicted_activity_fails_experimentally                         PENDING_EXPERIMENT
+            8            medchem_baseline_equals_or_beats_ai                               UNDETERMINED
+            9        experimental_sar_has_genuine_exceptions contradictions_logged_as_context_dependent
+           10 activity_depends_on_unmodeled_receptor_context                         UNKNOWN-unmeasured
+2026-09-14 22:43:20,196 | INFO |          phrase_class  matches verdict
+      proves_activity        0   CLEAR
+    confirms_activity        0   CLEAR
+  guarantees_activity        0   CLEAR
+       will_be_active        0   CLEAR
+     certainly_active        0   CLEAR
+unambiguous_causality        0   CLEAR
+2026-09-14 22:43:20,205 | INFO | {'PENDING_REVIEW': 6}

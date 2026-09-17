@@ -1,0 +1,2 @@
+== create reinvent312 venv on login (internet OK) ==
+Error: [Errno 26] Text file busy: '/cluster/home/nbhatt04/Low-data-alpah9alpah10-r01-ligand-based/project/venvs/reinvent312/bin/python'

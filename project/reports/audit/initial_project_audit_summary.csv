@@ -1,6 +1,6 @@
 component,status,n
 experimental_datasets,EXISTS,10
 model_artifacts,EXISTS,4
-scripts_modules,EXISTS,25
-reports_artifacts,EXISTS,138
+scripts_modules,EXISTS,27
+reports_artifacts,EXISTS,147
 structural_models,ANY_AVAILABLE,1

@@ -54,3 +54,10 @@
 2026-09-10 19:28:17,537 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
 2026-09-10 19:28:17,544 | INFO | targets from prospective/round1_plan.csv: 7
 2026-09-10 19:28:17,569 | INFO | 0 PREDICTED_ROUTE rows over 0 targets; clean routes for 0 (targets=7)
+2026-09-14 19:41:19,473 | INFO | === Synth route prediction for round 1 ===
+2026-09-14 19:41:19,662 | WARNING | AIZynthFinder/models NOT AVAILABLE - no route predictions written (honest skips, no fabrication)
+2026-09-14 19:41:19,666 | INFO | targets from prospective/round1_plan.csv: 8
+2026-09-14 19:41:19,696 | INFO | 0 PREDICTED_ROUTE rows over 0 targets; clean routes for 0 (targets=8)
+2026-09-14 23:48:04,928 | INFO | Phase 13c synthetic-route prioritization: n=17 priority={'D_DEPRIORITIZE': 9, 'A_SYNTHESIZE': 6, 'B_SYNTHESIZE_IF_CAPACITY': 2} -> synthesis_route_prioritization.csv
+2026-09-14 23:49:44,367 | INFO | Phase 13c synthetic-route prioritization: n=17 priority={'D_DEPRIORITIZE': 9, 'A_SYNTHESIZE': 6, 'B_SYNTHESIZE_IF_CAPACITY': 2} -> synthesis_route_prioritization.csv
+2026-09-14 23:50:40,484 | INFO | Phase 13c synthetic-route prioritization: n=17 priority={'A_SYNTHESIZE': 11, 'B_SYNTHESIZE_IF_CAPACITY': 6} -> synthesis_route_prioritization.csv
