@@ -205,7 +205,7 @@ parallel, not as sequential aims):
     boost, scaffold-capped); consensus explanations flag which proposed edit is
     expected to drive potency; planned synthetic probes are prioritized by
     route-prediction decision support (phase 4c). Responsibly scoped: REINVENT4
-    generated 31,397 molecules across six modes (de_novo, information_gain,
+    generated 31,474 molecules across six modes (de_novo, information_gain,
     local_analog, local_analog_libinvent, scaffold_hopping, taf_disrupting; all
     in silico, untested; RUN_COMPLETED, never fabricated; reinvent_manifest.json),
     so the current prospective set derives from the traditional
@@ -494,7 +494,7 @@ medicinal chemist at the oversight gate.
 
 Structural models. AF3 binding model in validation phase (co-PI laboratory);
 ingestion hook implemented in src/structures.py; will provide TAF-6
-binding-mode features when validated. REINVENT4: 31,397 molecules generated
+binding-mode features when validated. REINVENT4: 31,474 molecules generated
 (in silico, untested, RUN_COMPLETED on GPU) - reported with provenance, not fabricated.
 
 3.3.2 Aim 1 - Medicinal-chemistry-driven analog program with computational/AI
@@ -575,7 +575,7 @@ CH2 or N). These probe the C2=C3 enediol requirement (currently UNTESTED in
 the dataset) and deliver the aza/deoxy chemotypes flagged as de-prioritized
 by brute force but potentially functionally relevant to this target.
 
-(b) REINVENT4 generation: 31,397 molecules generated across six modes
+(b) REINVENT4 generation: 31,474 molecules generated across six modes
 (de_novo, information_gain, local_analog, local_analog_libinvent, scaffold_hopping,
 taf_disrupting; all in silico, untested; RUN_COMPLETED; reinvent_manifest.json);
 any generated molecules must pass the same
@@ -709,7 +709,7 @@ functionally relevant series (med-chem review); route planner coverage gaps
 (phase 4c planned behavior, once live: NO_ROUTE_FOUND targets reported with
 probabilities, then routed by the
 medicinal chemist, not silently claimed); generative-AI absence (REINVENT4
-generation completed and archived (binary present, 31,397 molecules, 6 modes,
+generation completed and archived (binary present, 31,474 molecules, 6 modes,
 RUN_COMPLETED) - molecule output is reported as prospective, never fabricated; med-chem
 enumeration carries the analog expansion until generator output is usable);
 synthesis difficulty in the constrained rigid series (Studies 1.2/1.5) - if a

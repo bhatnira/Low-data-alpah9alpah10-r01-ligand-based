@@ -103,7 +103,7 @@ repository; the co-PI laboratory is validating Alphafold3 binding models for the
 ascorbate-PAM series (ingestion hook in src/structures.py ready to integrate as
 TAF-6 binding-mode features when validated). REINVENT4 generation COMPLETED on
 GPU: six run-mode configs were written and executed (RUN_COMPLETED); the
-pooled, deduplicated generation set is 31,397 unique canonical molecules from
+pooled, deduplicated generation set is 31,474 unique canonical molecules from
 the five Mol2Mol modes (de novo, information_gain, local_analog,
 scaffold_hopping, taf_disrupting; per-mode counts 6,314 / 6,277 / 6,273 /
 6,308 / 6,225); the LibInvent mode (local_analog_libinvent) also ran and its
@@ -323,7 +323,7 @@ scaffold_out, bootstrap, permutation).
   columns (molecule_id, parent, generation_mode, source, created_at) present.
 
 5.8 Chemical-space expansion.
-  - generated count 31,397 unique canonical molecules pooled from the 5
+  - generated count 31,474 unique canonical molecules pooled from the 5
     Mol2Mol REINVENT4 modes (de novo, information_gain, local_analog,
     scaffold_hopping, taf_disrupting); the LibInvent mode also ran and
     its raw outputs are retained under reinvent/out/local_analog_libinvent/
@@ -345,7 +345,7 @@ scaffold_out, bootstrap, permutation).
 ================================================================================
 Leakage controls (all explicitly checked, none severe):
   - no duplicate molecule across splits
-  - generated_molecules.csv (31,397 REINVENT4 molecules,
+  - generated_molecules.csv (31,474 REINVENT4 molecules,
     experimental_status=untested) exists but is NOT mixed into training (REVIEW
     flag)
   - no experimental-outcome leakage (0 round files exist; confirmatory cycle
@@ -403,7 +403,7 @@ Falsification criteria (pre-written, per TAF, tested BEFORE results are seen):
  8. GENERATIVE CHEMISTRY INTEGRATIONS
 ================================================================================
 REINVENT4 (Phase 9-11).
-  - Status: six run-mode configs written and checksum-validated; binary present -> generation run (RUN_COMPLETED); 31,397 molecules pooled from the five Mol2Mol modes (the LibInvent mode also ran; outputs retained under reinvent/out/local_analog_libinvent/, not in the pool); no molecules fabricated.
+  - Status: six run-mode configs written and checksum-validated; binary present -> generation run (RUN_COMPLETED); 31,474 molecules pooled from the five Mol2Mol modes (the LibInvent mode also ran; outputs retained under reinvent/out/local_analog_libinvent/, not in the pool); no molecules fabricated.
   - Priors: reinvent_pubchem.prior (Mol2Mol), libinvent.prior; both
     checksum-verified against Zenodo record 20701824.
   - Stereochemistry: only the Mol2Mol prior supports stereo; isomeric_smiles
@@ -480,7 +480,7 @@ Failure-mode analysis (10 explicit modes; determinations from real evidence).
                                                outputs)
   5 reinvent_unrealistic_molecules             NOT-TRIGGERED (collection keeps
                                                only RDKit-valid canonical SMILES;
-                                               31,397 molecules; invalid dropped,
+                                               31,474 molecules; invalid dropped,
                                                nothing fabricated)
   6 generated_stay_in_original_space           NOT-TRIGGERED (scaffold/chemical-
                                                distance metrics present)
@@ -621,7 +621,7 @@ Implemented and verified this cycle:
   enrichment factor at top-k, precision@k, and BH-FDR where replicate
   p-values exist - populated when round results land.
 - Data watch (loop/data_watch.json): honest availability scan. Six REINVENT
-  strategy directories populated; 31,397 molecules ingested
+  strategy directories populated; 31,474 molecules ingested
   (reinvent_ingest: "ingested 31397 molecules"; per-mode: de_novo 6314,
   information_gain 6277, local_analog 6273, scaffold_hopping 6308,
   taf_disrupting 6225). The LibInvent strategy also ran but is outside the
@@ -688,7 +688,7 @@ in the closed-loop system rather than by an overclaim:
    for the ascorbate-PAM series) to upgrade TAF-6 and provide a structural
    hypothesis layer (currently NOT AVAILABLE; ingestion hook in src/structures.py).
 4. REINVENT4 generation now complete (Mol2Mol prior, stereo-aware; LibInvent
-   config without stereo endpoint): 31,397 molecules, RUN_COMPLETED on GPU;
+   config without stereo endpoint): 31,474 molecules, RUN_COMPLETED on GPU;
    generated-molecule novelty/SAR-space metrics are populated from real
    generation (chemical_space/chemical_space_report.csv).
 5. Definitively test TAF-4 (stereo) with the designed enantiomeric/

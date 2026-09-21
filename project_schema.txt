@@ -63,7 +63,7 @@ ligand-based-modeling/
     │
     ├── screening/
     │   ├── purchasable/                     # (Reserved for library screening)
-    │   └── reinvent/                        # REINVENT4 output (see project/reinvent/: 6 mode dirs, 31,397 collected)
+    │   └── reinvent/                        # REINVENT4 output (see project/reinvent/: 6 mode dirs, 31,474 collected)
     │
     ├── candidates/                          # candidate portfolio A-F (15 unique molecules)
     │

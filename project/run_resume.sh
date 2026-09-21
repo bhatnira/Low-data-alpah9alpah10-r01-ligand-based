@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Resume: downstream phases (chemspace -> reports) on the 31,397-molecule
+# Resume: downstream phases (chemspace -> reports) on the 31,474-molecule
 # REINVENT pass-2 set, then tests + doc sync + residual sentinel check.
 #SBATCH --job-name=lbm-resume
 #SBATCH --partition=batch

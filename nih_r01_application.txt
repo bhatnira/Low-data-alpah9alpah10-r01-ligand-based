@@ -584,7 +584,7 @@ testing on structurally distinct scaffolds.
 COMPOUNDS (not biological subjects):
 
   Training set: 30 compounds (7 active, 23 inactive)
-  Generated set: 31,397 compounds (REINVENT 4, six run modes; all
+  Generated set: 31,474 compounds (REINVENT 4, six run modes; all
     in silico, untested; RUN_COMPLETED - see reinvent_manifest.json)
   Candidate portfolio: 15 unique molecules (9 chemistry-validated analogs + 6
     negative controls; 34 assignment rows across portfolio groups A-F)
@@ -712,7 +712,7 @@ generative design.
 Sub-aim 2a: Purchasable Library Screening (NOT EXECUTED in the current
 build: no ZINC22/Enamine library screen was run. Vestigial from the earlier
 v1 scope - the realized candidate supply is the MMP-guided medchem baseline
-(97 enumerated / 11 chemistry-valid) and REINVENT4 generation (31,397, all
+(97 enumerated / 11 chemistry-valid) and REINVENT4 generation (31,474, all
 in silico, untested). Kept here as the original plan; superseded by v2.)
 
   Step 2.1: Database Acquisition
@@ -765,7 +765,7 @@ Sub-aim 2b: REINVENT 4 Generative Design
 
   Step 2.7: Generation and Selection
     - Generate ~6,000-6,300 molecules per pooled mode (six modes written and
-      run; 31,397 total, all in silico, untested; RUN_COMPLETED)
+      run; 31,474 total, all in silico, untested; RUN_COMPLETED)
     - Apply filters (validity, drug-likeness, TAF threshold)
     - Multi-objective scoring
     - Select top 30-50 compounds
