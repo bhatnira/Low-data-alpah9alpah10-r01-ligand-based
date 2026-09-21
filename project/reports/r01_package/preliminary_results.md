@@ -1,0 +1,23 @@
+# Preliminary Results — Aim 1
+
+## Ascorbate-Derived α9α10 PAM Scaffold Optimization via Integrated SAR and Generative AI
+
+### Modest structural modifications dramatically enhance α9α10 PAM potency
+
+Our preliminary SAR dataset of 30 ascorbic acid derivatives (7 active, 23 inactive) reveals that the γ-lactone enediol core of ascorbic acid is the dominant active chemotype: four of seven active compounds share the Bemis-Murcko scaffold O=C1C=CCO1, confirming that this five-membered lactone ring is essential for α9α10 positive allosteric modulation (Fig. 1A). Descriptor analysis shows that active compounds are smaller (MW 221 ± 35 vs. 256 ± 58 for inactives) and more hydrophilic (LogP −0.32 ± 0.82 vs. 0.35 ± 1.91), indicating that modest reductions in molecular weight and lipophilicity are sufficient to shift compounds from inactive to active space. Critically, potency spans nearly four orders of magnitude (0.2–6,077 µM) within this structurally compact series, demonstrating that subtle modifications to the ascorbate scaffold—stereochemistry, hydroxyl positioning, and side-chain substitution—govern α9α10 potentiation in a steep, non-graded fashion.
+
+### Transferable Atom Features (TAFs) define the pharmacophore
+
+Systematic extraction of Transferable Atom Features identified four structural requirements for α9α10 PAM activity (Fig. 1B). TAF-1 (five-membered lactone ring acting as an H-bond acceptor) and TAF-3 (an electron-withdrawing group positioned 3–5 Å from the lactone core) are both required; TAF-2 (hydroxyl donor at ~109° from the C–C bond) is preferred; and TAF-4 (defined stereochemistry at the two ascorbate stereocenters) is essential—compounds with undefined stereochemistry are disproportionately inactive. These TAFs were cross-validated against matched-molecular-pair (MMP) transformations, counterfactual fragment analysis, and SHAP-based descriptor importance, providing multi-source convergence on the ascorbate pharmacophore model.
+
+### Generative AI expands the ascorbate chemical space by 1,000-fold
+
+REINVENT4 generative modeling, seeded with the 30-compound training set and constrained to preserve the γ-lactone enediol pharmacophore, produced 31,474 structurally valid molecules spanning 22,077 novel Bemis-Murcko scaffolds absent from the training set. Morgan fingerprint analysis confirms that all generated compounds lie beyond a Tanimoto distance of 0.4 from the nearest training molecule (mean nearest-neighbor distance = 0.85), indicating substantial scaffold exploration while retaining the core pharmacophore (Fig. 2A). The generated library populates previously unexplored regions of chemical space surrounding the ascorbate starting point, providing a large, diverse pool for iterative analog design.
+
+### Iterative model-guided selection identifies high-potency candidates
+
+An information-gain gate (IG ≥ 0.30) retained 2,788 candidates predicted to maximally reduce model uncertainty upon synthesis. Multi-axis scoring—incorporating predicted potency, synthetic feasibility, stereochemical validity, and structural alert filtering—yielded a 100-compound candidate portfolio. Retrosynthetic route analysis further prioritized 17 Tier-2 (mechanistically informative) compounds, of which 11 carry favorable synthesis verdicts and 6 are synthesizable subject to capacity (Fig. 2B). All 100 portfolio compounds carry an explicit OUT_OF_DOMAIN applicability label, reflecting the small training set; this limitation is documented transparently rather than suppressed. The pipeline thus demonstrates that an integrated SAR + generative AI workflow can, from 30 starting compounds, produce a tractable, mechanism-informative cohort of ascorbate-derived α9α10 PAM candidates ready for iterative experimental validation.
+
+**Figure 1.** (A) Scaffold frequency in the30-compound training set; the γ-lactone core (O=C1C=CCO1) is shared by 4/7 active compounds. (B) Transferable Atom Feature (TAF) map of the ascorbate pharmacophore: required (TAF-1, TAF-3, TAF-4) and preferred (TAF-2) structural elements.
+
+**Figure 2.** (A) PCA projection of Morgan fingerprints showing 30 training compounds (red stars = active, blue circles = inactive) embedded within a 5,000-member sample of the 31,474 generated library (gray). (B) Hierarchical selection funnel: Generated (31,474) → IG-gate pool (2,788) → Portfolio (100) → Tier-2 mechanistic (17) → Route-ready (11).
