@@ -1,0 +1,709 @@
+# ARM 3 — Adaptive SAR Modeling, Compound Screening, and Generative-Design Guidance
+
+## Objective
+
+Develop a third, adaptive computational arm that becomes active only after the α9α10 nAChR PAM experimental dataset has become sufficiently enriched to support statistically defensible SAR modeling.
+
+Arm 3 will:
+
+1. build quantitative SAR models from experimentally characterized compounds;
+2. rigorously validate their ability to distinguish active and inactive compounds;
+3. screen external or internally generated compound libraries;
+4. prioritize compounds for experimental testing;
+5. provide a quantitative predictive signal to REINVENT4 in Arm 2;
+6. continuously retrain and revalidate as new experimental data are obtained.
+
+Arm 3 is a **predictive modeling and screening layer**.
+
+It must not replace experimental validation or the transparent SAR interpretation performed by Arm 1.
+
+---
+
+# 1. Activation criterion
+
+Do NOT activate Arm 3 simply because a fixed number of compounds has been reached.
+
+Define a prospective activation gate before model training.
+
+The gate should consider:
+
+* total experimentally characterized compounds
+* number of actives
+* number of inactives
+* number of independent chemical series/scaffolds
+* number of informative matched molecular pairs
+* chemical-space coverage
+* activity-label quality
+* duplicate rate
+* assay consistency
+* stereochemical coverage
+* scaffold diversity
+
+The activation criterion must be frozen before evaluating the model.
+
+Example operational criterion:
+
+> Activate quantitative SAR modeling only when the dataset contains sufficient numbers of experimentally characterized active and inactive compounds distributed across multiple chemical contexts/scaffolds to support held-out validation.
+
+The exact threshold should be determined from the actual dataset rather than assuming that a particular compound count automatically makes the model reliable.
+
+---
+
+# 2. Shared experimental state
+
+Arm 3 must consume the same immutable experimental dataset used by Arm 1 and Arm 2.
+
+Example:
+
+`experimental_v20`
+
+must simultaneously define:
+
+* Arm-1 SAR state
+* Arm-2 generation state
+* Arm-3 modeling state
+
+Never allow the three arms to use different definitions of the experimental dataset.
+
+---
+
+# 3. Experimental ground truth
+
+Use only experimentally characterized compounds for supervised training.
+
+The activity definition must remain locked:
+
+`active = potency > 0 AND potentiation > 0`
+
+Preserve the underlying continuous measurements whenever available.
+
+Do not treat generated compounds, docking predictions, Boltz predictions, or untested compounds as labeled training examples.
+
+---
+
+# 4. Data splitting
+
+Prevent chemical-information leakage.
+
+Do not rely only on random train/test splitting.
+
+Use:
+
+### Scaffold split
+
+Hold out chemically distinct scaffolds.
+
+### Series-aware split
+
+Keep closely related analogs together where appropriate.
+
+### Leave-one-series-out validation
+
+When enough independent series exist, evaluate whether the model generalizes beyond individual medicinal-chemistry series.
+
+### Temporal prospective validation
+
+Once the adaptive loop begins, compounds designed in one round must be evaluated using models trained only on information available before that round.
+
+This is the most important validation mechanism for the final closed-loop system.
+
+---
+
+# 5. Model development
+
+Once the activation criterion is met, evaluate a small set of appropriate classical QSAR models.
+
+Candidate model families may include:
+
+* regularized linear models
+* random forest
+* gradient-boosted trees
+* support-vector machines
+* calibrated ensemble models
+
+Do not automatically assume that a more complex model is better.
+
+Model selection must be based on held-out performance and robustness.
+
+The model must remain secondary to experimental evidence.
+
+---
+
+# 6. Molecular representations
+
+Evaluate representations appropriate for the available dataset, such as:
+
+* circular fingerprints
+* physicochemical descriptors
+* structural fingerprints
+* scaffold descriptors
+* experimentally derived SAR features
+
+Avoid unnecessary descriptor expansion when the dataset remains small.
+
+Do not use a large descriptor space simply because it is computationally available.
+
+---
+
+# 7. Prediction tasks
+
+Where data permit, build separate models for:
+
+### Classification
+
+Predict:
+
+`P(active)`
+
+or a calibrated probability of belonging to the experimentally defined active class.
+
+### Potency
+
+Predict quantitative potency when enough reliable measurements exist.
+
+### Potentiation
+
+Predict quantitative potentiation when enough measurements exist.
+
+If a quantitative endpoint is not sufficiently populated, do not force a model.
+
+---
+
+# 8. Calibration
+
+Predicted probabilities must be calibrated.
+
+Report:
+
+* ROC-AUC where appropriate
+* PR-AUC
+* sensitivity
+* specificity
+* balanced accuracy
+* calibration metrics
+* confusion matrix
+* enrichment factor
+* precision among selected candidates
+
+For regression:
+
+* RMSE
+* MAE
+* R²
+* Spearman correlation
+* calibration/error analysis
+
+Always report confidence intervals where statistically meaningful.
+
+Do not report a single performance number without the validation scheme.
+
+---
+
+# 9. Applicability domain
+
+Every prediction must include an indication of whether the molecule lies within the model's chemical applicability domain.
+
+Distinguish:
+
+### In-domain
+
+Chemically represented by training data.
+
+### Borderline
+
+Partially represented.
+
+### Out-of-domain
+
+Substantially different from training chemistry.
+
+Do not interpret an out-of-domain prediction as equivalent to an experimentally supported prediction.
+
+---
+
+# 10. Uncertainty
+
+Quantify predictive uncertainty where the selected model supports it.
+
+Use appropriate approaches such as:
+
+* ensemble variability
+* conformal prediction
+* bootstrap uncertainty
+* calibrated probability intervals
+
+Do not equate model confidence with biological certainty.
+
+Maintain two separate concepts:
+
+### Experimental SAR evidence
+
+Generated by Arm 1.
+
+### Model-derived prediction
+
+Generated by Arm 3.
+
+Never merge them into one score that obscures their origin.
+
+---
+
+# 11. Screening mode
+
+Once validated, Arm 3 may screen:
+
+* commercially available libraries
+* project compound libraries
+* REINVENT4-generated molecules
+* analog libraries
+* virtual screening collections
+
+For every screened compound report:
+
+* predicted activity
+* predicted potency where available
+* uncertainty
+* applicability domain
+* similarity to experimental compounds
+* scaffold
+* relevant Arm-1 SAR transformations
+* TAF relationship
+
+---
+
+# 12. Compound prioritization
+
+Do not rank molecules solely by predicted activity.
+
+Use a multi-factor prioritization framework incorporating:
+
+* predicted activity
+* prediction uncertainty
+* applicability domain
+* chemical quality
+* synthetic feasibility
+* experimental SAR consistency
+* chemical diversity
+* hypothesis-testing value
+
+Maintain distinct categories such as:
+
+### Exploit
+
+Strong model prediction + good experimental SAR support.
+
+### Explore
+
+Moderate prediction or novel chemistry with acceptable uncertainty.
+
+### Challenge
+
+Model/SAR disagreement that could discriminate between competing hypotheses.
+
+Do not hide disagreement between Arm 1 and Arm 3.
+
+---
+
+# 13. Integration with Arm 1
+
+Arm 3 must continuously receive the latest Arm-1 SAR state.
+
+Arm 1 provides:
+
+* experimentally supported transformations
+* unfavorable transformations
+* mixed/context-dependent transformations
+* untested regions
+* MMP evidence
+* TAF status
+* experimental uncertainty
+* chemical-property shifts
+
+Arm 3 uses these as interpretable contextual information.
+
+Arm 3 must NOT overwrite Arm-1 experimental conclusions.
+
+---
+
+# 14. Integration with Arm 2 / REINVENT4
+
+Once Arm 3 passes its validation gate, its predictions can become an additional REINVENT4 design signal.
+
+REINVENT4 should receive:
+
+### Arm 1
+
+Experimental SAR constraints.
+
+### Arm 3
+
+Quantitative predictive guidance.
+
+### Chemical filters
+
+Drug-design constraints.
+
+### Diversity constraints
+
+Chemical-space coverage.
+
+### Hypothesis-testing objectives
+
+Exploration of uncertain SAR.
+
+REINVENT4 must not simply optimize the Arm-3 predicted activity score.
+
+Prevent reward hacking by maintaining:
+
+* property constraints
+* diversity objectives
+* applicability-domain constraints
+* uncertainty penalties
+* SAR-consistency constraints
+* hypothesis-testing objectives
+
+---
+
+# 15. Model disagreement
+
+Explicitly identify:
+
+`Arm 1 SAR support ≠ Arm 3 prediction`
+
+These molecules are scientifically important.
+
+Possible categories:
+
+### Agreement
+
+Experimental SAR and model prediction are consistent.
+
+### Model-supported extension
+
+Model predicts favorable activity in a chemically related but experimentally untested region.
+
+### Model/SAR disagreement
+
+Model predicts differently from the experimentally observed SAR.
+
+### Out-of-domain prediction
+
+Model prediction is not strongly supported because the chemistry is poorly represented.
+
+Do not automatically discard disagreement.
+
+Use selected disagreement compounds as hypothesis-testing experiments.
+
+---
+
+# 16. Preventing model exploitation
+
+REINVENT4 must not discover trivial ways to maximize model score without biological plausibility.
+
+Apply:
+
+* chemical validity filters
+* property filters
+* synthetic feasibility filters
+* applicability-domain constraints
+* similarity/diversity constraints
+* Arm-1 SAR constraints
+* novelty constraints
+* scaffold diversity
+* uncertainty constraints
+
+Track generated-to-selected attrition.
+
+---
+
+# 17. Prospective validation
+
+This is essential.
+
+For every design round:
+
+### Before experiment
+
+Freeze:
+
+* training dataset version
+* model version
+* descriptors/fingerprints
+* preprocessing
+* model hyperparameters
+* model calibration
+* REINVENT4 configuration
+* screening library
+* candidate-selection rules
+* candidate structures
+
+### Then
+
+Generate/select compounds.
+
+### Then
+
+Blind the experimental identities.
+
+### Then
+
+Synthesize/test.
+
+### Only afterward
+
+Unblind the results.
+
+The new results become the next experimental dataset version.
+
+---
+
+# 18. Adaptive retraining
+
+After every predefined experimental round:
+
+`experimental_vN`
+
+↓
+
+recalculate Arm 1
+
+↓
+
+evaluate whether Arm 3 remains valid
+
+↓
+
+append newly characterized compounds
+
+↓
+
+retrain candidate models
+
+↓
+
+revalidate using appropriate prospective/held-out data
+
+↓
+
+update applicability domain
+
+↓
+
+update calibration
+
+↓
+
+update screening predictions
+
+↓
+
+update REINVENT4 guidance
+
+Do not assume the previous model remains valid after substantial chemical-space expansion.
+
+---
+
+# 19. Model retirement
+
+Arm 3 must be allowed to become inactive again.
+
+If:
+
+* validation performance degrades substantially
+* calibration deteriorates
+* chemical-space coverage changes
+* prospective performance fails
+* assay conditions change
+* dataset composition changes substantially
+
+then:
+
+`Arm 3 = RETIRED / REBUILD REQUIRED`
+
+Arm 1 and Arm 2 continue operating.
+
+Do not force a predictive model into the workflow when its validation no longer supports its use.
+
+---
+
+# 20. Three-arm synchronization
+
+The complete system must operate from a common versioned state.
+
+Example:
+
+`EXPERIMENTAL_v20`
+
+↓
+
+`ARM 1 — SAR_v20`
+
+↓
+
+`ARM 2 — REINVENT4_v20`
+
+↓
+
+`ARM 3 — QSAR_v20`
+
+↓
+
+`CANDIDATE PANEL_v20`
+
+↓
+
+`BLINDED EXPERIMENT`
+
+↓
+
+`EXPERIMENTAL_v21`
+
+↓
+
+`ARM 1_v21`
+
+↓
+
+`ARM 2_v21`
+
+↓
+
+`ARM 3_v21`
+
+This cycle repeats.
+
+---
+
+# 21. Arm 3 activation/deactivation state
+
+Maintain explicit state:
+
+* `NOT_READY`
+* `EVALUATING`
+* `ACTIVE`
+* `DEGRADED`
+* `REBUILD_REQUIRED`
+* `RETIRED`
+
+Arm 2 must remain operational even when Arm 3 is `NOT_READY` or `RETIRED`.
+
+This prevents the entire design system from depending on a predictive model.
+
+---
+
+# 22. Central experiment registry
+
+Maintain a single registry containing:
+
+* compound ID
+* dataset version
+* synthesis status
+* blinded status
+* experimental status
+* activity
+* potency
+* potentiation
+* Arm-1 SAR interpretation
+* Arm-2 generation provenance
+* Arm-3 model prediction
+* model uncertainty
+* applicability domain
+* final experimental result
+
+Every molecule must be traceable from:
+
+`generation → selection → synthesis → experiment → SAR update`
+
+---
+
+# 23. Information-flow rules
+
+### Allowed
+
+Experimental data → Arm 1
+
+Experimental data → Arm 3
+
+Arm 1 → Arm 2
+
+Arm 3 → Arm 2
+
+Arm 1 → Arm 3 contextual features
+
+Arm 2 → experiment
+
+Arm 3 → screening
+
+Experiment → next dataset
+
+### Not allowed
+
+Prospective experimental result → retroactive candidate selection
+
+Future experimental result → previous model training
+
+Unblinded candidate result → same-round generation
+
+Generated molecules → training labels before experimental testing
+
+---
+
+# 24. Final scientific role of Arm 3
+
+Arm 3 answers:
+
+> **Once the experimental SAR dataset is sufficiently enriched, can a rigorously validated SAR model generalize beyond the observed chemistry sufficiently well to support compound screening and provide an additional quantitative design signal for REINVENT4?**
+
+Arm 3 is therefore an **additional predictive layer**, not the experimental ground truth.
+
+---
+
+# 25. Overall three-arm system
+
+The final architecture is:
+
+`                    EXPERIMENTAL DATA`
+
+`                           ↓`
+
+`             ┌─────────────┴─────────────┐`
+
+`             ↓                           ↓`
+
+`        ARM 1 — SAR                ARM 3 — QSAR`
+
+`             ↓                           ↓`
+
+`             └─────────────┬─────────────┘`
+
+`                           ↓`
+
+`                ARM 2 — REINVENT4`
+
+`                           ↓`
+
+`              Diversity + Filtering`
+
+`                           ↓`
+
+`                    Chemist Review`
+
+`                           ↓`
+
+`                  Candidate Freeze`
+
+`                           ↓`
+
+`                 Blinded Experiment`
+
+`                           ↓`
+
+`                NEW EXPERIMENTAL DATA`
+
+`                           ↓`
+
+`                    Synchronize All`
+
+The system is therefore a **closed-loop adaptive experimental-design platform**, where experimental measurements continuously update transparent SAR interpretation, quantitative SAR modeling, and automated molecular generation.
+
+The experiment—not Arm 1, Arm 2, or Arm 3—remains the final arbiter of biological activity.

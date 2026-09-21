@@ -1,0 +1,613 @@
+# ARM 1 — Adaptive Experimental SAR–Guided Structural Rationale and Uncertainty Analysis
+
+## Objective
+
+Implement a rigorous, adaptive, non-AI framework that uses the experimentally measured α9α10 nAChR PAM dataset to explain **which structural modifications are supported by experimental SAR, what chemical-property changes those modifications introduce, and how uncertain the interpretation is**.
+
+This arm is an **experimental SAR interpretation and hypothesis-generation system**.
+
+It must NOT train a new activity-prediction model.
+
+It must NOT use RF, SHAP, neural-network attribution, docking scores, Boltz affinity predictions, or other AI-derived fragment attribution.
+
+The framework must be recalculated whenever new experimental evidence becomes available.
+
+The experimental dataset is the evolving ground truth.
+
+---
+
+## 1. Current experimental dataset
+
+Start from the current canonical experimental dataset:
+
+* approximately 30 compounds
+* approximately 7 experimentally defined PAM actives
+* experimental potency
+* experimental potentiation
+* canonical/isomeric SMILES
+* stereochemistry
+* compound identifiers
+* experimental provenance
+
+Do not assume the dataset will remain 30 compounds / 7 actives.
+
+Create immutable dataset versions:
+
+`experimental_v0`
+
+`experimental_v1`
+
+`experimental_v2`
+
+etc.
+
+Never overwrite previous versions.
+
+---
+
+# 2. Activity definition
+
+Use the locked project definition:
+
+`active = potency > 0 AND potentiation > 0`
+
+Preserve the original quantitative potency and potentiation values.
+
+Do not silently redefine activity.
+
+---
+
+# 3. Molecular QC
+
+For every compound:
+
+* validate SMILES
+* preserve stereochemistry
+* canonicalize isomeric SMILES
+* detect exact duplicates
+* detect chemically equivalent duplicates
+* calculate MW
+* calculate standard physicochemical descriptors
+* record provenance
+* flag ambiguous structures
+
+Never silently change stereochemistry.
+
+---
+
+# 4. Identify structural modifications
+
+For every prospective molecule supplied to the system:
+
+1. Identify the closest experimentally characterized parent.
+2. Prefer an experimentally active parent when a valid relationship exists.
+3. Determine whether a matched molecular pair can be defined.
+4. Identify the exact atoms/bonds changed.
+5. Define the transformation explicitly.
+
+Examples:
+
+`OH → O-Et`
+
+`H → Br`
+
+`O-Me → O-Et`
+
+`substituent A → substituent B`
+
+The system must highlight the actual changed atoms/bonds rather than labeling the entire molecule.
+
+---
+
+# 5. Matched Molecular Pair analysis
+
+Use MMP analysis as the primary modification-level SAR method.
+
+For every transformation identify:
+
+### Direct experimental MMP
+
+The same transformation has been experimentally observed in a closely comparable molecular context.
+
+### Context-matched MMP
+
+The same transformation occurs in a closely related scaffold/series.
+
+### Related SAR
+
+A chemically related transformation provides indirect evidence.
+
+### No precedent
+
+No informative experimental observation exists.
+
+MMP analysis is descriptive experimental SAR.
+
+Do not claim that an individual fragment or transformation causes activity.
+
+---
+
+# 6. Experimental outcome analysis
+
+For each transformation calculate:
+
+* number of informative pairs
+* favorable outcomes
+* unfavorable outcomes
+* mixed outcomes
+* active → inactive transitions
+* inactive → active transitions
+* potency differences
+* potentiation differences
+* consistency across contexts
+
+For binary outcomes:
+
+`favorable_fraction = favorable / informative_n`
+
+Do not describe this as the probability that a future molecule will be active.
+
+---
+
+# 7. Quantitative uncertainty
+
+For repeated binary observations use a conservative Beta-binomial/Jeffreys-prior model:
+
+`p ~ Beta(k + 0.5, n - k + 0.5)`
+
+where:
+
+* `k` = favorable observations
+* `n` = informative observations
+
+Report:
+
+* posterior mean
+* 95% credible interval
+* n
+
+The interval must remain wide when evidence is sparse.
+
+For example, 2/2 favorable observations must NOT be reported as:
+
+`100% probability of activity`
+
+Instead report:
+
+`2/2 favorable experimental precedents; evidence depth limited; uncertainty remains high.`
+
+Use evidence depth such as:
+
+* `n=0`: no evidence
+* `n=1`: very limited
+* `n=2–3`: limited
+* `n≥4`: greater evidence depth
+
+These are reporting categories, not biological thresholds.
+
+---
+
+# 8. Continuous potency analysis
+
+When quantitative potency is available:
+
+`ΔpEC50 = pEC50(modified) - pEC50(parent)`
+
+For repeated MMPs report:
+
+* individual ΔpEC50 values
+* median ΔpEC50
+* IQR
+* bootstrap 95% CI when justified
+
+For potentiation also report the corresponding experimental change.
+
+If sample size is too small for reliable bootstrap estimation, report individual observations and classify uncertainty as high.
+
+Do not manufacture precision.
+
+---
+
+# 9. Chemical-property changes
+
+For every structural modification calculate the chemical-property shift.
+
+At minimum:
+
+* MW
+* cLogP/logD where appropriate
+* TPSA
+* HBD
+* HBA
+* rotatable bonds
+* heavy atoms
+* fraction sp3
+* aromaticity
+* formal charge
+* steric size/volume where available
+* molecular flexibility
+
+Example:
+
+`OH → O-Et`
+
+may produce:
+
+* HBD ↓
+* HBA approximately unchanged
+* MW ↑
+* lipophilicity ↑
+* TPSA ↓
+* rotatable bonds ↑
+* steric volume ↑
+
+These are chemical-property consequences.
+
+They must NOT be represented as direct proof of improved receptor activity.
+
+---
+
+# 10. TAF mapping
+
+Apply the current TAF v0 SMARTS definitions.
+
+For every molecule/transformation report:
+
+* TAF preserved
+* TAF introduced
+* TAF disrupted
+* TAF not applicable
+* uncertain
+
+TAFs remain hypotheses.
+
+Use:
+
+`consistent with TAF-X`
+
+rather than:
+
+`TAF-X proves activity`.
+
+---
+
+# 11. Structure-level visualization
+
+The structure itself is the central output.
+
+Generate publication-quality 2D structures.
+
+Highlight the exact modified atoms/bonds.
+
+Use:
+
+### GREEN
+
+Direct experimental evidence supports favorable outcome.
+
+### RED
+
+Direct experimental evidence supports unfavorable outcome.
+
+### YELLOW
+
+Mixed or limited experimental evidence.
+
+### ORANGE
+
+Indirect/contextual extrapolation.
+
+### GRAY
+
+No informative precedent or unchanged background.
+
+Do not use AI-derived feature importance to determine colors.
+
+Do not color based on docking or predicted affinity.
+
+---
+
+# 12. Encode uncertainty separately
+
+Do NOT encode uncertainty merely through color intensity.
+
+Use an explicit evidence/uncertainty annotation.
+
+Examples:
+
+* High evidence depth
+* Moderate evidence depth
+* Low evidence depth
+* High uncertainty
+* Very high uncertainty
+* Unknown
+
+Therefore:
+
+`GREEN + HIGH UNCERTAINTY`
+
+is valid.
+
+Example:
+
+`OH → O-Et`
+
+`SAR support: Favorable`
+
+`Direct MMP: 2/2`
+
+`Evidence depth: Limited`
+
+`Uncertainty: High`
+
+---
+
+# 13. Evidence hierarchy
+
+Rank evidence internally as:
+
+1. Direct experimental MMP
+2. Context-matched experimental SAR
+3. Related experimental SAR
+4. Chemical-property rationale
+5. TAF consistency
+6. No evidence
+
+Do not treat levels 4–5 as equivalent to direct experimental evidence.
+
+---
+
+# 14. SAR state
+
+Every transformation/feature must have a current state:
+
+* SUPPORTED
+* UNFAVORABLE
+* MIXED
+* CONTEXT_DEPENDENT
+* UNTESTED
+* CONTRADICTED
+
+Track:
+
+* evidence count
+* experimental effect
+* uncertainty
+* chemical context
+* dataset version
+* last update
+
+Example:
+
+`OH → O-Et`
+
+v0 → UNTESTED
+
+v1 → FAVORABLE
+
+v2 → CONTEXT_DEPENDENT
+
+v3 → FAVORABLE in context A / UNFAVORABLE in context B
+
+New evidence must be capable of changing the previous interpretation.
+
+---
+
+# 15. Contradictory SAR
+
+If the same transformation produces different outcomes:
+
+* do not average away the contradiction
+* report each relevant context
+* classify as MIXED or CONTEXT_DEPENDENT
+* show the experimental observations
+* increase uncertainty
+
+Do not label a transformation favorable merely because its average effect is positive.
+
+---
+
+# 16. Stereochemistry
+
+Explicitly track stereochemistry.
+
+Do not treat stereoisomers as equivalent MMPs.
+
+If a transformation changes stereochemistry:
+
+* classify it separately
+* identify experimental stereochemical precedent
+* preserve exact stereochemical configuration
+
+---
+
+# 17. Adaptive update
+
+After every experimental round:
+
+1. Unblind according to the preregistered workflow.
+2. Add new experimental data.
+3. Create a new immutable dataset version.
+4. Recalculate MMP relationships.
+5. Recalculate transformation states.
+6. Recalculate experimental effect sizes.
+7. Recalculate uncertainty.
+8. Recalculate TAF relationships.
+9. Recalculate chemical-property/SAR relationships.
+10. Identify newly supported, weakened, contradicted, or unexplored transformations.
+
+Do not manually lock old SAR conclusions.
+
+New experimental evidence can strengthen, weaken, reverse, or contextualize previous conclusions.
+
+---
+
+# 18. Prospective design principles
+
+Arm 1 does NOT generate the final molecules.
+
+Instead, it produces experimentally grounded design rules for Arm 2.
+
+For each useful transformation provide:
+
+* transformation
+* parent examples
+* supporting compounds
+* experimental outcome
+* evidence depth
+* uncertainty
+* chemical-property shift
+* TAF relationship
+* current SAR state
+
+---
+
+# 19. Final output for every molecule
+
+Generate:
+
+### Structure
+
+2D structure with modified region highlighted.
+
+### Parent
+
+Closest experimental parent.
+
+### Transformation
+
+Exact chemical change.
+
+### Experimental precedent
+
+Direct / context-matched / related / none.
+
+### Experimental outcome
+
+Potency and potentiation changes.
+
+### Chemical-property shift
+
+MW, lipophilicity, TPSA, HBD/HBA, flexibility, sterics.
+
+### TAF
+
+Preserved / introduced / disrupted / unknown.
+
+### SAR support
+
+Favorable / unfavorable / mixed / indirect / unknown.
+
+### Evidence depth
+
+Number and type of observations.
+
+### Uncertainty
+
+Quantitative interval when justified; otherwise explicit qualitative uncertainty.
+
+### Interpretation
+
+Conservative experimental-SAR statement.
+
+---
+
+# 20. Required machine-readable output
+
+Generate a table containing at least:
+
+* compound_id
+* parent_id
+* proposed_smiles
+* transformation
+* changed_atoms
+* changed_bonds
+* mmp_level
+* mmp_n
+* favorable_n
+* unfavorable_n
+* mixed_n
+* favorable_fraction
+* beta_binomial_mean
+* beta_binomial_lower95
+* beta_binomial_upper95
+* median_delta_pEC50
+* potency_CI_lower
+* potency_CI_upper
+* delta_potentiation
+* MW_shift
+* cLogP_shift
+* TPSA_shift
+* HBD_shift
+* HBA_shift
+* rotatable_bond_shift
+* steric_shift
+* stereochemistry_status
+* TAF_status
+* SAR_state
+* SAR_support
+* evidence_depth
+* uncertainty
+* interpretation
+* dataset_version
+* provenance
+
+Use `NA` when a quantity cannot be calculated.
+
+Never guess missing values.
+
+---
+
+# 21. No AI fragment attribution
+
+Do NOT use:
+
+* RF feature importance
+* SHAP
+* neural-network attribution
+* fragment contribution prediction
+* attention-based explanations
+* docking scores
+* Boltz affinity scores
+
+to claim that a specific fragment causes activity.
+
+---
+
+# 22. Scientific language
+
+Prefer:
+
+* experimentally supported
+* consistent with experimental SAR
+* limited precedent
+* mixed evidence
+* context-dependent
+* indirectly supported
+* hypothesis-consistent
+* untested
+* high uncertainty
+
+Avoid:
+
+* proves
+* guarantees
+* causes activity
+* 80% probability of activity
+* high-confidence active fragment
+
+unless independently justified by substantially larger evidence.
+
+---
+
+# 23. Core purpose
+
+Arm 1 must answer:
+
+> **Which structural modification is supported by the current experimental SAR, what chemical changes does that modification introduce, what evidence supports it, and how uncertain is that interpretation?**
+
+The framework must continuously adapt:
+
+`Experimental evidence → SAR analysis → updated SAR landscape → next design cycle`
+
+The experimental dataset is the evolving ground truth.

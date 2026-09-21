@@ -1,0 +1,646 @@
+# ARM 2 — Adaptive REINVENT4 Experimental SAR–Guided Molecular Design
+
+## Objective
+
+Implement an automated molecular-design arm in which **REINVENT4 generates prospective α9α10 nAChR PAM molecules for synthesis and experimental testing**.
+
+REINVENT4 replaces manual molecular design.
+
+The design landscape comes from the latest experimentally validated SAR produced by Arm 1.
+
+The chemist's role is limited primarily to:
+
+* synthesis feasibility
+* chemical quality
+* medicinal-chemistry review
+* final candidate approval
+
+The workflow is:
+
+`Experimental dataset → Arm-1 SAR landscape → REINVENT4 generation → transparent filtering → diversity/hypothesis selection → chemist review → synthesis → blinded experimental testing`
+
+Do NOT use RF.
+
+Do NOT use SHAP.
+
+Do NOT use a separate AI activity-prediction model.
+
+Do NOT use docking or predicted affinity as a required activity-ranking objective.
+
+REINVENT4 is the **molecular generator**, not the source of experimental SAR evidence.
+
+---
+
+# 1. Adaptive starting landscape
+
+At every design round, initialize Arm 2 from the latest experimentally unblinded dataset.
+
+Use:
+
+`experimental_v0 → SAR_v0 → REINVENT4_v0`
+
+After new experimental results:
+
+`experimental_v1 → SAR_v1 → REINVENT4_v1`
+
+Then:
+
+`experimental_v2 → SAR_v2 → REINVENT4_v2`
+
+etc.
+
+Do not permanently use the original seven actives as the only starting landscape.
+
+New experimental evidence must be capable of changing the molecules REINVENT4 generates.
+
+---
+
+# 2. Inputs from Arm 1
+
+Use the latest Arm-1 output containing:
+
+* experimentally supported transformations
+* unfavorable transformations
+* mixed/context-dependent transformations
+* untested transformations
+* MMP evidence
+* experimental effect sizes
+* evidence depth
+* uncertainty
+* TAF status
+* chemical-property changes
+* active scaffolds
+* relevant inactive scaffolds
+* current SAR state
+
+Do not convert these into an opaque AI activity score.
+
+---
+
+# 3. REINVENT4 generation
+
+Use REINVENT4 as the automated molecular-design engine.
+
+The primary generation strategy should be:
+
+## Local analog generation
+
+Start from experimentally characterized active chemistry and generate controlled structural modifications.
+
+Purpose:
+
+* explore experimentally informed chemical space
+* test supported SAR
+* explore neighboring chemistry
+* generate synthetically reasonable analogs
+
+Use additional controlled exploration for transformations with limited evidence.
+
+---
+
+# 4. Three candidate classes
+
+The generated library should contain predefined design classes.
+
+## Class A — SAR-supported
+
+Molecules incorporating experimentally supported favorable transformations.
+
+Purpose:
+
+Test whether observed SAR can be reproduced and extended.
+
+## Class B — SAR-consistent exploration
+
+Molecules making related modifications with limited or indirect experimental precedent.
+
+Purpose:
+
+Explore nearby chemical space.
+
+## Class C — hypothesis-challenging
+
+Molecules deliberately modifying uncertain, mixed, or TAF-disrupting features.
+
+Purpose:
+
+Test competing SAR hypotheses and avoid simply reinforcing existing assumptions.
+
+Maintain representation from these classes according to the preregistered design.
+
+---
+
+# 5. Generation constraints
+
+All generated molecules must pass:
+
+### Chemical validity
+
+* valid SMILES
+* valid valence
+* chemically reasonable structure
+
+### Stereochemistry
+
+* preserve required stereochemistry
+* explicitly validate stereochemical configuration
+* reject ambiguous stereochemistry where inappropriate
+
+### Duplicate control
+
+Remove:
+
+* exact duplicates
+* canonical duplicates
+* known compounds
+* duplicates within the generated set
+
+---
+
+# 6. SAR-guided filtering
+
+For each generated molecule identify:
+
+* parent compound
+* structural transformation
+* MMP relationship
+* experimental evidence
+* current SAR state
+* evidence depth
+* uncertainty
+* TAF status
+
+Apply the current Arm-1 SAR state.
+
+### SUPPORTED
+
+Preferentially allow/explore.
+
+### UNFAVORABLE
+
+Down-rank or exclude from the main candidate pool unless deliberately selected for hypothesis testing.
+
+### MIXED / CONTEXT_DEPENDENT
+
+Allow controlled exploration.
+
+### UNTESTED
+
+Allow exploratory generation but explicitly label as untested.
+
+### CONTRADICTED
+
+Do not preferentially generate except for explicit hypothesis-testing purposes.
+
+---
+
+# 7. Chemical-property filtering
+
+Apply predefined medicinal-chemistry filters:
+
+* MW
+* cLogP/logD
+* TPSA
+* HBD
+* HBA
+* rotatable bonds
+* heavy atoms
+* fraction sp3
+* formal charge
+* structural alerts
+* reactive groups
+* synthetic accessibility
+* chemical stability concerns where computationally assessable
+
+Use project-defined thresholds.
+
+Freeze thresholds before candidate selection.
+
+Do not change thresholds after seeing experimental results.
+
+---
+
+# 8. Similarity and chemical-space exploration
+
+Do not allow REINVENT4 to produce only copies or trivial analogs.
+
+Maintain multiple exploration regions:
+
+### Conservative
+
+Close to experimentally characterized active chemistry.
+
+### Intermediate
+
+Moderately differentiated analogs.
+
+### Hypothesis-testing
+
+Chemically differentiated structures designed to test uncertain SAR.
+
+A Tanimoto range such as 0.5–0.8 may be used as an operational local-analog starting range, but it must remain configurable and must not be presented as a biologically validated threshold.
+
+---
+
+# 9. Large-scale generation
+
+Generate a large candidate pool appropriate to available computational resources.
+
+Example:
+
+`10,000 generated molecules`
+
+Track the complete funnel:
+
+`generated`
+
+→ `valid`
+
+→ `stereochemically valid`
+
+→ `unique`
+
+→ `property compliant`
+
+→ `SAR compliant`
+
+→ `synthetically plausible`
+
+→ `diverse`
+
+→ `chemist reviewed`
+
+→ `experimentally selected`
+
+Report the number retained at each step.
+
+---
+
+# 10. Do not simply select the top generator scores
+
+Do not select candidates solely according to REINVENT4 score.
+
+After filtering:
+
+1. Cluster by molecular fingerprint.
+2. Cluster by Murcko scaffold.
+3. Identify transformation classes.
+4. Remove redundant candidates.
+5. Select chemically diverse representatives.
+6. Preserve representation of the three design classes.
+
+The purpose is to maximize experimental information, not merely generator score.
+
+---
+
+# 11. Hypothesis-testing selection
+
+Explicitly select some molecules whose experimental outcome can distinguish between competing SAR hypotheses.
+
+For each hypothesis-testing molecule record:
+
+* hypothesis A
+* hypothesis B
+* structural modification
+* expected interpretation under each hypothesis
+* experimental measurement required to distinguish them
+
+Do not assign an AI probability to either outcome.
+
+The experiment determines which interpretation is supported.
+
+---
+
+# 12. Candidate annotation
+
+Every generated molecule must receive a transparent annotation:
+
+### Parent
+
+Closest experimentally characterized molecule.
+
+### Transformation
+
+Exact structural modification.
+
+### SAR evidence
+
+Direct / context-matched / related / none.
+
+### SAR state
+
+Supported / unfavorable / mixed / context-dependent / untested / contradicted.
+
+### Chemical-property shift
+
+MW, lipophilicity, TPSA, HBD/HBA, flexibility, steric effects.
+
+### TAF
+
+Preserved / introduced / disrupted / unknown.
+
+### Evidence depth
+
+Experimental precedent count.
+
+### Uncertainty
+
+Experimental evidence uncertainty.
+
+### Design class
+
+SAR-supported / SAR-consistent / hypothesis-challenging.
+
+---
+
+# 13. Chemist review
+
+Present a filtered candidate set to the medicinal chemist.
+
+For each candidate provide:
+
+* 2D structure
+* highlighted modification
+* parent
+* transformation
+* experimental SAR evidence
+* chemical-property changes
+* TAF status
+* evidence depth
+* uncertainty
+* diversity information
+* synthetic feasibility
+
+The chemist reviews whether the molecule is:
+
+* chemically sensible
+* synthetically feasible
+* sufficiently interpretable
+* appropriate for experimental testing
+
+The chemist should not be required to manually design replacements for the candidates.
+
+---
+
+# 14. Final experimental selection
+
+After review:
+
+1. Apply the preregistered selection criteria.
+2. Preserve predefined representation across design classes.
+3. Record candidate-selection rationale.
+4. Freeze the final structures.
+5. Freeze SMILES and stereochemistry.
+6. Assign blinded experimental IDs.
+7. Freeze the experimental candidate panel.
+
+No candidate should be removed or added because of knowledge of its eventual experimental result.
+
+---
+
+# 15. Prospective validation
+
+Before synthesis/testing, freeze:
+
+* REINVENT4 version
+* configuration
+* random seeds
+* generation parameters
+* scoring parameters
+* filtering rules
+* similarity thresholds
+* candidate-selection rules
+* final candidate IDs
+* SMILES
+* stereochemistry
+* generation dataset version
+* SAR dataset version
+
+Then perform synthesis and experimental testing.
+
+The experimental result is the final arbiter.
+
+---
+
+# 16. Adaptive update
+
+After experimental testing and formal unblinding:
+
+1. Add results to the next experimental dataset version.
+2. Recalculate Arm-1 SAR.
+3. Update MMP evidence.
+4. Update transformation states.
+5. Update uncertainty.
+6. Update TAF relationships.
+7. Update chemical-property/SAR observations.
+8. Reinitialize REINVENT4 using the updated SAR landscape.
+
+New experimental evidence must be able to:
+
+* promote a transformation
+* demote a transformation
+* identify context dependence
+* contradict a previous hypothesis
+* introduce a new favorable transformation
+* eliminate an unsupported design direction
+
+Do not simply append data while keeping the old generation landscape unchanged.
+
+---
+
+# 17. Versioned adaptive loop
+
+Use the following immutable cycle:
+
+`Experimental Dataset v0`
+
+↓
+
+`Arm-1 SAR State v0`
+
+↓
+
+`REINVENT4 v0`
+
+↓
+
+`Generation + filtering + diversity`
+
+↓
+
+`Chemist review`
+
+↓
+
+`Freeze candidates`
+
+↓
+
+`Synthesis + blinded experiment`
+
+↓
+
+`Unblind`
+
+↓
+
+`Experimental Dataset v1`
+
+↓
+
+`Arm-1 SAR State v1`
+
+↓
+
+`REINVENT4 v1`
+
+↓
+
+`Next prospective experiment`
+
+Continue iteratively.
+
+---
+
+# 18. No leakage
+
+Never use the experimental outcome of a prospective compound to influence its own selection.
+
+Correct sequence:
+
+`design → freeze → synthesize/test → unblind → update`
+
+Incorrect sequence:
+
+`design → observe result → modify selection → report as prospective`
+
+Maintain:
+
+* timestamps
+* dataset versions
+* generation versions
+* selection logs
+* blinded/unblinded status
+
+---
+
+# 19. No RF or AI activity model
+
+Do NOT use:
+
+* RF
+* RF uncertainty
+* RF feature importance
+* SHAP
+* neural-network activity prediction
+* fragment contribution models
+* docking score as the primary objective
+* Boltz affinity prediction as the primary objective
+
+REINVENT4 is used for **molecular generation**, not as a replacement for experimental SAR.
+
+The design signal comes from the experimentally derived Arm-1 SAR landscape.
+
+---
+
+# 20. Final machine-readable candidate table
+
+For every generated/selected molecule store:
+
+* candidate_id
+* generation_version
+* dataset_version
+* smiles
+* parent_id
+* transformation
+* changed_atoms
+* changed_bonds
+* design_class
+* mmp_level
+* mmp_n
+* favorable_n
+* unfavorable_n
+* SAR_state
+* SAR_support
+* uncertainty
+* TAF_status
+* MW
+* cLogP/logD
+* TPSA
+* HBD
+* HBA
+* rotatable_bonds
+* scaffold
+* fingerprint_cluster
+* similarity_to_parent
+* similarity_to_known_actives
+* synthetic_accessibility
+* filtering_status
+* chemist_review
+* final_selection
+* blinded_status
+* experimental_status
+
+Use `NA` where unavailable.
+
+Never invent values.
+
+---
+
+# 21. Primary scientific question
+
+Arm 2 must answer:
+
+> **Can REINVENT4 automatically exploit experimentally observed α9α10 PAM SAR to generate chemically tractable prospective molecules, while adapting its chemical search landscape as new experimental evidence changes the SAR?**
+
+The goal is not to demonstrate that an AI model predicts activity.
+
+The goal is to determine whether **automated generative molecular design can efficiently translate experimentally supported SAR into new experimentally testable chemistry**.
+
+---
+
+# 22. Final adaptive principle
+
+The system must continuously follow:
+
+`EXPERIMENT`
+
+↓
+
+`UPDATED EXPERIMENTAL SAR`
+
+↓
+
+`ARM-1 SAR INTERPRETATION`
+
+↓
+
+`UPDATED DESIGN LANDSCAPE`
+
+↓
+
+`REINVENT4 GENERATION`
+
+↓
+
+`FILTERING + DIVERSITY + HYPOTHESIS TESTING`
+
+↓
+
+`CHEMIST REVIEW`
+
+↓
+
+`BLINDED EXPERIMENT`
+
+↓
+
+`NEW EXPERIMENTAL EVIDENCE`
+
+↓
+
+`UPDATED SAR`
+
+The experimental evidence changes the starting landscape for the next REINVENT4 cycle.
+
+The system must be adaptive, prospective, auditable, and resistant to information leakage.
